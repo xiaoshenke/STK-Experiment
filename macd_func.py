@@ -9,11 +9,12 @@ from functools import partial
 
 from matplotlib import dates as mdates
 from matplotlib import ticker as mticker
-
 from matplotlib.dates import DateFormatter, WeekdayLocator, DayLocator, MONDAY,YEARLY
 from matplotlib.dates import MonthLocator,MONTHLY
 
 import matplotlib.pyplot as plt
+from matplotlib.gridspec import GridSpec
+
 
 # mimic linear function
 def linear_func(k,b,x):
@@ -22,6 +23,9 @@ def linear_func(k,b,x):
 # mimic parabolic function
 def parabolic_func(k,a,b,x):
 	return k*(x-a)*(x-a)+b
+
+def cubic_func(x0,a,b,c,x):
+	return a*(x-x0)*(x-x0)*(x-x0) + b*(x-x0) + c
 
 def movingaverage(values,window):
     weigths = np.repeat(1.0, window)/window
@@ -48,30 +52,24 @@ def draw_func(func):
 	SP = len(df.kdata.values[MA2-1:])
 	
 	av1_series = Series(Av1,index=df.index[MA1-1:])
-	av1_series.name = 'av1'
 	av2_series = Series(Av2,index=df.index[MA2-1:])
-	av2_series.name = 'av2'
 	df['av1'] = av1_series
 	df['av2'] = av2_series
 	
-	fig = plt.figure(facecolor='#07000d',figsize=(15,10))
-	ax1 = plt.subplot2grid((6,4), (1,0), rowspan=4, colspan=4, axisbg='#07000d')
-	ax1.plot(df.date.values[-SP:],df.kdata.values[-SP:],linewidth=1.5,linestyle='--',marker='o')
+	fig = plt.figure(figsize=(12,8))
+	gs = GridSpec(3,3)
+	ax1 = plt.subplot(gs[0:-1,:])
+	plt.plot(df.date.values[-SP:],df.kdata.values[-SP:],linewidth=1.5,linestyle='--',marker='o')
 
 	Label1 = str(MA1)+' SMA'
-	ax1.plot(df.date.values[-SP:],Av1[-SP:],'#e1edf9',label=Label1, linewidth=1.5)
+	plt.plot(df.date.values[-SP:],Av1[-SP:],'#e1edf9',label=Label1, linewidth=1.5)
 
 	Label2 = str(MA2)+' SMA'
-	ax1.plot(df.date.values[-SP:],Av2[-SP:],'#4ee6fd',label=Label2, linewidth=1.5)
-
-	ax1.grid(True,color='w')
+	plt.plot(df.date.values[-SP:],Av2[-SP:],'#4ee6fd',label=Label2, linewidth=1.5)
+	plt.ylabel('kdata')
+	plt.grid(True)
 	ax1.xaxis.set_major_locator(mticker.MaxNLocator(10))
 	ax1.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
-
-	# draw x-axis
-	ax1.tick_params(axis='x', colors='w')	
-	# draw y-axis
-	ax1.tick_params(axis='y', colors='w')   
 
 	df['macd'] = df['av1'] - df['av2']
 	Eav = movingaverage(df.macd.values,EMA)
@@ -80,11 +78,10 @@ def draw_func(func):
 	eva_series = Series(Eav,index=df.index[MA2-2:])
 	df['ema'] = eva_series
 
-	ax2 = plt.subplot2grid((6,4), (5,0), sharex=ax1, rowspan=4, colspan=4, axisbg='#07000d')
-	ax2.plot(df.date.values[-SP:], df.macd[-SP:], color='#4ee6fd', lw=2)
-	ax2.plot(df.date.values[-SP:], df.ema[-SP:], color='#e1edf9', lw=1)
-	ax2.tick_params(axis='x', colors='w')
-	ax2.tick_params(axis='y', colors='w')
+	ax2 = plt.subplot(gs[-1,:], sharex=ax1)
+	plt.plot(df.date.values[-SP:], df.macd[-SP:], color='#4ee6fd', lw=2)
+	plt.plot(df.date.values[-SP:], df.ema[-SP:], color='#e1edf9', lw=1)
+	plt.ylabel('macd')
 	plt.show()
 
 	print df
@@ -92,8 +89,9 @@ def draw_func(func):
 
 
 def main():
+	draw_func(partial(cubic_func,30,0.03,-22,10))
 	#draw_func(partial(linear_func,0.5,0))
-	draw_func(partial(parabolic_func,-0.03,40,50))
+	#draw_func(partial(parabolic_func,-0.03,40,50))
 	return
 
 # Used to explain how macd works 
