@@ -1,0 +1,4 @@
+app/*.pyc
+app/main/*.pyc
+app/main/*.bat
+.DS_Store
