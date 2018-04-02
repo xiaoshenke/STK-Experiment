@@ -4,6 +4,7 @@ import os
 from stk_lock import history_file_lock as f_lock
 import tushare as ts
 import numpy as np
+import time_util
 
 # default download 1 year data 
 def download_func(code,filepath=None,start_time=None):
@@ -14,16 +15,17 @@ def download_func(code,filepath=None,start_time=None):
 	if not start_time:
 		start_time = time_util.get_today_formatted()
 	#df = ts.get_h_data(code,start=time_util.get_today_of_last_year_formatted())
+	start_time = time_util.get_today_of_last_year_formatted() 
 	df = ts.get_h_data(code,start=start_time)
 
 	# not forget to add 'code' column
-	df['code'] = np.repeat(code,len(df.index))
-	if not df or len(df.index) == 0:
-		return 
+	# Fixme: 000023 -> 23?
+	df['code'] = np.repeat("%s"%code,len(df.index))
 	while not f_lock.acquire():
 		pass
 	# write file
 	try:
+		print "try to append %s"%df
 		if not os.path.exists(filepath):
 			df.to_csv(filepath)
 		else:
@@ -55,4 +57,6 @@ if __name__ == "__main__":
 	#download_history_to_file(range(100),"abc")
 	download_history_to_file(["000789","000023"],"history.csv")
 	print "finished"
+	import sys
+	sys.exit()
 
