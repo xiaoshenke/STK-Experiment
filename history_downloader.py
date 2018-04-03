@@ -2,9 +2,15 @@
 import threadpool
 import os
 from stk_lock import history_file_lock as f_lock
-import tushare as ts
+#import tushare as ts
 import numpy as np
 import time_util
+
+THREAD_POOL_NUM = 10
+pool = threadpool.ThreadPool(THREAD_POOL_NUM)
+
+def fake_download_func(code,filepath=None,start_time=None):
+	print "fake_download_func,code:%s"%code
 
 # default download 1 year data 
 def download_func(code,filepath=None,start_time=None):
@@ -16,23 +22,25 @@ def download_func(code,filepath=None,start_time=None):
 		start_time = time_util.get_today_formatted()
 	#df = ts.get_h_data(code,start=time_util.get_today_of_last_year_formatted())
 	start_time = time_util.get_today_of_last_year_formatted() 
+	import tushare as ts
 	df = ts.get_h_data(code,start=start_time)
 
 	# not forget to add 'code' column
-	# Fixme: 000023 -> 23?
-	df['code'] = np.repeat("%s"%code,len(df.index))
+	df['code'] = np.repeat(code,len(df.index))
 	while not f_lock.acquire():
 		pass
 	# write file
 	try:
 		print "try to append %s"%df
 		if not os.path.exists(filepath):
-			df.to_csv(filepath)
+			# drop index
+			df.to_csv(filepath,index=False)
 		else:
 			import pandas
-			origin = pandas.read_csv(filepath)
+			# fix string turned to integer
+			origin = pandas.read_csv(filepath,dtype={'code':object})
 			df = origin.append(df)
-			df.to_csv(filepath)
+			df.to_csv(filepath,index=False)
 	except Exception,e:
 		pass
 	finally:
@@ -43,7 +51,6 @@ def download_func(code,filepath=None,start_time=None):
 def download_history_to_file(codes,filepath,callback=None):
 	if not codes or len(codes) == 0:
 		return
-	pool = threadpool.ThreadPool(10)
 	#requests = threadpool.makeRequests(download_func,codes)	
 	arg_list = [((code,filepath),{}) for code in codes]
 	requests = threadpool.makeRequests(download_func,arg_list)
@@ -51,12 +58,8 @@ def download_history_to_file(codes,filepath,callback=None):
 	pool.wait()	
 	return 
 
-# FIXME: can't quit from cmd... guess is threadpool
 # TODO: mac install tushare
 if __name__ == "__main__":
-	#download_history_to_file(range(100),"abc")
 	download_history_to_file(["000789","000023"],"history.csv")
-	print "finished"
-	import sys
-	sys.exit()
+	pool.dismissWorkers(THREAD_POOL_NUM,True)
 
