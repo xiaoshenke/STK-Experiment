@@ -5,3 +5,4 @@ other/*.pyc
 .DS_Store
 history.csv
 *.pyc
+secret
