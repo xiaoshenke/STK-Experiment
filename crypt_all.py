@@ -4,7 +4,7 @@ import base64
 
 SECRET_FILE = "secret"
 
-ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py"]
+ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test"]
 
 def get_current_dir():
 	import sys,os
@@ -20,37 +20,74 @@ def should_apply_crypt(file):
 		return False
 	if file.endswith(".sh"):
 		return False
+	if file.endswith(".pyc"):
+		return False
 	if file in ignore_list:
 		return False
 	return True
 
-# TODO: crpyt and write file
-def crypt_file(file):
+def crypt_file(file,aes):
 	if not should_apply_crypt(file):
 		return
-	print "crypt_file,from:%s to:%s"%(file,base64.b64encode(file))
+	if not file.endswith(".py"):
+		return
+	f = None
+	f_write = None
+	try:
+		print "crypt_file,from:%s to:%s"%(file,base64.b64encode(file))
+		f = open(file)
+		text = f.read()
+		text_after = aes.encrypt(text)
+		f_write = open(base64.b64encode(file),'w')
+		f_write.write(text_after)
+		
+		print "remove file:%s"%file
+                os.remove(file)
+	except Exception,e:
+		pass
+	finally:
+		if f:
+			f.close()
+		if f_write:
+			f.close() 
 	
 def is_base64file(file):
 	return file.endswith("==")
 
-# TODO: uncrpyt and write file
-def uncrypt_file(file):
+def uncrypt_file(file,aes):
 	if not should_apply_crypt(file):
 		return
-	if not is_base64file(file):
+	if file.endswith(".py"):
 		return
+	f = None
+	f_write = None
 	try:
 		print "uncrypt_file,from:%s to:%s"%(file,base64.b64decode(file))
+		f = open(file)
+		text = f.read()
+		text_after = aes.decrypt(text)
+		f_write = open(base64.b64decode(file),'w')
+		f_write.write(text_after)
+
+		print "remove file:%s"%file
+		os.remove(file)
 	except Exception,e:
 		pass
-
+	finally:
+		if f:
+			f.close()
+		if f_write:
+			f.close() 
+	
 def crypt_by_dir():
 	secret = check_and_read_secret()
 	if not secret:
 		return
+	from crypt_util import AES_ENCRYPT
+	aes = AES_ENCRYPT(secret)
 	for p,dirs,files in os.walk(get_current_dir(),topdown=True):
 		for f in files:
-			crypt_file(f)
+			crypt_file(f,aes)
 		# only 1 level,so break here
 		break
 
@@ -58,9 +95,12 @@ def uncrpyt_by_dir():
 	secret = check_and_read_secret()
 	if not secret:
 		return
+	from crypt_util import AES_ENCRYPT
+	aes = AES_ENCRYPT(secret)
+	
 	for p,dirs,files in os.walk(get_current_dir(),topdown=True):
 		for f in files:
-			uncrypt_file(f)
+			uncrypt_file(f,aes)
 		# only 1 level,so break here
 		break
 
@@ -79,6 +119,18 @@ def check_and_read_secret():
 
 # Usage: python crypt_all [-r],if -r is set,will do uncrpyt job
 if __name__ == "__main__":
+	if True and False:
+		from crypt_util import AES_ENCRYPT
+		aes = AES_ENCRYPT("secret123")
+		uncrypt_file("Y3J5cHRfdGVzdA==",aes)
+		import sys
+		sys.exit()
+	if True and False:
+		from crypt_util import AES_ENCRYPT
+	        aes = AES_ENCRYPT("secret123")		
+		crypt_file("crypt_test",aes)		
+		import sys
+		sys.exit()
 	import sys
 	if len(sys.argv) >= 2 and sys.argv[1].lower() == "-r":
 		uncrpyt_by_dir()

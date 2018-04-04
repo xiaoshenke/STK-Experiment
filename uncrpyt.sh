@@ -1,4 +1,4 @@
 #!/bin/bash
 
-python crpyt_all.py -r
+python crypt_all.py -r
 
