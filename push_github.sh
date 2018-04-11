@@ -8,8 +8,10 @@ fi
 
 python crypt_all.py
 
+message=$*
+
 git add .
-git commit -m $*
+git commit -m "${message[*]}"
 git push origin master
 
 
