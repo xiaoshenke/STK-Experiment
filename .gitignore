@@ -6,3 +6,4 @@ other/*.pyc
 history.csv
 *.pyc
 secret
+*.csv
