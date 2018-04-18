@@ -44,7 +44,7 @@ if [[ ${code:0:2} == "30" ]]
 then
 	code=sz$code
 else
-	code=sz$code
+	code=sh$code
 fi
 
 url=http://finance.sina.com.cn/realstock/company/$code/nc.shtml
