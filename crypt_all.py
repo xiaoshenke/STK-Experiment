@@ -4,7 +4,7 @@ import base64
 
 SECRET_FILE = "secret"
 
-ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test"]
+ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py"]
 
 def get_current_dir():
 	import sys,os
