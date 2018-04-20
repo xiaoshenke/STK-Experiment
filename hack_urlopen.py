@@ -1,6 +1,17 @@
 #!/usr/bin/python
 # coding=utf-8
 from socket import timeout
+from threading import Event
+exit = Event()
+import signal
+
+def quit(signo, _frame):
+	print("Interrupted by %d, shutting down" % signo)
+	exit.set()
+
+for sig in ('TERM', 'HUP', 'INT'):
+	signal.signal(getattr(signal, 'SIG'+sig), quit);
+
 
 class WrapperRead:
     def __init__(self,r_obj):
@@ -22,7 +33,7 @@ def urlopen_till_success(request,timeout):
 	import time
 	sleep_time = 1
 	socket_timeout = timeout
-	while True:
+	while True and not exit.is_set():
 		try:
 			return urlopen(request,socket_timeout)
 		except SocketTimeoutException,e:
@@ -36,7 +47,14 @@ def urlopen_till_success(request,timeout):
 			pass
 		print "urlopen_till_success request:%s try_time:%s sleep:%s"%(request,try_time,sleep_time)
 		try_time = try_time+1
-		time.sleep(sleep_time)
+		exit.wait(sleep_time)
+		if True:
+			continue
+		try:
+			time.sleep(sleep_time)
+		except KeyboardInterrupt:
+			print 'receive KeyboardInterrupt'
+			break
 
 def urlopen(request,timeout):
 	try:
