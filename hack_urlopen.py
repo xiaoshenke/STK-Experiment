@@ -44,6 +44,8 @@ def urlopen_till_success(request,timeout):
 		except Http456Exception,e:
 			print e
 			sleep_time = sleep_time+15
+			if sleep_time < 60:
+				sleep_time = 60
 		except Exception,e:
 			print e
 			pass
