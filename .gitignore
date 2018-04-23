@@ -7,3 +7,6 @@ history.csv
 *.pyc
 secret
 *.csv
+*.jpg
+*.png
+*.gif
