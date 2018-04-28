@@ -9,7 +9,7 @@ open_type=1
 
 # 1:dk 2:wk 3:mk 4:f
 stock_type=1
-
+is_index=0
 while [ -n "$1" ]
 do
 	case "$1" in
@@ -28,6 +28,9 @@ do
 	-i | -img)
 		open_type=2
 		;;
+	-index)
+		is_index=1
+		;;
 	-w)
 		open_type=1
 		;;
@@ -45,11 +48,11 @@ then
 fi
 
 code=$1
-if [[ ${code:0:2} == "30" ]]
+if [ $is_index -eq 1 ]
 then
-	code=sz$code
-else
 	code=sh$code
+else
+	code=sz$code
 fi
 
 if [ $open_type -eq 1  ]
