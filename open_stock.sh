@@ -48,7 +48,7 @@ then
 fi
 
 code=$1
-if [ $is_index -eq 1 ]
+if [ $is_index -eq 1 ] || [[ ${code:0:2} == "60" ]]
 then
 	code=sh$code
 else
