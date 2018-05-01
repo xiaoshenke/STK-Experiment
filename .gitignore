@@ -10,3 +10,5 @@ secret
 *.jpg
 *.png
 *.gif
+csv_data
+csv_data/*
