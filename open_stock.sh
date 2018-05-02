@@ -13,6 +13,13 @@ is_index=0
 while [ -n "$1" ]
 do
 	case "$1" in
+	-h)
+		echo Usage: ./open_stock.sh "-d[k]|-w[k]|-m[k]|-f -i[mg]|-w -index" your-code
+		echo '''for eg. 
+open shangzheng index, ./open_stock.sh -f -index -i 000001
+open shenzheng index, ./open_stock.sh -f -i 399001'''
+		exit 2
+		;;
 	-d | -dk)
 		stock_type=1
 		;;
@@ -34,6 +41,10 @@ do
 	-w)
 		open_type=1
 		;;
+	-*)
+		echo $1 arg not supported!
+		exit 2
+		;;	
 	*)
 		break
 		;;
