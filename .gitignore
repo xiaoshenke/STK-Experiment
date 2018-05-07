@@ -12,3 +12,4 @@ secret
 *.gif
 csv_data
 csv_data/*
+cons.py
