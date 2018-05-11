@@ -10,5 +10,3 @@ def today():
     day = datetime.datetime.today().date()
     return day
 
-if __name__ == "__main__":
-	pass
