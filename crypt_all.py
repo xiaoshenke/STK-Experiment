@@ -36,14 +36,14 @@ def crypt_file(file,aes):
 	f = None
 	f_write = None
 	try:
-		print "crypt_file,from:%s to:%s"%(file,base64.b64encode(file))
+		#print "crypt_file,from:%s to:%s"%(file,base64.b64encode(file))
 		f = open(file)
 		text = f.read()
 		text_after = aes.encrypt(text)
 		f_write = open(base64.b64encode(file),'w')
 		f_write.write(text_after)
 		
-		print "remove file:%s"%file
+		#print "remove file:%s"%file
                 os.remove(file)
 	except Exception,e:
 		pass
@@ -64,14 +64,14 @@ def uncrypt_file(file,aes):
 	f = None
 	f_write = None
 	try:
-		print "uncrypt_file,from:%s to:%s"%(file,base64.b64decode(file))
+		#print "uncrypt_file,from:%s to:%s"%(file,base64.b64decode(file))
 		f = open(file)
 		text = f.read()
 		text_after = aes.decrypt(text)
 		f_write = open(base64.b64decode(file),'w')
 		f_write.write(text_after)
 
-		print "remove file:%s"%file
+		#print "remove file:%s"%file
 		os.remove(file)
 	except Exception,e:
 		pass
