@@ -9,3 +9,6 @@ CSV_PATH="/Users/dashu/Desktop/Playgroud/STK-Experiment/csv_data/"
  
 #IS_DEBUG=True
 IS_DEBUG=False
+
+IS_TEST=True
+#IS_TEST=False
