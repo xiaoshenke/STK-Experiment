@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import os
 import base64
+from log import logger
 
 SECRET_FILE = "secret"
 
@@ -119,23 +120,51 @@ def check_and_read_secret():
 	finally:
 		f.close()
 
+def get_origin_name(crypted_name):
+	for p,dirs,files in os.walk(get_current_dir(),topdown=True):
+		for f in files:
+			if should_apply_crypt(f) and f.endswith(".py"):
+				if base64.b64encode(f) == crypted_name:
+					return f
+		break
+	return ""
+
+def get_origin_name_from_list(py_list,crypted_name):
+	for f in py_list:
+		if base64.b64encode(f) == crypted_name:
+			return f
+	return ""
+
+def show_helper():
+	print "python crypt_all # crypt all .py files of current file"
+	print "python crypt_all -r # uncrypt all .py files of current file"
+	print "python crypt_all get_origin_name some-crypted-name # get origin name of a crypted file name"
+	print "python crypt_all get_origin_name_from_list your-py_list some-crypted-name"
+	pass
+
+
 # Usage: python crypt_all [-r],if -r is set,will do uncrpyt job
 if __name__ == "__main__":
-	if True and False:
-		from crypt_util import AES_ENCRYPT
-		aes = AES_ENCRYPT("secret123")
-		uncrypt_file("Y3J5cHRfdGVzdA==",aes)
-		import sys
-		sys.exit()
-	if True and False:
-		from crypt_util import AES_ENCRYPT
-	        aes = AES_ENCRYPT("secret123")		
-		crypt_file("crypt_test",aes)		
-		import sys
-		sys.exit()
 	import sys
-	if len(sys.argv) >= 2 and sys.argv[1].lower() == "-r":
-		uncrpyt_by_dir()
-	else:
+	if len(sys.argv) < 2:
 		crypt_by_dir()
-
+		sys.exit()
+	if sys.argv[1].lower() == "-r":
+		uncrpyt_by_dir()
+		sys.exit()
+	if sys.argv[1].lower() == "get_origin_name":
+		if len(sys.argv) < 3:
+			print "get_origin_name you have to input your crypted-name"
+			sys.exit()
+		origin = get_origin_name(sys.argv[2])
+		print origin
+		sys.exit()
+	if sys.argv[1].lower() == "get_origin_name_from_list":
+		if len(sys.argv) < 4:
+			print "get_origin_name_from_list you have to input your py-list and crypted-name"
+		print get_origin_name_from_list(sys.argv[2].split("\n"),sys.argv[3])
+		sys.exit()
+	if sys.argv[1] == "-h":
+		show_helper()
+		sys.exit()
+	
