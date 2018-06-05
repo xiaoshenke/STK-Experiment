@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import datetime
+from log import logger
 
 # return:date
 def parse_date_str(origin):
