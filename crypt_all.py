@@ -162,6 +162,7 @@ if __name__ == "__main__":
 	if sys.argv[1].lower() == "get_origin_name_from_list":
 		if len(sys.argv) < 4:
 			print "get_origin_name_from_list you have to input your py-list and crypted-name"
+			sys.exit()
 		print get_origin_name_from_list(sys.argv[2].split("\n"),sys.argv[3])
 		sys.exit()
 	if sys.argv[1] == "-h":
