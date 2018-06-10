@@ -88,8 +88,13 @@ else
 	url=http://image.sinajs.cn/newchart/min/n/$code.gif
 fi
 
-echo downloading img:$url ...
-curl -s -o $code.jpg $url
+if [ ! -f $code.jpg ]
+then
+	echo downloading img:$url ...
+	curl -s -o $code.jpg $url
+else
+	echo $code.jpg already exist!
+fi
 
 open $code.jpg
 
