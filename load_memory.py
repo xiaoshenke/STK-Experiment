@@ -9,11 +9,13 @@ STOCK = 1
 INDEX = 2
 PLATE = 3
 AREA  = 4
+TOVER = 5
 
 stk_map = {}
 index_map = {}
 plate_map = {}
 area_map = {}
+tover_map = {}
 
 def load_memory(code,type=STOCK):
 	def _load_memory(func):
@@ -27,14 +29,19 @@ def load_memory(code,type=STOCK):
 				r_map = plate_map
 			elif type == AREA:
 				r_map = area_map
+			elif type == TOVER:
+				r_map = tover_map			
 			else:
-				logger.debug("@load_memory,type:%s not supported,ignore decrator"%type)
+				if IS_DEBUG:
+					logger.debug("@load_memory,type:%s not supported,ignore decrator"%type)
 				return func(*args,**kwargs)
 
 			if code in r_map:
-				logger.debug("@load_memory hit memory")
+				if IS_DEBUG:
+					logger.debug("@load_memory hit memory")
 				return r_map[code]
-			logger.debug("@load_memory hit memory fail")
+			if IS_DEBUG:
+				logger.debug("@load_memory hit memory fail")
 
 			ret = func(*args,**kwargs)
 			r_map[code] = ret
