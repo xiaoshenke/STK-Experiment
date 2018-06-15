@@ -13,6 +13,27 @@ def exe_shell(shell_name,pm_list=[]):
 	t.extend(pm_list)
 	return subprocess.call(t)
 
+from subprocess import *
+
+# wrapper sh code,return stdout string
+def sh_wrapper_string(args,out=PIPE):
+	if not args or len(args) == 0:
+		return ""
+	
+	ret = ""
+	process = Popen(args, stdout=out, stderr=STDOUT,universal_newlines=True)
+	while True:
+		if process.stdout == None:
+			break
+        	out = process.stdout.read(1)
+        	if out == '' and process.poll() != None:
+			# TODO: bugfix...
+            		break
+	        if out != '' and len(out) != 0:
+			ret = ret + out
+    	return ret
+
+
 if __name__ == "__main__":
 	print exe_shell("echo.sh")
 

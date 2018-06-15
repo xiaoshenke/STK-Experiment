@@ -5,7 +5,7 @@ from log import logger
 
 SECRET_FILE = "secret"
 
-ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py"]
+ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py"]
 
 def get_current_dir():
 	import sys,os
@@ -37,14 +37,12 @@ def crypt_file(file,aes):
 	f = None
 	f_write = None
 	try:
-		#print "crypt_file,from:%s to:%s"%(file,base64.b64encode(file))
 		f = open(file)
 		text = f.read()
 		text_after = aes.encrypt(text)
 		f_write = open(base64.b64encode(file),'w')
 		f_write.write(text_after)
 		
-		#print "remove file:%s"%file
                 os.remove(file)
 	except Exception,e:
 		pass
@@ -65,14 +63,12 @@ def uncrypt_file(file,aes):
 	f = None
 	f_write = None
 	try:
-		#print "uncrypt_file,from:%s to:%s"%(file,base64.b64decode(file))
 		f = open(file)
 		text = f.read()
 		text_after = aes.decrypt(text)
 		f_write = open(base64.b64decode(file),'w')
 		f_write.write(text_after)
 
-		#print "remove file:%s"%file
 		os.remove(file)
 	except Exception,e:
 		pass
