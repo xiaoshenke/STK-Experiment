@@ -13,3 +13,6 @@ secret
 csv_data
 csv_data/*
 cons.py
+*.xls
+jpg_data
+jpg_data/*

@@ -1,8 +1,9 @@
-
 #!/bin/bash 
 # Usage: ./open_stock.sh -d[k]|-w[k]|-m[k]|-f -i[mg]|-w your-code 
 # -f:fenshitu -i:open img -w:open website(default)
 # -dk day kline,-wk week kline,-mk month kline
+
+JPG_PATH="jpg_data"
 
 # 1:open website 2:open img
 open_type=1
@@ -75,26 +76,46 @@ then
 fi
 
 url=""
+local=""
+local_code=""
 if [ $stock_type -eq 1 ]
 then
 	url=http://image.sinajs.cn/newchart/daily/n/$code.gif
+	local=`find $JPG_PATH|grep $code.jpg|head -n 1`
+	local_code=$code.jpg
 elif [ $stock_type -eq 2 ]
 then
 	url=http://image.sinajs.cn/newchart/weekly/n/$code.gif
+	local=`find $JPG_PATH|grep w_$code.jpg|head -n 1`
+	local_code=w_$code.jpg
 elif [ $stock_type -eq 3 ]
 then
 	url=http://image.sinajs.cn/newchart/monthly/n/$code.gif
+	local=`find $JPG_PATH|grep m_$code.jpg|head -n 1`
+	local_code=m_$code.jpg
 else
 	url=http://image.sinajs.cn/newchart/min/n/$code.gif
+	local=`find $JPG_PATH|grep $code.jpg|head -n 1`
+	local_code=$code.jpg
 fi
 
-if [ ! -f $code.jpg ]
+if [ ${#local} -gt 6 ]
 then
-	echo downloading img:$url ...
-	curl -s -o $code.jpg $url
-else
-	echo $code.jpg already exist!
+	echo $local_code already exist at $local 
+	open $local
+	exit 2
 fi
 
-open $code.jpg
+if [ -f $local_code ]
+then
+	echo $local_code already exist!
+	open $local_code
+else
+	echo downloading img:$url to $local_code
+	curl -s -o $local_code $url
+	open $local_code
+fi
+
+exit 2
+
 
