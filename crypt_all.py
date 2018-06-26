@@ -5,7 +5,7 @@ from log import logger
 
 SECRET_FILE = "secret"
 
-ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py"]
+ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py","updater.py"]
 
 def get_current_dir():
 	import sys,os
