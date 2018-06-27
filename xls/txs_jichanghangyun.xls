@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+            <html xmlns='http://www.w3.org/1999/xhtml'>
+            <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+            <title></title>
+            <style>
+            td{
+                text-align:center;
+                font-size:12px;
+                font-family:Arial, Helvetica, sans-serif;
+                border:#1C7A80 1px solid;
+                color:#152122;
+    }
+    table,tr{
+        border-style:none;
+    }
+    .centerTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:center;
+    }
+    .leftTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:left;
+    }
+    </style>
+        </head>
+
+        <body>
+        <table border='1'><tr><td class="centerTitle">股票代码</td><td class="centerTitle">股票简称</td><td class="centerTitle">现价(元)</td><td class="centerTitle">涨跌幅(%)</td><td class="centerTitle">所属同花顺行业</td><td class="centerTitle">所属概念</td><td class="centerTitle">最新dde大单净额(元)</td></tr><tr><td>	000089.SZ</td><td>深圳机场</td><td style="text-align:right;mso-number-format:0.00;">8.20</td><td style="text-align:right;mso-number-format:0.00;">-0.85</td><td>交通运输-机场航运-机场Ⅲ</td><td>春运;地方国资改革;深圳国资改革;融资融券;深股通;大运会;转融券标的;机构重仓</td><td>--</td></tr><tr><td>600004.SH</td><td>白云机场</td><td style="text-align:right;mso-number-format:0.00;">18.48</td><td style="text-align:right;mso-number-format:0.00;">0.16</td><td>交通运输-机场航运-机场Ⅲ</td><td>广东国资改革;地方国资改革;春运;融资融券;沪股通;转融券标的;粤港澳大湾区;机构重仓</td><td>--</td></tr><tr><td>600009.SH</td><td>上海机场</td><td style="text-align:right;mso-number-format:0.00;">59.13</td><td style="text-align:right;mso-number-format:0.00;">-0.67</td><td>交通运输-机场航运-机场Ⅲ</td><td>上海自贸区;迪士尼;浦东新区;春运;地方国资改革;MSCI概念;融资融券;沪股通;转融券标的;证金持股</td><td>--</td></tr><tr><td>600897.SH</td><td>厦门空港</td><td style="text-align:right;mso-number-format:0.00;">22.21</td><td style="text-align:right;mso-number-format:0.00;">-1.46</td><td>交通运输-机场航运-机场Ⅲ</td><td>航空租赁;平潭免税区;地方国资改革;海峡西岸;福建自贸区;沪股通;机构重仓</td><td>--</td></tr><tr><td>	000099.SZ</td><td>中信海直</td><td style="text-align:right;mso-number-format:0.00;">7.04</td><td style="text-align:right;mso-number-format:0.00;">-2.76</td><td>交通运输-机场航运-航空运输Ⅲ</td><td>央企国资改革;海洋经济;私人飞机;大飞机;航天军工;三沙;融资融券;深股通;转融券标的;通用航空;证金持股;无人机</td><td>--</td></tr><tr><td>	002928.SZ</td><td>华夏航空</td><td style="text-align:right;mso-number-format:0.00;">33.90</td><td style="text-align:right;mso-number-format:0.00;">3.35</td><td>交通运输-机场航运-航空运输Ⅲ</td><td>新股与次新股;白马股</td><td>--</td></tr><tr><td>600029.SH</td><td>南方航空</td><td style="text-align:right;mso-number-format:0.00;">10.85</td><td style="text-align:right;mso-number-format:0.00;">0.93</td><td>交通运输-机场航运-航空运输Ⅲ</td><td>广州旅游;航空租赁;春运;人民币升值;油价下调;央企国资改革;央企控股;MSCI概念;融资融券;沪股通;转融券标的;央企整合</td><td>--</td></tr><tr><td>600115.SH</td><td>东方航空</td><td style="text-align:right;mso-number-format:0.00;">8.17</td><td style="text-align:right;mso-number-format:0.00;">0.99</td><td>交通运输-机场航运-航空运输Ⅲ</td><td>人民币升值;油价下调;航空租赁;大飞机;浦东新区;央企国资改革;央企控股;春运;上海自贸区;3D打印;MSCI概念;跨境电商;迪士尼;通用航空;融资融券;沪股通;转融券标的;互联网;电子商务;证金持股;机构重仓;央企整合</td><td>--</td></tr><tr><td>600221.SH</td><td>海航控股</td><td>--</td><td>--</td><td>交通运输-机场航运-航空运输Ⅲ</td><td>东盟北部湾;春运;雄安新区;雄安金融;人民币升值;航空租赁;海南旅游岛;油价下调;地方国资改革;春节概念;融资融券;转融券标的;并购重组;三沙;西沙旅游</td><td>--</td></tr><tr><td>601021.SH</td><td>春秋航空</td><td style="text-align:right;mso-number-format:0.00;">39.72</td><td style="text-align:right;mso-number-format:0.00;">-1.24</td><td>交通运输-机场航运-航空运输Ⅲ</td><td>MSCI概念;特朗普访华;春运;油价下调;融资融券;沪股通;转融券标的;机构重仓</td><td>--</td></tr><tr><td>601111.SH</td><td>中国国航</td><td style="text-align:right;mso-number-format:0.00;">11.73</td><td style="text-align:right;mso-number-format:0.00;">0.69</td><td>交通运输-机场航运-航空运输Ⅲ</td><td>春运;油价下调;五一出境游;央企国资改革;央企控股;中字头股票;MSCI概念;航空租赁;融资融券;人民币升值;沪股通;转融券标的;央企整合</td><td>--</td></tr><tr><td>603885.SH</td><td>吉祥航空</td><td style="text-align:right;mso-number-format:0.00;">17.68</td><td style="text-align:right;mso-number-format:0.00;">0.80</td><td>交通运输-机场航运-航空运输Ⅲ</td><td>春运;油价下调;沪股通;白马股</td><td>--</td></tr></table>
+        </body>
+        </html>
