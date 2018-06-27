@@ -3,7 +3,6 @@ app/main/*.pyc
 app/main/*.bat
 other/*.pyc
 .DS_Store
-history.csv
 *.pyc
 secret
 *.csv
@@ -13,6 +12,5 @@ secret
 csv_data
 csv_data/*
 cons.py
-*.xls
 jpg_data
 jpg_data/*
