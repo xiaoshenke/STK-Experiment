@@ -5,7 +5,7 @@ import os
 from pandas import DataFrame,Series
 from log import logger
 
-DEBUG_OPEN = True
+DEBUG_OPEN = False
 
 # 被updater注解的函数返回一个无效index的DataFrame 
 def updater(file_name,keys=[],dtype=None,encoding='utf-8',sort_key=None,ascending=False):
@@ -126,6 +126,7 @@ def _deal_key_len_0(keys,origin_df,df):
 def _deal_key_len_1(keys,origin_df,df):
 	if DEBUG_OPEN:
 		logger.debug("updater._deal_key_len_1,origin_df size:%s df size:%s",origin_df.index.size,df.index.size)
+		logger.debug("df:%s",df[:5])
 
 	# 在一个键的情况下,只要这个键的值不在原来列表,即认为应该插入
 	key = keys[0]

@@ -1,5 +1,5 @@
 #!/bin/bash 
-# Usage: ./open_stock.sh -d[k]|-w[k]|-m[k]|-f -i[mg]|-w your-code 
+# Usage: ./open_stock.sh -d[k]|-w[k]|-m[k]|-f -i[mg]|-w [-ig] your-code 
 # -f:fenshitu -i:open img -w:open website(default)
 # -dk day kline,-wk week kline,-mk month kline
 
@@ -11,6 +11,7 @@ open_type=1
 # 1:dk 2:wk 3:mk 4:f
 stock_type=1
 is_index=0
+ignore_local=0
 while [ -n "$1" ]
 do
 	case "$1" in
@@ -41,6 +42,9 @@ open shenzheng index, ./open_stock.sh -f -i 399001'''
 		;;
 	-w)
 		open_type=1
+		;;
+	-ig)
+		ignore_local=1
 		;;
 	-*)
 		echo $1 arg not supported!
@@ -99,22 +103,23 @@ else
 	local_code=$code.jpg
 fi
 
-if [ ${#local} -gt 6 ]
+if [ -f $local_code ]
+then
+	echo $local_code already exist!
+	open $local_code
+	exit 2
+fi
+
+if [ ${#local} -gt 6 ] && [ $ignore_local -eq 0 ]
 then
 	echo $local_code already exist at $local 
 	open $local
 	exit 2
 fi
 
-if [ -f $local_code ]
-then
-	echo $local_code already exist!
-	open $local_code
-else
-	echo downloading img:$url to $local_code
-	curl -s -o $local_code $url
-	open $local_code
-fi
+echo downloading img:$url to $local_code
+curl -s -o $local_code $url
+open $local_code
 
 exit 2
 
