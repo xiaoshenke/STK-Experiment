@@ -8,7 +8,7 @@ from log import logger
 DEBUG_OPEN = True
 
 # 被updater注解的函数返回一个无效index的DataFrame 
-def updater(file_name,keys=[],dtype=None,encoding='utf-8',sort_key=None,ascending=False):
+def updater(file_name,keys=[],dtype={'code':object},encoding='utf-8',sort_key=None,ascending=False):
 	def _updater(func):
 		def _real(*args,**kwargs):
 			ret = func(*args,**kwargs)
@@ -33,7 +33,7 @@ def updater(file_name,keys=[],dtype=None,encoding='utf-8',sort_key=None,ascendin
 				if not os.path.exists(file_name):
 					pass
 				else:	
-					origin_df = pandas.read_csv(file_name,date_parser=pandas.to_datetime,encoding=encoding)
+					origin_df = pandas.read_csv(file_name,date_parser=pandas.to_datetime,encoding=encoding,dtype=dtype)
 					backup_df = origin_df
 
 					# 校验一下从文件读取的origin_df和ret的columns是否相同,不相同则不进行存储
@@ -142,7 +142,7 @@ def _deal_key_len_1(keys,origin_df,df):
 		if cb_df.empty:
 			logger.debug("cb_df is empty,so nothing will updated!")
 		else:
-			logger.debug("concat df size:%s,df:%s",cb_df.index.size,cb_df)
+			logger.debug("concat df size:%s",cb_df.index.size)
 	return not cb_df.empty, pandas.concat([origin_df,cb_df],axis=0)
 
 # return (bool,final_df)
@@ -205,8 +205,8 @@ def _deal_key_len_2(keys,origin_df,df):
 					filter_df = pandas.concat([filter_df,tmp],axis=0)
 	if DEBUG_OPEN:
 		logger.debug("filter_df size:%s",filter_df.index.size)
-		if not filter_df.empty:
-			logger.debug(filter_df)
+	logger.debug(origin_df)
+	logger.debug(filter_df)
 	return (not filter_df.empty,pandas.concat([origin_df,filter_df],axis=0))
 
 def test1():
