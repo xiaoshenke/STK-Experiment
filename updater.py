@@ -205,8 +205,6 @@ def _deal_key_len_2(keys,origin_df,df):
 					filter_df = pandas.concat([filter_df,tmp],axis=0)
 	if DEBUG_OPEN:
 		logger.debug("filter_df size:%s",filter_df.index.size)
-	logger.debug(origin_df)
-	logger.debug(filter_df)
 	return (not filter_df.empty,pandas.concat([origin_df,filter_df],axis=0))
 
 def test1():
