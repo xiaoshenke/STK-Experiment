@@ -208,7 +208,6 @@ def _deal_key_len_2(keys,origin_df,df):
 	return (not filter_df.empty,pandas.concat([origin_df,filter_df],axis=0))
 
 def test1():
-	from pandas import DataFrame,Series
 	codes = ['000001','000002','000003','000004','000001','a']
 	dates = ['2018-01-01','2018-01-02','2018-01-03','2018-01-04','2018-01-02','2018-01-01']
 	close = [1.1,1.2,1.3,1.4,1.5,0.0]
