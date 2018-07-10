@@ -44,5 +44,6 @@ if __name__ == '__main__':
     e = aes_encrypt.encrypt(customer_id)
     d = aes_encrypt.decrypt(e)
     print customer_id
-    print e
-    print d
+    print "after encrypt:%s"%e
+    print "after decrypt:%s"%d
+

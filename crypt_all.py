@@ -3,9 +3,12 @@ import os
 import base64
 from log import logger
 
+DEBUG_OPEN = False
 SECRET_FILE = "secret"
 
-ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py","updater.py"]
+ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py","updater.py","__init__.py"]
+
+ignore_dirs = ["/.git","/csv_data","/other","/xls"]
 
 def get_current_dir():
 	import sys,os
@@ -27,24 +30,30 @@ def should_apply_crypt(file):
 		return False
 	if file in ignore_list:
 		return False
+
 	return True
 
-def crypt_file(file,aes):
+def crypt_file(file,aes,base_dir=None):
 	if not should_apply_crypt(file):
 		return
 	if not file.endswith(".py"):
 		return
+
 	f = None
 	f_write = None
 	try:
-		f = open(file)
+		from_file = file if not base_dir else base_dir + "/" + file
+		f = open(from_file)
 		text = f.read()
 		text_after = aes.encrypt(text)
-		f_write = open(base64.b64encode(file),'w')
+
+		to_file = base64.b64encode(file) if not base_dir else base_dir + "/" + base64.b64encode(file)
+		f_write = open(to_file,'w')
 		f_write.write(text_after)
 		
-                os.remove(file)
+                os.remove(from_file)
 	except Exception,e:
+		logger.debug(e)
 		pass
 	finally:
 		if f:
@@ -55,7 +64,7 @@ def crypt_file(file,aes):
 def is_base64file(file):
 	return file.endswith("==")
 
-def uncrypt_file(file,aes):
+def uncrypt_file(file,aes,base_dir=None):
 	if not should_apply_crypt(file):
 		return
 	if file.endswith(".py"):
@@ -63,13 +72,22 @@ def uncrypt_file(file,aes):
 	f = None
 	f_write = None
 	try:
-		f = open(file)
+		from_file = file if not base_dir else base_dir + "/" + file
+		if DEBUG_OPEN:
+			logger.debug("crypt_all.uncrypt_file from_file:%s",from_file)
+
+		f = open(from_file)
 		text = f.read()
 		text_after = aes.decrypt(text)
-		f_write = open(base64.b64decode(file),'w')
+
+		to_file = base64.b64decode(file) if not base_dir else base_dir + "/" + base64.b64decode(file)
+
+		if DEBUG_OPEN:
+			logger.debug("crypt_all.uncrypt_file to_file:%s",to_file)
+		f_write = open(to_file,'w')
 		f_write.write(text_after)
 
-		os.remove(file)
+		os.remove(from_file)
 	except Exception,e:
 		pass
 	finally:
@@ -82,13 +100,21 @@ def crypt_by_dir():
 	secret = check_and_read_secret()
 	if not secret:
 		return
+
 	from crypt_util import AES_ENCRYPT
 	aes = AES_ENCRYPT(secret)
 	for p,dirs,files in os.walk(get_current_dir(),topdown=True):
+		ignore = False
+		for ig in ignore_dirs:
+			if ig in p:
+				ignore = True
+				break
+		if ignore:
+			continue
+
 		for f in files:
-			crypt_file(f,aes)
-		# only 1 level,so break here
-		break
+			crypt_file(f,aes,p)
+	return	
 
 def uncrpyt_by_dir():
 	secret = check_and_read_secret()
@@ -98,10 +124,17 @@ def uncrpyt_by_dir():
 	aes = AES_ENCRYPT(secret)
 	
 	for p,dirs,files in os.walk(get_current_dir(),topdown=True):
+		ignore = False
+		for ig in ignore_dirs:
+			if ig in p:
+				ignore = True
+				break
+		if ignore:
+			continue
+	
 		for f in files:
-			uncrypt_file(f,aes)
-		# only 1 level,so break here
-		break
+			uncrypt_file(f,aes,p)
+	return
 
 # return None if no secret
 def check_and_read_secret():
@@ -136,32 +169,41 @@ def show_helper():
 	print "python crypt_all -r # uncrypt all .py files of current file"
 	print "python crypt_all get_origin_name some-crypted-name # get origin name of a crypted file name"
 	print "python crypt_all get_origin_name_from_list your-py_list some-crypted-name"
-	pass
+	return
 
-
-# Usage: python crypt_all [-r],if -r is set,will do uncrpyt job
-if __name__ == "__main__":
+def deal_cmd():
 	import sys
 	if len(sys.argv) < 2:
 		crypt_by_dir()
-		sys.exit()
+		return
+
 	if sys.argv[1].lower() == "-r":
 		uncrpyt_by_dir()
-		sys.exit()
+		return
+
 	if sys.argv[1].lower() == "get_origin_name":
 		if len(sys.argv) < 3:
-			print "get_origin_name you have to input your crypted-name"
+			print "get_origin_name you have to input your crypted-file-name"
 			sys.exit()
+
 		origin = get_origin_name(sys.argv[2])
 		print origin
-		sys.exit()
+		return
+
 	if sys.argv[1].lower() == "get_origin_name_from_list":
 		if len(sys.argv) < 4:
 			print "get_origin_name_from_list you have to input your py-list and crypted-name"
-			sys.exit()
+			return
 		print get_origin_name_from_list(sys.argv[2].split("\n"),sys.argv[3])
-		sys.exit()
+		return
+
 	if sys.argv[1] == "-h":
 		show_helper()
-		sys.exit()
+		return
+	return
 	
+# Usage: python crypt_all [-r],if -r is set,will do uncrpyt job
+if __name__ == "__main__":
+	import sys
+	deal_cmd()
+
