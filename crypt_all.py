@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# coding=utf-8
+
 import os
 import base64
 from log import logger
@@ -73,8 +75,6 @@ def uncrypt_file(file,aes,base_dir=None):
 	f_write = None
 	try:
 		from_file = file if not base_dir else base_dir + "/" + file
-		if DEBUG_OPEN:
-			logger.debug("crypt_all.uncrypt_file from_file:%s",from_file)
 
 		f = open(from_file)
 		text = f.read()
@@ -82,8 +82,6 @@ def uncrypt_file(file,aes,base_dir=None):
 
 		to_file = base64.b64decode(file) if not base_dir else base_dir + "/" + base64.b64decode(file)
 
-		if DEBUG_OPEN:
-			logger.debug("crypt_all.uncrypt_file to_file:%s",to_file)
 		f_write = open(to_file,'w')
 		f_write.write(text_after)
 
@@ -150,6 +148,9 @@ def check_and_read_secret():
 		f.close()
 
 def get_origin_name(crypted_name):
+	if DEBUG_OPEN:
+		logger.debug("crpyt_all.get_origin_name,crypted_name:%s",crypted_name)
+
 	for p,dirs,files in os.walk(get_current_dir(),topdown=True):
 		for f in files:
 			if should_apply_crypt(f) and f.endswith(".py"):
@@ -159,8 +160,29 @@ def get_origin_name(crypted_name):
 	return ""
 
 def get_origin_name_from_list(py_list,crypted_name):
+	if DEBUG_OPEN:
+		logger.debug("crypt_all.get_origin_name_from_list py_list:%s",py_list)
+
+	# 当前文件夹
+	if not '/' in crypted_name:
+		for f in py_list:
+			if base64.b64encode(f) == crypted_name:
+				return f
+		return ""
+
+	# 子目录
+	idx = crypted_name.rfind('/')
+	a = crypted_name[:idx]
+	b = crypted_name[idx+1:]
 	for f in py_list:
-		if base64.b64encode(f) == crypted_name:
+		if not '/' in f:
+			continue
+		idx = f.rfind('/')
+		fa = f[:idx]
+		fb = f[idx+1:]
+		if fa != a:
+			continue
+		if base64.b64encode(fb) == b:
 			return f
 	return ""
 

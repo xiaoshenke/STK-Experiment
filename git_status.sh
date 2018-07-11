@@ -3,6 +3,7 @@
 # Usage: ./git_status.sh
 
 py_list=`ls *.py`
+py_list=`find *|grep .py`
 
 python crypt_all.py
 
