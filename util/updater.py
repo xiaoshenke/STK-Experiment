@@ -134,7 +134,7 @@ def _deal_key_len_1(keys,origin_df,df):
 	origin_key_list = origin_df[key].tolist()
 	cmp_keys = [ str(k) for k in origin_key_list ]
 	for idx in df.index.tolist():
-		# TODO: 使用str遇到unicode是不安全的,但现在应该只会在'code'和'date'字段	
+		# FIXME: 使用str遇到unicode是不安全的,但现在应该只会在'code'和'date'字段	
 		if str(df.ix[idx][key]) not in cmp_keys:
 			cb_list.append(idx)
 	cb_df = df.ix[cb_list]

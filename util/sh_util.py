@@ -27,7 +27,6 @@ def sh_wrapper_string(args,out=PIPE):
 			break
         	out = process.stdout.read(1)
         	if out == '' and process.poll() != None:
-			# TODO: bugfix...
             		break
 	        if out != '' and len(out) != 0:
 			ret = ret + out
