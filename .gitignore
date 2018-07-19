@@ -5,7 +5,7 @@ other/*.pyc
 .DS_Store
 *.pyc
 secret
-*.csv
+#*.csv
 *.jpg
 *.png
 *.gif
