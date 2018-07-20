@@ -133,6 +133,14 @@ def _deal_key_len_1(keys,origin_df,df):
 	cb_list = []
 	origin_key_list = origin_df[key].tolist()
 	cmp_keys = [ str(k) for k in origin_key_list ]
+
+	if DEBUG_OPEN:
+		if len(cmp_keys) != 0:
+			logger.debug("origin key type:%s ",type(cmp_keys[0]))
+		if df.index.size != 0:
+			logger.debug("compare key type:%s ",type(df[key].tolist()[0]))
+		logger.debug("df:%s",df[:3])
+
 	for idx in df.index.tolist():
 		# FIXME: 使用str遇到unicode是不安全的,但现在应该只会在'code'和'date'字段	
 		if str(df.ix[idx][key]) not in cmp_keys:

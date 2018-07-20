@@ -6,6 +6,7 @@ other/*.pyc
 *.pyc
 secret
 #*.csv
+other/*.csv
 *.jpg
 *.png
 *.gif
