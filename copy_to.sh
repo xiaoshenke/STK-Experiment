@@ -1,6 +1,7 @@
 #!/bin/bash
 
 TO_PATH="/Users/wuxian/Desktop"
+TO_PATH="/Users/dashu/Desktop"
 
 if [ $# -ne 1 ]
 then
