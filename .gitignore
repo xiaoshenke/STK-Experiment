@@ -16,3 +16,7 @@ cons.py
 jpg_data
 jpg_data/*
 strategy/*.csv
+data/csv_data
+data/jpg_data
+data/csv_data/*
+data/jpg_data/*

@@ -6,7 +6,10 @@ then
 	exit 2
 fi
 
-python crypt_all.py
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
+python util/crypt/crypt_all.py
 
 message=$*
 

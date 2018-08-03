@@ -3,7 +3,7 @@
 # -f:fenshitu -i:open img -w:open website(default)
 # -dk day kline,-wk week kline,-mk month kline
 
-JPG_PATH="jpg_data"
+JPG_PATH="data/jpg_data"
 
 # 1:open website 2:open img
 open_type=1

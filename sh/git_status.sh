@@ -5,7 +5,12 @@
 py_list=`ls *.py`
 py_list=`find *|grep .py`
 
-python crypt_all.py
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
+CRYPT_ALL_FILE="util/crypt/crypt_all.py"
+
+python $CRYPT_ALL_FILE
 
 before_track=1
 function deal_word {
@@ -25,7 +30,7 @@ function deal_word {
 function deal_after_track {
 	word=$@
 	crypted=$word
-	origin=$(python crypt_all.py get_origin_name_from_list "${py_list[@]}" "$crypted")
+	origin=$(python $CRYPT_ALL_FILE get_origin_name_from_list "${py_list[@]}" "$crypted")
 	if [ ${#origin} -gt 1 ] && [[ ! $word =~ ".py" ]]
 	then
 		echo $origin
@@ -39,7 +44,7 @@ function deal_before_track {
 	if [[ $word =~ "deleted" ]] || [[ $word =~ "modified" ]]
 	then
 		crypted=${word##* }
-		origin=$(python crypt_all.py get_origin_name_from_list "${py_list[@]}" $crypted)
+		origin=$(python $CRYPT_ALL_FILE get_origin_name_from_list "${py_list[@]}" $crypted)
 		if [ ${#origin} -gt 1 ] && [[ ! $word =~ ".py" ]]
 		then
 			echo ${word%% *} $origin

@@ -10,7 +10,13 @@ SECRET_FILE = "secret"
 
 ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py","updater.py","__init__.py"]
 
-ignore_dirs = ["/.git","/csv_data","/other","/xls"]
+ignore_dirs = ["/.git","/csv_data","/other","/xls","/data"]
+
+def get_base_dir():
+	from cons import CSV_PATH
+	s = 'STK-Experiment'
+	idx = CSV_PATH.index(s)
+	return CSV_PATH[:idx+len(s)]
 
 def get_current_dir():
 	import sys,os
@@ -101,7 +107,8 @@ def crypt_by_dir():
 
 	from crypt_util import AES_ENCRYPT
 	aes = AES_ENCRYPT(secret)
-	for p,dirs,files in os.walk(get_current_dir(),topdown=True):
+	dir = get_base_dir()
+	for p,dirs,files in os.walk(dir,topdown=True):
 		ignore = False
 		for ig in ignore_dirs:
 			if ig in p:
@@ -120,8 +127,8 @@ def uncrpyt_by_dir():
 		return
 	from crypt_util import AES_ENCRYPT
 	aes = AES_ENCRYPT(secret)
-	
-	for p,dirs,files in os.walk(get_current_dir(),topdown=True):
+	dir = get_base_dir()
+	for p,dirs,files in os.walk(dir,topdown=True):
 		ignore = False
 		for ig in ignore_dirs:
 			if ig in p:
@@ -150,8 +157,8 @@ def check_and_read_secret():
 def get_origin_name(crypted_name):
 	if DEBUG_OPEN:
 		logger.debug("crpyt_all.get_origin_name,crypted_name:%s",crypted_name)
-
-	for p,dirs,files in os.walk(get_current_dir(),topdown=True):
+	dir = get_base_dir()
+	for p,dirs,files in os.walk(dir,topdown=True):
 		for f in files:
 			if should_apply_crypt(f) and f.endswith(".py"):
 				if base64.b64encode(f) == crypted_name:
