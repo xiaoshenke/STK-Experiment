@@ -1,3 +1,3 @@
 # STK-Experiment
 
-1 pip install -r common.txt
+pip install -r common.txt

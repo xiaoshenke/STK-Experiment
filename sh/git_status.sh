@@ -55,5 +55,5 @@ git status |while read word;do
 deal_word ${word[*]}
 done
 
-sh uncrpyt.sh
+sh sh/uncrpyt.sh
 
