@@ -2,4 +2,4 @@
 python crypt_all.py
 git pull
 
-sh uncrpyt.sh
+sh sh/uncrpyt.sh
