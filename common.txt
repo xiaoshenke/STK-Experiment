@@ -8,3 +8,4 @@ click
 # if can't install,use sudo pip install --user -i https://pypi.tuna.tsinghua.edu.cn/simple multiprocess
 #multiprocess
 PP==1.6.5
+dask
