@@ -13,10 +13,11 @@ ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_uti
 ignore_dirs = ["/.git","/csv_data","/other","/xls","/data"]
 
 def get_base_dir():
-	from cons import CSV_PATH
+	# 要求必须在工程下执行
+	dir = os.getcwd()
 	s = 'STK-Experiment'
-	idx = CSV_PATH.index(s)
-	return CSV_PATH[:idx+len(s)]
+	idx = dir.index(s)
+	return dir[:idx+len(s)]
 
 def get_current_dir():
 	import sys,os
