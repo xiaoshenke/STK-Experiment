@@ -144,9 +144,15 @@ def uncrpyt_by_dir():
 
 # return None if no secret
 def check_and_read_secret():
-	if not os.path.exists(SECRET_FILE):
+	from cons import CUR_PATH
+	file = "%s/%s"%(CUR_PATH,SECRET_FILE)
+
+	if DEBUG_OPEN:
+		logger.debug("crypt_all.check_and_read_secret try read file:%s",file)
+
+	if not os.path.exists(file):
 		return None
-	f = open(SECRET_FILE,'r')
+	f = open(file,'r')
 	try:
 		sec = f.read()
 		return sec
