@@ -10,14 +10,11 @@ other/*.csv
 *.jpg
 *.png
 *.gif
-csv_data
-csv_data/*
-jpg_data
-jpg_data/*
 strategy/*.csv
-data/csv_data
+data/csv_data/*.csv
+!data/csv_data/longhu.csv
+data/csv_data/hist/*
 data/jpg_data
-data/csv_data/*
 data/jpg_data/*
 data/*.csv
 tracer/*.tmp
