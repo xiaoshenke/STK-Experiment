@@ -3,6 +3,9 @@
 # -f:fenshitu -i:open img -w:open website(default)
 # -dk day kline,-wk week kline,-mk month kline
 
+# open shangzheng index, sh/open_stock.sh -index 000001
+# open shenzheng index, sh/open_stock.sh -f -i 399001
+
 JPG_PATH="data/jpg_data"
 
 # 1:open website 2:open img
