@@ -10,11 +10,15 @@ other/*.csv
 *.jpg
 *.png
 *.gif
-strategy/*.csv
+*.tmp
+*.back
+*.bat
 data/csv_data/*.csv
 !data/csv_data/longhu.csv
+!test/*.csv
 data/csv_data/hist/*
 data/jpg_data
 data/jpg_data/*
 data/*.csv
 tracer/*.tmp
+
