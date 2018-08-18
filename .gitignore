@@ -14,6 +14,7 @@ other/*.csv
 *.back
 *.bat
 !test/*.csv
+#!core/strategy/xt/brk/*.csv
 data/csv_data/hist/*
 data/jpg_data
 data/jpg_data/*
