@@ -18,3 +18,11 @@ git commit -m "${message[*]}"
 git push origin master
 
 sh sh/uncrpyt.sh
+
+exit 2
+
+if [[ $path =~ "dashu" ]]
+then
+	sh sh/lock.sh
+fi
+
