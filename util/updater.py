@@ -5,39 +5,38 @@ import os
 from pandas import DataFrame,Series
 from log import logger
 
-DEBUG_OPEN = False
+DEBUG_OPEN = True
 
 # 被updater注解的函数返回一个无效index的DataFrame 
 def updater(file_name,keys=[],dtype={'code':object},encoding='utf-8',sort_key=None,ascending=False):
 	def _updater(func):
 		def _real(*args,**kwargs):
 			ret = func(*args,**kwargs)
-			if not _check_ret_value(ret):
-				return ret
 
 			if not file_name or len(file_name) == 0:
 				if DEBUG_OPEN:
 					logger.warn("filename empty,ignore")
 				return ret
+
 			elif not keys or len(keys) >= 3:
 				if DEBUG_OPEN:
 					logger.debug("keys is none,or length of keys is not supported!")
+				return ret
+						
+			elif not _check_df_type_and_value(ret):
 				return ret
 
 			final_df = ret
 			backup_df = DataFrame()
 			do_write = True
-		
-			try:
-				# 文件不存在时,说明是第一次写,直接跳出循环写结果
-				if not os.path.exists(file_name):
-					pass
-				else:	
+
+			if os.path.exists(file_name):					
+				try:
 					origin_df = pandas.read_csv(file_name,date_parser=pandas.to_datetime,encoding=encoding,dtype=dtype)
 					backup_df = origin_df
 
 					# 校验一下从文件读取的origin_df和ret的columns是否相同,不相同则不进行存储
-					do_write,ret = _check_df_names_same(origin_df,ret)
+					do_write,ret = _check_df_names_same_2(origin_df,ret)
 					if do_write:
 						if len(keys) == 0:
 							do_write,final_df = _deal_key_len_0(keys,origin_df,ret)
@@ -48,22 +47,22 @@ def updater(file_name,keys=[],dtype={'code':object},encoding='utf-8',sort_key=No
 					else:
 						if DEBUG_OPEN:
 							logger.debug("columns not all fit,simply ignore")
-			except Exception,e:
-				# 出现异常 不写文件
-				do_write = False
-				logger.warn("updater decorator exception:%s"%e)
-			finally:
-				if do_write:
-					try:
-						if sort_key != None:
-							final_df = final_df.sort_values(sort_key, ascending=ascending)
-						final_df.to_csv(file_name,index=False,date_format="%Y-%m-%d",encoding=encoding)
-						logger.info("@updater,file:%s updated!"%file_name)
-					except Exception,e:
-						logger.warn("updater decorator,exception:%s"%e)
-						if not backup_df.empty:
-							backup_df.to_csv(file_name,index=False,date_format="%Y-%m-%d",encoding=encoding)
-				return ret
+				except Exception,e:
+					# 出现异常 不写文件
+					do_write = False
+					logger.warn("updater decorator exception:%s"%e)
+			
+			if do_write:
+				try:
+					if sort_key != None:
+						final_df = final_df.sort_values(sort_key, ascending=ascending)
+					final_df.to_csv(file_name,index=False,date_format="%Y-%m-%d",encoding=encoding)
+					logger.info("@updater,file:%s updated!"%file_name)
+				except Exception,e:
+					logger.warn("updater decorator,exception:%s"%e)
+					if not backup_df.empty:
+						backup_df.to_csv(file_name,index=False,date_format="%Y-%m-%d",encoding=encoding)
+			return ret
 		return _real
 	return _updater
 
@@ -85,16 +84,26 @@ def get_df_by_idx(df,idx,key1):
 		tmp = df.ix[idx].reset_index(drop=False)
 	return tmp
 
-def _check_ret_value(ret):
+def _check_df_type_and_value(ret):
 	if not is_df_type(ret):
 		if DEBUG_OPEN:
 			logger.debug("func annotated with @updater return not dataframe type,ignore ")
 		return False
+
 	elif ret.empty:
 		if DEBUG_OPEN:
 			logger.warn("@updater.func return empty,ignore")
 		return False
 	return True
+
+# return (bool,df)
+def _check_df_names_same_2(origin_df,df):
+	names = df.columns.values
+	for name in names:
+		if name not in origin_df.columns.values:
+			return False,df
+	return True,df
+
 
 # 这里额外做了是否对df进行reset_index的兜底工作
 # return (bool,df)
@@ -211,7 +220,7 @@ def _deal_key_len_2(keys,origin_df,df):
 		logger.debug("filter_df size:%s",filter_df.index.size)
 	return (not filter_df.empty,pandas.concat([origin_df,filter_df],axis=0))
 
-def test1():
+def demo():
 	codes = ['000001','000002','000003','000004','000001','a']
 	dates = ['2018-01-01','2018-01-02','2018-01-03','2018-01-04','2018-01-02','2018-01-01']
 	close = [1.1,1.2,1.3,1.4,1.5,0.0]
@@ -228,4 +237,4 @@ def test1():
 	update_func()
 
 if __name__ == "__main__":
-	test1()
+	demo()
