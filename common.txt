@@ -10,3 +10,4 @@ click
 PP==1.6.5
 # sudo pip install --user -i https://pypi.tuna.tsinghua.edu.cn/simple dask[complete]
 dask
+statsmodels
