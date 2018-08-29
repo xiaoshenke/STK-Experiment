@@ -2,7 +2,7 @@
 # coding=utf-8
 import time
 from log import logger
-from helper import to_float2
+from util.mini import to_float2
 
 def print_exe_time():
 	def _print_exe_time(func):
