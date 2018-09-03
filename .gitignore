@@ -13,6 +13,7 @@ other/*.csv
 *.tmp
 *.back
 *.bat
+!core/strategy/xt/brk/benchmark/material/*.csv
 !test/*.csv
 !core/strategy/xt/brk/csv/*.csv
 #!core/strategy/xt/brk/*.csv
