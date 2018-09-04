@@ -1,12 +1,7 @@
-app/*.pyc
-app/main/*.pyc
-app/main/*.bat
-other/*.pyc
 .DS_Store
 *.pyc
 secret
 *.csv
-other/*.csv
 *.jpg
 *.png
 *.gif
@@ -16,7 +11,6 @@ other/*.csv
 !core/strategy/xt/brk/benchmark/material/*.csv
 !test/*.csv
 !core/strategy/xt/brk/csv/*.csv
-#!core/strategy/xt/brk/*.csv
 data/csv_data/hist/*
 data/jpg_data
 data/jpg_data/*
