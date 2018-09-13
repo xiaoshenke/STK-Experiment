@@ -5,7 +5,7 @@ import os
 from pandas import DataFrame,Series
 from log import logger
 
-DEBUG_OPEN = True
+DEBUG_OPEN = False
 
 # 被updater注解的函数返回一个无效index的DataFrame 
 def updater(file_name,keys=[],dtype={'code':object},encoding='utf-8',sort_key=None,ascending=False):

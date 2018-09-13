@@ -15,3 +15,6 @@ def today():
     day = datetime.datetime.today().date()
     return day
 
+def next_day(day):
+	return str(parse_date_str(day)+datetime.timedelta(1))
+
