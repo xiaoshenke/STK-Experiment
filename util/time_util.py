@@ -18,3 +18,6 @@ def today():
 def next_day(day):
 	return str(parse_date_str(day)+datetime.timedelta(1))
 
+def last_day(day):
+	return str(parse_date_str(day)+datetime.timedelta(-1))
+
