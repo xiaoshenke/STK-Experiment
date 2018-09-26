@@ -5,7 +5,7 @@ from log import logger
 import calendar
 
 def get_month_start(month,year=2018):
-	return return '%d-%02d-01'%(year,month)
+	return '%d-%02d-01'%(year,month)
 
 #def get_month_start(day):
 #	day = parse_date_str(day)
