@@ -8,7 +8,7 @@ secret
 *.tmp
 *.back
 *.bat
-#!benchmark/material/*.csv
+!benchmark/material/*.csv
 !test/*.csv
 !core/strategy/xt/brk/csv/*.csv
 data/csv_data/hist/*
