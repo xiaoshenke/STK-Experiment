@@ -99,10 +99,13 @@ def uncrypt_file(file,aes,base_dir=None):
 		text_after = aes.decrypt(text)
 
 		to_file = base64.b64decode(file) if not base_dir else base_dir + "/" + base64.b64decode(file)
-
+                if DEBUG_OPEN:
+                        logger.debug("from file:%s,to file:%s",from_file,to_file)
 		f_write = open(to_file,'w')
 		f_write.write(text_after)
-
+                if f:
+                        f.close()
+                        f = None
 		os.remove(from_file)
 	except Exception,e:
 		pass
@@ -110,7 +113,7 @@ def uncrypt_file(file,aes,base_dir=None):
 		if f:
 			f.close()
 		if f_write:
-			f.close() 
+			f_write.close() 
 	
 def crypt_by_dir():
 	secret = check_and_read_secret()
