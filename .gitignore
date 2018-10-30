@@ -17,3 +17,6 @@ data/jpg_data/*
 data/*.csv
 tracer/*.tmp
 data/csv_data/*.csv
+*.py~
+*.un~
+*~

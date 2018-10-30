@@ -1,11 +1,15 @@
 #!/usr/bin/python
+# coding:utf-8
 # coding=utf-8
 
 import os
+import sys
+sys.path.append('C:\Users\Administrator\Desktop\STK-Experiment')
 import base64
 from log import logger
 
-DEBUG_OPEN = False
+IS_WINDOWS = True
+DEBUG_OPEN = True
 SECRET_FILE = "secret"
 
 ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py","updater.py","__init__.py"]
@@ -49,26 +53,33 @@ def crypt_file(file,aes,base_dir=None):
 		return
 
 	f = None
-	f_write = None
-	try:
-		from_file = file if not base_dir else base_dir + "/" + file
+
+        f_write = None
+        seperator = '/' if not IS_WINDOWS else '\\'
+        try:
+		from_file = file if not base_dir else base_dir + seperator + file
 		f = open(from_file)
 		text = f.read()
 		text_after = aes.encrypt(text)
 
-		to_file = base64.b64encode(file) if not base_dir else base_dir + "/" + base64.b64encode(file)
+		to_file = base64.b64encode(file) if not base_dir else base_dir + seperator + base64.b64encode(file)
+
+                if DEBUG_OPEN:
+                        logger.debug("from file:%s, to file:%s",from_file,to_file)
 		f_write = open(to_file,'w')
-		f_write.write(text_after)
-		
+                f_write.write(text_after)
+                if f:
+                    f.close()
+                    f = None
                 os.remove(from_file)
-	except Exception,e:
+        except Exception,e:
 		logger.debug(e)
 		pass
 	finally:
 		if f:
 			f.close()
 		if f_write:
-			f.close() 
+			f_write.close() 
 	
 def is_base64file(file):
 	return file.endswith("==")
@@ -117,8 +128,11 @@ def crypt_by_dir():
 				break
 		if ignore:
 			continue
-
+                if DEBUG_OPEN:
+                        logger.debug("in crypt_by_dir,p:%s",p)
 		for f in files:
+                        if DEBUG_OPEN:
+                               logger.debug("we will crypt file:%s",f)
 			crypt_file(f,aes,p)
 	return	
 
@@ -155,6 +169,8 @@ def check_and_read_secret():
 	f = open(file,'r')
 	try:
 		sec = f.read()
+                if DEBUG_OPEN:
+                      logger.debug("read secret:%s",sec)
 		return sec
 	except Exception,e:
 		return None
