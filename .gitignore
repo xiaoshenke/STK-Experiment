@@ -2,6 +2,7 @@
 *.pyc
 secret
 *.csv
+*.xls
 *.jpg
 *.png
 *.gif
