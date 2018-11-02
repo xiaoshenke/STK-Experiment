@@ -4,12 +4,11 @@
 
 import os
 import sys
-sys.path.append('C:\Users\Administrator\Desktop\STK-Experiment')
 import base64
 from log import logger
 
-IS_WINDOWS = True
-DEBUG_OPEN = True
+IS_WINDOWS = False
+DEBUG_OPEN = False
 SECRET_FILE = "secret"
 
 ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py","updater.py","__init__.py"]
