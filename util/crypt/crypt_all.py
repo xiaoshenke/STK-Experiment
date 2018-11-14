@@ -32,7 +32,8 @@ def should_apply_crypt(file):
 	if not file or len(file) == 0:
 		return False
 	if file.startswith("."):
-		return False
+		#return False
+		pass
 	if file.endswith(".sh"):
 		return False
 	if file.endswith(".csv"):
