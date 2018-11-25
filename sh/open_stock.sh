@@ -108,7 +108,7 @@ fi
 
 if [ -f $local_code ]
 then
-	echo $local_code already exist!
+	#echo $local_code already exist!
 	open $local_code
 	exit 2
 fi
@@ -120,7 +120,7 @@ then
 	exit 2
 fi
 
-echo downloading img:$url to $local_code
+#echo downloading img:$url to $local_code
 curl -s -o $local_code $url
 open $local_code
 
