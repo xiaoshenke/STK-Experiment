@@ -108,7 +108,7 @@ fi
 
 if [ -f $local_code ]
 then
-	#echo $local_code already exist!
+	echo $local_code already exist!
 	open $local_code
 	exit 2
 fi
