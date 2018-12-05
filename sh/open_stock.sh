@@ -19,10 +19,10 @@ while [ -n "$1" ]
 do
 	case "$1" in
 	-h)
-		echo Usage: ./open_stock.sh "-d[k]|-w[k]|-m[k]|-f -i[mg]|-w -index" your-code
+		echo Usage: sh/open_stock.sh "-d[k]|-w[k]|-m[k]|-f -i[mg]|-w -index" your-code
 		echo '''for eg. 
-open shangzheng index, ./open_stock.sh -f -index -i 000001
-open shenzheng index, ./open_stock.sh -f -i 399001'''
+open shangzheng index, sh/open_stock.sh -index 000001
+open shenzheng index, sh/open_stock.sh 399001'''
 		exit 2
 		;;
 	-d | -dk)
@@ -106,7 +106,8 @@ else
 	local_code=$code.jpg
 fi
 
-if [ -f $local_code ]
+# ????? don't understand..
+if [ -f $local_code ] && [ $ignore_local -eq 0 ]
 then
 	echo $local_code already exist!
 	open $local_code
