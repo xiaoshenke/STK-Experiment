@@ -2,6 +2,7 @@
 # coding=utf-8
 
 import os
+from log import logger
 from pandas import DataFrame
 from util.df_util import read_csv,to_csv
 
@@ -28,6 +29,7 @@ def updater(file_name,keys=[],key='',dtype={'code':object},encoding='utf-8',sort
 					hist = hist.sort_values(sort_key,ascending=ascending)
 					hist = hist.reset_index(drop=True)
 				to_csv(hist,file_name)
+				logger.info("@updater,file:%s updated!"%file_name)
 			return ret
 		return _real
         return _updater
