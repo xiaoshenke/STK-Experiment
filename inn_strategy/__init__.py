@@ -11,8 +11,8 @@
 
 # 5, 在inn文件下的文件中开启use_inn_api选项,如inn_strategy.brkxt_inn.apply_brkxt brk = BrkxtStrategy().set_use_inn_api(True);df = brk.apply([ser['code']],start,self.day,on_pp=False)
 
-因此由上面的过程知,若新的算子要支持日内模式,需要以下三个步骤
-1 feature的支持
-2 strategy子类在构建compostion的时候使用inn的api
-3 inn策略开启strategy子类的inn模式
+# 因此由上面的过程知,若新的算子要支持日内模式,需要以下三个步骤
+# 1 feature的支持
+# 2 strategy子类在构建compostion的时候使用inn的api
+# 3 inn策略开启strategy子类的inn模式
 
