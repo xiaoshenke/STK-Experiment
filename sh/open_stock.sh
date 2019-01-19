@@ -60,6 +60,8 @@ open shenzheng index, sh/open_stock.sh 399001'''
 	shift
 done
 
+#echo stock_type:$stock_type
+
 if [ $# -ne 1 ]
 then
 	echo Usage:./open_stock.sh -d[k]|-w[k]|-m[k]|-f -i[mg]|-w your-code
