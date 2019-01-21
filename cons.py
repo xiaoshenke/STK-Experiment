@@ -9,6 +9,7 @@ INN_DATA_PATH="%s/data/inn_strategy/"%CUR_PATH
 REPORT_PATH="%s/data/report/"%CUR_PATH
 
 INN_TMP="%s/data/inn_tmp/"%CUR_PATH
+INN_RECORD="%s/data/inn_record/"%CUR_PATH
 
 DEBUG_PATH="%s/data/debug/"%CUR_PATH
 
