@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import datetime
-from log import logger
 import calendar
 
 def get_month_start(month,year=2018):
