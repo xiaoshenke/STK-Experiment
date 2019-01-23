@@ -13,3 +13,4 @@ Numpy
 #dask
 #statsmodels
 pycrypto
+watchdog
