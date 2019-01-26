@@ -33,6 +33,15 @@ def next_day(day):
 def last_day(day):
 	return str(parse_date_str(day)+datetime.timedelta(-1))
 
+def get_cur_timestamp():
+	import time
+	ct = time.time()
+	local_time = time.localtime(ct)
+	data_head = time.strftime("%Y-%m-%d %H:%M:%S", local_time)
+	data_secs = (ct - long(ct)) * 1000
+	time_stamp = "%s.%03d" % (data_head, data_secs)
+	return time_stamp
+
 if __name__ == "__main__":
 	print get_month_end('2018-02-03')
-
+	print get_cur_timestamp()
