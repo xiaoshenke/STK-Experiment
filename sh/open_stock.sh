@@ -5,6 +5,7 @@
 
 # open shangzheng index, sh/open_stock.sh -index 000001
 # open shenzheng index, sh/open_stock.sh -f -i 399001
+# open chuangye index,sh/open_stock.sh 399006
 
 JPG_PATH="data/jpg_data"
 
