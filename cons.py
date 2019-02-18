@@ -7,6 +7,8 @@ XLS_PATH="%s/data/xls_data/"%CUR_PATH
 TOOL_PATH="%s/data/tool/"%CUR_PATH
 REPORT_PATH="%s/data/report/"%CUR_PATH
 
+INDEX_PATH="%s/data/csv_data/index/"%CUR_PATH
+
 # inn.apply()返回的文件存储路径 -> 当前的功能其实..是下载远程文件
 INN_APPLY="%s/data/inn/apply/"%CUR_PATH
 
