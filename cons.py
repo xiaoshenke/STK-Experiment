@@ -24,6 +24,8 @@ INN_FENSHI_CODES="%s/data/inn/fenshi_wholecodes/"%CUR_PATH
 # 每日策略的filter source文件路径
 INN_FILTER_SOURCE="%s/data/inn/filter_source/"%CUR_PATH
 
+INN_TICK_PATH="%s/data/inn/code/"%CUR_PATH
+
 DEBUG_PATH="%s/data/debug/"%CUR_PATH
 
 STRA_DATA_PATH="%s/data/strategy/"%CUR_PATH
