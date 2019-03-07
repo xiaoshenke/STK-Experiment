@@ -5,7 +5,8 @@ from cons import INN_RUNNING
 from util.time_util import today
 
 import logging, sys, os
-logging.basicConfig(stream=sys.stderr,level=logging.DEBUG,filemode='a')
+#logging.basicConfig(stream=sys.stderr,level=logging.DEBUG,filemode='a')
+logging.basicConfig(stream=sys.stdout,level=logging.DEBUG,filemode='a')
 logger = logging.getLogger('stock')
 
 logger.setLevel(logging.DEBUG)
