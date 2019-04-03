@@ -17,6 +17,9 @@ INN_EVALUATE="%s/data/inn/evaluate/"%CUR_PATH
 
 # 每日的运行日志以及ignore codes(当前并没有启用)
 INN_RUNNING="%s/data/inn/running/"%CUR_PATH
+# eventloop framework的df文件路径
+INN_RUNNING_DAILY="%s/data/inn/running/daily/"%CUR_PATH
+
 
 # 每日通过standby下载的所有文件路径
 INN_FENSHI_CODES="%s/data/inn/fenshi_wholecodes/"%CUR_PATH
