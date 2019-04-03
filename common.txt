@@ -1,12 +1,9 @@
-#ThreadPool==1.3.2
 #Requests>=2.0.0
 lxml>=3.8.0
 #xlrd>=0.9.0
 pandas
 Numpy
 #click
-# if can't install,use sudo pip install --user -i https://pypi.tuna.tsinghua.edu.cn/simple multiprocess
 #PP==1.6.5
-# sudo pip install --user -i https://pypi.tuna.tsinghua.edu.cn/simple dask[complete]
 pycrypto
 watchdog
