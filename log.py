@@ -9,10 +9,10 @@ import logging, sys, os
 logger = logging.getLogger('stock')
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
 fh = logging.StreamHandler(sys.stdout)
-fh.setLevel(logging.INFO)
+fh.setLevel(logging.DEBUG)
 fh.setFormatter(formatter)
 logger.addHandler(fh)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 f_logger = logging.getLogger('fstock')
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
