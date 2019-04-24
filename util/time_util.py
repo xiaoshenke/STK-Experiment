@@ -33,9 +33,9 @@ def next_day(day):
 def last_day(day):
 	return str(parse_date_str(day)+datetime.timedelta(-1))
 
-def get_cur_timestamp():
+def get_cur_timestamp(ct=-1):
 	import time
-	ct = time.time()
+	ct = time.time() if ct < 0 else ct
 	local_time = time.localtime(ct)
 	data_head = time.strftime("%Y-%m-%d %H:%M:%S", local_time)
 	data_secs = (ct - long(ct)) * 1000
