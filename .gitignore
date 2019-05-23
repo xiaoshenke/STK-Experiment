@@ -10,6 +10,7 @@ secret
 *.back
 *.bat
 *.xls1
+*.out
 !benchmark/material/*.csv
 !test/*.csv
 !core/strategy/xt/brk/csv/*.csv
