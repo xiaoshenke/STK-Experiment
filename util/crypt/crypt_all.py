@@ -32,7 +32,6 @@ def should_apply_crypt(file):
 	if not file or len(file) == 0:
 		return False
 	if file.startswith("."):
-		#return False
 		pass
 	if file.endswith(".sh"):
 		return False
@@ -52,7 +51,6 @@ def crypt_file(file,aes,base_dir=None):
 		return
 
 	f = None
-
         f_write = None
         seperator = '/' if not IS_WINDOWS else '\\'
         try:
