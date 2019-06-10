@@ -17,6 +17,7 @@ secret
 data/csv_data/hist/*
 data/jpg_data
 data/jpg_data/*
+data/report/*
 data/*.csv
 tracer/*.tmp
 data/inn*
