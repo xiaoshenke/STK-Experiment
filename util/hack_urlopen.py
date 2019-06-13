@@ -1,5 +1,7 @@
 #!/usr/bin/python
 # coding=utf-8
+
+from log import logger
 from socket import timeout
 from threading import Event
 exit = Event()
@@ -49,7 +51,7 @@ def urlopen_till_success(request,timeout):
 		except Exception,e:
 			print e
 			pass
-		print "urlopen_till_success request:%s try_time:%s sleep:%s"%(request,try_time,sleep_time)
+		logger.debug("urlopen_till_success request:%s try_time:%s sleep:%s"%(request,try_time,sleep_time))
 		try_time = try_time+1
 		try:
 			time.sleep(sleep_time)
