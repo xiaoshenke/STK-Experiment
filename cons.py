@@ -16,7 +16,9 @@ REPORT_PATH="%s/data/report/"%CUR_PATH
 
 BASE_INN_PATH = "%s/data/inn/"%CUR_PATH
 
-# inn.apply()返回的文件存储路径 
+# inn.apply()返回的文件存储路径, 注意:实际的路径还要加上日期
+# 例: apply/2019-06-20/5g-2019-06-20_09:30:02.114.csv
+# 注意startswith为5g-2019-06-20,因为某些操作符作用的话,仅仅5g是不够的
 INN_APPLY="%s/apply/"%BASE_INN_PATH
 
 # evaluater.evaluate()返回的文件存储路径 
