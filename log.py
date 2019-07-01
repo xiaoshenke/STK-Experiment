@@ -22,3 +22,5 @@ fh.setFormatter(formatter)
 f_logger.setLevel(logging.DEBUG)
 
 INN_EVA_LOG_NAME="inn_eva"
+
+INN_DOWNLOADER_NAME="inn_downloader"
