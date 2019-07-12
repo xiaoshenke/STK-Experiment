@@ -2,6 +2,7 @@
 # coding=utf-8
 
 CUR_PATH="/Users/wuxian/Desktop/STK-Experiment"
+CUR_PATH="/home/xiaoshenke100/STK-Experiment"
 
 # 除了日内产生的csv的保存路径
 CSV_PATH="%s/data/csv_data/"%CUR_PATH
@@ -45,3 +46,4 @@ TOOL_PATH="%s/data/tool/"%CUR_PATH
 INDEX_PATH="%s/data/csv_data/index/"%CUR_PATH
 
 # to run this, export PYTHONPATH=/Users/wuxian/Desktop/STK-Experiment:$PYTHONPATH
+# to run this, export PYTHONPATH=/home/xiaoshenke100/STK-Experiment:$PYTHONPATH
