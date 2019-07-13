@@ -10,6 +10,8 @@ CSV_PATH="%s/data/csv_data/"%CUR_PATH
 # xls保存路径
 XLS_PATH="%s/data/xls_data/"%CUR_PATH
 
+DAILY_PATH="%s/data/daily/"%CUR_PATH
+
 # 每日生成的复盘文件路径
 REPORT_PATH="%s/data/report/"%CUR_PATH
 

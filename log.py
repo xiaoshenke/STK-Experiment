@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # coding=utf-8
-from cons import INN_RUNNING
 from util.time_util import today
+from util.dir_util import get_daily_dir
 
 import logging, sys, os
 logging.basicConfig(stream=sys.stdout,level=logging.DEBUG,filemode='a')
@@ -12,7 +12,7 @@ logger.setLevel(logging.DEBUG)
 f_logger = logging.getLogger('fstock')
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
 # 配置文件路径
-fh = logging.FileHandler("%s%s.log"%(INN_RUNNING,str(today())))
+fh = logging.FileHandler("%s%s.log"%(get_daily_dir(),str(today())))
 fh.setLevel(logging.DEBUG)
 fh.setFormatter(formatter)
 f_logger.addHandler(fh)

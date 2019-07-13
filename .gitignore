@@ -17,6 +17,8 @@ data/jpg_data
 data/jpg_data/*
 data/report/*
 data/*.csv
+data/daily
+data/daily/*
 tracer/*.tmp
 data/inn*
 data/csv_data/*.csv
