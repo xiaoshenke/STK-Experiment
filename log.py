@@ -1,7 +1,9 @@
 #!/usr/bin/python
 # coding=utf-8
 from util.time_util import today
-from util.dir_util import get_daily_dir
+from util.dir_util import get_daily_dir,init_dirs
+
+init_dirs()
 
 import logging, sys, os
 logging.basicConfig(stream=sys.stdout,level=logging.DEBUG,filemode='a')
