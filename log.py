@@ -10,18 +10,31 @@ logger = logging.getLogger('stock')
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
 logger.setLevel(logging.DEBUG)
 
-f_logger = logging.getLogger('fstock')
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
-# 配置文件路径
-fh = logging.FileHandler("%s%s.log"%(get_daily_dir(),str(today())))
-#fh = logging.FileHandler("%s.log"%str(today()))
-fh.setLevel(logging.DEBUG)
-fh.setFormatter(formatter)
-f_logger.addHandler(fh)
-fh = logging.StreamHandler(sys.stdout)
-fh.setLevel(logging.DEBUG)
-fh.setFormatter(formatter)
-f_logger.setLevel(logging.DEBUG)
+def get_daily_flogger(day):
+        _logger = logging.getLogger('fstock')
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+        # 配置文件路径
+        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),day))
+        #fh = logging.FileHandler("%s.log"%str(today()))
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        _logger.handlers = []
+        _logger.addHandler(fh)
+        fh = logging.StreamHandler(sys.stdout)
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        _logger.setLevel(logging.DEBUG)
+        return _logger
+
+f_logger = None
+def update_flogger(day=''):
+    day = day if day else str(today())
+    global f_logger
+    init_dirs(day)
+    f_logger = get_daily_flogger(day)
+
+# 当日期变化的时候,调一下这个函数
+update_flogger()
 
 INN_EVA_LOG_NAME="inn_eva"
 
