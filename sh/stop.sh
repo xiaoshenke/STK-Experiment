@@ -36,10 +36,9 @@ function kill_pids {
 #kill_pids ${pids[@]}
 
 # step1: kill standby scheduler
-
-PIDS=`ps -aux|grep python|grep schedule|grep -v grep|awk '{print $2}'`
+PIDS=`ps aux|grep python|grep schedule|grep -v grep|awk '{print $2}'`
 echo standby scheduler pid:${PIDS[@]}
-echo killing standby scheduler...
+echo killing standby scheduler at `date +'%Y-%m-%d %H:%M:%S'`...
 
 kill_pids ${PIDS[@]}
 if [ $? -eq 0 ]
@@ -49,9 +48,9 @@ then
 fi
 
 # step2: kill main engine
-PIDS=`ps -aux|grep python|grep engine|grep -v grep|awk '{print $2}'`
+PIDS=`ps aux|grep python|grep engine|grep -v grep|awk '{print $2}'`
 echo main engine pid:${PIDS[@]}
-echo killing main engine...
+echo killing main engine at `date +'%Y-%m-%d %H:%M:%S'`...
 
 kill_pids ${PIDS[@]}
 
