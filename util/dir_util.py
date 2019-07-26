@@ -10,9 +10,9 @@ def get_cur_dir():
 	return CUR_PATH
 
 def get_daily_dir(day=''):
-	from cons import DAILY_PATH
+	from cons import STK_DAILY_PATH
 	day = day if day else str(today())
-	return "%s%s/"%(DAILY_PATH,day)
+	return "%s%s/"%(STK_DAILY_PATH,day)
 
 def get_apply_dir(day=''):	
 	return "%s/apply/"%get_daily_dir(day)
