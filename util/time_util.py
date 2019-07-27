@@ -3,6 +3,10 @@
 import datetime
 import calendar
 
+def unix_to_str(t):
+	import time
+	return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(t))
+
 def get_month_start(month,year=2018):
 	return '%d-%02d-01'%(year,month)
 
