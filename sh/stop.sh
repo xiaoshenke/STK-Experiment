@@ -44,7 +44,7 @@ kill_pids ${PIDS[@]}
 if [ $? -eq 0 ]
 then
 	echo killing standby scheduler fail,please manual checkout!!
-	exit 1
+	#exit 1
 fi
 
 # step2: kill main engine
