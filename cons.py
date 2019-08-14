@@ -4,8 +4,8 @@
 CUR_PATH="/Users/wuxian/Desktop/STK-Experiment"
 STK_DAILY_PATH="/Users/wuxian/Desktop/stk_daily/"
 
-#CUR_PATH="/home/xiaoshenke100/STK-Experiment"
-#STK_DAILY_PATH="/home/xiaoshenke100/stk_daily/"
+CUR_PATH="/home/xiaoshenke100/STK-Experiment"
+STK_DAILY_PATH="/home/xiaoshenke100/stk_daily/"
 
 # 除了日内产生的csv的保存路径
 CSV_PATH="%s/data/csv_data/"%CUR_PATH
