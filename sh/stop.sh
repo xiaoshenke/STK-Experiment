@@ -40,7 +40,8 @@ PIDS=`ps aux|grep python|grep schedule|grep -v grep|awk '{print $2}'`
 echo standby scheduler pid:${PIDS[@]}
 echo killing standby scheduler at `date +'%Y-%m-%d %H:%M:%S'`...
 
-kill_pids ${PIDS[@]}
+# not killing standby
+#kill_pids ${PIDS[@]}
 if [ $? -eq 0 ]
 then
 	echo killing standby scheduler fail,please manual checkout!!
