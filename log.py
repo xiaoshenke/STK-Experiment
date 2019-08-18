@@ -38,7 +38,7 @@ update_flogger()
 
 INN_EVA_LOG_NAME="inn_eva"
 
-INN_CAL_SCHEDULE = "inn_cal_schedule"
+INN_CAL_SCHEDULE = "cal_schedule"
 
 INN_DOWNLOADER_NAME="inn_downloader"
 
