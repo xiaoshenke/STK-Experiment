@@ -43,3 +43,5 @@ INN_CAL_SCHEDULE = "cal_schedule"
 INN_DOWNLOADER_NAME="inn_downloader"
 
 INN_SERVER = "inn_server"
+
+INN_CODES_BUILDER = "codes_builder"
