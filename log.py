@@ -45,3 +45,7 @@ INN_DOWNLOADER_NAME="inn_downloader"
 INN_SERVER = "inn_server"
 
 INN_CODES_BUILDER = "codes_builder"
+
+INN_CODES_MERGER = "codes_merger"
+
+INN_PRESCHEDULER = "prescheduler"
