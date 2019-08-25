@@ -15,16 +15,27 @@ def get_daily_flogger(day):
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
         # 配置文件路径
         fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),day))
-        #fh = logging.FileHandler("%s.log"%str(today()))
         fh.setLevel(logging.DEBUG)
         fh.setFormatter(formatter)
         _logger.handlers = []
         _logger.addHandler(fh)
-        fh = logging.StreamHandler(sys.stdout)
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(formatter)
         _logger.setLevel(logging.DEBUG)
         return _logger
+
+def get_daily_eva_cli_logger(day=''):
+	day = day if day else str(today())
+        _logger = logging.getLogger('eva_cli')
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+        # 配置文件路径
+        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'eva_cli'))
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        _logger.handlers = []
+        _logger.addHandler(fh)
+        _logger.setLevel(logging.DEBUG)
+        return _logger
+
+ecli_logger = get_daily_eva_cli_logger()
 
 f_logger = None
 def update_flogger(day=''):
@@ -49,3 +60,4 @@ INN_CODES_BUILDER = "codes_builder"
 INN_CODES_MERGER = "codes_merger"
 
 INN_PRESCHEDULER = "prescheduler"
+
