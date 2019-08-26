@@ -66,3 +66,7 @@ INN_MARKET = 'market'
 INN_RAPID_UP_TRACING = 'rapid_up_tracing'
 
 INN_XLS_DOWNLOADER = 'xls_downloader'
+
+INN_LAST_TOP = 'last_top'
+
+INN_UPSTP_HOT = 'upstp_hot'
