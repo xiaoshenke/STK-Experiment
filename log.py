@@ -62,3 +62,7 @@ INN_CODES_MERGER = "codes_merger"
 INN_PRESCHEDULER = "prescheduler"
 
 INN_MARKET = 'market'
+
+INN_RAPID_UP_TRACING = 'rapid_up_tracing'
+
+INN_XLS_DOWNLOADER = 'xls_downloader'

@@ -14,6 +14,9 @@ def get_daily_dir(day=''):
 	day = day if day else str(today())
 	return "%s%s/"%(STK_DAILY_PATH,day)
 
+def get_rapid_up_dir(day=''):
+	return "%s/rapid_up/"%get_daily_dir(day)
+
 def get_open_dir(day=''):
 	return "%s/open/"%get_daily_dir(day)
 
@@ -40,7 +43,7 @@ def get_csv_path():
 	return CSV_PATH
 
 def init_dirs(day=''):
-	dirs = [get_daily_dir,get_apply_dir,get_evaluate_dir,get_filter_source_dir,get_fenshi_wholecodes_dir,get_report_dir,get_open_dir,get_create_source_dir]
+	dirs = [get_daily_dir,get_apply_dir,get_evaluate_dir,get_filter_source_dir,get_fenshi_wholecodes_dir,get_report_dir,get_open_dir,get_create_source_dir,get_rapid_up_dir]
 	dirs = [ dir(day) for dir in dirs ]
 	import os
 	for dir in dirs:
