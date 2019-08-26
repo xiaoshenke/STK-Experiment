@@ -70,3 +70,5 @@ INN_XLS_DOWNLOADER = 'xls_downloader'
 INN_LAST_TOP = 'last_top'
 
 INN_UPSTP_HOT = 'upstp_hot'
+
+INN_RAPID_XLS = 'rapid_xls'
