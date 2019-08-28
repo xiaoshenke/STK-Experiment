@@ -4,6 +4,7 @@
 secret
 *.csv
 *.xls
+*.xls2
 *.jpg
 *.png
 *.gif
