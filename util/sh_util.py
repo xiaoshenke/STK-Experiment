@@ -11,6 +11,7 @@ def exe_shell(shell_name,pm_list=[]):
 	# Fixed a bug here
 	t.insert(0,'/bin/bash')
 	t.extend(pm_list)
+	#print "exe_shell cmd:%s"%t
 	return subprocess.call(t)
 
 from subprocess import *
