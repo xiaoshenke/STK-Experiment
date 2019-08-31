@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # coding=utf-8
 
+SERVER_PORT = 1234
+
 CUR_PATH="/Users/wuxian/Desktop/STK-Experiment"
 STK_DAILY_PATH="/Users/wuxian/Desktop/stk_daily/"
 
