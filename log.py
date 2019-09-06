@@ -37,6 +37,20 @@ def get_daily_eva_cli_logger(day=''):
 
 ecli_logger = get_daily_eva_cli_logger()
 
+def get_daily_prescheduler_logger(day=''):
+	day = day if day else str(today())
+        _logger = logging.getLogger('prescheduler')
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+        # 配置文件路径
+        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'prescheduler'))
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        _logger.handlers = []
+        _logger.addHandler(fh)
+        _logger.setLevel(logging.DEBUG)
+        return _logger
+presch_logger = get_daily_prescheduler_logger()
+
 def get_daily_cal_scheduler_cli_logger(day=''):
 	day = day if day else str(today())
         _logger = logging.getLogger('sch_cli')
