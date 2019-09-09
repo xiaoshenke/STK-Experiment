@@ -77,6 +77,8 @@ update_flogger()
 
 INN_EVA_LOG_NAME="inn_eva"
 
+INN_TYPE_GROUPED_EVA = 'type_grouped_eva'
+
 INN_CAL_SCHEDULE = "cal_schedule"
 
 INN_DOWNLOADER_NAME="inn_downloader"
