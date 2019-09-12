@@ -65,6 +65,21 @@ def get_daily_cal_scheduler_cli_logger(day=''):
         return _logger
 schcli_logger = get_daily_cal_scheduler_cli_logger()
 
+def get_daily_error_logger(day=''):
+	day = day if day else str(today())
+        _logger = logging.getLogger('error')
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+        # 配置文件路径
+        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'error'))
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        _logger.handlers = []
+        _logger.addHandler(fh)
+        _logger.setLevel(logging.DEBUG)
+        return _logger
+error_logger = get_daily_error_logger()
+
+
 f_logger = None
 def update_flogger(day=''):
     day = day if day else str(today())
@@ -74,6 +89,7 @@ def update_flogger(day=''):
 
 # 当日期变化的时候,调一下这个函数
 update_flogger()
+
 
 INN_EVA_LOG_NAME="inn_eva"
 
