@@ -79,6 +79,11 @@ def get_daily_error_logger(day=''):
         return _logger
 error_logger = get_daily_error_logger()
 
+def save_error(msg):
+	try:
+		error_logger.error(str(msg))
+	except Exception,e:
+		pass
 
 f_logger = None
 def update_flogger(day=''):
