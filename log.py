@@ -65,6 +65,27 @@ def get_daily_cal_scheduler_cli_logger(day=''):
         return _logger
 schcli_logger = get_daily_cal_scheduler_cli_logger()
 
+def get_daily_slow_logger(day=''):
+	day = day if day else str(today())
+        _logger = logging.getLogger('slow')
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+        # 配置文件路径
+        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'slow'))
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        _logger.handlers = []
+        _logger.addHandler(fh)
+        _logger.setLevel(logging.DEBUG)
+        return _logger
+slow_logger = get_daily_slow_logger()
+
+def log_slow(msg):
+	try:
+		slow_logger.warm(str(msg))
+	except Exception,e:
+		pass
+
+
 def get_daily_error_logger(day=''):
 	day = day if day else str(today())
         _logger = logging.getLogger('error')
