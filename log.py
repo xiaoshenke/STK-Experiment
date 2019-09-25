@@ -81,9 +81,10 @@ slow_logger = get_daily_slow_logger()
 
 def log_slow(msg):
 	try:
-		slow_logger.warm(str(msg))
+		slow_logger.warn(str(msg))
 	except Exception,e:
-		pass
+		print "log_slow"
+		print e
 
 
 def get_daily_error_logger(day=''):
