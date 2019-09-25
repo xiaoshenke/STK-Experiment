@@ -41,7 +41,7 @@ echo standby scheduler pid:${PIDS[@]}
 echo killing standby scheduler at `date +'%Y-%m-%d %H:%M:%S'`...
 
 # not killing standby
-#kill_pids ${PIDS[@]}
+kill_pids ${PIDS[@]}
 if [ $? -eq 0 ]
 then
 	echo killing standby scheduler fail,please manual checkout!!
