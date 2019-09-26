@@ -117,6 +117,8 @@ def update_flogger(day=''):
 # 当日期变化的时候,调一下这个函数
 update_flogger()
 
+HIT_PROCESSER = 'hit_processer'
+
 HIT_HOT_XLS = 'hit_hot_xls'
 
 INN_EVA_LOG_NAME="inn_eva"
