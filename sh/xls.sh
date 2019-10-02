@@ -7,7 +7,7 @@ then
 	exit 2
 fi
 
-cat $1 | gawk 'BEGIN{RS="abcdefghi";FS="centerTitle"} {print $NF}' | gawk 'BEGIN{RS="<tr>";FS="<td>|</td>"} {print $2}'|while read line
+cat $1 | gawk 'BEGIN{RS="abcdefghi";FS="centerTitle"} {print $NF}' | gawk 'BEGIN{RS="<tr>|</tr>";FS="<td>|</td>"} {print $2}'|while read line
 do
 	if [[ $line =~ "SZ" ]] || [[ $line =~ "SH" ]]
 	then
