@@ -22,6 +22,22 @@ def get_daily_flogger(day):
         _logger.setLevel(logging.DEBUG)
         return _logger
 
+def get_daily_hit_processer_logger(day=''):
+	day = day if day else str(today())
+        _logger = logging.getLogger('hit_processer')
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+        # 配置文件路径
+        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'hit_processer'))
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        _logger.handlers = []
+        _logger.addHandler(fh)
+        _logger.setLevel(logging.DEBUG)
+        return _logger
+
+hprocesser_logger = get_daily_hit_processer_logger()
+
+
 def get_daily_eva_cli_logger(day=''):
 	day = day if day else str(today())
         _logger = logging.getLogger('eva_cli')
@@ -85,7 +101,6 @@ def log_slow(msg):
 	except Exception,e:
 		print "log_slow"
 		print e
-
 
 def get_daily_error_logger(day=''):
 	day = day if day else str(today())
