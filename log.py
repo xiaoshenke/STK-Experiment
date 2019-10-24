@@ -37,7 +37,6 @@ def get_daily_hit_processer_logger(day=''):
 
 hprocesser_logger = get_daily_hit_processer_logger()
 
-
 def get_daily_eva_cli_logger(day=''):
 	day = day if day else str(today())
         _logger = logging.getLogger('eva_cli')
