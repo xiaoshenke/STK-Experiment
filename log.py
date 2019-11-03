@@ -162,3 +162,5 @@ INN_LAST_TOP = 'last_top'
 INN_UPSTP_HOT = 'upstp_hot'
 
 INN_RAPID_XLS = 'rapid_xls'
+
+CAL_INTEGRATION = 'cal_integration'
