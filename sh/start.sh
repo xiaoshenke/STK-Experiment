@@ -16,5 +16,5 @@ nohup python inn_strategy/standby_cli.py schedule_standby_and_merge2 >standby.lo
 
 echo start engine...
 #nohup python engine/cli.py start-engine >>nohup.out 2>&1 &
-nohup python engine/main_engine.py >>nohup.out 2>&1 &
+nohup python engine/main_engine.py >nohup.out 2>&1 &
 
