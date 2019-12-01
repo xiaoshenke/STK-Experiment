@@ -80,6 +80,20 @@ def get_daily_cal_scheduler_cli_logger(day=''):
         return _logger
 schcli_logger = get_daily_cal_scheduler_cli_logger()
 
+def get_daily_stage_minus_report_logger(day=''):
+	day = day if day else str(today())
+        _logger = logging.getLogger('stage_minus')
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+        # 配置文件路径
+        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'stage-'))
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        _logger.handlers = []
+        _logger.addHandler(fh)
+        _logger.setLevel(logging.DEBUG)
+        return _logger
+stage_minus_logger = get_daily_stage_minus_report_logger()
+
 def get_daily_cals_report_logger(day=''):
 	day = day if day else str(today())
         _logger = logging.getLogger('cals_report')
