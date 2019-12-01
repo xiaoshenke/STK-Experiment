@@ -94,6 +94,36 @@ def get_daily_cals_report_logger(day=''):
         return _logger
 cals_report_logger = get_daily_cals_report_logger()
 
+def get_daily_cal_file_codes_report_logger(day=''):
+	day = day if day else str(today())
+        _logger = logging.getLogger('file_codes_report')
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+        # 配置文件路径
+        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'cal_file_codes_report'))
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        _logger.handlers = []
+        _logger.addHandler(fh)
+        _logger.setLevel(logging.DEBUG)
+        return _logger
+cal_file_codes_report_logger = get_daily_cal_file_codes_report_logger()
+
+def get_daily_cal_hist_codes_report_logger(day=''):
+	day = day if day else str(today())
+        _logger = logging.getLogger('cal_hist_report')
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+        # 配置文件路径
+        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'cal_hist_codes_report'))
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        _logger.handlers = []
+        _logger.addHandler(fh)
+        _logger.setLevel(logging.DEBUG)
+        return _logger
+cal_hist_codes_report_logger = get_daily_cal_hist_codes_report_logger()
+
+
+
 def get_daily_slow_logger(day=''):
 	day = day if day else str(today())
         _logger = logging.getLogger('slow')
