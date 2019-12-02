@@ -22,12 +22,11 @@ def get_daily_flogger(day):
         _logger.setLevel(logging.DEBUG)
         return _logger
 
-def get_daily_hit_processer_logger(day=''):
+def get_common_daily_logger(appender,save_name,day=''):
 	day = day if day else str(today())
-        _logger = logging.getLogger('hit_processer')
+        _logger = logging.getLogger(appender)
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
-        # 配置文件路径
-        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'hit_processer'))
+        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),save_name))
         fh.setLevel(logging.DEBUG)
         fh.setFormatter(formatter)
         _logger.handlers = []
@@ -35,122 +34,28 @@ def get_daily_hit_processer_logger(day=''):
         _logger.setLevel(logging.DEBUG)
         return _logger
 
-hprocesser_logger = get_daily_hit_processer_logger()
+# cal manager日志,记录了cal manager处理的所有event
+cal_manager_report_logger = get_common_daily_logger('cal_manager_report','cal_manager_report')
 
-def get_daily_eva_cli_logger(day=''):
-	day = day if day else str(today())
-        _logger = logging.getLogger('eva_cli')
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
-        # 配置文件路径
-        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'eva_cli'))
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(formatter)
-        _logger.handlers = []
-        _logger.addHandler(fh)
-        _logger.setLevel(logging.DEBUG)
-        return _logger
+# 单次file刷新时的算子组日志,记录了实际上cal manager所有发生的计算
+cals_report_logger = get_common_daily_logger('cals_report','cals_report')
 
-ecli_logger = get_daily_eva_cli_logger()
+# 单次file刷新时,这个file对应的股票池数据的表现,当前主要是涨停表现
+cal_file_codes_report_logger = get_common_daily_logger('file_codes_report','file_codes_report')
 
-def get_daily_prescheduler_logger(day=''):
-	day = day if day else str(today())
-        _logger = logging.getLogger('prescheduler')
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
-        # 配置文件路径
-        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'prescheduler'))
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(formatter)
-        _logger.handlers = []
-        _logger.addHandler(fh)
-        _logger.setLevel(logging.DEBUG)
-        return _logger
-presch_logger = get_daily_prescheduler_logger()
+# cal manager计算出来过的历史结果股票数据的表现,当前主要是涨停表现
+cal_hist_codes_report_logger = get_common_daily_logger('cal_hist_report','hist_codes_report')
 
-def get_daily_cal_scheduler_cli_logger(day=''):
-	day = day if day else str(today())
-        _logger = logging.getLogger('sch_cli')
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
-        # 配置文件路径
-        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'cal_scheduler_cli'))
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(formatter)
-        _logger.handlers = []
-        _logger.addHandler(fh)
-        _logger.setLevel(logging.DEBUG)
-        return _logger
-schcli_logger = get_daily_cal_scheduler_cli_logger()
+# 单次file刷新时的算子组中的stage-数据,用于挖掘优秀个股买点
+stage_minus_logger = get_common_daily_logger('stage_minus','stage-')
 
-def get_daily_stage_minus_report_logger(day=''):
-	day = day if day else str(today())
-        _logger = logging.getLogger('stage_minus')
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
-        # 配置文件路径
-        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'stage-'))
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(formatter)
-        _logger.handlers = []
-        _logger.addHandler(fh)
-        _logger.setLevel(logging.DEBUG)
-        return _logger
-stage_minus_logger = get_daily_stage_minus_report_logger()
+# hit process的日志
+hprocesser_logger = get_common_daily_logger('hit_processer','hit_processer')
 
-def get_daily_cals_report_logger(day=''):
-	day = day if day else str(today())
-        _logger = logging.getLogger('cals_report')
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
-        # 配置文件路径
-        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'cals_report'))
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(formatter)
-        _logger.handlers = []
-        _logger.addHandler(fh)
-        _logger.setLevel(logging.DEBUG)
-        return _logger
-cals_report_logger = get_daily_cals_report_logger()
-
-def get_daily_cal_file_codes_report_logger(day=''):
-	day = day if day else str(today())
-        _logger = logging.getLogger('file_codes_report')
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
-        # 配置文件路径
-        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'cal_file_codes_report'))
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(formatter)
-        _logger.handlers = []
-        _logger.addHandler(fh)
-        _logger.setLevel(logging.DEBUG)
-        return _logger
-cal_file_codes_report_logger = get_daily_cal_file_codes_report_logger()
-
-def get_daily_cal_hist_codes_report_logger(day=''):
-	day = day if day else str(today())
-        _logger = logging.getLogger('cal_hist_report')
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
-        # 配置文件路径
-        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'cal_hist_codes_report'))
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(formatter)
-        _logger.handlers = []
-        _logger.addHandler(fh)
-        _logger.setLevel(logging.DEBUG)
-        return _logger
-cal_hist_codes_report_logger = get_daily_cal_hist_codes_report_logger()
-
-
-
-def get_daily_slow_logger(day=''):
-	day = day if day else str(today())
-        _logger = logging.getLogger('slow')
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
-        # 配置文件路径
-        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'slow'))
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(formatter)
-        _logger.handlers = []
-        _logger.addHandler(fh)
-        _logger.setLevel(logging.DEBUG)
-        return _logger
-slow_logger = get_daily_slow_logger()
+ecli_logger = get_common_daily_logger('eva_cli','eva_cli')
+schcli_logger = get_common_daily_logger('sch_cli','cal_scheduler_cli')
+slow_logger = get_common_daily_logger('slow','slow')
+error_logger = get_common_daily_logger('error','error')
 
 def log_slow(msg):
 	try:
@@ -158,20 +63,6 @@ def log_slow(msg):
 	except Exception,e:
 		print "log_slow"
 		print e
-
-def get_daily_error_logger(day=''):
-	day = day if day else str(today())
-        _logger = logging.getLogger('error')
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
-        # 配置文件路径
-        fh = logging.FileHandler("%s%s.log"%(get_daily_dir(day),'error'))
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(formatter)
-        _logger.handlers = []
-        _logger.addHandler(fh)
-        _logger.setLevel(logging.DEBUG)
-        return _logger
-error_logger = get_daily_error_logger()
 
 def save_error(msg):
 	try:

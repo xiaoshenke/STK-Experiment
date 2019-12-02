@@ -14,6 +14,7 @@ secret
 *.xls1
 *.out
 !benchmark/material/*.csv
+!data/csv_data/calAll.csv
 data/csv_data/hist/*
 data/jpg_data
 data/jpg_data/*
