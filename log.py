@@ -52,7 +52,6 @@ stage_minus_logger = get_common_daily_logger('stage_minus','stage-')
 # hit process的日志
 hprocesser_logger = get_common_daily_logger('hit_processer','hit_processer')
 
-ecli_logger = get_common_daily_logger('eva_cli','eva_cli')
 schcli_logger = get_common_daily_logger('sch_cli','cal_scheduler_cli')
 slow_logger = get_common_daily_logger('slow','slow')
 error_logger = get_common_daily_logger('error','error')
