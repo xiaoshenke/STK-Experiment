@@ -34,6 +34,8 @@ def get_common_daily_logger(appender,save_name,day=''):
         _logger.setLevel(logging.DEBUG)
         return _logger
 
+market_stage_logger = get_common_daily_logger('market_stage','market_stage')
+
 # cal manager日志,记录了cal manager处理的所有event
 cal_manager_report_logger = get_common_daily_logger('cal_manager_report','cal_manager_report')
 
