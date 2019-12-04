@@ -48,6 +48,9 @@ cal_file_codes_report_logger = get_common_daily_logger('file_codes_report','file
 # cal manager计算出来过的历史结果股票数据的表现,当前主要是涨停表现
 cal_hist_codes_report_logger = get_common_daily_logger('cal_hist_report','hist_codes_report')
 
+# hit.xls_stage.hit_all_xls的盘面全版块信息,当前主要是涨停表现
+all_xls_logger = get_common_daily_logger('all_xls','all_xls')
+
 # 单次file刷新时的算子组中的stage-数据,用于挖掘优秀个股买点
 stage_minus_logger = get_common_daily_logger('stage_minus','stage-')
 
