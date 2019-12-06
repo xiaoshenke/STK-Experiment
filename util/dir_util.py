@@ -32,6 +32,9 @@ def get_filter_source_dir(day=''):
 def get_create_source_dir(day=''):
 	return "%s/create_source/"%get_daily_dir(day)
 
+def get_cal_manager_source_dir(day=''):
+	return '%s/cm_source/'%get_daily_dir(day)
+
 def get_stage_source_dir(day=''):
 	return "%s/stage_source/"%get_daily_dir(day)
 
@@ -46,7 +49,7 @@ def get_csv_path():
 	return CSV_PATH
 
 def init_dirs(day=''):
-	dirs = [get_daily_dir,get_apply_dir,get_evaluate_dir,get_filter_source_dir,get_fenshi_wholecodes_dir,get_report_dir,get_open_dir,get_create_source_dir,get_rapid_up_dir,get_stage_source_dir]
+	dirs = [get_daily_dir,get_apply_dir,get_evaluate_dir,get_filter_source_dir,get_fenshi_wholecodes_dir,get_report_dir,get_open_dir,get_create_source_dir,get_rapid_up_dir,get_stage_source_dir,get_cal_manager_source_dir]
 	dirs = [ dir(day) for dir in dirs ]
 	import os
 	for dir in dirs:
