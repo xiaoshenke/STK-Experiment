@@ -57,12 +57,9 @@ stage_minus_logger = get_common_daily_logger('stage_minus','stage-')
 # hit process的日志
 hprocesser_logger = get_common_daily_logger('hit_processer','hit_processer')
 
-schcli_logger = get_common_daily_logger('sch_cli','cal_scheduler_cli')
-slow_logger = get_common_daily_logger('slow','slow')
-error_logger = get_common_daily_logger('error','error')
-
 def log_slow(msg):
 	try:
+		slow_logger = get_common_daily_logger('slow','slow')
 		slow_logger.warn(str(msg))
 	except Exception,e:
 		print "log_slow"
@@ -70,6 +67,7 @@ def log_slow(msg):
 
 def save_error(msg):
 	try:
+		error_logger = get_common_daily_logger('error','error')
 		error_logger.error(str(msg))
 	except Exception,e:
 		pass
