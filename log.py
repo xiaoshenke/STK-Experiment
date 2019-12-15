@@ -54,6 +54,9 @@ all_xls_logger = get_common_daily_logger('all_xls','all_xls')
 # 单次file刷新时的算子组中的stage-数据,用于挖掘优秀个股买点
 stage_minus_logger = get_common_daily_logger('stage_minus','stage-')
 
+# hot xls的log,实质当前是被我用来做hit算子HIT_XLS_EFFECT_NORMAL_1记录操作用的
+hot_xls_logger = get_common_daily_logger('hot_xls','hot_xls')
+
 # hit process的日志
 hprocesser_logger = get_common_daily_logger('hit_processer','hit_processer')
 
