@@ -60,6 +60,9 @@ hot_xls_logger = get_common_daily_logger('hot_xls','hot_xls')
 # hit process的日志
 hprocesser_logger = get_common_daily_logger('hit_processer','hit_processer')
 
+# cli操作日志
+cli_logger = get_common_daily_logger('cli','cli')
+
 def log_slow(msg):
 	try:
 		slow_logger = get_common_daily_logger('slow','slow')
