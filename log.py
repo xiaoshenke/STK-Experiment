@@ -60,6 +60,9 @@ hot_xls_logger = get_common_daily_logger('hot_xls','hot_xls')
 # hit process的日志
 hprocesser_logger = get_common_daily_logger('hit_processer','hit_processer')
 
+# codes merger日志
+codes_merger_logger = get_common_daily_logger('codes_merger','codes_merger')
+
 # cli操作日志
 cli_logger = get_common_daily_logger('cli','cli')
 
@@ -107,8 +110,6 @@ INN_DOWNLOADER_NAME="inn_downloader"
 INN_SERVER = "inn_server"
 
 INN_CODES_BUILDER = "codes_builder"
-
-INN_CODES_MERGER = "codes_merger"
 
 INN_PRESCHEDULER = "prescheduler"
 
