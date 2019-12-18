@@ -74,9 +74,9 @@ def log_slow(msg):
 		print "log_slow"
 		print e
 
+error_logger = get_common_daily_logger('error','error')
 def save_error(msg):
 	try:
-		error_logger = get_common_daily_logger('error','error')
 		error_logger.error(str(msg))
 	except Exception,e:
 		pass
