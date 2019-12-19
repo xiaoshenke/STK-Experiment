@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# coding=utf-8
 
 import datetime
 import calendar
@@ -41,6 +42,11 @@ def get_cur_timestamp(ct=-1):
 	data_secs = (ct - long(ct)) * 1000
 	time_stamp = "%s.%03d" % (data_head, data_secs)
 	return time_stamp
+
+# 获取8位的timestr 
+def get_cur_timestr_8():	
+	import time
+	return unix_to_str(time.time())[-8:]
 
 if __name__ == "__main__":
 	print get_cur_timestamp()
