@@ -63,6 +63,9 @@ hprocesser_logger = get_common_daily_logger('hit_processer','hit_processer')
 # codes merger日志
 codes_merger_logger = get_common_daily_logger('codes_merger','codes_merger')
 
+# realtime_reporter日志
+realtime_reporter_logger = get_common_daily_logger('realtime_reporter','realtime_reporter')
+
 # cli操作日志
 cli_logger = get_common_daily_logger('cli','cli')
 
