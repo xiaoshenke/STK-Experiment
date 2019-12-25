@@ -55,4 +55,9 @@ echo killing main engine at `date +'%Y-%m-%d %H:%M:%S'`...
 
 kill_pids ${PIDS[@]}
 
+# step3: kill sh downloader web
+PIDS=`ps aux|grep python|grep web|grep -v grep|awk '{print $2}'`
+echo sh downloader pid:${PIDS[@]}
+echo killing sh downloader at `date +'%Y-%m-%d %H:%M:%S'`...
 
+kill_pids ${PIDS[@]}

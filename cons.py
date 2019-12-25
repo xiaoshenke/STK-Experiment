@@ -3,6 +3,8 @@
 
 SERVER_PORT = 1234
 
+SH_DOWNLOADER_SERVER_PORT = 1235
+
 CUR_PATH="/Users/wuxian/Desktop/STK-Experiment"
 STK_DAILY_PATH="/Users/wuxian/Desktop/stk_daily/"
 
