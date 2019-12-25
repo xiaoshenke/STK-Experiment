@@ -20,6 +20,9 @@ def get_codes_dir(day=''):
 def get_realtime_report_dir(day=''):
         return "%s/realtime_report/"%get_daily_dir(day)
 
+def get_manual_report_dir(day=''):
+	return "%s/manual_report/"%get_daily_dir(day)
+
 def get_rapid_up_dir(day=''):
 	return "%s/rapid_up/"%get_daily_dir(day)
 
@@ -61,7 +64,7 @@ def get_csv_path():
 	return CSV_PATH
 
 def init_dirs(day=''):
-	dirs = [get_daily_dir,get_apply_dir,get_evaluate_dir,get_filter_source_dir,get_fenshi_wholecodes_dir,get_report_dir,get_open_dir,get_create_source_dir,get_stage_source_dir,get_queryable_source_dir,get_realtime_report_dir,get_codes_dir,get_df_merger_source_dir]
+	dirs = [get_daily_dir,get_apply_dir,get_evaluate_dir,get_filter_source_dir,get_fenshi_wholecodes_dir,get_report_dir,get_open_dir,get_create_source_dir,get_stage_source_dir,get_queryable_source_dir,get_realtime_report_dir,get_codes_dir,get_df_merger_source_dir,get_manual_report_dir]
 	dirs = [ dir(day) for dir in dirs ]
 	import os
 	for dir in dirs:
