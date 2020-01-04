@@ -66,6 +66,9 @@ codes_merger_logger = get_common_daily_logger('codes_merger','codes_merger')
 # xls scheduler调度日志
 xls_scheduler_logger = get_common_daily_logger('xls_scheduler','xls_scheduler')
 
+# scheduler reporter日志
+scheduler_reporter_logger = get_common_daily_logger('scheduler_reporter','scheduler_reporter')
+
 # realtime_reporter日志
 realtime_reporter_logger = get_common_daily_logger('realtime_reporter','realtime_reporter')
 
