@@ -18,9 +18,11 @@ class XlsCodesZone1Configer(BaseCodesConfiger):
 	xls = cal_xls.xls
 	type_map = {}
 	if sort <= 1:
-		# 全level数据	
-		type = '%s*%s'%(xls,'CODES_XLS_LEVEL_ALL')
-		alias = '%s*%s'%(xls,SHAPE_CODES_XLS_LEVEL_ALL)
+		# 全level数据	-> 当前level1的数据质量挺差的
+		#type = '%s*%s'%(xls,'CODES_XLS_LEVEL_ALL')
+		#alias = '%s*%s'%(xls,SHAPE_CODES_XLS_LEVEL_ALL)
+		type = '%s*%s'%(xls,'(CODES_XLS_LEVEL_3|CODES_XLS_LEVEL_2)')
+		alias = '%s*%s'%(xls,SHAPE_CODES_XLS_LEVEL_23)
 		codes = safe_get_codes(type,day)
                 if len(codes) > 0:
                         type_map[alias] = codes
