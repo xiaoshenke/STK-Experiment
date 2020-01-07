@@ -73,7 +73,10 @@ def init_dirs(day=''):
 	for dir in dirs:
 		if not os.path.exists(dir):
 			print "we will mkdir:%s"%dir
-			os.mkdir(dir)
+			try:
+				os.mkdir(dir)
+			except Exception,e:
+				print e
 	return
 
 @click.group()
