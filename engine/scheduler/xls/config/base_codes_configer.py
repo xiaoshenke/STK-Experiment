@@ -1,11 +1,13 @@
 #!/usr/bin/python
 # coding=utf-8
+# code config基类
 
 class BaseCodesConfiger:
     def __init__(self):
-	pass
+	self.enable_realtime_df = True
 
     # core API:
+    # return {} key: alias val: [code]
     def get_xls_derived_codes_map(self,cal_xls,day,time_str,enable_realtime_df):
 	return {}
 
@@ -25,6 +27,10 @@ class BaseCodesConfiger:
         if len(codes) > 0:
                 codes = safe_get_codes('CODES_LOW_XT',day,codes=codes)
         return codes
+
+    def set_enable_realtime_df(self,enable):
+	self.enable_realtime_df = enable
+	return self
 
 if __name__ == "__main__":
 	pass

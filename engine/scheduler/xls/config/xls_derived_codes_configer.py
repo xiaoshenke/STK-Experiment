@@ -9,6 +9,7 @@ class XlsDerivedCodesConfiger(BaseCodesConfiger):
 	BaseCodesConfiger.__init__(self)
 
     # core API:
+    # return {} key: alias val: [code]
     def get_xls_derived_codes_map(self,cal_xls,day,time_str,enable_realtime_df):
 	if time_str <= '09:45:00':
 		from engine.scheduler.xls.config.xls_codes_zone1_configer import XlsCodesZone1Configer
