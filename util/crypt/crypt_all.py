@@ -12,7 +12,7 @@ SECRET_FILE = "secret"
 
 ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py","updater.py","__init__.py","dir_util.py","crontab.py"]
 
-ignore_dirs = ["/.git","/csv_data","/other","/xls/","/data"]
+ignore_dirs = ["/.git","/csv_data","/other","/data"]
 
 def get_base_dir():
 	# 要求必须在工程下执行
