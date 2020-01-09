@@ -10,8 +10,8 @@ from engine.scheduler.xls.config.base_codes_configer import BaseCodesConfiger
 from util.df_util import empty
 
 class XlsCodesZone2Configer(BaseCodesConfiger):
-    def __init__(self):
-        BaseCodesConfiger.__init__(self)
+    def __init__(self,enable_realtime_df=True):
+        BaseCodesConfiger.__init__(self,enable_realtime_df)
 
     # core API:
     def get_xls_derived_codes_map(self,cal_xls,day,time_str,enable_realtime_df):
