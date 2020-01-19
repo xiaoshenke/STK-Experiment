@@ -75,6 +75,9 @@ realtime_reporter_logger = get_common_daily_logger('realtime_reporter','realtime
 # manual_reporter日志
 manual_reporter_logger = get_common_daily_logger('manual_reporter','manual_reporter')
 
+# shape reporter日志
+shape_reporter_logger = get_common_daily_logger('shape_reporter','shape_reporter')
+
 # cli操作日志
 cli_logger = get_common_daily_logger('cli','cli')
 
