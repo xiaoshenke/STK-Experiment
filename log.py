@@ -72,6 +72,9 @@ shape_scheduler_logger = get_common_daily_logger('shape_scheduler','shape_schedu
 # open2 scheduler调度日志
 open2_scheduler_logger = get_common_daily_logger('open2_scheduler','open2_scheduler')
 
+# opening_xls scheduler调度日志
+opening_xls_scheduler_logger = get_common_daily_logger('opening_xls','opening_xls')
+
 # scheduler reporter日志
 scheduler_reporter_logger = get_common_daily_logger('scheduler_reporter','scheduler_reporter')
 
