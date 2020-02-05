@@ -13,6 +13,7 @@ secret
 *.bat
 *.xls1
 *.out
+*.txt
 !data/csv_data/calAll.csv
 data/csv_data/*.csv
 data/csv_data/hist/*
