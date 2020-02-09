@@ -63,6 +63,9 @@ hprocesser_logger = get_common_daily_logger('hit_processer','hit_processer')
 # codes merger日志
 codes_merger_logger = get_common_daily_logger('codes_merger','codes_merger')
 
+# market configer日志
+mkt_configer_logger = get_common_daily_logger('market_configer','market_configer')
+
 # xls scheduler调度日志
 xls_scheduler_logger = get_common_daily_logger('xls_scheduler','xls_scheduler')
 
