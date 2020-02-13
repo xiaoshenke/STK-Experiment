@@ -66,6 +66,9 @@ codes_merger_logger = get_common_daily_logger('codes_merger','codes_merger')
 # market configer日志
 mkt_configer_logger = get_common_daily_logger('market_configer','market_configer')
 
+# dyna scheduler日志
+dyna_scheduler_logger = get_common_daily_logger('dyna_scheduler','dyna_scheduler')
+
 # xls scheduler调度日志
 xls_scheduler_logger = get_common_daily_logger('xls_scheduler','xls_scheduler')
 
