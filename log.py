@@ -139,8 +139,6 @@ INN_CAL_SCHEDULE = "cal_schedule"
 
 INN_CAL_MANAGER = 'cal_manager'
 
-INN_DYNA_SCHEDULR = 'dyna_scheduler'
-
 INN_DOWNLOADER_NAME="inn_downloader"
 
 INN_SERVER = "inn_server"
