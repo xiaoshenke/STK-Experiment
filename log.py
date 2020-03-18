@@ -40,6 +40,9 @@ event_logger = get_common_daily_logger('event','event')
 # xls-tracing-observer日志
 xls_tracing_observer_logger = get_common_daily_logger('xls_tracing_observer','xls_tracing_observer')
 
+# market-observer日志
+market_observer_logger = get_common_daily_logger('market_observer','market_observer')
+
 # xls stage traing日志
 xls_stage_tracing_logger = get_common_daily_logger('xls_stage','xls_stage')
 
