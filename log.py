@@ -37,6 +37,9 @@ def get_common_daily_logger(appender,save_name,day=''):
 # event logger
 event_logger = get_common_daily_logger('event','event')
 
+# observer-xls 日志
+observer_xls_logger = get_common_daily_logger('observer_xls','observer_xls')
+
 # xls-tracing-observer日志
 xls_tracing_observer_logger = get_common_daily_logger('xls_tracing_observer','xls_tracing_observer')
 
