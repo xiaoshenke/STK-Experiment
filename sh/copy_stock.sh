@@ -1,8 +1,9 @@
 #!/bin/bash
-# Usage: ./copy_stock.sh -d|-w|-f -i [-ig] your-code
+# Usage: ./copy_stock.sh -d|-w|-f -i [-ig] -sub your-code
 # copy shangzheng index, sh/copy_stock.sh -index 000001
 # copy shenzheng index, sh/copy_stock.sh -f -i 399001
 # copy chuangye index,sh/copy_stock.sh 399006
+# -sub(sub-dir): copy stock to current-dir/sub_dir/
 
 # 1:copy website 2:copy img
 open_type=1
@@ -13,13 +14,14 @@ is_index=0
 ignore_local=0
 
 appender="d"
+sub_dir=""
 
 # extract parameters
 while [ -n "$1" ]
 do
 	case "$1" in
 	-h)
-		echo Usage: sh/copy_stock.sh "-d[k]|-w[k]|-f -i[mg]|-w -index" your-code
+		echo Usage: sh/copy_stock.sh "-d[k]|-w[k]|-f -i[mg]|-w -index -sub" your-code
 		echo '''for eg. 
 copy shangzheng index, sh/copy_stock.sh -index 000001
 copy shenzheng index, sh/copy_stock.sh 399001'''
@@ -45,6 +47,10 @@ copy shenzheng index, sh/copy_stock.sh 399001'''
 		;;
 	-ig)
 		ignore_local=1
+		;;
+	-sub)
+		sub_dir=$2
+		shift
 		;;
 	-*)
 		echo $1 arg not supported!
@@ -84,7 +90,12 @@ fi
 # else,we will download and open image,carefully deal with -ignore parameter
 
 url=""
+cur_dir=`pwd`
 local_code=$origin_code.$appender.jpg
+if [ ${#sub_dir} -gt 0 ]
+then
+	local_code=$cur_dir/$sub_dir/$origin_code.$appender.jpg
+fi
 
 if [ $stock_type -eq 1 ]
 then
