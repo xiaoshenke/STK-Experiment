@@ -49,6 +49,9 @@ market_observer_logger = get_common_daily_logger('market_observer','market_obser
 # market->xls candidate observer日志
 xls_observer_logger = get_common_daily_logger('xls_observer','xls_observer')
 
+# xls-reporter-observer日志
+xls_reporter_observer_logger = get_common_daily_logger('xls_reporter_observer','xls_reporter_observer')
+
 # xls stage traing日志
 xls_stage_tracing_logger = get_common_daily_logger('xls_stage','xls_stage')
 
