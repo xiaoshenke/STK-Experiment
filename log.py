@@ -74,7 +74,7 @@ shape_scheduler_logger = get_common_daily_logger('shape_scheduler','shape_schedu
 xls_reporter_logger = get_common_daily_logger('xls_reporter','xls_reporter')
 
 # xls opener日志
-xls_opener = get_common_daily_logger('xls_opener','xls_opener')
+xls_opener_logger = get_common_daily_logger('xls_opener','xls_opener')
 
 # realtime_reporter日志
 realtime_reporter_logger = get_common_daily_logger('realtime_reporter','realtime_reporter')
