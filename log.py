@@ -88,6 +88,9 @@ manual_reporter_logger = get_common_daily_logger('manual_reporter','manual_repor
 # shape reporter日志
 shape_reporter_logger = get_common_daily_logger('shape_reporter','shape_reporter')
 
+# prebuild_candi日志
+prebuild_candi_logger = get_common_daily_logger('prebuild_candi','prebuild_candi')
+
 # cli操作日志
 cli_logger = get_common_daily_logger('cli','cli')
 
