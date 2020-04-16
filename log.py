@@ -34,6 +34,9 @@ def get_common_daily_logger(appender,save_name,day=''):
         _logger.setLevel(logging.DEBUG)
         return _logger
 
+# 用于临时作用
+tmp_logger = get_common_daily_logger('tmp','tmp')
+
 # event logger
 event_logger = get_common_daily_logger('event','event')
 
