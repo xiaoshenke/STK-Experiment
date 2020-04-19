@@ -97,6 +97,9 @@ prebuild_candi_logger = get_common_daily_logger('prebuild_candi','prebuild_candi
 # cli操作日志
 cli_logger = get_common_daily_logger('cli','cli')
 
+# operate日志
+operate_logger = get_common_daily_logger('operate','operate')
+
 def log_slow(msg):
 	try:
 		slow_logger = get_common_daily_logger('slow','slow')
