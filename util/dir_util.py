@@ -83,11 +83,14 @@ def get_report2_dir(day=''):
 def get_yidong_dir(day=''):
 	return "%s/yidong/"%get_daily_dir(day)
 
+def get_prebuild_dir(day=''):
+	return "%s/prebuild/"%get_daily_dir(day)
+
 def get_csv_path():
 	return "%s/data/csv_data/"%get_cur_dir()
 
 def init_dirs(day=''):
-	dirs = [get_daily_dir,get_apply_dir,get_filter_source_dir,get_fenshi_wholecodes_dir,get_report_dir,get_open_dir,get_create_source_dir,get_stage_source_dir,get_queryable_source_dir,get_realtime_report_dir,get_df_merger_source_dir,get_manual_report_dir,get_shape_report_dir,get_tracing_dir,get_dfa_source_dir,get_xls_report_dir,get_report2_dir,get_yidong_dir]
+	dirs = [get_daily_dir,get_apply_dir,get_filter_source_dir,get_fenshi_wholecodes_dir,get_report_dir,get_open_dir,get_create_source_dir,get_stage_source_dir,get_queryable_source_dir,get_df_merger_source_dir,get_manual_report_dir,get_shape_report_dir,get_tracing_dir,get_dfa_source_dir,get_xls_report_dir,get_report2_dir,get_yidong_dir,get_prebuild_dir,get_hot_xls_dir]
 	dirs = [ dir(day) for dir in dirs ]
 	import os
 	for dir in dirs:
