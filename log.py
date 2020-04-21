@@ -94,6 +94,9 @@ shape_reporter_logger = get_common_daily_logger('shape_reporter','shape_reporter
 # prebuild_candi日志
 prebuild_candi_logger = get_common_daily_logger('prebuild_candi','prebuild_candi')
 
+# pretracing_xls日志
+pretracing_xls_logger = get_common_daily_logger('pretracing_xls','pretracing_xls')
+
 # cli操作日志
 cli_logger = get_common_daily_logger('cli','cli')
 
