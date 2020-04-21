@@ -64,6 +64,9 @@ codes_merger_logger = get_common_daily_logger('codes_merger','codes_merger')
 # dyna scheduler日志
 dyna_scheduler_logger = get_common_daily_logger('dyna_scheduler','dyna_scheduler')
 
+# preview_scheduler日志
+preview_scheduler_logger = get_common_daily_logger('preview_scheduler','preview_scheduler')
+
 # dyna candidate日志
 dyna_candidate_logger = get_common_daily_logger('dyna_candidate','dyna_candidate')
 
