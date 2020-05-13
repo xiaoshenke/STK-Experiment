@@ -67,6 +67,9 @@ dyna_scheduler_logger = get_common_daily_logger('dyna_scheduler','dyna_scheduler
 # preview_scheduler日志
 preview_scheduler_logger = get_common_daily_logger('preview_scheduler','preview_scheduler')
 
+# preview_score_observer日志
+preview_score_observer_logger = get_common_daily_logger('preview_score_observer','preview_score_observer')
+
 # dyna candidate日志
 dyna_candidate_logger = get_common_daily_logger('dyna_candidate','dyna_candidate')
 
