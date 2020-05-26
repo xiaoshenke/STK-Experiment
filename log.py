@@ -76,6 +76,9 @@ dyna_candidate_logger = get_common_daily_logger('dyna_candidate','dyna_candidate
 # dyna derive日志
 dyna_derive_logger = get_common_daily_logger('dyna_derive','dyna_derive')
 
+# @dyna_xls_codes
+dyna_xls_logger = get_common_daily_logger('dyna_xls','dyna_xls')
+
 # xls scheduler调度日志
 xls_scheduler_logger = get_common_daily_logger('xls_scheduler','xls_scheduler')
 
