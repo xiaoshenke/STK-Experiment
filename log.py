@@ -106,6 +106,9 @@ prebuild_candi_logger = get_common_daily_logger('prebuild_candi','prebuild_candi
 # pretracing_xls日志
 pretracing_xls_logger = get_common_daily_logger('pretracing_xls','pretracing_xls')
 
+# risk0_advisor日志
+risk0_advisor_logger = get_common_daily_logger('risk0_advisor','risk0_advisor')
+
 # cli操作日志
 cli_logger = get_common_daily_logger('cli','cli')
 
