@@ -79,6 +79,8 @@ dyna_derive_logger = get_common_daily_logger('dyna_derive','dyna_derive')
 # candi-top-codes日志
 candi_top_codes_logger = get_common_daily_logger('candi_top_codes','candi_top_codes')
 
+# candi-shape-codes日志
+candi_shape_codes_logger = get_common_daily_logger('candi_shape_codes','candi_shape_codes')
 
 # @dyna_xls_codes
 dyna_xls_logger = get_common_daily_logger('dyna_xls','dyna_xls')
