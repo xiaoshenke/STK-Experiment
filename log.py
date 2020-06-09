@@ -85,6 +85,9 @@ candi_shape_codes_logger = get_common_daily_logger('candi_shape_codes','candi_sh
 # candi-compete-codes日志
 candi_compete_codes_logger = get_common_daily_logger('candi_compete_codes','candi_compete_codes')
 
+# comp_shape_codes日志
+comp_shape_codes_logger = get_common_daily_logger('comp_shape_codes','comp_shape_codes')
+
 # @dyna_xls_codes
 dyna_xls_logger = get_common_daily_logger('dyna_xls','dyna_xls')
 
