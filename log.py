@@ -130,6 +130,9 @@ risk0_advisor_logger = get_common_daily_logger('risk0_advisor','risk0_advisor')
 # safe_advisor日志
 safe_advisor_logger = get_common_daily_logger('safe_advisor','safe_advisor')
 
+# default_advisor 日志
+default_advisor_logger = get_common_daily_logger('default_advisor','default_advisor')
+
 # cli操作日志
 cli_logger = get_common_daily_logger('cli','cli')
 
