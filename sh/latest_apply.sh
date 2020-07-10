@@ -1,6 +1,5 @@
 #!/bin/bash
 # used to show the latest apply file of [xls]
-# TODO:
 
 if [ $# -ne 1 ]
 then
