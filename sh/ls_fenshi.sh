@@ -7,5 +7,4 @@ then
 	day=$1
 fi
 
-ls ../stk_daily/$day/apply
-
+ls ../stk_daily/$day/fenshi_wholecodes/
