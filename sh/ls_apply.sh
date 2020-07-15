@@ -7,5 +7,6 @@ then
 	day=$1
 fi
 
+echo ls ../stk_daily/$day/apply
 ls ../stk_daily/$day/apply
 
