@@ -13,6 +13,6 @@ then
 	dir=$1
 fi
 
-echo open $dir/*.jpg
+#echo open $dir/*.jpg
 open $dir/*.jpg
 
