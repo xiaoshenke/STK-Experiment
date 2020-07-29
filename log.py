@@ -139,6 +139,9 @@ safe_advisor_logger = get_common_daily_logger('safe_advisor','safe_advisor')
 # default_advisor 日志
 default_advisor_logger = get_common_daily_logger('default_advisor','default_advisor')
 
+# rotate_advisor 日志
+rotate_advisor_logger = get_common_daily_logger('rotate_advisor','rotate_advisor')
+
 # cli操作日志
 cli_logger = get_common_daily_logger('cli','cli')
 
