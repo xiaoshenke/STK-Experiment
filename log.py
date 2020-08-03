@@ -40,6 +40,9 @@ tmp_logger = get_common_daily_logger('tmp','tmp')
 # event logger
 event_logger = get_common_daily_logger('event','event')
 
+# xls_infoer日志
+xls_infoer_logger = get_common_daily_logger('xls_infoer','xls_infoer')
+
 # observer-xls 日志
 observer_xls_logger = get_common_daily_logger('observer_xls','observer_xls')
 
