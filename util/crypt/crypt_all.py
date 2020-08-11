@@ -39,6 +39,8 @@ def should_apply_crypt(file):
 		return False
 	if file.endswith(".pyc"):
 		return False
+	if file.endswith('.out'):
+		return False
 	if file in ignore_list:
 		return False
 
