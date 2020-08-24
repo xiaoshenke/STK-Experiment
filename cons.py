@@ -9,7 +9,7 @@ MANUAL_CODES_SERVER_PORT = 1235
 CHUANGYE_10_TO_20 = False
 
 # derive算子暂时忽略创业板个股
-FILTER_CHUANGYE = True
+FILTER_CHUANGYE = False
 
 CUR_PATH="/Users/wuxian/Desktop/STK-Experiment"
 CSV_PATH = "%s/data/csv_data/"%CUR_PATH
