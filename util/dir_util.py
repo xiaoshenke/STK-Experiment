@@ -23,6 +23,9 @@ def get_suma_dir(day=''):
 def get_codes_dir(day=''):
 	return "%s/codes/"%get_daily_dir(day)
 
+def get_xls_dir(day=''):
+	return "%s/xls/"%get_daily_dir(day)
+
 def get_realtime_report_dir(day=''):
         return "%s/realtime_report/"%get_daily_dir(day)
 
@@ -115,7 +118,7 @@ def get_csv_path():
 	return "%s/data/csv_data/"%get_cur_dir()
 
 def init_dirs(day=''):
-	dirs = [get_daily_dir,get_apply_dir,get_filter_source_dir,get_fenshi_wholecodes_dir,get_report_dir,get_open_dir,get_create_source_dir,get_stage_source_dir,get_queryable_source_dir,get_manual_report_dir,get_shape_report_dir,get_tracing_dir,get_dfa_source_dir,get_xls_report_dir,get_yidong_dir,get_prebuild_dir,get_hot_xls_dir,get_noon_report_dir,get_create_cache_dir,get_candi_source_dir,get_env_dir,get_advise_dir,get_plan_dir,get_suma_dir]
+	dirs = [get_daily_dir,get_apply_dir,get_filter_source_dir,get_fenshi_wholecodes_dir,get_report_dir,get_open_dir,get_create_source_dir,get_stage_source_dir,get_queryable_source_dir,get_manual_report_dir,get_shape_report_dir,get_tracing_dir,get_dfa_source_dir,get_xls_report_dir,get_yidong_dir,get_prebuild_dir,get_hot_xls_dir,get_noon_report_dir,get_create_cache_dir,get_candi_source_dir,get_env_dir,get_advise_dir,get_plan_dir,get_suma_dir,get_xls_dir]
 	dirs = [ dir(day) for dir in dirs ]
 	import os
 	for dir in dirs:
