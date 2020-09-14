@@ -154,6 +154,9 @@ cli_logger = get_common_daily_logger('cli','cli')
 # operate日志
 operate_logger = get_common_daily_logger('operate','operate')
 
+# crontab日志
+crontab_logger = get_common_daily_logger('crontab','crontab')
+
 def log_slow(msg):
 	try:
 		slow_logger = get_common_daily_logger('slow','slow')
