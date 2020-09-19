@@ -67,6 +67,9 @@ xls_stage_tracing_logger = get_common_daily_logger('xls_stage','xls_stage')
 # codes merger日志
 codes_merger_logger = get_common_daily_logger('codes_merger','codes_merger')
 
+# plan scheduler日志
+plan_scheduler_logger = get_common_daily_logger('plan_scheduler','plan_scheduler')
+
 # dyna scheduler日志
 dyna_scheduler_logger = get_common_daily_logger('dyna_scheduler','dyna_scheduler')
 
