@@ -163,6 +163,12 @@ operate_logger = get_common_daily_logger('operate','operate')
 # crontab日志
 crontab_logger = get_common_daily_logger('crontab','crontab')
 
+# plan-list日志
+plan_list_logger = get_common_daily_logger('plan_list','plan_list')
+
+# realtime_plan日志
+realtime_plan_logger = get_common_daily_logger('realtime_plan','realtime_plan')
+
 def log_slow(msg):
 	try:
 		slow_logger = get_common_daily_logger('slow','slow')
