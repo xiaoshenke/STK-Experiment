@@ -7,6 +7,7 @@ then
         day=$1
 fi
 
-echo tail ../stk_daily/$day/lifecycle_plan.log
+touch ../stk_daily/$day/lifecycle_plan.log
+echo tail -f ../stk_daily/$day/lifecycle_plan.log
 tail -f ../stk_daily/$day/lifecycle_plan.log
 

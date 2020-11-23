@@ -7,6 +7,7 @@ then
         day=$1
 fi
 
+touch ../stk_daily/$day/realtime_plan.log
 echo tail -f ../stk_daily/$day/realtime_plan.log
 tail -f ../stk_daily/$day/realtime_plan.log
 
