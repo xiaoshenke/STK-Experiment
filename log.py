@@ -130,6 +130,9 @@ realtime_reporter_logger = get_common_daily_logger('realtime_reporter','realtime
 # lifecycle_plan日志
 lifecycle_plan_logger = get_common_daily_logger('lifecycle_plan','lifecycle_plan')
 
+# upscore_plan日志
+upscore_plan_logger = get_common_daily_logger('upscore_plan','upscore_plan')
+
 # manual_reporter日志
 manual_reporter_logger = get_common_daily_logger('manual_reporter','manual_reporter')
 
