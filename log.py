@@ -133,6 +133,9 @@ lifecycle_plan_logger = get_common_daily_logger('lifecycle_plan','lifecycle_plan
 # upscore_plan日志
 upscore_plan_logger = get_common_daily_logger('upscore_plan','upscore_plan')
 
+# pretraces plan日志
+pretraces_plan_logger = get_common_daily_logger('pretraces_plan','pretraces_plan')
+
 # manual_reporter日志
 manual_reporter_logger = get_common_daily_logger('manual_reporter','manual_reporter')
 
