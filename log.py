@@ -95,10 +95,10 @@ candi_top_codes_logger = get_common_daily_logger('candi_top_codes','candi_top_co
 candi_shape_codes_logger = get_common_daily_logger('candi_shape_codes','candi_shape_codes')
 
 # candi-compete-codes日志
-candi_compete_codes_logger = get_common_daily_logger('candi_compete_codes','candi_compete_codes')
+#candi_compete_codes_logger = get_common_daily_logger('candi_compete_codes','candi_compete_codes')
 
 # comp_shape_codes日志
-comp_shape_codes_logger = get_common_daily_logger('comp_shape_codes','comp_shape_codes')
+#comp_shape_codes_logger = get_common_daily_logger('comp_shape_codes','comp_shape_codes')
 
 # manual_shape_codes日志
 manual_shape_codes_logger = get_common_daily_logger('manual_shape_codes','manual_shape_codes')
@@ -110,13 +110,13 @@ manual_buyer_logger = get_common_daily_logger('manual_buyer','manual_buyer')
 query_xls_logger = get_common_daily_logger('query_xls','query_xls')
 
 # @dyna_xls_codes
-dyna_xls_logger = get_common_daily_logger('dyna_xls','dyna_xls')
+#dyna_xls_logger = get_common_daily_logger('dyna_xls','dyna_xls')
 
 # xls scheduler调度日志
-xls_scheduler_logger = get_common_daily_logger('xls_scheduler','xls_scheduler')
+#xls_scheduler_logger = get_common_daily_logger('xls_scheduler','xls_scheduler')
 
 # shape scheduler调度日志
-shape_scheduler_logger = get_common_daily_logger('shape_scheduler','shape_scheduler')
+#shape_scheduler_logger = get_common_daily_logger('shape_scheduler','shape_scheduler')
 
 # xls reporter 日志
 xls_reporter_logger = get_common_daily_logger('xls_reporter','xls_reporter')
