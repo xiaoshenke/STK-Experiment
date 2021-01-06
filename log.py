@@ -142,6 +142,9 @@ pretraces_list_logger = get_common_daily_logger('pretraces_list','pretraces_list
 # pretraces plan日志
 pretraces_plan_logger = get_common_daily_logger('pretraces_plan','pretraces_plan')
 
+# guxing plan日志
+guxing_plan_logger = get_common_daily_logger('guxing_plan','guxing_plan')
+
 # manual_reporter日志
 manual_reporter_logger = get_common_daily_logger('manual_reporter','manual_reporter')
 
