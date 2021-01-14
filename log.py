@@ -142,6 +142,9 @@ xls_plan_logger = get_common_daily_logger('xls_plan','xls_plan')
 # pretraces list plan日志
 pretraces_list_logger = get_common_daily_logger('pretraces_list','pretraces_list')
 
+# manual_list 日志
+manual_list_logger = get_common_daily_logger('manual_list','manual_list')
+
 # pretraces plan日志
 pretraces_plan_logger = get_common_daily_logger('pretraces_plan','pretraces_plan')
 
