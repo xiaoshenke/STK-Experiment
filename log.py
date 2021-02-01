@@ -121,6 +121,9 @@ query_xls_logger = get_common_daily_logger('query_xls','query_xls')
 # xls reporter 日志
 xls_reporter_logger = get_common_daily_logger('xls_reporter','xls_reporter')
 
+# plan reporter日志
+plan_reporter_logger = get_common_daily_logger('plan_reporter','plan_reporter')
+
 # xls opener日志
 xls_opener_logger = get_common_daily_logger('xls_opener','xls_opener')
 
