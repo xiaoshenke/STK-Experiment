@@ -40,32 +40,14 @@ tmp_logger = get_common_daily_logger('tmp','tmp')
 # event logger
 event_logger = get_common_daily_logger('event','event')
 
-# xls_infoer日志
-xls_infoer_logger = get_common_daily_logger('xls_infoer','xls_infoer')
-
-# observer-xls 日志
-observer_xls_logger = get_common_daily_logger('observer_xls','observer_xls')
+# manual xls logger,见@engine.manual.xls.manual_xls
+manual_xls_logger = get_common_daily_logger('manual_xls','manual_xls')
 
 # xls-tracing-observer日志
 xls_tracing_observer_logger = get_common_daily_logger('xls_tracing_observer','xls_tracing_observer')
 
-# market-observer日志
-market_observer_logger = get_common_daily_logger('market_observer','market_observer')
-
-# result_observer日志
-result_observer_logger = get_common_daily_logger('result_observer','result_observer')
-
-# market->xls candidate observer日志
-xls_observer_logger = get_common_daily_logger('xls_observer','xls_observer')
-
-# xls-reporter-observer日志
-xls_reporter_observer_logger = get_common_daily_logger('xls_reporter_observer','xls_reporter_observer')
-
 # xls stage traing日志
 xls_stage_tracing_logger = get_common_daily_logger('xls_stage','xls_stage')
-
-# codes merger日志
-codes_merger_logger = get_common_daily_logger('codes_merger','codes_merger')
 
 # plan scheduler日志
 plan_scheduler_logger = get_common_daily_logger('plan_scheduler','plan_scheduler')
@@ -94,12 +76,6 @@ candi_top_codes_logger = get_common_daily_logger('candi_top_codes','candi_top_co
 # candi-shape-codes日志
 candi_shape_codes_logger = get_common_daily_logger('candi_shape_codes','candi_shape_codes')
 
-# candi-compete-codes日志
-#candi_compete_codes_logger = get_common_daily_logger('candi_compete_codes','candi_compete_codes')
-
-# comp_shape_codes日志
-#comp_shape_codes_logger = get_common_daily_logger('comp_shape_codes','comp_shape_codes')
-
 # manual_shape_codes日志
 manual_shape_codes_logger = get_common_daily_logger('manual_shape_codes','manual_shape_codes')
 
@@ -108,15 +84,6 @@ manual_buyer_logger = get_common_daily_logger('manual_buyer','manual_buyer')
 
 # query_xls日志
 query_xls_logger = get_common_daily_logger('query_xls','query_xls')
-
-# @dyna_xls_codes
-#dyna_xls_logger = get_common_daily_logger('dyna_xls','dyna_xls')
-
-# xls scheduler调度日志
-#xls_scheduler_logger = get_common_daily_logger('xls_scheduler','xls_scheduler')
-
-# shape scheduler调度日志
-#shape_scheduler_logger = get_common_daily_logger('shape_scheduler','shape_scheduler')
 
 # xls reporter 日志
 xls_reporter_logger = get_common_daily_logger('xls_reporter','xls_reporter')
