@@ -92,6 +92,7 @@ fi
 url=""
 cur_dir=`pwd`
 local_code=$origin_code.$appender.jpg
+# has sub-dir
 if [ ${#sub_dir} -gt 0 ]
 then
 	local_code=$cur_dir/$sub_dir/$origin_code.$appender.jpg
