@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#echo "$@"
 if [ $# -ne 1 ]
 then
 	echo usage: sh/open_in_safari.sh abc.jpg
