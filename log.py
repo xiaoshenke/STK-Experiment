@@ -100,6 +100,9 @@ realtime_reporter_logger = get_common_daily_logger('realtime_reporter','realtime
 # market plan日志
 market_plan_logger = get_common_daily_logger('market_plan','market_plan')
 
+# strongs plan日志
+strongs_plan_logger = get_common_daily_logger('strongs_plan','strongs_plan')
+
 # monitor_plan日志
 monitor_plan_logger = get_common_daily_logger('monitor_plan','monitor_plan')
 
