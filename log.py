@@ -103,6 +103,12 @@ market_plan_logger = get_common_daily_logger('market_plan','market_plan')
 # strongs plan日志
 strongs_plan_logger = get_common_daily_logger('strongs_plan','strongs_plan')
 
+# strongest plan日志
+strongest_plan_logger = get_common_daily_logger('strongest_plan','strongest_plan')
+
+# weakest plan日志
+weakest_plan_logger = get_common_daily_logger('weakest_plan','weakest_plan')
+
 # monitor_plan日志
 monitor_plan_logger = get_common_daily_logger('monitor_plan','monitor_plan')
 
