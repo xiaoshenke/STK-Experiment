@@ -43,6 +43,9 @@ event_logger = get_common_daily_logger('event','event')
 # manual xls logger,见@engine.manual.xls.manual_xls
 manual_xls_logger = get_common_daily_logger('manual_xls','manual_xls')
 
+# manual codes logger,见@engine.manual.codes.manual_codes
+manual_codes_logger = get_common_daily_logger('manual_codes','manual_codes')
+
 # xls-tracing-observer日志
 xls_tracing_observer_logger = get_common_daily_logger('xls_tracing_observer','xls_tracing_observer')
 
