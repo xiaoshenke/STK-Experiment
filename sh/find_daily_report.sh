@@ -35,7 +35,7 @@ done
 
 if [ ${#greps} -eq 0 ]
 then
-	echo find ../stk_daily/$day/xls_report/
+	echo find ../stk_daily/$day/report/
 	exit 0
 fi
 
