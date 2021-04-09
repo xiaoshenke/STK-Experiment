@@ -43,6 +43,9 @@ event_logger = get_common_daily_logger('event','event')
 # manual xls logger,见@engine.manual.xls.manual_xls
 manual_xls_logger = get_common_daily_logger('manual_xls','manual_xls')
 
+# watch recorder
+watch_recorder_logger = get_common_daily_logger('watch_recorder','watch_recorder')
+
 # manual codes logger,见@engine.manual.codes.manual_codes
 manual_codes_logger = get_common_daily_logger('manual_codes','manual_codes')
 
