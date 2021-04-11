@@ -88,6 +88,9 @@ manual_shape_codes_logger = get_common_daily_logger('manual_shape_codes','manual
 # manual-buyer日志
 manual_buyer_logger = get_common_daily_logger('manual_buyer','manual_buyer')
 
+# observe_scheduler日志
+observe_scheduler_logger = get_common_daily_logger('observe_scheduler','observe_scheduler')
+
 # query_xls日志
 query_xls_logger = get_common_daily_logger('query_xls','query_xls')
 
