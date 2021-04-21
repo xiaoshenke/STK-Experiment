@@ -49,6 +49,9 @@ watch_recorder_logger = get_common_daily_logger('watch_recorder','watch_recorder
 # manual codes logger,见@engine.manual.codes.manual_codes
 manual_codes_logger = get_common_daily_logger('manual_codes','manual_codes')
 
+# report recorder日志,见@engine.record.report_recorder
+report_recorder_logger = get_common_daily_logger('report_recorder','report_recorder')
+
 # xls-tracing-observer日志
 xls_tracing_observer_logger = get_common_daily_logger('xls_tracing_observer','xls_tracing_observer')
 
