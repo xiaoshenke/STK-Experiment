@@ -118,6 +118,9 @@ shouban_plan_logger = get_common_daily_logger('shouban_plan','shouban_plan')
 # ban24 plan日志
 ban24_plan_logger = get_common_daily_logger('ban24_plan','ban24_plan')
 
+# chaozuo plan日志
+chaozuo_plan_logger = get_common_daily_logger('chaozuo_plan','chaozuo_plan')
+
 # strongs plan日志
 strongs_plan_logger = get_common_daily_logger('strongs_plan','strongs_plan')
 
