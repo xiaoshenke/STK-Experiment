@@ -41,6 +41,8 @@ def should_apply_crypt(file):
 		return False
 	if file.endswith('.out'):
 		return False
+	if file.endswith('.log'):
+		return False
 	if file in ignore_list:
 		return False
 
