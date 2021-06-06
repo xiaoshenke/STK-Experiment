@@ -169,6 +169,9 @@ guxing_list_logger = get_common_daily_logger('guxing_list','guxing_list')
 # manual_reporter日志
 manual_reporter_logger = get_common_daily_logger('manual_reporter','manual_reporter')
 
+# 见@web.plan_report_handler
+report_handler_logger = get_common_daily_logger('report_handler','report_handler')
+
 # shape reporter日志
 shape_reporter_logger = get_common_daily_logger('shape_reporter','shape_reporter')
 
