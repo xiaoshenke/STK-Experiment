@@ -9,3 +9,6 @@ fi
 
 echo python inn_strategy/ana_cli.py open_csv $file
 python inn_strategy/ana_cli.py open_csv $file
+
+sleep 1.0
+open *.jpg
