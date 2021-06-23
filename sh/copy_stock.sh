@@ -7,7 +7,7 @@
 
 # 1:copy website 2:copy img
 open_type=1
-# 1:dk 2:wk 3:mk 4:f
+# 1:dk 2:wk 3:mk 4:f 5:all
 stock_type=1
 # 0:not index 1:index
 is_index=0
@@ -30,6 +30,10 @@ copy shenzheng index, sh/copy_stock.sh 399001'''
 	-d | -dk)
 		stock_type=1
 		appender="d"
+		;;
+	-a | -all)
+		stock_type=5
+		open_type=2
 		;;
 	-w | -wk)
 		stock_type=2
@@ -96,6 +100,15 @@ local_code=$origin_code.$appender.jpg
 if [ ${#sub_dir} -gt 0 ]
 then
 	local_code=$cur_dir/$sub_dir/$origin_code.$appender.jpg
+fi
+
+if [ $stock_type -eq 5 ]
+then
+	echo sh/copy_stock -i $origin_code
+	sh/copy_stock.sh -i $origin_code
+	echo sh/copy_stock -i -f $origin_code
+	sh/copy_stock.sh -i -f $origin_code
+	exit 2
 fi
 
 if [ $stock_type -eq 1 ]
