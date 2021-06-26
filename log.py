@@ -118,6 +118,9 @@ realtime_reporter_logger = get_common_daily_logger('realtime_reporter','realtime
 # market-observer日志
 market_observer_logger = get_common_daily_logger('market_observer','market_observer')
 
+# 实际是在@market-observer中,分出market的部分 分开再写一遍日志
+market_logger = get_common_daily_logger('market','market')
+
 # market plan日志
 market_plan_logger = get_common_daily_logger('market_plan','market_plan')
 
