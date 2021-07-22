@@ -121,6 +121,9 @@ market_observer_logger = get_common_daily_logger('market_observer','market_obser
 # 实际是在@market-observer中,分出market的部分 分开再写一遍日志
 market_logger = get_common_daily_logger('market','market')
 
+# 实际是在@market-observer中,分出top-amount的部分
+top_amount_logger = get_common_daily_logger('top_amount','top_amount')
+
 # market plan日志
 market_plan_logger = get_common_daily_logger('market_plan','market_plan')
 
