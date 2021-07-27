@@ -37,6 +37,9 @@ def get_common_daily_logger(appender,save_name,day=''):
 # 用于临时作用
 tmp_logger = get_common_daily_logger('tmp','tmp')
 
+# 用于分析性能问题
+cost_logger = get_common_daily_logger('cost','cost')
+
 # event logger
 event_logger = get_common_daily_logger('event','event')
 
