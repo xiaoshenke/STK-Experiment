@@ -82,18 +82,6 @@ preview_score_observer_logger = get_common_daily_logger('preview_score_observer'
 # dyna candidate日志
 dyna_candidate_logger = get_common_daily_logger('dyna_candidate','dyna_candidate')
 
-# dyna derive日志
-dyna_derive_logger = get_common_daily_logger('dyna_derive','dyna_derive')
-
-# xls_shape_codes日志
-xls_shape_codes_logger = get_common_daily_logger('xls_shape_codes','xls_shape_codes')
-
-# candi-top-codes日志
-candi_top_codes_logger = get_common_daily_logger('candi_top_codes','candi_top_codes')
-
-# candi-shape-codes日志
-candi_shape_codes_logger = get_common_daily_logger('candi_shape_codes','candi_shape_codes')
-
 # manual_shape_codes日志
 manual_shape_codes_logger = get_common_daily_logger('manual_shape_codes','manual_shape_codes')
 
@@ -126,6 +114,12 @@ market_logger = get_common_daily_logger('market','market')
 
 # 实际是在@market-observer中,分出top-amount的部分
 top_amount_logger = get_common_daily_logger('top_amount','top_amount')
+
+# 分离出top suggest的部分
+top_suggest_logger = get_common_daily_logger('top_suggest','top_suggest')
+
+# 分离出stock observer的日志
+stock_logger = get_common_daily_logger('stock','stock')
 
 # market plan日志
 market_plan_logger = get_common_daily_logger('market_plan','market_plan')
