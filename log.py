@@ -106,6 +106,9 @@ xls_opener_logger = get_common_daily_logger('xls_opener','xls_opener')
 # realtime_reporter日志
 realtime_reporter_logger = get_common_daily_logger('realtime_reporter','realtime_reporter')
 
+# last-trade日志
+last_trade_logger = get_common_daily_logger('last_trade','last_trade')
+
 # market-observer日志
 market_observer_logger = get_common_daily_logger('market_observer','market_observer')
 
