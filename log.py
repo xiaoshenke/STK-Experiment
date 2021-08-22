@@ -124,6 +124,9 @@ top_suggest_logger = get_common_daily_logger('top_suggest','top_suggest')
 # 分离出stock observer的日志
 stock_logger = get_common_daily_logger('stock','stock')
 
+# stock-scheduler日志
+stock_scheduler_logger = get_common_daily_logger('stock_scheduler','stock_scheduler')
+
 # market plan日志
 market_plan_logger = get_common_daily_logger('market_plan','market_plan')
 
