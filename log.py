@@ -112,6 +112,8 @@ last_trade_logger = get_common_daily_logger('last_trade','last_trade')
 # market-observer日志
 market_observer_logger = get_common_daily_logger('market_observer','market_observer')
 
+prop_observer_logger = get_common_daily_logger('prop_observer','prop_observer')
+
 # 实际是在@market-observer中,分出market的部分 分开再写一遍日志
 market_logger = get_common_daily_logger('market','market')
 
