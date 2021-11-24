@@ -1,10 +1,12 @@
 #!/bin/bash
-# Usage: ./open_xueqiu.sh code
+# Usage: ./open_xueqiu.sh [code]
 
 if [ $# -ne 1 ]
 then
-	echo Usage:./open_xueqiu.sh code
-	exit 2
+	url=https://xueqiu.com/hq
+	echo we will open xueqiu main website: $url...
+	open $url
+	exit 1
 fi
 
 code=$1
