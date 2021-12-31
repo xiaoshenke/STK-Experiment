@@ -60,6 +60,18 @@ report_recorder_detail_logger = get_common_daily_logger('report_recorder_detail'
 # buyer id日志,见@engine.record.buyer_recorder
 buyer_id_logger = get_common_daily_logger('buyer_id','buyer_id')
 
+# longhu-observe日志
+longhu_observe_logger = get_common_daily_logger('longhu_observe','longhu_observe')
+
+# high-observe日志
+high_observe_logger = get_common_daily_logger('observe','high_observe')
+
+# zhz500-observe日志
+zhz500_observe_logger = get_common_daily_logger('observe','zhz500_observe')
+
+# market-observe日志
+market_observe_logger = get_common_daily_logger('observe','market_observe')
+
 # time-observer日志
 time_observer_logger = get_common_daily_logger('time_observer','time_observer')
 
@@ -111,13 +123,7 @@ realtime_reporter_logger = get_common_daily_logger('realtime_reporter','realtime
 # last-trade日志
 last_trade_logger = get_common_daily_logger('last_trade','last_trade')
 
-# market-observer日志
-market_observer_logger = get_common_daily_logger('market_observer','market_observer')
-
 prop_observer_logger = get_common_daily_logger('prop_observer','prop_observer')
-
-# 实际是在@market-observer中,分出market的部分 分开再写一遍日志
-market_logger = get_common_daily_logger('market','market')
 
 # 实际是在@market-observer中,分出top-amount的部分
 top_amount_logger = get_common_daily_logger('top_amount','top_amount')
@@ -130,9 +136,6 @@ stock_logger = get_common_daily_logger('stock','stock')
 
 # stock-scheduler日志
 stock_scheduler_logger = get_common_daily_logger('stock_scheduler','stock_scheduler')
-
-# market plan日志
-market_plan_logger = get_common_daily_logger('market_plan','market_plan')
 
 # shouban plan日志
 shouban_plan_logger = get_common_daily_logger('shouban_plan','shouban_plan')
