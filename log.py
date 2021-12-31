@@ -60,17 +60,23 @@ report_recorder_detail_logger = get_common_daily_logger('report_recorder_detail'
 # buyer id日志,见@engine.record.buyer_recorder
 buyer_id_logger = get_common_daily_logger('buyer_id','buyer_id')
 
+# pool-observe日志
+pool_observe_logger = get_common_daily_logger('pool_observe','pool_observe')
+
+# xls-observe日志
+xls_observe_logger = get_common_daily_logger('xls_observe','xls_observe')
+
 # longhu-observe日志
 longhu_observe_logger = get_common_daily_logger('longhu_observe','longhu_observe')
 
 # high-observe日志
-high_observe_logger = get_common_daily_logger('observe','high_observe')
+high_observe_logger = get_common_daily_logger('high_observe','high_observe')
 
 # zhz500-observe日志
-zhz500_observe_logger = get_common_daily_logger('observe','zhz500_observe')
+zhz500_observe_logger = get_common_daily_logger('zhz500_observe','zhz500_observe')
 
 # market-observe日志
-market_observe_logger = get_common_daily_logger('observe','market_observe')
+market_observe_logger = get_common_daily_logger('market_observe','market_observe')
 
 # time-observer日志
 time_observer_logger = get_common_daily_logger('time_observer','time_observer')
