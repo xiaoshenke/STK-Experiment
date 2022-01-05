@@ -1,5 +1,5 @@
 #!/bin/bash
-# usage sh/tail_lifecycle.sh [day]
+# usage sh/tail_realtime.sh [day]
 
 day=`date +'%Y-%m-%d'`
 if [ $# -eq 1 ]

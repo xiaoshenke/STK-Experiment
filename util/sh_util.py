@@ -32,7 +32,5 @@ def sh_wrapper_string(args,out=PIPE):
 			ret = ret + out
     	return ret
 
-
 if __name__ == "__main__":
-	print exe_shell("echo.sh")
-
+	pass
