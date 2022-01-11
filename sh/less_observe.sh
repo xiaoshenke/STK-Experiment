@@ -24,7 +24,7 @@ then
 fi
 
 idx=$1
-name=""
+name=$1
 if [[ $idx == "1" ]]
 then
 	name="market"
@@ -49,8 +49,23 @@ then
 elif [[ $idx == "7" ]]
 then
 	name="codes"
-else
-	name="codes"
+fi
+
+echo name:$name
+valids=(
+market
+zhz500
+longhu
+high
+pool
+xls
+codes
+)
+
+if [[ ! "${valids[@]}" =~ "${name}" ]]
+then
+	echo not support name:$name
+	exit 2
 fi
 
 touch ../stk_daily/$day/"$name"_observe.log
