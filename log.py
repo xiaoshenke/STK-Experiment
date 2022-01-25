@@ -126,6 +126,9 @@ plan_reporter_logger = get_common_daily_logger('plan_reporter','plan_reporter')
 # xls opener日志
 xls_opener_logger = get_common_daily_logger('xls_opener','xls_opener')
 
+# observe opener日志
+observe_opener_logger = get_common_daily_logger('observe_opener','observe_opener')
+
 # realtime_reporter日志
 realtime_reporter_logger = get_common_daily_logger('realtime_reporter','realtime_reporter')
 
