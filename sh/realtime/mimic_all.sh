@@ -22,3 +22,5 @@ python realtime/observe/longhu.py set --mimic $mimic
 echo python realtime/observe/market.py set --mimic $mimic
 python realtime/observe/market.py set --mimic $mimic
 
+echo python realtime/observe/xls.py set --mimic $mimic
+python realtime/observe/xls.py set --mimic $mimic
