@@ -4,6 +4,9 @@
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
+echo python realtime/observe/upstp.py open_last
+python realtime/observe/upstp.py open_last
+
 echo python realtime/observe/stocks.py open_last
 python realtime/observe/stocks.py open_last
 
