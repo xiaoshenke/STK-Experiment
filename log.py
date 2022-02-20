@@ -81,6 +81,9 @@ high_observe_logger = get_common_daily_logger('high_observe','high_observe')
 # zhz500-observe日志
 zhz500_observe_logger = get_common_daily_logger('zhz500_observe','zhz500_observe')
 
+# upstp-observe日志
+upstp_observe_logger = get_common_daily_logger('upstp_observe','upstp_observe')
+
 # market-observe日志
 market_observe_logger = get_common_daily_logger('market_observe','market_observe')
 
