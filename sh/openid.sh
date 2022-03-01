@@ -6,7 +6,7 @@ mode="jpg"
 while [ -n "$1" ]
 do
 	case "$1" in
-	-mode)
+	-mode|--mode)
 		mode=$2
 		shift
 		;;
