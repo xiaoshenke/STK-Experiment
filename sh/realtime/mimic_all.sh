@@ -16,11 +16,11 @@ python realtime/observe/upstp.py set --mimic $mimic
 echo python realtime/observe/stocks.py set --mimic $mimic
 python realtime/observe/stocks.py set --mimic $mimic
 
-echo python realtime/observe/pool.py set --mimic $mimic
-python realtime/observe/pool.py set --mimic $mimic
+#echo python realtime/observe/pool.py set --mimic $mimic
+#python realtime/observe/pool.py set --mimic $mimic
 
-echo python realtime/observe/longhu.py set --mimic $mimic
-python realtime/observe/longhu.py set --mimic $mimic
+#echo python realtime/observe/longhu.py set --mimic $mimic
+#python realtime/observe/longhu.py set --mimic $mimic
 
 echo python realtime/observe/market.py set --mimic $mimic
 python realtime/observe/market.py set --mimic $mimic
