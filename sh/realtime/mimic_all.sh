@@ -27,3 +27,6 @@ python realtime/observe/market.py set --mimic $mimic
 
 echo python realtime/observe/xls.py set --mimic $mimic
 python realtime/observe/xls.py set --mimic $mimic
+
+echo python realtime/observe/bind.py set --mimic $mimic
+python realtime/observe/bind.py set --mimic $mimic
