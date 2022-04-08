@@ -8,4 +8,5 @@ Numpy
 pycrypto
 watchdog
 sh
+threadpool
 #sortedcontainers

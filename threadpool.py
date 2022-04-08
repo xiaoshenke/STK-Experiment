@@ -139,9 +139,9 @@ class WorkerThread(threading.Thread):
     def run(self):
         """Repeatedly process the job queue until told to exit."""
         while True:
-	    print 'in workerThread'
+	    #print 'in workerThread'
             if self._dismissed.isSet():
-		print 'break because self._dismissed.isSet'
+		#print 'break because self._dismissed.isSet'
                 # we are dismissed, break out of loop
                 break
             # get next work request. If we don't get a new request from the
@@ -150,24 +150,24 @@ class WorkerThread(threading.Thread):
 	    request = None
             try:
                 request = self._requests_queue.get(True, self._poll_timeout)
-		print 'success get:%s'%request
+		#print 'success get:%s'%request
             except Queue.Empty:
-		print 'queue is empty,call continue'
+		#print 'queue is empty,call continue'
                 continue
             else:
                 if self._dismissed.isSet():
-		    print 'break because self._dismissed.isSet'
+		    #print 'break because self._dismissed.isSet'
                     # we are dismissed, put back request in queue and exit loop
                     self._requests_queue.put(request)
                     break
                 try:
-		    print 'before call request.callable'
-		    print request.callable
-		    print '%s'%(request.args)
+		    #print 'before call request.callable'
+		    #print request.callable
+		    #print '%s'%(request.args)
                     result = request.callable(*request.args, **request.kwds)
                     self._results_queue.put((request, result))
                 except:
-		    print 'request.exception is true.'
+		    #print 'request.exception is true.'
                     request.exception = True
                     self._results_queue.put((request, sys.exc_info()))
 
@@ -310,7 +310,7 @@ class ThreadPool:
         assert isinstance(request, WorkRequest)
         # don't reuse old work requests
         assert not getattr(request, 'exception', None)
-	print 'self._requests_queue.put'
+	#print 'self._requests_queue.put'
         self._requests_queue.put(request, block, timeout)
         self.workRequests[request.requestID] = request
 
