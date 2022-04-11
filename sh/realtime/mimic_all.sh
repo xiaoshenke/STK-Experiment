@@ -33,3 +33,6 @@ python realtime/observe/xls.py set --mimic $mimic
 
 echo python realtime/observe/bind.py set --mimic $mimic
 python realtime/observe/bind.py set --mimic $mimic
+
+echo python realtime/buyer/observe_cli.py set --mimic $mimic
+python realtime/buyer/observe_cli.py set --mimic $mimic

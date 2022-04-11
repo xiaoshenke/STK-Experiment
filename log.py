@@ -87,6 +87,9 @@ zhz500_observe_logger = get_common_daily_logger('zhz500_observe','zhz500_observe
 # bind-observe日志
 bind_observe_logger = get_common_daily_logger('bind_observe','bind_observe')
 
+# buyer_scheduler日志
+buyer_scheduler_logger = get_common_daily_logger('buyer_scheduler','buyer_scheduler')
+
 # upstp-observe日志
 upstp_observe_logger = get_common_daily_logger('upstp_observe','upstp_observe')
 

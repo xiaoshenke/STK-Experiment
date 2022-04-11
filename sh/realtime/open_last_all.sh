@@ -28,5 +28,5 @@ python realtime/observe/bind.py open_last
 echo python realtime/observe/xls.py open_last
 python realtime/observe/xls.py open_last
 
-
-
+echo python realtime/buyer/observe_cli.py open_last
+python realtime/buyer/observe_cli.py open_last
