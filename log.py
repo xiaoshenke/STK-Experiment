@@ -74,6 +74,9 @@ zhz500_observe_logger = get_common_daily_logger('zhz500_observe','zhz500_observe
 # bind-observe日志
 bind_observe_logger = get_common_daily_logger('bind_observe','bind_observe')
 
+# mline-observe日志
+mline_observe_logger = get_common_daily_logger('mline_observe','mline_observe')
+
 # buyer_scheduler日志
 buyer_scheduler_logger = get_common_daily_logger('buyer_scheduler','buyer_scheduler')
 
