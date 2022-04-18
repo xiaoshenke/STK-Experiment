@@ -242,6 +242,7 @@ def deal_cmd():
 			print "get_origin_name you have to input your crypted-file-name"
 			sys.exit()
 
+		#print u'util.crypt_all.deal_cmd,get_origin_name:%s'%sys.argv[2]
 		origin = get_origin_name(sys.argv[2])
 		print origin
 		return
@@ -262,4 +263,3 @@ def deal_cmd():
 if __name__ == "__main__":
 	import sys
 	deal_cmd()
-
