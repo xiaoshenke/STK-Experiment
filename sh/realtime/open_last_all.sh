@@ -10,6 +10,9 @@ python realtime/observe/market.py open_last
 echo python realtime/observe/stocks.py open_last
 python realtime/observe/stocks.py open_last
 
+echo python realtime/observe/longhu.py open_last
+python realtime/observe/longhu.py open_last
+
 echo python realtime/observe/chaozuo.py open_last
 python realtime/observe/chaozuo.py open_last
 
