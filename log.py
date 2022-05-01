@@ -77,6 +77,9 @@ bind_observe_logger = get_common_daily_logger('bind_observe','bind_observe')
 # mline-observe日志
 mline_observe_logger = get_common_daily_logger('mline_observe','mline_observe')
 
+# dig-observe日志
+dig_observe_logger = get_common_daily_logger('dig_observe','dig_observe')
+
 # buyer_scheduler日志
 buyer_scheduler_logger = get_common_daily_logger('buyer_scheduler','buyer_scheduler')
 
