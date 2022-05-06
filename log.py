@@ -133,6 +133,14 @@ def log_slow(msg):
 		print "log_slow"
 		print e
 
+# 网络错误单独做成日志
+net_error_logger = get_common_daily_logger('net_error','net_error')
+def save_net_error(msg):
+	try:
+		net_error_logger.error(str(msg))
+	except Exception,e:
+		pass
+
 error_logger = get_common_daily_logger('error','error')
 def save_error(msg):
 	try:

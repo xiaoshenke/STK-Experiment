@@ -4,11 +4,13 @@ import time
 from log import logger
 from util.mini import to_float2
 
-def print_exe_time():
+def print_exe_time(do_print=True):
 	def _print_exe_time(func):
 		def _real(*args,**kwargs):
 			start = time.time()
 			ret = func(*args,**kwargs)
+			if not do_print:
+				return ret
 			if "at 0x" in str(func):
 				idx = str(func).index("at 0x")			
 				print "method:%s runs %s seconds!"%(str(func)[:idx-1]+">",to_float2(time.time()-start))
