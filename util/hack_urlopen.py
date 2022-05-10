@@ -16,7 +16,6 @@ for sig in ('TERM', 'HUP', 'INT'):
 	# exception:signal only works in main thread
 	#signal.signal(getattr(signal, 'SIG'+sig), quit);
 
-
 class WrapperRead:
     def __init__(self,r_obj):
 	self.r_obj=r_obj
@@ -33,6 +32,7 @@ class SocketTimeoutException(Exception):
 	Exception.__init__(self,name)
 
 def urlopen_till_success(request,timeout):
+	from log import save_net_error
 	try_time = 1
 	import time
 	sleep_time = 1
@@ -41,7 +41,8 @@ def urlopen_till_success(request,timeout):
 		try:
 			return urlopen(request,socket_timeout)
 		except SocketTimeoutException,e:
-			print e
+			#print e
+			save_net_error(str(e))
 			socket_timeout = socket_timeout+1
 		except Http456Exception,e:
 			print e
@@ -51,7 +52,8 @@ def urlopen_till_success(request,timeout):
 		except Exception,e:
 			print e
 			pass
-		logger.debug("urlopen_till_success request:%s try_time:%s sleep:%s"%(request,try_time,sleep_time))
+		#logger.debug("urlopen_till_success request:%s try_time:%s sleep:%s"%(request,try_time,sleep_time))
+		save_net_error("urlopen_till_success request:%s try_time:%s sleep:%s"%(request,try_time,sleep_time))
 		try_time = try_time+1
 		try:
 			time.sleep(sleep_time)
@@ -77,5 +79,5 @@ def urlopen(request,timeout):
 	except Exception,e:
 		raise e
 			
-
-
+if __name__ == "__main__":
+	pass
