@@ -42,10 +42,11 @@ def urlopen_till_success(request,timeout):
 			return urlopen(request,socket_timeout)
 		except SocketTimeoutException,e:
 			#print e
-			save_net_error(str(e))
+			save_net_error('urlopen_till_success,%s'%str(e))
 			socket_timeout = socket_timeout+1
 		except Http456Exception,e:
-			print e
+			#print e
+			save_net_error('urlopen_till_success,%s'%(str(e)))
 			sleep_time = sleep_time+15
 			if sleep_time < 60:
 				sleep_time = 60
