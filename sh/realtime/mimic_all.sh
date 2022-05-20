@@ -42,6 +42,9 @@ python realtime/buyer/observe_cli.py set --mimic $mimic
 echo python realtime/observe/mline.py set --mimic $mimic
 python realtime/observe/mline.py set --mimic $mimic
 
+echo python realtime/observe/change.py set --mimic $mimic
+python realtime/observe/change.py set --mimic $mimic
+
 echo python realtime/observe/dig.py set --mimic $mimic
 python realtime/observe/dig.py set --mimic $mimic
 

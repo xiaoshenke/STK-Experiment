@@ -80,6 +80,9 @@ mline_observe_logger = get_common_daily_logger('mline_observe','mline_observe')
 # dig-observe日志
 dig_observe_logger = get_common_daily_logger('dig_observe','dig_observe')
 
+# change-observe日志
+change_observe_logger = get_common_daily_logger('change_observe','change_observe')
+
 # buyer_scheduler日志
 buyer_scheduler_logger = get_common_daily_logger('buyer_scheduler','buyer_scheduler')
 
