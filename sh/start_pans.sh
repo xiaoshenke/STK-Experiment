@@ -17,3 +17,4 @@ nohup python engine/observe/change/cli.py start_engine_mode >>observe.change.log
 
 nohup python engine/observe/mline/cli.py start_engine_mode >>observe.mline.log 2>&1 &
 
+nohup python engine/observe/xls/cli.py start_engine_mode >>observe.xls.log 2>&1 &
