@@ -34,6 +34,9 @@ python realtime/observe/mline.py open_last
 echo python realtime/observe/change.py open_last
 python realtime/observe/change.py open_last
 
+echo python realtime/observe/pools.py open_last
+python realtime/observe/pools.py open_last
+
 echo python realtime/observe/dig.py open_last
 python realtime/observe/dig.py open_last
 

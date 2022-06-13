@@ -20,3 +20,5 @@ nohup python engine/observe/mline/cli.py start_engine_mode >>observe.mline.log 2
 nohup python engine/observe/xls/cli.py start_engine_mode >>observe.xls.log 2>&1 &
 
 nohup python engine/observe/chaozuo/cli.py start_engine_mode >>observe.chaozuo.log 2>&1 &
+
+nohup python engine/observe/pools/cli.py start_engine_mode >>observe.pools.log 2>&1 &
