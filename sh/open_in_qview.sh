@@ -17,7 +17,7 @@ fi
 if [[ $jpg =~ "/*.jpg" ]]
 then
 	dir=${jpg%/*}
-	code=`ls $dir|grep jpg|head -n 1`
+	code=`ls $dir|grep jpg|sort|head -n 1`
 	jpg=$dir/$code
 fi
 
