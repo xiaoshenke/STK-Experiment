@@ -70,6 +70,9 @@ then
 
 	echo python realtime/observe/change.py open_last
 	python realtime/observe/change.py open_last --day $day --time_str $time_str
+
+	#echo python realtime/observe/xls.py open_last
+	#python realtime/observe/xls.py open_last --day $day --time_str $time_str
 elif [[ $mode == "bind" ]]
 then
 	echo python realtime/observe/upstp.py open_last
