@@ -21,6 +21,6 @@ then
 	jpg=$dir/$code
 fi
 
-echo open -a /Applications/qView.app/ $jpg
+#echo open -a /Applications/qView.app/ $jpg
 open -a /Applications/qView.app/ $jpg
 
