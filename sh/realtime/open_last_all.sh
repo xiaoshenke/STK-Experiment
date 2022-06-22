@@ -34,11 +34,11 @@ echo 当前支持的mode为chaozuo,market,pool,default,dapiao
 
 if [[ $mode == "chaozuo" ]]
 then
-	echo python realtime/observe/high.py open_last
-	python realtime/observe/high.py open_last --day $day --time_str $time_str
-
 	echo python realtime/observe/chaozuo.py open_last
 	python realtime/observe/chaozuo.py open_last --day $day --time_str $time_str
+
+	echo python realtime/observe/high.py open_last
+	python realtime/observe/high.py open_last --day $day --time_str $time_str
 
 	#echo python realtime/observe/stocks.py open_last
 	#python realtime/observe/stocks.py open_last --day $day --time_str $time_str
@@ -46,7 +46,10 @@ elif [[ $mode == "xls" ]]
 then
 	echo python realtime/observe/xls.py open_last
 	python realtime/observe/xls.py open_last --day $day --time_str $time_str
-
+elif [[ $mode == "buyer" ]] || [[ $mode == "buy" ]]
+then
+	echo python realtime/buyer/observe_cli.py open_last
+	python realtime/buyer/observe_cli.py open_last --day $day --time_str $time_str
 elif [[ $mode == "dapiao" ]]
 then
 	echo python realtime/observe/zhz500.py open_last
@@ -57,22 +60,26 @@ then
 
 	echo python realtime/observe/stocks.py open_last
 	python realtime/observe/stocks.py open_last --day $day --time_str $time_str
+elif [[ $mode == "pools" ]]
+then
+	echo python realtime/observe/pools.py open_last
+	python realtime/observe/pools.py open_last --day $day --time_str $time_str
 elif [[ $mode == "pool" ]]
 then
+	echo python realtime/observe/upstp.py open_last
+	python realtime/observe/upstp.py open_last --day $day --time_str $time_str
+
+	echo python realtime/observe/bind.py open_last
+	python realtime/observe/bind.py open_last --day $day --time_str $time_str
+
 	echo python realtime/observe/mline.py open_last
 	python realtime/observe/mline.py open_last --day $day --time_str $time_str
 
 	echo python realtime/observe/pools.py open_last
 	python realtime/observe/pools.py open_last --day $day --time_str $time_str
 
-	echo python realtime/observe/upstp.py open_last
-	python realtime/observe/upstp.py open_last --day $day --time_str $time_str
-
 	echo python realtime/observe/change.py open_last
 	python realtime/observe/change.py open_last --day $day --time_str $time_str
-
-	echo python realtime/observe/bind.py open_last
-	python realtime/observe/bind.py open_last --day $day --time_str $time_str
 elif [[ $mode == "bind" ]]
 then
 	echo python realtime/observe/upstp.py open_last
@@ -80,17 +87,23 @@ then
 
 	echo python realtime/observe/bind.py open_last
 	python realtime/observe/bind.py open_last --day $day --time_str $time_str
+elif [[ $mode == "upstp" ]]
+then
+	echo python realtime/observe/upstp.py open_last
+	python realtime/observe/upstp.py open_last --day $day --time_str $time_str
 elif [[ $mode == "market" ]]
 then
+	echo python realtime/observe/stocks.py open_last
+	python realtime/observe/stocks.py open_last --day $day --time_str $time_str
+
 	echo python realtime/observe/market.py open_last
 	python realtime/observe/market.py open_last --day $day --time_str $time_str
 
 	echo python realtime/observe/change.py open_last
 	python realtime/observe/change.py open_last --day $day --time_str $time_str
 
-	echo python realtime/observe/stocks.py open_last
-	python realtime/observe/stocks.py open_last --day $day --time_str $time_str
-else
+elif [[ $mode == "default" ]]
+then
 	echo python realtime/observe/market.py open_last
 	python realtime/observe/market.py open_last --day $day --time_str $time_str
 
@@ -129,4 +142,6 @@ else
 
 	#echo python realtime/buyer/observe_cli.py open_last
 	#python realtime/buyer/observe_cli.py open_last --day $day --time_str $time_str
+else
+	echo 不支持$mode
 fi

@@ -7,6 +7,7 @@ then
 	exit 0
 fi
 txt=$1
-echo open -a /Applications/TextEdit.app/ $txt
+
+#echo open -a /Applications/TextEdit.app/ $txt
 open -a /Applications/TextEdit.app/ $txt
 
