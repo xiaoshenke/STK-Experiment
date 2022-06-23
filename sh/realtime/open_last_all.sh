@@ -52,14 +52,15 @@ then
 	python realtime/buyer/observe_cli.py open_last --day $day --time_str $time_str
 elif [[ $mode == "dapiao" ]]
 then
+	echo python realtime/observe/stocks.py open_last
+	python realtime/observe/stocks.py open_last --day $day --time_str $time_str
+
 	echo python realtime/observe/zhz500.py open_last
 	python realtime/observe/zhz500.py open_last --day $day --time_str $time_str
 
 	echo python realtime/observe/dapiao.py open_last
 	python realtime/observe/dapiao.py open_last --day $day --time_str $time_str
 
-	echo python realtime/observe/stocks.py open_last
-	python realtime/observe/stocks.py open_last --day $day --time_str $time_str
 elif [[ $mode == "pools" ]]
 then
 	echo python realtime/observe/pools.py open_last
