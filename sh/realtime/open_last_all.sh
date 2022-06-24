@@ -50,6 +50,11 @@ elif [[ $mode == "buyer" ]] || [[ $mode == "buy" ]]
 then
 	echo python realtime/buyer/observe_cli.py open_last
 	python realtime/buyer/observe_cli.py open_last --day $day --time_str $time_str
+elif [[ $mode == "stocks" ]]
+then
+	echo python realtime/observe/stocks.py open_last
+	python realtime/observe/stocks.py open_last --day $day --time_str $time_str
+
 elif [[ $mode == "dapiao" ]]
 then
 	echo python realtime/observe/stocks.py open_last
@@ -81,6 +86,11 @@ then
 
 	echo python realtime/observe/change.py open_last
 	python realtime/observe/change.py open_last --day $day --time_str $time_str
+elif [[ $mode == "change" ]]
+then
+	echo python realtime/observe/change.py open_last
+	python realtime/observe/change.py open_last --day $day --time_str $time_str
+
 elif [[ $mode == "bind" ]]
 then
 	echo python realtime/observe/upstp.py open_last
