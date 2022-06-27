@@ -39,9 +39,6 @@ then
 
 	echo python realtime/observe/high.py open_last
 	python realtime/observe/high.py open_last --day $day --time_str $time_str
-
-	#echo python realtime/observe/stocks.py open_last
-	#python realtime/observe/stocks.py open_last --day $day --time_str $time_str
 elif [[ $mode == "xls" ]]
 then
 	echo python realtime/observe/xls.py open_last
@@ -54,7 +51,6 @@ elif [[ $mode == "stocks" ]]
 then
 	echo python realtime/observe/stocks.py open_last
 	python realtime/observe/stocks.py open_last --day $day --time_str $time_str
-
 elif [[ $mode == "dapiao" ]]
 then
 	echo python realtime/observe/stocks.py open_last
@@ -65,7 +61,6 @@ then
 
 	echo python realtime/observe/dapiao.py open_last
 	python realtime/observe/dapiao.py open_last --day $day --time_str $time_str
-
 elif [[ $mode == "pools" ]]
 then
 	echo python realtime/observe/pools.py open_last
@@ -90,7 +85,6 @@ elif [[ $mode == "change" ]]
 then
 	echo python realtime/observe/change.py open_last
 	python realtime/observe/change.py open_last --day $day --time_str $time_str
-
 elif [[ $mode == "bind" ]]
 then
 	echo python realtime/observe/upstp.py open_last
