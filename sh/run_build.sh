@@ -4,6 +4,7 @@ if [ $# -ne 1 ]
 then
 	echo Usage:sh/run_build.sh day
 fi
+export PYTHONUNBUFFERED=1
 
 day=$1
 

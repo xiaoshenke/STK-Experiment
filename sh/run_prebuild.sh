@@ -7,6 +7,8 @@ fi
 
 day=$1
 
+export PYTHONUNBUFFERED=1
+
 echo nohup python engine/crontab/build/prebuild_job.py run $day >>prebuild.log 2>&1 &
 nohup python engine/crontab/build/prebuild_job.py run $day >>prebuild.log 2>&1 &
 
