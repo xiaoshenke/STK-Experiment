@@ -61,6 +61,13 @@ then
 
 	echo python realtime/observe/dapiao.py open_last
 	python realtime/observe/dapiao.py open_last --day $day --time_str $time_str
+elif [[ $mode == "mline" ]]
+then
+	echo python realtime/observe/change.py open_last
+	python realtime/observe/change.py open_last --day $day --time_str $time_str
+
+	echo python realtime/observe/mline.py open_last
+	python realtime/observe/mline.py open_last --day $day --time_str $time_str
 elif [[ $mode == "pools" ]]
 then
 	echo python realtime/observe/pools.py open_last
