@@ -21,7 +21,7 @@ do
 	shift
 done
 
-mode='default'
+mode=''
 if [ $# -eq 1 ]
 then
 	mode=$1
