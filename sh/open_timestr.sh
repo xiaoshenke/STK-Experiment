@@ -1,4 +1,5 @@
 #!/bin/bash
+# Usage: sh/open_timestr.sh aa:bb:cc [xls]
 
 mode="jpg"
 
