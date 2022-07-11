@@ -51,6 +51,11 @@ elif [[ $mode == "stocks" ]]
 then
 	echo python realtime/observe/stocks.py open_last
 	python realtime/observe/stocks.py open_last --day $day --time_str $time_str
+elif [[ $mode == "longhu" ]]
+then
+	echo python realtime/observe/longhu.py open_last
+	python realtime/observe/longhu.py open_last --day $day --time_str $time_str
+
 elif [[ $mode == "dapiao" ]]
 then
 	echo python realtime/observe/stocks.py open_last
