@@ -1,13 +1,78 @@
 #!/bin/bash
-# usage sh/tail_observe.sh [day]
+# usage sh/tail_realtime.sh [-day aaaa-bb-cc] idx
+
+echo now support 1:market 2:zhz500 3:longhu 4:high 5:pool 6:xls 7:codes
 
 day=`date +'%Y-%m-%d'`
-if [ $# -eq 1 ]
+while [ -n "$1" ]
+do 
+        case "$1" in 
+        -day | --day)
+                shift
+                day=$1
+                ;;
+        *)
+                break
+                ;;
+        esac
+        shift
+done
+
+if [ $# -ne 1 ]
 then
-        day=$1
+	echo usage sh/less_observe_node.sh [-day aaaa-bb-cc] idx
 fi
 
-touch ../stk_daily/$day/observe_scheduler.log
-echo tail -f ../stk_daily/$day/observe_scheduler.log
-tail -f ../stk_daily/$day/observe_scheduler.log
+idx=$1
+name=$1
+if [[ $idx == "1" ]]
+then
+	name="market"
+elif [[ $idx == "2" ]]
+then
+	name="zhz500"
+elif [[ $idx == "2" ]]
+then
+        name="zhz500"
+elif [[ $idx == "3" ]]
+then
+	name="longhu"
+elif [[ $idx == "4" ]]
+then
+	name="high"
+elif [[ $idx == "5" ]]
+then
+	name="pool"
+elif [[ $idx == "6" ]]
+then
+	name="xls"
+elif [[ $idx == "7" ]]
+then
+	name="codes"
+elif [[ $idx == "8" ]]
+then
+	name="buyer"
+fi
+
+echo name:$name
+valids=(
+market
+zhz500
+longhu
+high
+pool
+xls
+codes
+buyer
+)
+
+if [[ ! "${valids[@]}" =~ "${name}" ]]
+then
+	echo not support name:$name
+	exit 2
+fi
+
+touch ../stk_daily/$day/"$name"_observe.log
+echo tail -f ../stk_daily/$day/"$name"_observe.log
+tail -f ../stk_daily/$day/"$name"_observe.log
 

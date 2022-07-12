@@ -49,6 +49,9 @@ then
 elif [[ $idx == "7" ]]
 then
 	name="codes"
+elif [[ $idx == "8" ]]
+then
+	name="buyer"
 fi
 
 echo name:$name
@@ -60,6 +63,7 @@ high
 pool
 xls
 codes
+buyer
 )
 
 if [[ ! "${valids[@]}" =~ "${name}" ]]

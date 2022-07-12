@@ -92,6 +92,9 @@ upstp_observe_logger = get_common_daily_logger('upstp_observe','upstp_observe')
 # market-observe日志
 market_observe_logger = get_common_daily_logger('market_observe','market_observe')
 
+# buyer-observe日志
+buyer_observe_logger = get_common_daily_logger('buyer_observe','buyer_observe')
+
 # xls stage traing日志
 xls_stage_tracing_logger = get_common_daily_logger('xls_stage','xls_stage')
 
