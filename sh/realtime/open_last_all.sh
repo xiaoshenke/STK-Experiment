@@ -99,8 +99,8 @@ then
 	python realtime/observe/change.py open_last --day $day --time_str $time_str
 elif [[ $mode == "bind" ]]
 then
-	echo python realtime/observe/upstp.py open_last
-	python realtime/observe/upstp.py open_last --day $day --time_str $time_str
+	echo python realtime/observe/longhu.py open_last
+	python realtime/observe/longhu.py open_last --day $day --time_str $time_str
 
 	echo python realtime/observe/bind.py open_last
 	python realtime/observe/bind.py open_last --day $day --time_str $time_str
