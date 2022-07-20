@@ -34,11 +34,12 @@ echo 当前支持的mode为chaozuo,market,pool,default,dapiao
 
 if [[ $mode == "chaozuo" ]]
 then
+	echo python realtime/observe/high.py open_last
+	python realtime/observe/high.py open_last --day $day --time_str $time_str
+
 	echo python realtime/observe/chaozuo.py open_last
 	python realtime/observe/chaozuo.py open_last --day $day --time_str $time_str
 
-	echo python realtime/observe/high.py open_last
-	python realtime/observe/high.py open_last --day $day --time_str $time_str
 elif [[ $mode == "xls" ]]
 then
 	echo python realtime/observe/xls.py open_last
