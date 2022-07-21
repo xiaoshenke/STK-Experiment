@@ -2,6 +2,8 @@
 
 # Usage: sh/start_pans.sh [mode]
 
+export PYTHONUNBUFFERED=1
+
 mode='default'
 if [ $# -eq 1 ]
 then
