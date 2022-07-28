@@ -62,9 +62,6 @@ then
 
 elif [[ $mode == "dapiao" ]]
 then
-	echo python realtime/observe/stocks.py open_last
-	python realtime/observe/stocks.py open_last --day $day --time_str $time_str
-
 	echo python realtime/observe/zhz500.py open_last
 	python realtime/observe/zhz500.py open_last --day $day --time_str $time_str
 
