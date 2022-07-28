@@ -30,10 +30,10 @@ xls=""
 if [ $# -eq 2 ]
 then
 	xls=$2
-	echo python realtime/query_cli.py open_timestr $time_str --xls $xls --open_mode $mode
-	python realtime/query_cli.py open_timestr $time_str --xls $xls --open_mode $mode
+	echo python realtime/query_cli.py open_timestr $time_str --xls $xls --open_mode $mode --no_backend true
+	python realtime/query_cli.py open_timestr $time_str --xls $xls --open_mode $mode --no_backend true
 else
-	echo python realtime/query_cli.py open_timestr $time_str --open_mode $mode
-	python realtime/query_cli.py open_timestr $time_str --open_mode $mode
+	echo python realtime/query_cli.py open_timestr $time_str --open_mode $mode --no_backend true
+	python realtime/query_cli.py open_timestr $time_str --open_mode $mode --no_backend true
 fi
 
