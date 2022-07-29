@@ -111,9 +111,6 @@ then
 	python realtime/observe/upstp.py open_last --day $day --time_str $time_str
 elif [[ $mode == "market" ]]
 then
-	echo python realtime/observe/stocks.py open_last
-	python realtime/observe/stocks.py open_last --day $day --time_str $time_str
-
 	echo python realtime/observe/market.py open_last
 	python realtime/observe/market.py open_last --day $day --time_str $time_str
 

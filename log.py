@@ -147,6 +147,14 @@ def save_net_error(msg):
 	except Exception,e:
 		pass
 
+# cpu issure单独做成日至
+cpu_issure_logger = get_common_daily_logger('cpu_issure','cpu_issure')
+def save_cpu_issure(msg):
+	try:
+		cpu_issure_logger.error(str(msg))
+	except Exception,e:
+		pass
+
 error_logger = get_common_daily_logger('error','error')
 def save_error(msg):
 	try:
