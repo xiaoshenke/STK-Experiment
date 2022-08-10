@@ -43,6 +43,10 @@ elif [[ $mode == "high" ]]
 then
 	echo python realtime/observe/high.py open_last
 	python realtime/observe/high.py open_last --day $day --time_str $time_str
+elif [[ $mode == "zhz500" ]]
+then
+	echo python realtime/observe/zhz500.py open_last
+	python realtime/observe/zhz500.py open_last --day $day --time_str $time_str
 elif [[ $mode == "xls" ]]
 then
 	echo python realtime/observe/xls.py open_last
@@ -81,10 +85,10 @@ then
 elif [[ $mode == "pool" ]]
 then
 	echo python realtime/observe/upstp.py open_last
-	python realtime/observe/upstp.py open_last --day $day --time_str $time_str
+	python realtime/observe/upstp.py open_last --day $day --time_str $time_str --check_expire True
 
 	echo python realtime/observe/bind.py open_last
-	python realtime/observe/bind.py open_last --day $day --time_str $time_str
+	python realtime/observe/bind.py open_last --day $day --time_str $time_str --check_expire True
 
 	echo python realtime/observe/mline.py open_last
 	python realtime/observe/mline.py open_last --day $day --time_str $time_str
@@ -101,14 +105,14 @@ then
 elif [[ $mode == "bind" ]]
 then
 	echo python realtime/observe/longhu.py open_last
-	python realtime/observe/longhu.py open_last --day $day --time_str $time_str
+	python realtime/observe/longhu.py open_last --day $day --time_str $time_str --check_expire True
 
 	echo python realtime/observe/bind.py open_last
 	python realtime/observe/bind.py open_last --day $day --time_str $time_str
 elif [[ $mode == "upstp" ]]
 then
 	echo python realtime/observe/upstp.py open_last
-	python realtime/observe/upstp.py open_last --day $day --time_str $time_str
+	python realtime/observe/upstp.py open_last --day $day --time_str $time_str --check_expire True
 elif [[ $mode == "market" ]]
 then
 	echo python realtime/observe/market.py open_last
