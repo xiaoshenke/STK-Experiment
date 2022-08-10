@@ -59,6 +59,9 @@ xls_observe_logger = get_common_daily_logger('xls_observe','xls_observe')
 # longhu-observe日志
 longhu_observe_logger = get_common_daily_logger('longhu_observe','longhu_observe')
 
+# shouban-observe日志
+shouban_observe_logger = get_common_daily_logger('shouban_observe','shouban_observe')
+
 # chaozuo-observe日志
 chaozuo_observe_logger = get_common_daily_logger('chaozuo_observe','chaozuo_observe')
 

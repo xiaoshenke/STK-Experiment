@@ -43,6 +43,10 @@ elif [[ $mode == "high" ]]
 then
 	echo python realtime/observe/high.py open_last
 	python realtime/observe/high.py open_last --day $day --time_str $time_str
+elif [[ $mode == "shouban" ]]
+then
+	echo python realtime/observe/shouban.py open_last
+	python realtime/observe/shouban.py open_last --day $day --time_str $time_str
 elif [[ $mode == "zhz500" ]]
 then
 	echo python realtime/observe/zhz500.py open_last
