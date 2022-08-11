@@ -50,7 +50,7 @@ then
 elif [[ $mode == "zhz500" ]]
 then
 	echo python realtime/observe/zhz500.py open_last
-	python realtime/observe/zhz500.py open_last --day $day --time_str $time_str
+	python realtime/observe/zhz500.py open_last --day $day --time_str $time_str --check_expire True
 elif [[ $mode == "xls" ]]
 then
 	echo python realtime/observe/xls.py open_last
@@ -71,10 +71,10 @@ then
 elif [[ $mode == "dapiao" ]]
 then
 	echo python realtime/observe/zhz500.py open_last
-	python realtime/observe/zhz500.py open_last --day $day --time_str $time_str
+	python realtime/observe/zhz500.py open_last --day $day --time_str $time_str --check_expire True
 
 	echo python realtime/observe/dapiao.py open_last
-	python realtime/observe/dapiao.py open_last --day $day --time_str $time_str
+	python realtime/observe/dapiao.py open_last --day $day --time_str $time_str  --check_expire True
 elif [[ $mode == "mline" ]]
 then
 	echo python realtime/observe/change.py open_last
@@ -120,7 +120,7 @@ then
 elif [[ $mode == "market" ]]
 then
 	echo python realtime/observe/market.py open_last
-	python realtime/observe/market.py open_last --day $day --time_str $time_str
+	python realtime/observe/market.py open_last --day $day --time_str $time_str --check_expire True
 
 	echo python realtime/observe/change.py open_last
 	python realtime/observe/change.py open_last --day $day --time_str $time_str
