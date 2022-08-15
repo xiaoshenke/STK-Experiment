@@ -35,14 +35,14 @@ echo 当前支持的mode为chaozuo,market,pool,default,dapiao
 if [[ $mode == "chaozuo" ]]
 then
 	echo python realtime/observe/high.py open_last
-	python realtime/observe/high.py open_last --day $day --time_str $time_str
+	python realtime/observe/high.py open_last --day $day --time_str $time_str --check_expire True
 
 	echo python realtime/observe/chaozuo.py open_last
 	python realtime/observe/chaozuo.py open_last --day $day --time_str $time_str
 elif [[ $mode == "high" ]]
 then
 	echo python realtime/observe/high.py open_last
-	python realtime/observe/high.py open_last --day $day --time_str $time_str
+	python realtime/observe/high.py open_last --day $day --time_str $time_str --check_expire True
 elif [[ $mode == "shouban" ]]
 then
 	echo python realtime/observe/shouban.py open_last
