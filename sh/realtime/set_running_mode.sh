@@ -22,6 +22,11 @@ python realtime/observe/upstp.py set --running_mode $mode
 echo python realtime/observe/xls.py set --running_mode $mode
 python realtime/observe/xls.py set --running_mode $mode
 
+echo python realtime/observe/high.py set --running_mode $mode
+python realtime/observe/high.py set --running_mode $mode
+
+echo python realtime/observe/shouban.py set --running_mode $mode
+python realtime/observe/shouban.py set --running_mode $mode
 
 #echo python realtime/buyer/observe_cli.py set --running_mode $mode
 #python realtime/buyer/observe_cli.py set --running_mode $mode
