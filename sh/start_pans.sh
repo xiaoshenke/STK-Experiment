@@ -54,6 +54,8 @@ then
 
 	nohup python engine/observe/chaozuo/cli.py start_engine_mode >>observe.chaozuo.log 2>&1 &
 
+	nohup python engine/observe/chuangye/cli.py start_engine_mode >>observe.chuangye.log 2>&1 &
+
 	nohup python engine/observe/pools/cli.py start_engine_mode >>observe.pools.log 2>&1 &
 
 	nohup python engine/scheduler/buyer/cli.py start_engine_mode >>scheduler.buyer.log 2>&1 &

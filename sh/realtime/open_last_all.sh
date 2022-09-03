@@ -54,6 +54,10 @@ elif [[ $mode == "zhz500" ]]
 then
 	echo python realtime/observe/zhz500.py open_last
 	python realtime/observe/zhz500.py open_last --day $day --time_str $time_str --check_expire True
+elif [[ $mode == "300" ]] || [[ $mode == 'chuangye' ]]
+then
+	echo python realtime/observe/300.py open_last
+	python realtime/observe/300.py open_last --day $day --time_str $time_str --check_expire True
 elif [[ $mode == "xls" ]]
 then
 	echo python realtime/observe/xls.py open_last
