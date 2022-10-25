@@ -34,6 +34,9 @@ python realtime/observe/high.py set --running_mode $mode
 echo python realtime/observe/shouban.py set --running_mode $mode
 python realtime/observe/shouban.py set --running_mode $mode
 
+echo python realtime/observe/chaozuo.py set --running_mode $mode
+python realtime/observe/chaozuo.py set --running_mode $mode
+
 #echo python realtime/buyer/observe_cli.py set --running_mode $mode
 #python realtime/buyer/observe_cli.py set --running_mode $mode
 
