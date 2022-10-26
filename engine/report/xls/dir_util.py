@@ -40,5 +40,19 @@ def demo():
 	path = '../stk_daily/2022-04-19/xls_report//090523/xls:core/xls:core*FAST/'
 	print parse_dir(path)
 
+import click
+@click.group()
+def cli():
+        """PATH CLI"""
+        pass
+
+@cli.command()
+@click.argument('path')
+def parse(path):
+	b,xls,type,day,time_str = parse_dir(path)
+	print b
+	print xls,type,day,time_str
+
 if __name__ == "__main__":
-	demo()
+	#demo()
+	cli()

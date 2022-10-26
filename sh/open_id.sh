@@ -31,7 +31,7 @@ fi
 
 id=$1
 
-if [ -n $back ]
+if [ ${#back} -gt 1 ]
 then
 	echo python realtime/query_cli.py open $id --open_mode $mode --back $back
 	python realtime/query_cli.py open $id --open_mode $mode --back $back
