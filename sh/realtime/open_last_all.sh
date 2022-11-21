@@ -46,6 +46,10 @@ elif [[ $mode == "high" ]]
 then
 	echo python realtime/observe/high.py open_last
 	python realtime/observe/high.py open_last --day $day --time_str $time_str --check_expire True
+elif [[ $mode == "top_btw" ]]
+then
+	echo python realtime/observe/top_btw.py open_last
+	python realtime/observe/top_btw.py open_last --day $day --time_str $time_str 
 elif [[ $mode == "shouban" ]]
 then
 	echo python realtime/observe/shouban.py open_last
