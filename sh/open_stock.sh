@@ -77,6 +77,7 @@ fi
 if [ $open_type -eq 1  ]
 then
 	url=http://finance.sina.com.cn/realstock/company/$code/nc.shtml
+	echo "old url(not open):" $url
 	code=$1
 	url=http://stockpage.10jqka.com.cn/$code
 	echo going to open url:$url ...
