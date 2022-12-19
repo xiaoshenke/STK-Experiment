@@ -48,5 +48,19 @@ def get_cur_timestr_8():
 	import time
 	return unix_to_str(time.time())[-8:]
 
+# util API:
+def get_timestr_by_mode(mode):
+	if mode == 'open':
+		return '09:30:00'
+	elif mode == 'noon':
+		return '11:30:00'
+	elif mode == 'plan':
+		return '09:00:00'
+	elif mode == 'close':
+		return '15:00:00'
+
+	from util.time_util import get_cur_timestr_8
+	return get_cur_timestr_8()
+
 if __name__ == "__main__":
 	print get_cur_timestamp()
