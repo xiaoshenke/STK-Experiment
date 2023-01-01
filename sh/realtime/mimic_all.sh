@@ -12,6 +12,9 @@ fi
 
 echo "将依次对upstp,chaozuo,stocks,pool,longhu,market,xls,bind,buyer,mline,dig组件 进行mimic"
 
+echo python realtime/observe/prop.py set --mimic $mimic
+python realtime/observe/prop.py set --mimic $mimic
+
 echo python realtime/observe/upstp.py set --mimic $mimic
 python realtime/observe/upstp.py set --mimic $mimic
 
