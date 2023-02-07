@@ -36,8 +36,8 @@ python realtime/observe/market.py set --mimic $mimic
 echo python realtime/observe/xls.py set --mimic $mimic
 python realtime/observe/xls.py set --mimic $mimic
 
-echo python realtime/observe/bind.py set --mimic $mimic
-python realtime/observe/bind.py set --mimic $mimic
+#echo python realtime/observe/bind.py set --mimic $mimic
+#python realtime/observe/bind.py set --mimic $mimic
 
 echo python realtime/observe/longhu.py set --mimic $mimic
 python realtime/observe/longhu.py set --mimic $mimic
@@ -51,8 +51,8 @@ python realtime/observe/mline.py set --mimic $mimic
 echo python realtime/observe/change.py set --mimic $mimic
 python realtime/observe/change.py set --mimic $mimic
 
-echo python realtime/observe/dig.py set --mimic $mimic
-python realtime/observe/dig.py set --mimic $mimic
+#echo python realtime/observe/dig.py set --mimic $mimic
+#python realtime/observe/dig.py set --mimic $mimic
 
 echo python realtime/observe/pools.py set --mimic $mimic
 python realtime/observe/pools.py set --mimic $mimic
