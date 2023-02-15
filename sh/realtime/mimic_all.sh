@@ -57,6 +57,9 @@ python realtime/observe/change.py set --mimic $mimic
 echo python realtime/observe/pools.py set --mimic $mimic
 python realtime/observe/pools.py set --mimic $mimic
 
+echo python realtime/observe/style.py set --mimic $mimic
+python realtime/observe/style.py set --mimic $mimic
+
 
 #echo python realtime/report_cli.py set --mimic $mimic
 #python realtime/report_cli.py set --mimic $mimic
