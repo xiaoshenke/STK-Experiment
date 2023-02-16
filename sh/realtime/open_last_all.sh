@@ -30,7 +30,7 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo 当前支持的mode为chaozuo,market,pool,default,dapiao
+echo 当前支持的mode为chaozuo,market,pool,default,dapiao,style
 
 if [[ $mode == "chaozuo" ]]
 then
@@ -46,6 +46,10 @@ elif [[ $mode == "high" ]]
 then
 	echo python realtime/observe/high.py open_last
 	python realtime/observe/high.py open_last --day $day --time_str $time_str --check_expire True
+elif [[ $mode == "style" ]]
+then
+	echo python realtime/observe/style.py open_last
+	python realtime/observe/style.py open_last --day $day --time_str $time_str --check_expire True
 elif [[ $mode == "top_btw" ]]
 then
 	echo python realtime/observe/top_btw.py open_last
