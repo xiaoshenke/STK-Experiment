@@ -40,6 +40,9 @@ TOP_BTW_OBSERVE_SERVER_PORT = 1272
 # 认为cpu issure的时间
 CPU_ISSURE_TIME = 40.0
 
+# 出龙虎榜的时间
+LONGHUBANG_TIME = '16:40:00'
+
 # 创业板涨跌幅限制
 CHUANGYE_10_TO_20 = True
 
