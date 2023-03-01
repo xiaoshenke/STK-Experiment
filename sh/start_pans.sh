@@ -29,6 +29,10 @@ then
 	echo nohup python engine/tracing/market/cli.py start_tracing_engine_mode
 	nohup python engine/tracing/market/cli.py start_tracing_engine_mode >>tracing.market.log 2>&1 &
 
+	# 轻量级运行style observe
+	echo nohup python engine/observe/style/cli.py start_engine_mode
+	nohup python engine/observe/style/cli.py start_engine_mode --mimic_open true >>observe.style.log 2>&1 &
+
 elif [[ $mode == "default" ]]
 then
 	echo "依次起standby,node updater,xls tracing,market tracing,change observe,mline observe"
