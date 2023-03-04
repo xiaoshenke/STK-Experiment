@@ -12,7 +12,7 @@ fi
 
 if [[ $mode == "light" ]]
 then
-	echo "[轻量级模式]:依次起standby,node updater,xls tracing,market tracing"
+	echo "[轻量级模式]:依次起standby,node updater,xls tracing,market tracing,style observe..."
 
 	echo nohup python inn_strategy/standby_cli.py schedule_standby_and_merge2 --enable_merger false 
 	nohup python inn_strategy/standby_cli.py schedule_standby_and_merge2 --enable_merger false >>standby.log 2>&1 &
