@@ -12,7 +12,7 @@ fi
 
 if [[ $mode == "light" ]]
 then
-	echo "[轻量级模式]:依次起standby,node updater,xls tracing,market tracing,style observe..."
+	echo "[轻量级模式]:依次起standby,node updater,xls tracing,market tracing,style observe,change observe."
 
 	echo nohup python inn_strategy/standby_cli.py schedule_standby_and_merge2 --enable_merger false 
 	nohup python inn_strategy/standby_cli.py schedule_standby_and_merge2 --enable_merger false >>standby.log 2>&1 &
@@ -32,6 +32,9 @@ then
 	# 轻量级运行style observe
 	echo nohup python engine/observe/style/cli.py start_engine_mode
 	nohup python engine/observe/style/cli.py start_engine_mode --mimic_open true >>observe.style.log 2>&1 &
+
+	echo python engine/observe/change/cli.py start_engine_mode
+	nohup python engine/observe/change/cli.py start_engine_mode --running_mode light --mimic_open true >>observe.change.log 2>&1 &
 
 elif [[ $mode == "default" ]]
 then
