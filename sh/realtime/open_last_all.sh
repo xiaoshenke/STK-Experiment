@@ -3,6 +3,7 @@
 
 day=`date +'%Y-%m-%d'`
 time_str=`date +'%H:%M:%S'`
+key=#
 while [ -n "$1" ]
 do 
 	case "$1" in 
@@ -13,6 +14,10 @@ do
 	-time_str | --time_str)
 		shift
 		time_str=$1
+		;;
+	-key | --key)
+		shift
+		key=$1
 		;;
 	*)
 		break
@@ -100,23 +105,26 @@ then
 elif [[ $mode == "pools" ]]
 then
 	echo python realtime/observe/pools.py open_last
-	python realtime/observe/pools.py open_last --day $day --time_str $time_str
+	python realtime/observe/pools.py open_last --day $day --time_str $time_str --key $key
 elif [[ $mode == "pool" ]]
 then
 	echo python realtime/observe/upstp.py open_last
-	python realtime/observe/upstp.py open_last --day $day --time_str $time_str --check_expire True
+	python realtime/observe/upstp.py open_last --day $day --time_str $time_str --check_expire True --key $key
 
 	echo python realtime/observe/bind.py open_last
 	python realtime/observe/bind.py open_last --day $day --time_str $time_str --check_expire True
 
 	echo python realtime/observe/mline.py open_last
-	python realtime/observe/mline.py open_last --day $day --time_str $time_str
+	python realtime/observe/mline.py open_last --day $day --time_str $time_str --key $key
 
 	echo python realtime/observe/pools.py open_last
-	python realtime/observe/pools.py open_last --day $day --time_str $time_str
+	python realtime/observe/pools.py open_last --day $day --time_str $time_str --key $key
 
 	echo python realtime/observe/change.py open_last
-	python realtime/observe/change.py open_last --day $day --time_str $time_str
+	python realtime/observe/change.py open_last --day $day --time_str $time_str --key $key
+
+	echo python realtime/observe/top_btw.py open_last
+	python realtime/observe/top_btw.py open_last --day $day --time_str $time_str --key $key
 elif [[ $mode == "change" ]]
 then
 	echo python realtime/observe/change.py open_last
