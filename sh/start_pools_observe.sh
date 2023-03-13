@@ -10,7 +10,7 @@ then
 	mode=$1
 fi
 
-echo nohup python engine/observe/style/cli.py start_engine_mode
+echo nohup python engine/observe/pools/cli.py start_engine_mode --running_mode $mode --mimic_open true 
 nohup python engine/observe/pools/cli.py start_engine_mode --running_mode $mode --mimic_open true >>observe.pools.log 2>&1 &
 
 
