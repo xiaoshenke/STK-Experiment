@@ -10,7 +10,22 @@ then
 	mode=$1
 fi
 
-if [[ $mode == "light" ]]
+if [[ $mode == "download" ]]
+then
+	echo "仅起一些下载相关的组件,standby,node updater,xls tracing"
+
+	echo nohup python inn_strategy/standby_cli.py schedule_standby_and_merge2 --enable_merger false 
+	nohup python inn_strategy/standby_cli.py schedule_standby_and_merge2 --enable_merger false >>standby.log 2>&1 &
+
+	echo nohup python engine/advise/node/cli.py start_node_engine_mode update
+	# 轻量级运行default advisor(下载热门版块数据) 
+	nohup python engine/advise/node/cli.py start_node_engine_mode update >>node.log 2>&1 &
+
+	# 轻量级运行xls stage tracing
+	echo nohup python engine/tracing/xls/cli.py start_tracing_engine_mode
+	nohup python engine/tracing/xls/cli.py start_tracing_engine_mode >>tracing.log 2>&1 &
+
+elif [[ $mode == "light" ]]
 then
 	echo "[轻量级模式]:依次起standby,node updater,xls tracing,market tracing,style observe,change observe."
 
