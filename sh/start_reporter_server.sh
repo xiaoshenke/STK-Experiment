@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mimic=1
+mimic=0
 if [ $# -eq 1 ]
 then
 	mimic=$1
