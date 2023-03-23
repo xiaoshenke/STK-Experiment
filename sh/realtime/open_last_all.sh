@@ -1,5 +1,5 @@
 #!/bin/bash
-# usage sh/open_last_all.sh [-day aaaa-bb-cc] [-time_str xx:yy:zz] [mode]
+# usage sh/open_last_all.sh [-key xyz] [-day aaaa-bb-cc] [-time_str xx:yy:zz] [mode]
 
 day=`date +'%Y-%m-%d'`
 time_str=`date +'%H:%M:%S'`
@@ -18,6 +18,10 @@ do
 	-key | --key)
 		shift
 		key=$1
+		;;
+	-help | --help)
+		echo usage sh/open_last_all.sh [-key xyz] [-day aaaa-bb-cc] [-time_str xx:yy:zz] [mode]
+		exit 1
 		;;
 	*)
 		break
