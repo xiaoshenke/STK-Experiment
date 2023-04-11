@@ -44,7 +44,7 @@ REALTIME_PROPERTIES_FILE = 'realtime/realtime.properties'
 CPU_ISSURE_TIME = 40.0
 
 # 出龙虎榜的时间
-LONGHUBANG_TIME = '16:40:00'
+LONGHUBANG_TIME = '16:35:00'
 
 # 创业板涨跌幅限制
 CHUANGYE_10_TO_20 = True
