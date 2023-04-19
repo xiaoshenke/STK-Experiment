@@ -113,8 +113,7 @@ then
 elif [[ $mode == "pool" ]]
 then
 	echo python realtime/observe/style.py open_last
-	python realtime/observe/style.py open_last --day $day --time_str $time_s
-tr --check_expire True
+	python realtime/observe/style.py open_last --day $day --time_str $time_str --check_expire True
 
 	echo python realtime/observe/upstp.py open_last
 	python realtime/observe/upstp.py open_last --day $day --time_str $time_str --check_expire True --key $key
