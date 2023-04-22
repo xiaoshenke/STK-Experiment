@@ -40,6 +40,8 @@ TOP_BTW_OBSERVE_SERVER_PORT = 1272
 # properties文件名称
 REALTIME_PROPERTIES_FILE = 'realtime/realtime.properties'
 
+USER = 'wuxian'
+
 # 认为cpu issure的时间
 CPU_ISSURE_TIME = 40.0
 
