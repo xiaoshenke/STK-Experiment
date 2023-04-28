@@ -4,7 +4,7 @@
 
 export PYTHONUNBUFFERED=1
 
-mode='default'
+mode='download'
 if [ $# -eq 1 ]
 then
 	mode=$1
