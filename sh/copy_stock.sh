@@ -132,6 +132,6 @@ then
 fi
 
 # finally download and open
-curl -s -o $local_code $url
+curl --max-time 1.0 -s -o $local_code $url
 
 exit 2
