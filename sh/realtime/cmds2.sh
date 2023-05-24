@@ -37,7 +37,7 @@ do
 		else
 			front=$1
 		fi
-		now=$now+1
+		declare -i now=$now+1
                 ;;
         esac
         shift

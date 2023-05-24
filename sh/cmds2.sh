@@ -30,13 +30,14 @@ do
                 exit 1
                 ;;
         *)
+		# set value to type|front by now-flag
 		if [ $now -eq 0 ]
 		then
 			type=$1
 		else
 			front=$1
 		fi
-		now=$now+1
+		declare -i now=$now+1
                 ;;
         esac
         shift
