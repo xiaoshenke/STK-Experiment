@@ -40,6 +40,8 @@ TOP_BTW_OBSERVE_SERVER_PORT = 1272
 # @update_advisor对应的port
 NODE_UPDATER_SERVER_PORT = 1281
 
+STANDBY_SERVER_PORT = 1282
+
 # properties文件名称
 REALTIME_PROPERTIES_FILE = 'realtime/realtime.properties'
 
