@@ -66,8 +66,8 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 if [ ${#front} -eq 0 ]
 then
-	echo python realtime/cmds_cli.py pan_cmds $type --day $day --time_str $time_str --mode $mode
-	python realtime/cmds_cli.py pan_cmds $type --day $day --time_str $time_str --mode $mode
+	echo python realtime/cmds_cli.py buyer2_cmds $type --day $day --time_str $time_str --mode $mode
+	python realtime/cmds_cli.py buyer2_cmds $type --day $day --time_str $time_str --mode $mode
 	exit 1
 fi
 
