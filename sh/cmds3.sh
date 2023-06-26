@@ -6,7 +6,7 @@ day=#
 time_str=#
 mode=#
 
-type=''
+type='buyer'
 front=''
 
 now=0
