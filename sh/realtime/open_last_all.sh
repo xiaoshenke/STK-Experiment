@@ -59,6 +59,7 @@ elif [[ $mode == "style" ]]
 then
 	echo python realtime/observe/style.py open_last
 	python realtime/observe/style.py open_last --day $day --time_str $time_str --check_expire True
+
 elif [[ $mode == "top_btw" ]]
 then
 	echo python realtime/observe/top_btw.py open_last
@@ -159,6 +160,9 @@ elif [[ $mode == "default" ]]
 then
 	echo python realtime/observe/market.py open_last
 	python realtime/observe/market.py open_last --day $day --time_str $time_str
+	
+	echo python realtime/observe/style.py open_last
+	python realtime/observe/style.py open_last --day $day --time_str $time_str --check_expire True
 
 	echo python realtime/observe/stocks.py open_last
 	python realtime/observe/stocks.py open_last --day $day --time_str $time_str
