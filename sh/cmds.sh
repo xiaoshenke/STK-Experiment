@@ -4,9 +4,9 @@ day=#
 time_str=#
 mode=#
 
-type=''
+type='market'
 front=''
-
+fix=0
 now=0
 while [ -n "$1" ]
 do 
@@ -23,6 +23,10 @@ do
                 shift
                 mode=$1
                 ;;
+	-fix | --fix)
+		shift
+		fix=$1
+		;;	
         -help | --help)
 		echo usage sh/realtime/cmds.sh [--day abc] [--time_str xyz] [--mode aaa ] type
                 exit 1
@@ -58,8 +62,8 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 if [ ${#front} -eq 0 ]
 then
-	echo python realtime/cmds_cli.py cmds $type --day $day --time_str $time_str --mode $mode
-	python realtime/cmds_cli.py cmds $type --day $day --time_str $time_str --mode $mode
+	echo python realtime/cmds_cli.py cmds $type --day $day --time_str $time_str --fix $fix --mode $mode
+	python realtime/cmds_cli.py cmds $type --day $day --time_str $time_str --fix $fix --mode $mode
 	exit 1
 fi
 

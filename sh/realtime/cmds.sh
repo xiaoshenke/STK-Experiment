@@ -4,7 +4,7 @@ day=#
 time_str=#
 mode=#
 
-type=''
+type='market'
 front=''
 fix=0
 now=0
