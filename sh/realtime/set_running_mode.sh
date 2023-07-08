@@ -7,6 +7,9 @@ then
 	mode=$1
 fi
 
+echo python realtime/observe/mline.py set --running_mode $mode
+python realtime/observe/mline.py set --running_mode $mode
+
 echo python realtime/observe/prop.py set --running_mode $mode
 python realtime/observe/prop.py set --running_mode $mode
 
