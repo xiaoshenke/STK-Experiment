@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo ATTENTION: PAN-CMDS INFO
+echo ATTENTION: QIEPIAN-CMDS INFO
 
 day=#
 time_str=#
 mode=#
 
-type='buyer'
+type='market'
 front=''
 
 now=0
@@ -66,8 +66,8 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 if [ ${#front} -eq 0 ]
 then
-	echo python realtime/cmds_cli.py buyer2_cmds $type --day $day --time_str $time_str --mode $mode
-	python realtime/cmds_cli.py buyer2_cmds $type --day $day --time_str $time_str --mode $mode
+	echo python realtime/cmds_cli.py qiepian_cmds $type --day $day --time_str $time_str --mode $mode
+	python realtime/cmds_cli.py qiepian_cmds $type --day $day --time_str $time_str --mode $mode
 	exit 1
 fi
 

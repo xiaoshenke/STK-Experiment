@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "ATTENTION: DEFAULT(INFO)-CMDS INFO"
+
 day=#
 time_str=#
 mode=#

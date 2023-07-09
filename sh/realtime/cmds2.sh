@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo ATTENTION: BUYER-CMDS INFO
+echo "ATTENTION: BUYER(FRONT)-CMDS INFO"
 
 day=#
 time_str=#
