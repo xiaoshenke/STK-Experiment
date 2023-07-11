@@ -67,7 +67,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 if [ ${#front} -eq 0 ]
 then
 	echo python realtime/cmds_cli.py qiepian_cmds $type --day $day --time_str $time_str --mode $mode
-	python realtime/cmds_cli.py qiepian_cmds $type --day $day --time_str $time_str --mode $mode
+	python realtime/cmds_cli.py qiepian_cmds "$type" --day $day --time_str $time_str --mode $mode
 	exit 1
 fi
 
