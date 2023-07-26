@@ -4,6 +4,7 @@
 day=`date +'%Y-%m-%d'`
 time_str=`date +'%H:%M:%S'`
 key=#
+mode=''
 while [ -n "$1" ]
 do 
 	case "$1" in 
@@ -24,13 +25,13 @@ do
 		exit 1
 		;;
 	*)
-		break
+		#break
+		mode=$1
 		;;
 	esac
 	shift
 done
 
-mode=''
 if [ $# -eq 1 ]
 then
 	mode=$1
@@ -59,7 +60,10 @@ elif [[ $mode == "style" ]]
 then
 	echo python realtime/observe/style.py open_last
 	python realtime/observe/style.py open_last --day $day --time_str $time_str --check_expire True
-
+elif [[ $mode == "code_types" ]]
+then
+	echo python realtime/observe/code_types.py open_last
+	python realtime/observe/code_types.py open_last --day $day --time_str $time_str --check_expire True
 elif [[ $mode == "top_btw" ]]
 then
 	echo python realtime/observe/top_btw.py open_last
