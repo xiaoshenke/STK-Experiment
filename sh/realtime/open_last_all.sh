@@ -60,7 +60,7 @@ elif [[ $mode == "style" ]]
 then
 	echo python realtime/observe/style.py open_last
 	python realtime/observe/style.py open_last --day $day --time_str $time_str --check_expire True
-elif [[ $mode == "code_types" ]]
+elif [[ $mode == "code_types" ]] || [[ $mode == "code-types" ]]
 then
 	echo python realtime/observe/code_types.py open_last
 	python realtime/observe/code_types.py open_last --day $day --time_str $time_str --check_expire True
