@@ -10,3 +10,6 @@ watchdog
 sh
 threadpool
 #sortedcontainers
+#mplfinance
+
+mpl_finance
