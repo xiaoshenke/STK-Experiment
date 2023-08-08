@@ -35,7 +35,8 @@ def get_common_daily_logger(appender,save_name,day=''):
         return _logger
 
 mpl_logger = logging.getLogger('matplotlib')
-mpl_logger.setLevel(logging.WARNING)
+mpl_logger.setLevel(logging.ERROR)
+#mpl_logger.setLevel(logging.WARNING)
 
 # 用于临时作用
 tmp_logger = get_common_daily_logger('tmp','tmp')
