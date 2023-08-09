@@ -7,29 +7,34 @@ time_str=#
 mode=#
 
 type=''
+fix=0.0
 front=''
 
 now=0
 while [ -n "$1" ]
 do 
-        case "$1" in 
-        -day | --day)
-                shift
-                day=$1
-                ;;
-        -time_str | --time_str)
-                shift
-                time_str=$1
-                ;;
-        -mode | --mode)
-                shift
-                mode=$1
-                ;;
-        -help | --help)
+	case "$1" in 
+	-day | --day)
+		shift
+		day=$1
+		;;
+	-time_str | --time_str)
+		shift
+		time_str=$1
+		;;
+	-mode | --mode)
+		shift
+		mode=$1
+		;;
+	-fix | --fix)
+		shift
+		fix=$1
+		;;
+	-help | --help)
 		echo usage sh/realtime/cmds3.sh [--day abc] [--time_str xyz] [--mode aaa ] type
                 exit 1
                 ;;
-        *)
+	*)
 		# set value to type|front by now-flag
 		if [ $now -eq 0 ]
 		then
@@ -66,8 +71,8 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 if [ ${#front} -eq 0 ]
 then
-	echo python realtime/cmds_cli.py pan_cmds $type --day $day --time_str $time_str --mode $mode
-	python realtime/cmds_cli.py pan_cmds $type --day $day --time_str $time_str --mode $mode
+	echo python realtime/cmds_cli.py pan_cmds $type --day $day --time_str $time_str --mode $mode --fix $fix
+	python realtime/cmds_cli.py pan_cmds $type --day $day --time_str $time_str --mode $mode --fix $fix
 	exit 1
 fi
 
