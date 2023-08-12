@@ -29,13 +29,10 @@ codes=(${codes//,/ })
 cmd=''
 for code in ${codes[@]}
 do
-	#echo open $dir/$code*.jpg
-	#open $dir/$code*.jpg
 	if [ -f "$dir/$code.d.jpg" ]
 	then
 		cmd="$cmd $dir/$code.d.jpg $dir/$code.f.jpg"
 	fi
 done
 
-#echo open $cmd
 open $cmd
