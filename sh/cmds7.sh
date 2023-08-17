@@ -1,13 +1,13 @@
 #!/bin/bash
 
-echo ATTENTION: CORE-CMDS INFO
+echo ATTENTION: LAZHU-CMDS INFO
 
 day=#
 time_str=#
 mode=#
 
-type=''
-code_sub=#
+type='market'
+front=''
 
 now=0
 while [ -n "$1" ]
@@ -35,7 +35,7 @@ do
 		then
 			type=$1
 		else
-			code_sub=$1
+			front=$1
 		fi
 		declare -i now=$now+1
                 ;;
@@ -51,7 +51,7 @@ fi
 if [ $# -eq 2 ]
 then
 	type=$1
-	code_sub=$2
+	front=$2
 fi
 
 if [ ${#type} -eq 0 ]
@@ -64,7 +64,13 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python realtime/cmds_cli.py core_cmds $type --day $day --time_str $time_str --mode $mode --code_sub $code_sub
-	
-python realtime/cmds_cli.py core_cmds $type --day $day --time_str $time_str --mode $mode --code_sub $code_sub
+if [ ${#front} -eq 0 ]
+then
+	echo python realtime/cmds_cli.py lazhu_cmds $type --day $day --time_str $time_str --mode $mode
+	python realtime/cmds_cli.py lazhu_cmds $type --day $day --time_str $time_str --mode $mode
+	exit 1
+fi
+
+echo python realtime/caop/front.py cmds --day $day --time_str $time_str --mode $mode $type $front
+python realtime/caop/front.py cmds --day $day --time_str $time_str --mode $mode $type $front
 
