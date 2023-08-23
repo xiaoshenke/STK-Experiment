@@ -2,7 +2,7 @@
 
 export PYTHONUNBUFFERED=1
 
-operate=#
+operate=change
 
 while [ -n "$1" ]
 do 
