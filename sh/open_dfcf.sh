@@ -11,6 +11,14 @@ fi
 
 code=$1
 
+if [[ $code =~ "zs" ]] || [[ $code =~ "sh" ]]
+then
+	url=https://quote.eastmoney.com/$code.html
+	echo going to open url:$url ...
+	open $url
+	exit 1
+fi
+
 url=http://quote.eastmoney.com/bk/90.$code.html
 echo going to open url:$url ...
 open $url
