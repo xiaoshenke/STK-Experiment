@@ -48,6 +48,9 @@ then
 	echo nohup python engine/observe/style/cli.py start_engine_mode
 	nohup python engine/observe/style/cli.py start_engine_mode --mimic_open true >>observe.style.log 2>&1 &
 
+	echo nohup python engine/observe/mao/cli.py start_engine_mode
+	nohup python engine/observe/mao/cli.py start_engine_mode --mimic_open true >>observe.mao.log 2>&1 &
+
 	echo python engine/observe/change/cli.py start_engine_mode
 	nohup python engine/observe/change/cli.py start_engine_mode --running_mode light --mimic_open true >>observe.change.log 2>&1 &
 
