@@ -19,6 +19,9 @@ def parse_dir(dir):
 	if not dir.endswith('csv'):
 		dir = dir+'/'
 
+	if not 'xls_report' in dir:
+		return False,'','','',''
+
 	# 处理//
 	dir = dir.replace('//','/')
 	idx = dir.index('xls_report')
