@@ -121,6 +121,9 @@ then
 	python realtime/observe/pools.py open_last --day $day --time_str $time_str --key $key
 elif [[ $mode == "pool" ]]
 then
+	echo python realtime/observe/mao.py open_last
+	python realtime/observe/mao.py open_last --day $day --time_str $time_str
+
 	echo python realtime/observe/style.py open_last
 	python realtime/observe/style.py open_last --day $day --time_str $time_str --check_expire True
 
