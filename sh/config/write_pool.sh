@@ -8,7 +8,7 @@ now=0
 while [ -n "$1" ]
 do 
         case "$1" in 
-	-force | --force)
+	-force | --force | --froce)
 		shift
 		force=$1
 		;;	
