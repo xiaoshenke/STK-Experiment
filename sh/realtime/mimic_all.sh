@@ -15,6 +15,9 @@ echo "将依次对upstp,chaozuo,stocks,pool,longhu,market,xls,bind,buyer,mline,d
 echo python realtime/observe/prop.py set --mimic $mimic
 python realtime/observe/prop.py set --mimic $mimic
 
+echo python realtime/observe/mao.py set --mimic $mimic
+python realtime/observe/mao.py set --mimic $mimic
+
 echo python realtime/observe/upstp.py set --mimic $mimic
 python realtime/observe/upstp.py set --mimic $mimic
 
@@ -65,7 +68,6 @@ python realtime/observe/style.py set --mimic $mimic
 
 echo python realtime/observe/code_types.py set --mimic $mimic
 python realtime/observe/code_types.py set --mimic $mimic
-
 
 #echo python realtime/report_cli.py set --mimic $mimic
 #python realtime/report_cli.py set --mimic $mimic
