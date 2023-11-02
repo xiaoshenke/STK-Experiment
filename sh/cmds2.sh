@@ -56,8 +56,12 @@ fi
 
 if [ ${#type} -eq 0 ]
 then
-	echo type empty.
-	echo usage sh/realtime/cmds2.sh [--day abc] [--time_str xyz] [--mode aaa ] type
+	#echo type empty.
+	#echo usage sh/realtime/cmds2.sh [--day abc] [--time_str xyz] [--mode aaa ] type
+
+	type="buyer"
+	echo python realtime/cmds_cli.py buyer2_cmds $type --day $day --time_str $time_str --mode $mode
+	python realtime/cmds_cli.py buyer2_cmds $type --day $day --time_str $time_str --mode $mode
 	exit 1
 fi
 
