@@ -166,6 +166,9 @@ then
 
 	echo python realtime/observe/change.py open_last
 	python realtime/observe/change.py open_last --day $day --time_str $time_str
+	
+	echo python realtime/observe/style.py open_last
+	python realtime/observe/style.py open_last --day $day --time_str $time_str --check_expire True
 
 elif [[ $mode == "default" ]]
 then
