@@ -2,7 +2,7 @@
 
 export PYTHONUNBUFFERED=1
 
-operate=change
+operate=trend
 
 while [ -n "$1" ]
 do 
