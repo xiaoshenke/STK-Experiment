@@ -60,6 +60,18 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
+# update 2023-11-26: add pull branch
+if [ "$type" == "pull" ]
+then
+	if [ ${#front} -eq 0 ]
+	then
+		front="market"
+	fi
+	echo python realtime/cmds_cli.py pull_cmds $front --day $day --time_str $time_str --mode $mode
+	python realtime/cmds_cli.py pull_cmds $front --day $day --time_str $time_str --mode $mode
+	exit 1
+fi
+
 if [ ${#front} -eq 0 ]
 then
 	echo python realtime/cmds_cli.py cmds $type --day $day --time_str $time_str --fix $fix --mode $mode
