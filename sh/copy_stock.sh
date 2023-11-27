@@ -78,6 +78,9 @@ code=$1
 if [ $is_index -eq 1 ] || [[ ${code:0:2} == "60" ]] || [[ ${code:0:2} == "68" ]]
 then
 	code=sh$code
+elif [ $is_index -eq 1 ] || [[ ${code:0:1} == "4" ]] || [[ ${code:0:1} == "8" ]]
+then
+	code=bj$code
 else
 	code=sz$code
 fi
