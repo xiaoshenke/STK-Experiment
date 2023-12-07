@@ -3,6 +3,7 @@
 mode="jpg"
 back=""
 #echo "$@"
+id=0
 
 # extract parameters
 while [ -n "$1" ]
@@ -17,19 +18,29 @@ do
 		shift
 		;;
 	*)
-		break
+		#break
+		id=$1
 		;;
 	esac
 	shift
 done
 
-if [ $# -ne 1 ]
+#if [ $# -ne 1 ]
+#then
+#	echo usage: sh/openid.sh 123
+#	exit 0
+#fi
+
+if [ $# -eq 1 ]
+then
+	id=$1
+fi
+
+if [ $id -lt 1 ]
 then
 	echo usage: sh/openid.sh 123
 	exit 0
 fi
-
-id=$1
 
 if [ ${#back} -gt 1 ]
 then

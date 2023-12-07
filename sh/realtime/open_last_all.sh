@@ -52,6 +52,14 @@ then
 
 	echo python realtime/observe/chaozuo.py open_last
 	python realtime/observe/chaozuo.py open_last --day $day --time_str $time_str
+elif [[ $mode == "qingxu" ]]
+then
+	echo python realtime/observe/market.py open_last
+	python realtime/observe/market.py open_last --day $day --time_str $time_str 
+
+	echo python realtime/observe/mao.py open_last
+	python realtime/observe/mao.py open_last --day $day --time_str $time_str
+
 elif [[ $mode == "high" ]]
 then
 	echo python realtime/observe/high.py open_last
