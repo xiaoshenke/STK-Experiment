@@ -11,11 +11,13 @@ def print_exe_time(do_print=True):
 			ret = func(*args,**kwargs)
 			if not do_print:
 				return ret
+
+			cost = to_float2(time.time()-start)
 			if "at 0x" in str(func):
 				idx = str(func).index("at 0x")			
-				print "method:%s runs %s seconds!"%(str(func)[:idx-1]+">",to_float2(time.time()-start))
+				print "method:%s runs %s seconds!"%(str(func)[:idx-1]+">",cost)
 			else:
-				print "method:%s runs %s seconds!"%to_float2(func,time.time()-start)
+				print "method:%s runs %s seconds!"%to_float2(func,cost)
 			return ret
 		return _real
 	return _print_exe_time

@@ -46,6 +46,12 @@ NODE_UPDATER_SERVER_PORT = 1281
 
 STANDBY_SERVER_PORT = 1282
 
+# update 2023-12-13: 主用api为腾讯api(有时候会被限流) 备用api为sina(接口不稳定 有时候返回空数据)
+# update 2023-12-13: 再次确认了sina的接口....返回的数据正确性有问题,但是单个code又没有问题 只会在大量数据下有问题
+# 可选: sina , tencent
+#FENSHI_API = 'sina'
+FENSHI_API = 'tencent'
+
 # properties文件名称
 REALTIME_PROPERTIES_FILE = 'realtime/realtime.properties'
 
