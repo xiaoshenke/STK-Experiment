@@ -76,10 +76,11 @@ fi
 # if it is open browser,just open it
 if [ $open_type -eq 1  ]
 then
-	url=http://finance.sina.com.cn/realstock/company/$code/nc.shtml
+	_code=$1
+	url=http://stockpage.10jqka.com.cn/$_code
 	echo "old url(not open):" $url
-	code=$1
-	url=http://stockpage.10jqka.com.cn/$code
+
+	url=http://finance.sina.com.cn/realstock/company/$code/nc.shtml
 	echo going to open url:$url ...
 	open $url
 	exit 2
