@@ -2,7 +2,8 @@
 
 export PYTHONUNBUFFERED=1
 
-operate=trend
+# update 2024-01-16: trend->jpg
+operate=jpg
 
 while [ -n "$1" ]
 do 
