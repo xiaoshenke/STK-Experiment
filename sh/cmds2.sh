@@ -8,6 +8,7 @@ mode=#
 
 type=''
 front=''
+fake=''
 
 now=0
 while [ -n "$1" ]
@@ -25,6 +26,10 @@ do
                 shift
                 mode=$1
                 ;;
+	-fake | --fake)
+		shift
+		fake=$1
+		;;
         -help | --help)
 		echo usage sh/realtime/cmds2.sh [--day abc] [--time_str xyz] [--mode aaa ] type
                 exit 1
@@ -67,8 +72,8 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 if [ ${#front} -eq 0 ]
 then
-	echo python realtime/cmds_cli.py buyer_cmds $type --day $day --time_str $time_str --mode $mode
-	python realtime/cmds_cli.py buyer_cmds $type --day $day --time_str $time_str --mode $mode
+	echo python realtime/cmds_cli.py buyer_cmds $type --day $day --time_str $time_str --mode $mode --fake $fake
+	python realtime/cmds_cli.py buyer_cmds $type --day $day --time_str $time_str --mode $mode --fake $fake
 	exit 1
 fi
 
