@@ -8,7 +8,7 @@ mode=#
 
 type=''
 front=''
-fake=''
+fake='#'
 
 now=0
 while [ -n "$1" ]
