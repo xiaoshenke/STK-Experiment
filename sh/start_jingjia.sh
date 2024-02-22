@@ -6,3 +6,6 @@ sh/start_jingjia_advisor.sh
 echo 起观察组件... sh/start_jingjia_observe.sh
 sh/start_jingjia_observe.sh
 
+echo 起standby nohup python inn_strategy/standby_cli.py schedule_standby_and_merge2 --enable_merger false 
+nohup python inn_strategy/standby_cli.py schedule_standby_and_merge2 --enable_merger false >>standby.log 2>&1 &
+
