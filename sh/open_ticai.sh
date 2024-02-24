@@ -11,6 +11,9 @@ code=$1
 if [[ ${code:0:2} == "60" ]] || [[ ${code:0:2} == "68" ]]
 then
 	code=SH$code
+elif [[ ${code:0:1} == "8" ]] || [[ ${code:0:1} == "4" ]]
+then
+	code=BJ$code
 else
 	code=SZ$code
 fi
