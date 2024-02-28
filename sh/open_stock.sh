@@ -81,6 +81,9 @@ then
 	echo "old url(not open):" $url
 
 	url=http://finance.sina.com.cn/realstock/company/$code/nc.shtml
+	echo "old url(not open):" $url
+
+	url=http://quote.eastmoney.com/$code.html
 	echo going to open url:$url ...
 	open $url
 	exit 2
