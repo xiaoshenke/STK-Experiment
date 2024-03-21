@@ -28,17 +28,17 @@ python realtime/observe/pools.py set --running_mode $mode
 echo python realtime/observe/upstp.py set --running_mode $mode
 python realtime/observe/upstp.py set --running_mode $mode
 
-echo python realtime/observe/xls.py set --running_mode $mode
-python realtime/observe/xls.py set --running_mode $mode
+#echo python realtime/observe/xls.py set --running_mode $mode
+#python realtime/observe/xls.py set --running_mode $mode
 
-echo python realtime/observe/longhu.py set --running_mode $mode
-python realtime/observe/longhu.py set --running_mode $mode
+#echo python realtime/observe/longhu.py set --running_mode $mode
+#python realtime/observe/longhu.py set --running_mode $mode
 
-echo python realtime/observe/high.py set --running_mode $mode
-python realtime/observe/high.py set --running_mode $mode
+#echo python realtime/observe/high.py set --running_mode $mode
+#python realtime/observe/high.py set --running_mode $mode
 
-echo python realtime/observe/shouban.py set --running_mode $mode
-python realtime/observe/shouban.py set --running_mode $mode
+#echo python realtime/observe/shouban.py set --running_mode $mode
+#python realtime/observe/shouban.py set --running_mode $mode
 
 echo python realtime/observe/chaozuo.py set --running_mode $mode
 python realtime/observe/chaozuo.py set --running_mode $mode

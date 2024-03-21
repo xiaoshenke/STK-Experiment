@@ -162,6 +162,14 @@ def save_cpu_issure(msg):
 	except Exception,e:
 		pass
 
+# zao observe(早盘架构组件)单独做成日至
+zao_observe_logger = get_common_daily_logger('zao_observe','zao_observe')
+def save_zao_observe(msg):
+	try:
+		zao_observe_logger.info(str(msg))
+	except Exception,e:
+		pass
+
 error_logger = get_common_daily_logger('error','error')
 def save_error(msg):
 	try:
