@@ -19,8 +19,14 @@ python realtime/observe/change.py set --running_mode $mode
 echo python realtime/observe/market.py set --running_mode $mode
 python realtime/observe/market.py set --running_mode $mode
 
+echo python realtime/observe/mao.py set --running_mode $mode
+python realtime/observe/mao.py set --running_mode $mode
+
 echo python realtime/observe/pools.py set --running_mode $mode
 python realtime/observe/pools.py set --running_mode $mode
+
+echo python realtime/observe/code_types.py set --running_mode $mode
+python realtime/observe/code_types.py set --running_mode $mode
 
 #echo python realtime/observe/bind.py set --running_mode $mode
 #python realtime/observe/bind.py set --running_mode $mode
