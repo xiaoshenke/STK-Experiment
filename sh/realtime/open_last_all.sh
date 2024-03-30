@@ -152,6 +152,9 @@ then
 
 	echo python realtime/observe/top_btw.py open_last
 	python realtime/observe/top_btw.py open_last --day $day --time_str $time_str --key $key
+
+	echo python realtime/observe/code_types.py open_last
+	python realtime/observe/code_types.py open_last --day $day --time_str $time_str --check_expire True
 elif [[ $mode == "change" ]]
 then
 	echo python realtime/observe/change.py open_last
