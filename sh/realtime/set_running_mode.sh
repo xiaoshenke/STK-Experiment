@@ -46,8 +46,8 @@ python realtime/observe/upstp.py set --running_mode $mode
 #echo python realtime/observe/shouban.py set --running_mode $mode
 #python realtime/observe/shouban.py set --running_mode $mode
 
-echo python realtime/observe/chaozuo.py set --running_mode $mode
-python realtime/observe/chaozuo.py set --running_mode $mode
+#echo python realtime/observe/chaozuo.py set --running_mode $mode
+#python realtime/observe/chaozuo.py set --running_mode $mode
 
 #echo python realtime/observe/style.py set --running_mode $mode
 #python realtime/observe/style.py set --running_mode $mode
