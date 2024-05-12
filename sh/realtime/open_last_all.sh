@@ -63,7 +63,10 @@ elif [[ $mode == "jingjia" ]]
 then
 	echo python realtime/observe/jingjia.py open_last
 	python realtime/observe/jingjia.py open_last --day $day --time_str $time_str 
-
+elif [[ $mode == "chaoduan" ]]
+then
+	echo python realtime/observe/chaoduan.py open_last
+	python realtime/observe/chaoduan.py open_last --day $day --time_str $time_str 
 elif [[ $mode == "high" ]]
 then
 	echo python realtime/observe/high.py open_last
@@ -156,6 +159,9 @@ then
 
 	echo python realtime/observe/top_btw.py open_last
 	python realtime/observe/top_btw.py open_last --day $day --time_str $time_str --key $key
+
+	echo python realtime/observe/chaoduan.py open_last
+	python realtime/observe/chaoduan.py open_last --day $day --time_str $time_str 
 
 	echo python realtime/observe/code_types.py open_last
 	python realtime/observe/code_types.py open_last --day $day --time_str $time_str --check_expire True
