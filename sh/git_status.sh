@@ -4,7 +4,9 @@
 
 py_list=`find *|grep .py|grep -v "/[.]"|grep -v pyc`
 
-#echo $py_list[@]
+#echo $py_list
+#[@]
+#echo ${#py_list[*]}
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH

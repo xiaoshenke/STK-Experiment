@@ -10,7 +10,7 @@ IS_WINDOWS = False
 DEBUG_OPEN = False
 SECRET_FILE = "secret"
 
-ignore_list = ["common.txt","threadpool.py","README.md","crypt_all.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py","updater.py","__init__.py","dir_util.py","crontab.py"]
+ignore_list = [ "common.txt","threadpool.py","README.md","crypt_all.py","crypt_cli.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py","updater.py","__init__.py","dir_util.py","crontab.py",".DS_Store","realtime.properties",".gitignore" ]
 
 ignore_dirs = ["/.git","/csv_data","/other","/data"]
 
@@ -48,17 +48,27 @@ def should_apply_crypt(file):
 
 	return True
 
-def crypt_file(file,aes,base_dir=None):
+def crypt_file(file,aes,base_dir=None,debug=False):
 	if not should_apply_crypt(file):
 		return
 	if not file.endswith(".py"):
 		return
+
+	if not aes:
+		from crypt_util import AES_ENCRYPT
+		secret = check_and_read_secret()
+		aes = AES_ENCRYPT(secret)
+
+	if debug:
+		print u'crypt_all.crypt_file,file:%s'%(file)
 
 	f = None
         f_write = None
         seperator = '/' if not IS_WINDOWS else '\\'
         try:
 		from_file = file if not base_dir else base_dir + seperator + file
+		#print from_file
+
 		f = open(from_file)
 		text = f.read()
 		text_after = aes.encrypt(text)
@@ -67,6 +77,9 @@ def crypt_file(file,aes,base_dir=None):
 
                 if DEBUG_OPEN:
                         logger.debug("from file:%s, to file:%s",from_file,to_file)
+
+		if debug:
+			print 'from file:%s, to file:%s'%(from_file,to_file)
 		f_write = open(to_file,'w')
                 f_write.write(text_after)
                 if f:
@@ -85,15 +98,26 @@ def crypt_file(file,aes,base_dir=None):
 def is_base64file(file):
 	return file.endswith("==")
 
-def uncrypt_file(file,aes,base_dir=None):
+def uncrypt_file(file,aes,base_dir=None,debug=False):
+	if debug:
+		print u'util.crypt_all.uncrypt_file,file:%s'%(file)
 	if not should_apply_crypt(file):
+		if debug:
+			print u'should_apply_crypt return false.'
 		return
 	if file.endswith(".py"):
 		return
+
+	if not aes:
+		from crypt_util import AES_ENCRYPT
+		secret = check_and_read_secret()
+		aes = AES_ENCRYPT(secret)
+
 	f = None
 	f_write = None
+	from_file = file if not base_dir else base_dir + "/" + file
+
 	try:
-		from_file = file if not base_dir else base_dir + "/" + file
 
 		f = open(from_file)
 		text = f.read()
@@ -102,6 +126,10 @@ def uncrypt_file(file,aes,base_dir=None):
 		to_file = base64.b64decode(file) if not base_dir else base_dir + "/" + base64.b64decode(file)
                 if DEBUG_OPEN:
                         logger.debug("from file:%s,to file:%s",from_file,to_file)
+
+		if debug:
+			print 'from file:%s,to file:%s'%(from_file,to_file)
+
 		f_write = open(to_file,'w')
 		f_write.write(text_after)
                 if f:
@@ -109,6 +137,7 @@ def uncrypt_file(file,aes,base_dir=None):
                         f = None
 		os.remove(from_file)
 	except Exception,e:
+		print e,from_file
 		pass
 	finally:
 		if f:
@@ -196,6 +225,8 @@ def get_origin_name(crypted_name):
 def get_origin_name_from_list(py_list,crypted_name):
 	if DEBUG_OPEN:
 		logger.debug("crypt_all.get_origin_name_from_list py_list:%s",py_list)
+
+	#print 'get_origin_name_from_list,len-py-list:%s %s'%(len(py_list),crypted_name)
 
 	# 当前文件夹
 	if not '/' in crypted_name:
