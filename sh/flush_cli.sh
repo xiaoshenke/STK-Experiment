@@ -8,6 +8,7 @@ mode=#
 
 type=''
 flush_type='simple'
+front_type=#
 ignore_cache=0
 
 now=0
@@ -26,6 +27,10 @@ do
                 shift
                 mode=$1
                 ;;
+	-eva | --eva | --front | -front | --front_type | -front_type)
+                shift
+                front_type=$1
+                ;;
 	-ignore_cache | --ignore_cache)
                 shift
                 ignore_cache=$1
@@ -39,8 +44,11 @@ do
 		if [ $now -eq 0 ]
 		then
 			type=$1
-		else
+		elif [ $now -eq 1 ]
+		then
 			flush_type=$1
+		else
+			front_type=$1
 		fi
 		declare -i now=$now+1
                 ;;
@@ -59,6 +67,13 @@ then
 	flush_type=$2
 fi
 
+if [ $# -eq 3 ]
+then
+	type=$1
+	flush_type=$2
+	front_type=$3
+fi
+
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
@@ -67,7 +82,7 @@ then
 	echo python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
 	python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
 else
-	echo python realtime/flush_cli.py flush_subs $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/flush_cli.py flush_subs $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	echo python realtime/flush_cli.py flush_subs $type $flush_type --front_type $front_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/flush_cli.py flush_subs $type $flush_type --front_type $front_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 fi
 
