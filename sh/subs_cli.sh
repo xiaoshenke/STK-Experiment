@@ -40,7 +40,7 @@ do
                 ignore_cache=$1
                 ;;
         -help | --help)
-		echo usage sh/realtime/subs_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] code_type subs_type
+		echo usage sh/realtime/subs_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] code_type subs_type [info|flush|front-type]
                 exit 1
                 ;;
         *)
