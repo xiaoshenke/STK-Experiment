@@ -75,6 +75,10 @@ elif [[ $hq_type == "zhudao" ]]
 then
 	echo python realtime/hangqing_cli.py zhudao $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/hangqing_cli.py zhudao $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+elif [[ $hq_type == "fenbu" ]]
+then
+	echo python realtime/hangqing_cli.py fenbu $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/hangqing_cli.py fenbu $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 else
 	echo 输入的行情类型$hq_type 不正确
 fi

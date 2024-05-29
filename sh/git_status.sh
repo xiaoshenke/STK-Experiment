@@ -2,7 +2,7 @@
 # crypt version of git status
 # Usage: ./git_status.sh
 
-py_list=`find *|grep .py|grep -v "/[.]"|grep -v pyc`
+py_list=`find *|grep .py|grep -v "/[.]"|grep -v pyc|grep -v __init__`
 
 #echo $py_list
 #[@]
