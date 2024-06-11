@@ -46,7 +46,7 @@ do
                 ignore_cache=$1
                 ;;
         -help | --help)
-		echo usage sh/realtime/flush_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] type
+		echo usage sh/realtime/flush_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] [--subs bbb] type
                 exit 1
                 ;;
         *)

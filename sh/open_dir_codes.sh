@@ -19,7 +19,7 @@ fi
 # if no codes,just open dir/*.jpg
 if [ $has_codes -eq 0 ]
 then
-	echo open $dir/*.jpg
+	#echo open $dir/*.jpg
 	open $dir/*.jpg
 	exit 0
 fi
