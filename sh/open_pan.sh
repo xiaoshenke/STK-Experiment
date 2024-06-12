@@ -25,10 +25,10 @@ do
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
 		then
-			day=$1
+			type=$1
 		elif [ $now -eq 1 ]
 		then
-			type=$1
+			day=$1
 		fi
 		declare -i now=$now+1
                 ;;
