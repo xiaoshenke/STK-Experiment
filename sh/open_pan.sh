@@ -3,7 +3,9 @@
 echo ATTENTION: OPEN-PAN CLI
 
 day=#
-type=#
+
+# 先走一个读取逻辑,设置一下type的值 这个值是前一次打开text文件时记录的
+type=$(python realtime/properties_cli.py read_pan_type)
 
 now=0
 while [ -n "$1" ]
@@ -22,7 +24,7 @@ do
                 exit 1
                 ;;
         *)
-		# set value to type|flush_type by now-flag
+		# set value to type|day by now-flag
 		if [ $now -eq 0 ]
 		then
 			type=$1
