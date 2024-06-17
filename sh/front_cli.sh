@@ -98,5 +98,6 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
+echo python realtime/flush_cli.py flush_front $type $front_type --day $day --time_str $time_str --mode $mode --back $back_type --fronts $fronts --subs $subs --ignore_cache $ignore_cache
 python realtime/flush_cli.py flush_front $type $front_type --day $day --time_str $time_str --mode $mode --back $back_type --fronts $fronts --subs $subs --ignore_cache $ignore_cache
 
