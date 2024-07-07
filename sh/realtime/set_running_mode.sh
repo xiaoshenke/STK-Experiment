@@ -40,8 +40,8 @@ python realtime/observe/chaoduan.py set --running_mode $mode
 echo python realtime/observe/buyer.py set --running_mode $mode
 python realtime/observe/buyer.py set --running_mode $mode
 
-#echo python realtime/observe/xls.py set --running_mode $mode
-#python realtime/observe/xls.py set --running_mode $mode
+echo python realtime/observe/xls.py set --running_mode $mode
+python realtime/observe/xls.py set --running_mode $mode
 
 #echo python realtime/observe/longhu.py set --running_mode $mode
 #python realtime/observe/longhu.py set --running_mode $mode
