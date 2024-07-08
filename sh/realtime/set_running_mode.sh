@@ -10,9 +10,6 @@ fi
 echo python realtime/observe/mline.py set --running_mode $mode
 python realtime/observe/mline.py set --running_mode $mode
 
-echo python realtime/observe/prop.py set --running_mode $mode
-python realtime/observe/prop.py set --running_mode $mode
-
 echo python realtime/observe/change.py set --running_mode $mode
 python realtime/observe/change.py set --running_mode $mode
 
@@ -42,21 +39,6 @@ python realtime/observe/buyer.py set --running_mode $mode
 
 echo python realtime/observe/xls.py set --running_mode $mode
 python realtime/observe/xls.py set --running_mode $mode
-
-#echo python realtime/observe/longhu.py set --running_mode $mode
-#python realtime/observe/longhu.py set --running_mode $mode
-
-#echo python realtime/observe/high.py set --running_mode $mode
-#python realtime/observe/high.py set --running_mode $mode
-
-#echo python realtime/observe/shouban.py set --running_mode $mode
-#python realtime/observe/shouban.py set --running_mode $mode
-
-#echo python realtime/observe/chaozuo.py set --running_mode $mode
-#python realtime/observe/chaozuo.py set --running_mode $mode
-
-#echo python realtime/observe/style.py set --running_mode $mode
-#python realtime/observe/style.py set --running_mode $mode
 
 #echo python realtime/buyer/observe_cli.py set --running_mode $mode
 #python realtime/buyer/observe_cli.py set --running_mode $mode
