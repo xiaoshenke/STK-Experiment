@@ -7,6 +7,9 @@ then
 	mode=$1
 fi
 
+echo python realtime/properties_cli.py write_running_mode $mode
+python realtime/properties_cli.py write_running_mode $mode
+
 echo python realtime/observe/mline.py set --running_mode $mode
 python realtime/observe/mline.py set --running_mode $mode
 
@@ -39,6 +42,9 @@ python realtime/observe/buyer.py set --running_mode $mode
 
 echo python realtime/observe/xls.py set --running_mode $mode
 python realtime/observe/xls.py set --running_mode $mode
+
+echo python realtime/observe/jingjia.py set --running_mode $mode
+python realtime/observe/jingjia.py set --running_mode $mode
 
 #echo python realtime/buyer/observe_cli.py set --running_mode $mode
 #python realtime/buyer/observe_cli.py set --running_mode $mode
