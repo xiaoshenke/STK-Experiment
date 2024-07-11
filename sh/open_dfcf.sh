@@ -35,6 +35,14 @@ then
 	exit 1
 fi
 
+if [[ ${code:0:3} == "47." ]]
+then
+	url=https://quote.eastmoney.com/uk/$code.html
+	echo going to open url:$url ...
+	open $url
+	exit 1
+fi
+
 url=http://quote.eastmoney.com/bk/90.$code.html
 echo going to open url:$url ...
 open $url
