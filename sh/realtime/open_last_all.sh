@@ -59,10 +59,12 @@ then
 
 	echo python realtime/observe/mao.py open_last
 	python realtime/observe/mao.py open_last --day $day --time_str $time_str
+
 elif [[ $mode == "jingjia" ]]
 then
 	echo python realtime/observe/jingjia.py open_last
 	python realtime/observe/jingjia.py open_last --day $day --time_str $time_str 
+
 elif [[ $mode == "chaoduan" ]]
 then
 	echo python realtime/observe/chaoduan.py open_last
