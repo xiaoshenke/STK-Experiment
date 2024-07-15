@@ -77,7 +77,12 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-if [[ $flush_type == "simple" ]] || [[ $flush_type == "simple_pull" ]] || [[ $flush_type == "zhendang" ]] || [[ $flush_type == "maichong" ]]
+if [[ $type == "evaed" ]]
+then
+	echo python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
+	python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
+
+elif [[ $flush_type == "simple" ]] || [[ $flush_type == "simple_pull" ]] || [[ $flush_type == "zhendang" ]] || [[ $flush_type == "maichong" ]]
 then
 	echo python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
 	python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
