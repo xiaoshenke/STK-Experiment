@@ -107,8 +107,10 @@ then
 	python realtime/observe/xls.py open_last --day $day --time_str $time_str
 elif [[ $mode == "buyer" ]] || [[ $mode == "buy" ]]
 then
-	echo python realtime/buyer/observe_cli.py open_last
-	python realtime/buyer/observe_cli.py open_last --day $day --time_str $time_str
+	#echo python realtime/buyer/observe_cli.py open_last
+	#python realtime/buyer/observe_cli.py open_last --day $day --time_str $time_str
+	echo python realtime/observe/buyer.py open_last
+	python realtime/observe/buyer.py open_last --day $day --time_str $time_str
 elif [[ $mode == "stocks" ]]
 then
 	echo python realtime/observe/stocks.py open_last
