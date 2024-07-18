@@ -2,7 +2,7 @@
 
 echo Usage: sh/start_mao_observe.sh [xls]
 
-xls=db31
+xls=#
 if [ $# -eq 1 ]
 then
 	xls=$1

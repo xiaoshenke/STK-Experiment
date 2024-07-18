@@ -25,6 +25,12 @@ then
 	echo nohup python engine/tracing/xls/cli.py start_tracing_engine_mode
 	nohup python engine/tracing/xls/cli.py start_tracing_engine_mode >>tracing.log 2>&1 &
 
+	echo 起reporter server sh/start_reporter_server.sh
+	sh/start_reporter_server.sh 
+
+	echo 起index observe sh/start_index_observe.sh 
+	sh/start_index_observe.sh
+ 
 elif [[ $mode == "light" ]]
 then
 	echo "[轻量级模式]:依次起standby,node updater,xls tracing,market tracing,style observe,change observe."
