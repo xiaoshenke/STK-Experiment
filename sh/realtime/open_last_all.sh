@@ -69,7 +69,7 @@ then
 elif [[ $type == "jingjia" ]]
 then
 	echo python realtime/observe/jingjia.py open_last
-	python realtime/observe/jingjia.py open_last --day $day --time_str $time_str 
+	python realtime/observe/jingjia.py open_last --day $day --time_str $time_str --mode $mode
 
 elif [[ $type == "chaoduan" ]]
 then

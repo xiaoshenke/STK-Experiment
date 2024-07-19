@@ -90,7 +90,10 @@ then
 	echo python realtime/subs_cli.py flush --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type
 	python realtime/subs_cli.py flush --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type
 else
-	echo python realtime/subs_cli.py front --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type $operate
-	python realtime/subs_cli.py front --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type $operate
+#	echo python realtime/subs_cli.py front --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type $operate
+#	python realtime/subs_cli.py front --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type $operate
+
+	echo python realtime/flush_cli.py flush_subs $code_type $subs_type --front_type $operate --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+        python realtime/flush_cli.py flush_subs $code_type $subs_type --front_type $operate --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 fi
 
