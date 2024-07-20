@@ -184,8 +184,9 @@ then
 	python realtime/observe/code_types.py open_last --day $day --time_str $time_str --check_expire True
 elif [[ $type == "change" ]]
 then
-	echo python realtime/observe/change.py open_last
-	python realtime/observe/change.py open_last --day $day --time_str $time_str
+	echo python realtime/observe/change.py open_last --mode $mode
+	python realtime/observe/change.py open_last --day $day --time_str $time_str --mode $mode
+
 elif [[ $type == "bind" ]]
 then
 	echo python realtime/observe/longhu.py open_last
