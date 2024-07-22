@@ -89,8 +89,9 @@ then
 	python realtime/observe/mao.py open_last --day $day --time_str $time_str
 elif [[ $type == "code_types" ]] || [[ $type == "code-types" ]] || [[ $type == "codetypes" ]]
 then
-	echo python realtime/observe/code_types.py open_last
-	python realtime/observe/code_types.py open_last --day $day --time_str $time_str --check_expire True
+	echo python realtime/observe/code_types.py open_last --mode $mode
+	python realtime/observe/code_types.py open_last --day $day --time_str $time_str --check_expire True --mode $mode
+
 elif [[ $type == "top_btw" ]]
 then
 	echo python realtime/observe/top_btw.py open_last
