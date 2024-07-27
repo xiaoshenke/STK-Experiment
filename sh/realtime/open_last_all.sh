@@ -197,8 +197,9 @@ then
 	python realtime/observe/bind.py open_last --day $day --time_str $time_str
 elif [[ $type == "upstp" ]]
 then
-	echo python realtime/observe/upstp.py open_last
-	python realtime/observe/upstp.py open_last --day $day --time_str $time_str --check_expire True
+	echo python realtime/observe/upstp.py open_last --mode $mode
+	python realtime/observe/upstp.py open_last --day $day --time_str $time_str --check_expire True --mode $mode
+
 elif [[ $type == "market" ]]
 then
 	echo python realtime/observe/market.py open_last
