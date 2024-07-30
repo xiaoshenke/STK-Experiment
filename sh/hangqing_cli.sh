@@ -71,14 +71,23 @@ elif [[ $hq_type =~ "pull" ]]
 then
 	echo python realtime/hangqing_cli.py pull $type --pull_type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/hangqing_cli.py pull $type --pull_type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
 elif [[ $hq_type == "maichong" ]]
 then
 	echo python realtime/hangqing_cli.py maichong $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/hangqing_cli.py maichong $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
+elif [[ $hq_type == "maoding" ]] || [[ $hq_type == "md" ]]
+then
+	echo python realtime/hangqing_cli.py maoding $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/hangqing_cli.py maoding $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
+
 elif [[ $hq_type == "zhudao" ]]
 then
 	echo python realtime/hangqing_cli.py zhudao $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/hangqing_cli.py zhudao $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
 elif [[ $hq_type == "lianghua" ]] || [[ $hq_type == "lh" ]]
 then
 	echo python realtime/hangqing_cli.py lianghua $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache

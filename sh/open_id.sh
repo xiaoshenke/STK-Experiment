@@ -4,6 +4,7 @@ mode="jpg"
 back=""
 #echo "$@"
 id=0
+force=1
 
 # extract parameters
 while [ -n "$1" ]
@@ -12,6 +13,10 @@ do
 	-mode|--mode)
 		mode=$2
 		shift
+		;;
+	-force | --force)
+		shift
+		force=$1
 		;;
 	-back|--back)
 		back=$2
@@ -44,9 +49,9 @@ fi
 
 if [ ${#back} -gt 1 ]
 then
-	echo python realtime/query_cli.py open $id --open_mode $mode --back $back
-	python realtime/query_cli.py open $id --open_mode $mode --back $back
+	echo python realtime/query_cli.py open $id --open_mode $mode --back $back --force $force
+	python realtime/query_cli.py open $id --open_mode $mode --back $back --force $force
 else
-	echo python realtime/query_cli.py open $id --open_mode $mode
-	python realtime/query_cli.py open $id --open_mode $mode
+	echo python realtime/query_cli.py open $id --open_mode $mode --force $force
+	python realtime/query_cli.py open $id --open_mode $mode --force $force
 fi

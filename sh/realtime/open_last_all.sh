@@ -154,14 +154,14 @@ then
 
 elif [[ $type == "pool" ]]
 then
-	echo python realtime/observe/mao.py open_last
-	python realtime/observe/mao.py open_last --day $day --time_str $time_str
+	echo python realtime/observe/mao.py open_last --mode $mode
+	python realtime/observe/mao.py open_last --day $day --time_str $time_str --mode $mode
 
 	echo python realtime/observe/style.py open_last
 	python realtime/observe/style.py open_last --day $day --time_str $time_str --check_expire True
 
-	echo python realtime/observe/upstp.py open_last
-	python realtime/observe/upstp.py open_last --day $day --time_str $time_str --check_expire True --key $key
+	echo python realtime/observe/upstp.py open_last --mode $mode
+	python realtime/observe/upstp.py open_last --day $day --time_str $time_str --check_expire True --key $key --mode $mode
 
 	echo python realtime/observe/bind.py open_last
 	python realtime/observe/bind.py open_last --day $day --time_str $time_str --check_expire True
@@ -169,11 +169,11 @@ then
 	echo python realtime/observe/mline.py open_last
 	python realtime/observe/mline.py open_last --day $day --time_str $time_str --key $key
 
-	echo python realtime/observe/pools.py open_last
-	python realtime/observe/pools.py open_last --day $day --time_str $time_str --key $key
+	echo python realtime/observe/pools.py open_last --mode $mode
+	python realtime/observe/pools.py open_last --day $day --time_str $time_str --key $key --mode $mode
 
-	echo python realtime/observe/change.py open_last
-	python realtime/observe/change.py open_last --day $day --time_str $time_str --key $key
+	echo python realtime/observe/change.py open_last --mode $mode
+	python realtime/observe/change.py open_last --day $day --time_str $time_str --key $key --mode $mode
 
 	echo python realtime/observe/top_btw.py open_last
 	python realtime/observe/top_btw.py open_last --day $day --time_str $time_str --key $key
@@ -181,8 +181,9 @@ then
 	echo python realtime/observe/chaoduan.py open_last
 	python realtime/observe/chaoduan.py open_last --day $day --time_str $time_str 
 
-	echo python realtime/observe/code_types.py open_last
-	python realtime/observe/code_types.py open_last --day $day --time_str $time_str --check_expire True
+	echo python realtime/observe/code_types.py open_last --mode $mode
+	python realtime/observe/code_types.py open_last --day $day --time_str $time_str --check_expire True --mode $mode
+
 elif [[ $type == "change" ]]
 then
 	echo python realtime/observe/change.py open_last --mode $mode
