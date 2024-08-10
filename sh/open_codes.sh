@@ -1,18 +1,16 @@
 #!/bin/bash
-# used to open dir codes
 
-if [ $# -gt 1 ]
+if [ $# -lt 1 ]
 then
-	echo Usage: ./open_codes.sh dir
+	echo Usage: ./open_codes.sh aaa,bbb,ccc
 	exit 2
 fi
 
-dir=`pwd`
-if [ $# -eq 1 ]
-then
-	dir=$1
-fi
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
 
-#echo open $dir/*.jpg
-open $dir/*.jpg
+codes=$1
+
+echo python realtime/code/cli.py open $codes
+python realtime/code/cli.py open $codes
 
