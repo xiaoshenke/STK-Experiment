@@ -8,28 +8,33 @@ then
 fi
 
 open_mode=jpg
+time_str=#
 
 now=0
 while [ -n "$1" ]
 do 
-        case "$1" in 
-        -mode | --mode | -open_mode | --open_mode)
-                shift
-                open_mode=$1
-                ;;
-        -type | --type)
-                shift
-                open_mode=$1
-                ;;
-        -help | --help)
-                echo usage sh/open_xls_list.sh [--day abc] [--type xyz] xls_list
-                exit 1
-                ;;
-        *)
+	case "$1" in 
+	-mode | --mode | -open_mode | --open_mode)
+		shift
+		open_mode=$1
+		;;
+	-type | --type)
+		shift
+		open_mode=$1
+		;;
+	-time_str | --time_str)
+		shift
+		time_str=$1
+		;;
+	-help | --help)
+		echo usage sh/open_xls_list.sh [--day abc] [--type xyz] xls_list
+		exit 1
+		;;
+	*)
 		xls_list=$1
-                ;;
-        esac
-        shift
+		;;
+	esac
+	shift
 done
 
 #xls_list=$1
@@ -37,6 +42,6 @@ done
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python engine/xls/open_cli.py open_xls_list $xls_list --open_mode $open_mode
-python engine/xls/open_cli.py open_xls_list $xls_list --open_mode $open_mode
+echo python engine/xls/open_cli.py open_xls_list $xls_list --open_mode $open_mode --time_str $time_str
+python engine/xls/open_cli.py open_xls_list $xls_list --open_mode $open_mode --time_str $time_str
 

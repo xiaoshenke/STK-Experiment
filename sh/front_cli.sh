@@ -98,6 +98,17 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
+is_code_types=$(python realtime/flush_cli.py is_code_types "$type")
+
+if [[ $is_code_types == "1" ]]
+then
+	echo ########## 为code-types类型
+	echo python realtime/cts_cli.py front $type $front_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
+	python realtime/cts_cli.py front "$type" $front_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
+	exit 2
+fi
+
 echo python realtime/flush_cli.py flush_front $type $front_type --day $day --time_str $time_str --mode $mode --back $back_type --fronts $fronts --subs $subs --ignore_cache $ignore_cache
 
 python realtime/flush_cli.py flush_front $type $front_type --day $day --time_str $time_str --mode $mode --back $back_type --fronts $fronts --subs $subs --ignore_cache $ignore_cache
