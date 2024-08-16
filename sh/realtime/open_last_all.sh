@@ -66,7 +66,7 @@ then
 	echo python realtime/observe/mao.py open_last
 	python realtime/observe/mao.py open_last --day $day --time_str $time_str
 
-elif [[ $type == "jingjia" ]]
+elif [[ $type == "jingjia" ]] || [[ $type == "jj" ]]
 then
 	echo python realtime/observe/jingjia.py open_last
 	python realtime/observe/jingjia.py open_last --day $day --time_str $time_str --mode $mode
