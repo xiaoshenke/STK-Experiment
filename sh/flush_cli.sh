@@ -94,6 +94,12 @@ then
 	echo python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
 	python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
 
+#elif [[ ${flush_type::-2} == "ss" ]]
+elif [[ $flush_type == *ss ]]
+then
+	echo python realtime/flush_cli.py flush_fronts $type $flush_type --day $day --time_str $time_str --mode $mode
+	python realtime/flush_cli.py flush_fronts $type $flush_type --day $day --time_str $time_str --mode $mode 
+
 elif [[ $flush_type =~ "buy" ]]
 then
 	echo python realtime/flush_cli.py flush_buy $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
