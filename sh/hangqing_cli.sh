@@ -78,6 +78,11 @@ then
 	echo python realtime/hangqing_cli.py maoding $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
 	python realtime/hangqing_cli.py maoding $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
+elif [[ $hq_type == "youzi" ]] || [[ $hq_type == "yz" ]]
+then
+	echo python realtime/hangqing_cli.py maoding $type maoding:yz --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/hangqing_cli.py maoding $type maoding:yz --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
 elif [[ $hq_type =~ "jinji" ]]
 then
 	echo python realtime/hangqing_cli.py jinji $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
