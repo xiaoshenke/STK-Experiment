@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+            <html xmlns='http://www.w3.org/1999/xhtml'>
+            <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+            <title></title>
+            <style>
+            td{
+                text-align:center;
+                font-size:12px;
+                font-family:Arial, Helvetica, sans-serif;
+                border:#1C7A80 1px solid;
+                color:#152122;
+    }
+    table,tr{
+        border-style:none;
+    }
+    .centerTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:center;
+    }
+    .leftTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:left;
+    }
+    </style>
+        </head>
+
+        <body>
+        <table border='1'><tr><td class="centerTitle">股票代码</td><td class="centerTitle">股票简称</td><td class="centerTitle">现价(元)</td><td class="centerTitle">涨跌幅(%)</td><td class="centerTitle">所属同花顺行业</td><td class="centerTitle">所属概念</td><td class="centerTitle">最新dde大单净额(元)</td></tr><tr><td>	000627.SZ</td><td>天茂集团</td><td style="text-align:right;mso-number-format:0.00;">3.56</td><td style="text-align:right;mso-number-format:0.00;">1.14</td><td>金融服务-保险及其他-保险Ⅲ</td><td>线型;融资融券;深股通;转融券标的;互联网保险;富时罗素概念;富时罗素概念股;MSCI概念;标普道琼斯A股</td><td style="text-align:right;mso-number-format:0.00;">1718990.60</td></tr><tr><td>600291.SH</td><td>*ST西水</td><td style="text-align:right;mso-number-format:0.00;">3.27</td><td style="text-align:right;mso-number-format:0.00;">5.15</td><td>金融服务-保险及其他-保险Ⅲ</td><td>参股保险;ST板块;富时罗素概念股;参股银行</td><td style="text-align:right;mso-number-format:0.00;">-4187664.60</td></tr><tr><td>601318.SH</td><td>中国平安</td><td style="text-align:right;mso-number-format:0.00;">59.98</td><td style="text-align:right;mso-number-format:0.00;">3.58</td><td>金融服务-保险及其他-保险Ⅲ</td><td>上海金改;央视财经50;融资融券;沪股通;转融券标的;互联网保险;中字头股票;征信;富时罗素概念;富时罗素概念股;金融科技;独角兽概念;MSCI概念;标普道琼斯A股;同花顺漂亮100;参股券商</td><td style="text-align:right;mso-number-format:0.00;">466470360.00</td></tr><tr><td>601319.SH</td><td>中国人保</td><td style="text-align:right;mso-number-format:0.00;">5.89</td><td style="text-align:right;mso-number-format:0.00;">1.55</td><td>金融服务-保险及其他-保险Ⅲ</td><td>沪股通;中字头股票;融资融券;转融券标的;蚂蚁金服概念;标普道琼斯A股;央企国资改革</td><td style="text-align:right;mso-number-format:0.00;">58898066.00</td></tr><tr><td>601336.SH</td><td>新华保险</td><td style="text-align:right;mso-number-format:0.00;">45.35</td><td style="text-align:right;mso-number-format:0.00;">4.01</td><td>金融服务-保险及其他-保险Ⅲ</td><td>互联网保险;融资融券;沪股通;转融券标的;富时罗素概念;富时罗素概念股;蚂蚁金服概念;MSCI概念;标普道琼斯A股;央企国资改革;机构重仓</td><td style="text-align:right;mso-number-format:0.00;">132599930.00</td></tr><tr><td>601601.SH</td><td>中国太保</td><td style="text-align:right;mso-number-format:0.00;">28.37</td><td style="text-align:right;mso-number-format:0.00;">5.70</td><td>金融服务-保险及其他-保险Ⅲ</td><td>央视财经50;融资融券;沪股通;转融券标的;中字头股票;富时罗素概念;富时罗素概念股;蚂蚁金服概念;MSCI概念;标普道琼斯A股;参股银行</td><td style="text-align:right;mso-number-format:0.00;">226625977.00</td></tr><tr><td>601628.SH</td><td>中国人寿</td><td style="text-align:right;mso-number-format:0.00;">31.20</td><td style="text-align:right;mso-number-format:0.00;">2.09</td><td>金融服务-保险及其他-保险Ⅲ</td><td>中字头股票;融资融券;沪股通;转融券标的;富时罗素概念;富时罗素概念股;联通混改;MSCI概念;标普道琼斯A股;蚂蚁金服概念;参股银行;证金持股;央企国资改革</td><td style="text-align:right;mso-number-format:0.00;">25172333.30</td></tr></table>
+        </body>
+        </html>

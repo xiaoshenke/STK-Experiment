@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+            <html xmlns='http://www.w3.org/1999/xhtml'>
+            <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+            <title></title>
+            <style>
+            td{
+                text-align:center;
+                font-size:12px;
+                font-family:Arial, Helvetica, sans-serif;
+                border:#1C7A80 1px solid;
+                color:#152122;
+    }
+    table,tr{
+        border-style:none;
+    }
+    .centerTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:center;
+    }
+    .leftTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:left;
+    }
+    </style>
+        </head>
+
+        <body>
+        <table border='1'><tr><td class="centerTitle">股票代码</td><td class="centerTitle">股票简称</td><td class="centerTitle">现价(元)</td><td class="centerTitle">涨跌幅(%)</td><td class="centerTitle">所属概念</td><td class="centerTitle">所属概念数量(个)</td><td class="leftTitle">a股流通市值(元)2024.04.30</td></tr><tr><td>301301.SZ</td><td>川宁生物</td><td style="text-align:right;mso-number-format:0.00;">13.18</td><td style="text-align:right;mso-number-format:0.00;">20.04</td><td>合成生物;生物医药;转融券标的;融资融券;深股通;粮食概念;智能医疗;一季报预增</td><td style="text-align:right;mso-number-format:0.;">8</td><td style="text-align:right;mso-number-format:0.00;">8078184865.26</td></tr><tr><td>300381.SZ</td><td>溢多利</td><td style="text-align:right;mso-number-format:0.00;">7.50</td><td style="text-align:right;mso-number-format:0.00;">20.00</td><td>合成生物;饲料;燃料乙醇;横琴新区;NMN概念</td><td style="text-align:right;mso-number-format:0.;">5</td><td style="text-align:right;mso-number-format:0.00;">3650863605.00</td></tr><tr><td>301258.SZ</td><td>富士莱</td><td style="text-align:right;mso-number-format:0.00;">28.14</td><td style="text-align:right;mso-number-format:0.00;">20.00</td><td>合成生物;融资融券;保健品;外贸受益概念;医美概念;人民币贬值受益;转融券标的;阿尔茨海默概念;创投;医疗器械概念</td><td style="text-align:right;mso-number-format:0.;">10</td><td style="text-align:right;mso-number-format:0.00;">952419405.00</td></tr><tr><td>688089.SH</td><td>嘉必优</td><td style="text-align:right;mso-number-format:0.00;">19.65</td><td style="text-align:right;mso-number-format:0.00;">11.78</td><td>合成生物;维生素;融资融券;转融券标的;保健品;三胎概念;化妆护肤品</td><td style="text-align:right;mso-number-format:0.;">7</td><td style="text-align:right;mso-number-format:0.00;">3307274208.00</td></tr><tr><td>600789.SH</td><td>鲁抗医药</td><td style="text-align:right;mso-number-format:0.00;">7.14</td><td style="text-align:right;mso-number-format:0.00;">10.02</td><td>合成生物;生物医药;禽流感;兽药;西尼罗病毒;寨卡病毒概念;登革热;埃博拉概念;融资融券;转融券标的;医保目录;MERS概念;医疗改革;仿制药一致性评价;流感;肝炎概念;地方国企改革;国企改革;消毒剂;沪股通;阿尔茨海默概念;山东国企改革;创新药</td><td style="text-align:right;mso-number-format:0.;">23</td><td style="text-align:right;mso-number-format:0.00;">6397837155.36</td></tr><tr><td>603079.SH</td><td>圣达生物</td><td style="text-align:right;mso-number-format:0.00;">12.87</td><td style="text-align:right;mso-number-format:0.00;">10.00</td><td>合成生物;维生素;专精特新</td><td style="text-align:right;mso-number-format:0.;">3</td><td style="text-align:right;mso-number-format:0.00;">2203201889.46</td></tr><tr><td>603739.SH</td><td>蔚蓝生物</td><td style="text-align:right;mso-number-format:0.00;">13.87</td><td style="text-align:right;mso-number-format:0.00;">9.99</td><td>合成生物;动物疫苗;宠物经济;保健品;CRO概念;幽门螺杆菌概念;化肥;代糖概念;禽流感;食品安全;节能环保</td><td style="text-align:right;mso-number-format:0.;">11</td><td style="text-align:right;mso-number-format:0.00;">3509510371.42</td></tr><tr><td>	001366.SZ</td><td>播恩集团</td><td style="text-align:right;mso-number-format:0.00;">13.66</td><td style="text-align:right;mso-number-format:0.00;">9.98</td><td>合成生物;饲料;乡村振兴</td><td style="text-align:right;mso-number-format:0.;">3</td><td style="text-align:right;mso-number-format:0.00;">760588800.00</td></tr><tr><td>300233.SZ</td><td>金城医药</td><td style="text-align:right;mso-number-format:0.00;">18.82</td><td style="text-align:right;mso-number-format:0.00;">9.55</td><td>合成生物;埃博拉概念;眼科医疗;深股通;石墨烯;仿制药一致性评价;禽流感;新型烟草;工业大麻;肝炎概念;创新药;融资融券;转融券标的;高血压药;新冠特效药;烟草</td><td style="text-align:right;mso-number-format:0.;">16</td><td style="text-align:right;mso-number-format:0.00;">6967017768.60</td></tr><tr><td>	002886.SZ</td><td>沃特股份</td><td style="text-align:right;mso-number-format:0.00;">16.21</td><td style="text-align:right;mso-number-format:0.00;">6.86</td><td>合成生物;新能源汽车;无人机;石墨烯;新材料概念;特斯拉;华为概念;华为汽车;3D打印;碳基材料;光伏概念;新型烟草;6G概念;5G;小米概念;机器人概念;专精特新;PEEK材料;小米汽车;碳纤维;低空经济;军工</td><td style="text-align:right;mso-number-format:0.;">22</td><td style="text-align:right;mso-number-format:0.00;">3378093713.44</td></tr><tr><td>300199.SZ</td><td>翰宇药业</td><td style="text-align:right;mso-number-format:0.00;">12.88</td><td style="text-align:right;mso-number-format:0.00;">5.32</td><td>合成生物;辅助生殖;智能医疗;融资融券;多肽药;转融券标的;医保目录;乙肝治疗;互联网医疗;富时罗素概念股;NMN概念;创投;仿制药一致性评价;三胎概念;幽门螺杆菌概念;肝炎概念;新冠疫苗;创新药;粤港澳大湾区;抗原检测;细胞免疫治疗;深股通;流感;新冠特效药;猴痘概念;减肥药;工业大麻</td><td style="text-align:right;mso-number-format:0.;">27</td><td style="text-align:right;mso-number-format:0.00;">8578515511.44</td></tr><tr><td>688065.SH</td><td>凯赛生物</td><td style="text-align:right;mso-number-format:0.00;">51.30</td><td style="text-align:right;mso-number-format:0.00;">4.35</td><td>合成生物;融资融券;转融券标的;新材料概念;可降解塑料;专精特新;沪股通;一季报预增</td><td style="text-align:right;mso-number-format:0.;">8</td><td style="text-align:right;mso-number-format:0.00;">29927293400.70</td></tr><tr><td>600873.SH</td><td>梅花生物</td><td style="text-align:right;mso-number-format:0.00;">11.12</td><td style="text-align:right;mso-number-format:0.00;">2.21</td><td>合成生物;生物疫苗;维生素;国开行;融资融券;转融券标的;味精;饲料;调味品;沪股通;参股银行;代糖概念;高股息精选</td><td style="text-align:right;mso-number-format:0.;">13</td><td style="text-align:right;mso-number-format:0.00;">31723010900.00</td></tr></table>
+        </body>
+        </html>

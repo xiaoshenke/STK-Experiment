@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+            <html xmlns='http://www.w3.org/1999/xhtml'>
+            <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+            <title></title>
+            <style>
+            td{
+                text-align:center;
+                font-size:12px;
+                font-family:Arial, Helvetica, sans-serif;
+                border:#1C7A80 1px solid;
+                color:#152122;
+    }
+    table,tr{
+        border-style:none;
+    }
+    .centerTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:center;
+    }
+    .leftTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:left;
+    }
+    </style>
+        </head>
+
+        <body>
+        <table border='1'><tr><td class="centerTitle">股票代码</td><td class="centerTitle">股票简称</td><td class="centerTitle">现价(元)</td><td class="centerTitle">涨跌幅(%)</td><td class="centerTitle">所属概念</td><td class="centerTitle">概念解析</td><td class="centerTitle">概念资讯</td><td class="centerTitle">所属概念数量(个)</td><td class="leftTitle">a股流通市值(元)2023.09.06</td></tr><tr><td>300537.SZ</td><td>广信材料</td><td style="text-align:right;mso-number-format:0.00;">21.94</td><td style="text-align:right;mso-number-format:0.00;">20.02</td><td>BC电池</td><td>2023年7月11日公司公告：公司今年及短中期的增量主要来自新产品市场开拓。第一是光伏板块的BC电池（背接触电池）用光伏绝缘胶从去年底到今年上半年已经开始逐渐放量，根据市场公开信息及公司获得订单的增速看，预计三季度将整体有望更高速放量增长。</td><td></td><td style="text-align:right;mso-number-format:0.;">11</td><td style="text-align:right;mso-number-format:0.00;">3002701400.00</td></tr><tr><td>300776.SZ</td><td>帝尔激光</td><td style="text-align:right;mso-number-format:0.00;">65.85</td><td style="text-align:right;mso-number-format:0.00;">7.92</td><td>BC电池</td><td>据2023年半年报：公司目前的主要产品包括 PERC 激光消融设备，PERC 电池激光掺杂设备，TOPCon 电池激光硼掺杂设备，背接触电池（BC）的激光微蚀刻设备。</td><td></td><td style="text-align:right;mso-number-format:0.;">10</td><td style="text-align:right;mso-number-format:0.00;">11004598300.00</td></tr><tr><td>	002795.SZ</td><td>永和智控</td><td style="text-align:right;mso-number-format:0.00;">9.78</td><td style="text-align:right;mso-number-format:0.00;">2.62</td><td>BC电池</td><td>2022年12月27日公司互动：子公司普乐泰兴产品规划线主要为TOPCon电池和BC电池，但目前普乐泰兴的生产线尚未达产。 </td><td></td><td style="text-align:right;mso-number-format:0.;">6</td><td style="text-align:right;mso-number-format:0.00;">3563845100.00</td></tr><tr><td>600732.SH</td><td>爱旭股份</td><td style="text-align:right;mso-number-format:0.00;">24.36</td><td style="text-align:right;mso-number-format:0.00;">1.88</td><td>BC电池</td><td>据2022年年报：2022年，公司正式推出了基于全新一代 N 型背接触 ABC 电池技术的组件系列产品和光伏能源整体解决方案服务，首期珠海6.5GW ABC 电池量产项目已顺利投产，预计将于2023年二季度末实现满产。</td><td></td><td style="text-align:right;mso-number-format:0.;">7</td><td style="text-align:right;mso-number-format:0.00;">38937584000.00</td></tr><tr><td>300393.SZ</td><td>中来股份</td><td style="text-align:right;mso-number-format:0.00;">12.09</td><td style="text-align:right;mso-number-format:0.00;">-0.25</td><td>BC电池</td><td>2022年9月9日互动易：公司有IBC技术且有过小批量出货，但是成本比较高，所以公司决定将TOPCon和IBC结合研究TBC技术，目前已取得一些进展。</td><td></td><td style="text-align:right;mso-number-format:0.;">14</td><td style="text-align:right;mso-number-format:0.00;">11531846600.00</td></tr><tr><td>300757.SZ</td><td>罗博特科</td><td style="text-align:right;mso-number-format:0.00;">68.96</td><td style="text-align:right;mso-number-format:0.00;">-0.32</td><td>BC电池</td><td>2023年9月5日互动易回复：公司有用于BC电池生产的相关设备，包括槽式单晶制绒机、链式去PSG/BSG清洗机、槽式碱抛光机、去绕镀清洗机、VDI铜电镀、HDI铜电镀、槽式去膜去种子层化锡、测试分选、石英舟类自动化、石墨舟类自动化、板式自动化、包装线自动化等设备。</td><td></td><td style="text-align:right;mso-number-format:0.;">11</td><td style="text-align:right;mso-number-format:0.00;">7171840000.00</td></tr><tr><td>601012.SH</td><td>隆基绿能</td><td style="text-align:right;mso-number-format:0.00;">27.87</td><td style="text-align:right;mso-number-format:0.00;">-0.82</td><td>BC电池</td><td>2023年9月5日公司半年度业绩交流会中提到目前，隆基绿能BC产能主要为30GW HPBC（高效复合钝化背接触技术）电池项目，并已于今年上半年投入量产。</td><td></td><td style="text-align:right;mso-number-format:0.;">21</td><td style="text-align:right;mso-number-format:0.00;">211199830000.00</td></tr><tr><td>	002129.SZ</td><td>TCL中环</td><td style="text-align:right;mso-number-format:0.00;">25.58</td><td style="text-align:right;mso-number-format:0.00;">-1.16</td><td>BC电池</td><td>据2021年半年报：基于 MAXEON 公司拥有的 IBC 电池-组件、叠瓦组件的知识产权和卓越的研发能力，公司推动 MAXEON 在全球范围内进一步拓展电池、组件的制造体系和地面式电站、分布式电站的市场开发业务，快速建立海外产业布局和全球供应链体系。</td><td></td><td style="text-align:right;mso-number-format:0.;">24</td><td style="text-align:right;mso-number-format:0.00;">103328397000.00</td></tr><tr><td>300450.SZ</td><td>先导智能</td><td style="text-align:right;mso-number-format:0.00;">29.30</td><td style="text-align:right;mso-number-format:0.00;">-1.18</td><td>BC电池</td><td>2023年5月5日公司互动：公司有TOPcon、HJT、XBC、钙钛矿等领域光伏电池端整线装备。</td><td></td><td style="text-align:right;mso-number-format:0.;">25</td><td style="text-align:right;mso-number-format:0.00;">42541407000.00</td></tr><tr><td>	002056.SZ</td><td>横店东磁</td><td style="text-align:right;mso-number-format:0.00;">16.61</td><td style="text-align:right;mso-number-format:0.00;">-1.66</td><td>BC电池</td><td>2023年3月10日公司公告：公司有比较早参与研发P-IBC产品，该类产品跟我们的市场定位很契合，但以目前良率还无法量产，后续要看良率能否有突破，如果良率无法突破，将会适度放缓。</td><td></td><td style="text-align:right;mso-number-format:0.;">32</td><td style="text-align:right;mso-number-format:0.00;">26642827000.00</td></tr><tr><td>301021.SZ</td><td>英诺激光</td><td style="text-align:right;mso-number-format:0.00;">29.47</td><td style="text-align:right;mso-number-format:0.00;">-3.35</td><td>BC电池</td><td>据2023年半年报：在光伏领域，公司不仅推出了 TOPCon 激光 SE 直掺设备，而且布局了面向 BC、钙钛矿等多种电池技术所需激光器、光学模组或关键设备等业务，公司所推出的 BC 开膜设备等样机已交付给客户进行验证。</td><td></td><td style="text-align:right;mso-number-format:0.;">15</td><td style="text-align:right;mso-number-format:0.00;">2061764900.00</td></tr></table>
+        </body>
+        </html>

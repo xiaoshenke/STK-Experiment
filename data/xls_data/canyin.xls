@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+            <html xmlns='http://www.w3.org/1999/xhtml'>
+            <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+            <title></title>
+            <style>
+            td{
+                text-align:center;
+                font-size:12px;
+                font-family:Arial, Helvetica, sans-serif;
+                border:#1C7A80 1px solid;
+                color:#152122;
+    }
+    table,tr{
+        border-style:none;
+    }
+    .centerTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:center;
+    }
+    .leftTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:left;
+    }
+    </style>
+        </head>
+
+        <body>
+        <table border='1'><tr><td class="centerTitle">股票代码</td><td class="centerTitle">股票简称</td><td class="centerTitle">现价(元)</td><td class="centerTitle">涨跌幅(%)</td><td class="centerTitle">所属同花顺行业</td><td class="centerTitle">所属概念</td><td class="centerTitle">最新dde大单净额(元)</td></tr><tr><td>	000428.SZ</td><td>华天酒店</td><td style="text-align:right;mso-number-format:0.00;">5.37</td><td style="text-align:right;mso-number-format:0.00;">10.04</td><td>社会服务-酒店及餐饮-酒店</td><td>收入改革;情人节;养老概念;湖南国资改革;股权转让;预制菜;旅游;职业教育;地方国资改革</td><td style="text-align:right;mso-number-format:0.00;">-71863303.00</td></tr><tr><td>601007.SH</td><td>金陵饭店</td><td style="text-align:right;mso-number-format:0.00;">11.18</td><td style="text-align:right;mso-number-format:0.00;">10.04</td><td>社会服务-酒店及餐饮-酒店</td><td>收入改革;养老概念;参股保险;江苏国资改革;预制菜;旅游;地方国资改革</td><td style="text-align:right;mso-number-format:0.00;">29263502.50</td></tr><tr><td>605108.SH</td><td>同庆楼</td><td style="text-align:right;mso-number-format:0.00;">23.61</td><td style="text-align:right;mso-number-format:0.00;">10.02</td><td>社会服务-酒店及餐饮-餐饮</td><td>老字号;预制菜</td><td style="text-align:right;mso-number-format:0.00;">28448583.90</td></tr><tr><td>	002306.SZ</td><td>中科云网</td><td style="text-align:right;mso-number-format:0.00;">3.53</td><td style="text-align:right;mso-number-format:0.00;">9.97</td><td>社会服务-酒店及餐饮-餐饮</td><td>收入改革;节能环保;网络游戏</td><td style="text-align:right;mso-number-format:0.00;">20162588.00</td></tr><tr><td>	002186.SZ</td><td>全聚德</td><td style="text-align:right;mso-number-format:0.00;">9.59</td><td style="text-align:right;mso-number-format:0.00;">8.36</td><td>社会服务-酒店及餐饮-餐饮</td><td>老字号;环球主题公园;北京国资改革;预制菜;地方国资改革</td><td style="text-align:right;mso-number-format:0.00;">9048097.60</td></tr><tr><td>	000610.SZ</td><td>西安旅游</td><td style="text-align:right;mso-number-format:0.00;">10.96</td><td style="text-align:right;mso-number-format:0.00;">5.18</td><td>社会服务-酒店及餐饮-酒店</td><td>陕西自贸区;一带一路;西安自贸区;西咸新区;收入改革;创投;旅游;地方国资改革;抖音概念;网络直播</td><td style="text-align:right;mso-number-format:0.00;">-948034.00</td></tr><tr><td>301073.SZ</td><td>君亭酒店</td><td style="text-align:right;mso-number-format:0.00;">71.06</td><td style="text-align:right;mso-number-format:0.00;">5.15</td><td>社会服务-酒店及餐饮-酒店</td><td>共同富裕示范区;旅游;新股与次新股;注册制次新股;融资融券;预制菜;转融券标的;送转填权</td><td style="text-align:right;mso-number-format:0.00;">-6719542.70</td></tr><tr><td>	000721.SZ</td><td>西安饮食</td><td style="text-align:right;mso-number-format:0.00;">5.34</td><td style="text-align:right;mso-number-format:0.00;">4.71</td><td>社会服务-酒店及餐饮-餐饮</td><td>西安自贸区;收入改革;西咸新区;陕西自贸区;职业教育;美团概念股;老字号;独角兽概念;室外经济;预制菜;地方国资改革</td><td style="text-align:right;mso-number-format:0.00;">-1486211.00</td></tr><tr><td>600754.SH</td><td>锦江酒店</td><td style="text-align:right;mso-number-format:0.00;">62.30</td><td style="text-align:right;mso-number-format:0.00;">3.15</td><td>社会服务-酒店及餐饮-酒店</td><td>B转H;收入改革;情人节;共享办公;沪股通;融资融券;共享经济;转融券标的;富时罗素概念;富时罗素概念股;迪士尼;MSCI概念;标普道琼斯A股;旅游;上海国资改革;大消费;地方国资改革</td><td style="text-align:right;mso-number-format:0.00;">6949428.00</td></tr><tr><td>600258.SH</td><td>首旅酒店</td><td style="text-align:right;mso-number-format:0.00;">25.19</td><td style="text-align:right;mso-number-format:0.00;">2.32</td><td>社会服务-酒店及餐饮-酒店</td><td>情人节;收入改革;在线旅游;京津冀一体化;中概股回归;电子商务;沪股通;大消费;阿里巴巴概念;住房租赁;旅游;融资融券;转融券标的;富时罗素概念;富时罗素概念股;标普道琼斯A股;北京国资改革;养老金持股;MSCI概念;环球主题公园;地方国资改革</td><td style="text-align:right;mso-number-format:0.00;">5561907.30</td></tr></table>
+        </body>
+        </html>

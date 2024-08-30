@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+            <html xmlns='http://www.w3.org/1999/xhtml'>
+            <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+            <title></title>
+            <style>
+            td{
+                text-align:center;
+                font-size:12px;
+                font-family:Arial, Helvetica, sans-serif;
+                border:#1C7A80 1px solid;
+                color:#152122;
+    }
+    table,tr{
+        border-style:none;
+    }
+    .centerTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:center;
+    }
+    .leftTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:left;
+    }
+    </style>
+        </head>
+
+        <body>
+        <table border='1'><tr><td class="centerTitle">股票代码</td><td class="centerTitle">股票简称</td><td class="centerTitle">现价(元)</td><td class="centerTitle">涨跌幅(%)</td><td class="centerTitle">相关产品名称</td><td class="centerTitle">相关系数</td><td class="centerTitle">溯源分析</td><td class="centerTitle">经营范围</td><td class="centerTitle">所属同花顺行业</td><td class="centerTitle">公司网站</td></tr><tr><td>301211.SZ</td><td>亨迪药业</td><td style="text-align:right;mso-number-format:0.00;">55.63</td><td style="text-align:right;mso-number-format:0.00;">18.46</td><td>布洛芬</td><td>96.68%</td><td>公司原料药产品主要为非甾体抗炎类原料药布洛芬和右旋布洛芬，心血管类原料药托拉塞米和米力农，抗肿瘤类原料药醋酸阿比特龙、磷酸氟达拉滨和盐酸格拉司琼</td><td>片剂、硬胶囊剂、颗粒剂、原料药生产、销售；货物或技术进出口（国家限定公司经营或禁止进出口的项目、技术除外）。（依法须经批准的项目，经相关部门批准后方可开展经营活动）</td><td>医药生物-化学制药-原料药</td><td>www.biocause.com</td></tr><tr><td>	000756.SZ</td><td>新华制药</td><td style="text-align:right;mso-number-format:0.00;">46.10</td><td style="text-align:right;mso-number-format:0.00;">10.00</td><td>布洛芬</td><td>73.34%</td><td>布洛芬、阿司匹林、咖啡因、左旋多巴等主导原料药规模均居全球前列，年出口额3亿美元，与拜耳、百利高、葛兰素史克等100多家知名跨国企业建立了长期战略合作关系</td><td>生产、批发、零售西药、化工原料、食品添加剂、保健食品、固体饮料、兽用药品、鱼油、制药设备、医药检测仪器及仪表；自行研制开发项目的技术转让、服务、技术咨询、技术培训；批发、零售中药材、中药饮片、医疗器械（Ⅰ、Ⅱ、Ⅲ类）、隐形眼镜及护理液、检测试纸（剂）、保健食品、母\婴用品、乳制品（含婴幼儿配方奶粉）、化妆品、洗涤用品、预包装食品、散装食品、日用百货、初级农产品、海鲜、成人计生类产品；销售化学原料药、化工产品、化学试剂、医药中间体（以上三项不含危险、易制毒化学品）；进出口业务；仓储服务（不含危险品）；互联网信息咨询与服务；电商代运营（依法须经批准的项目，经相关部门批准后方可开展经营活动）。</td><td>医药生物-化学制药-原料药</td><td>www.xhzy.com</td></tr><tr><td>603456.SH</td><td>九洲药业</td><td style="text-align:right;mso-number-format:0.00;">38.95</td><td style="text-align:right;mso-number-format:0.00;">1.75</td><td>布洛芬</td><td>52.59%</td><td>根据ClinCalc数据库显示，美国非甾体抗炎类药物中，布洛芬、美洛昔康、萘普生处方频率处于前三，分别高于30%、25%和15%，而酮</td><td>化学原料药、医药中间体、医药制剂的研发、生产（凭许可证经营），创新药品、生物技术的技术开发、技术服务，新药、医药中间体及原料药的研发、销售（凭许可证经营），化工原料（不含危险化学品及易制毒品）、机械设备的制造、销售，经营进出口业务。（依法须经批准的项目，经相关部门批准后方可开展经营活动）</td><td>医药生物-化学制药-原料药</td><td>www.jiuzhoupharma.com</td></tr><tr><td>301069.SZ</td><td>凯盛新材</td><td style="text-align:right;mso-number-format:0.00;">31.66</td><td style="text-align:right;mso-number-format:0.00;">1.05</td><td>布洛芬</td><td>52.59%</td><td>氨苄青霉素、脑复新、布洛芬、盐酸异丙嗪、灭虫灵等</td><td>一般项目：塑料制品制造；塑料制品销售；基础化学原料制造（不含危险化学品等许可类化学品的制造）；化工产品生产（不含许可类化工产品）；化工产品销售（不含许可类化工产品）；合成材料制造（不含危险化学品）；涂料制造（不含危险化学品）；金属表面处理及热处理加工；通用设备制造（不含特种设备制造）；非居住房地产租赁；土地使用权租赁；信息咨询服务（不含许可类信息咨询服务）；技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广；货物进出口；技术进出口。（除依法须经批准的项目外，凭营业执照依法自主开展经营活动）许可项目：危险化学品生产。（依法须经批准的项目，经相关部门批准后方可开展经营活动，具体经营项目以相关部门批准文件或许可证件为准）</td><td>基础化工-化学原料-其他化学原料</td><td>www.ksxc.cn</td></tr><tr><td>600129.SH</td><td>太极集团</td><td style="text-align:right;mso-number-format:0.00;">29.88</td><td style="text-align:right;mso-number-format:0.00;">-1.55</td><td>布洛芬</td><td>55.19%</td><td>世界卫生组织提出缓解癌症疼痛采用三阶梯方案，对于轻度疼痛患者采用布洛芬、阿司匹林等解热镇痛药物；对于中度疼痛患者采用氨氯待因、可待因等弱阿片类镇痛药物；对于重度疼痛患者采用吗啡等强效阿片类镇痛药物2</td><td>加工、销售:中成药、西药;以下限分支机构经营:销售副食品及其他食品、汽车二级维护及其以下作业、包装装潢及其他印刷、住宿;保健用品加工、销售;医疗器械销售(仅限I类);医疗包装制品加工;百货、五金、交电、化工(不含化学危险品)、工艺美术品(不含金银首饰)、机械设备、建筑材料销售(不含危险化学品和木材)销售;机械零部件加工;中草药种植;水产养殖(国家有专项规定的除外);商品包装;旅游开发;房地产开发(取得相关行政许可后方可执业);自有房屋、土地出租;贸易经纪与代理[以上范围法律、法规禁止经营的不得经营;法律、法规规定应经审批而未获审批前不得经营]。</td><td>医药生物-中药-中药Ⅲ</td><td>www.taiji.com</td></tr><tr><td>605199.SH</td><td>葫芦娃</td><td style="text-align:right;mso-number-format:0.00;">21.20</td><td style="text-align:right;mso-number-format:0.00;">3.87</td><td>布洛芬</td><td>52.59%</td><td>小儿肺热咳喘颗粒被纳入河南省儿童新冠肺炎中医药防治方案（试行）、山东省中医疫病防治方案（2022冬春季补充版）、四川省新型冠状病毒感染的肺炎中医药防控技术指南，注射用利巴韦林、布洛芬、氨茶碱以及板蓝根颗粒、感冒清热颗粒、养阴清肺膏等多个产品被纳入部分省</td><td>药品生产；药品委托生产；药品批发；药品零售；药品进出口；技术进出口；第一类医疗器械生产；第二类医疗器械生产；第一类医疗器械销售；第二类医疗器械销售；保健食品生产；特殊医学用途配方食品生产；保健食品销售；特殊医学用途配方食品销售；食品生产；道路货物运输（不含危险货物）；健康咨询服务（不含诊疗服务）；技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广。（“一照多址”经营场所备案：海口市南海大道168号海口保税区6号厂房）（一般经营项目自主经营，许可经营项目凭相关许可证或者批准文件经营）（依法须经批准的项目，经相关部门批准后方可开展经营活动。）</td><td>医药生物-中药-中药Ⅲ</td><td>www.huluwayaoye.com</td></tr></table>
+        </body>
+        </html>

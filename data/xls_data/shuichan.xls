@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+            <html xmlns='http://www.w3.org/1999/xhtml'>
+            <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+            <title></title>
+            <style>
+            td{
+                text-align:center;
+                font-size:12px;
+                font-family:Arial, Helvetica, sans-serif;
+                border:#1C7A80 1px solid;
+                color:#152122;
+    }
+    table,tr{
+        border-style:none;
+    }
+    .centerTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:center;
+    }
+    .leftTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:left;
+    }
+    </style>
+        </head>
+
+        <body>
+        <table border='1'><tr><td class="centerTitle">股票代码</td><td class="centerTitle">股票简称</td><td class="centerTitle">现价(元)</td><td class="centerTitle">涨跌幅(%)</td><td class="centerTitle">所属概念</td><td class="centerTitle">概念解析</td><td class="centerTitle">概念资讯</td><td class="centerTitle">所属概念数量(个)</td><td class="leftTitle">a股流通市值(元)2023.08.28</td></tr><tr><td>	000798.SZ</td><td>中水渔业</td><td style="text-align:right;mso-number-format:0.00;">12.16</td><td style="text-align:right;mso-number-format:0.00;">10.05</td><td>水产品</td><td>公司目前的主要产品有鳕鱼、鱿鱼、虾、金枪鱼等还产品及加工制品。</td><td></td><td style="text-align:right;mso-number-format:0.;">9</td><td style="text-align:right;mso-number-format:0.00;">4448408700.00</td></tr><tr><td>	000881.SZ</td><td>中广核技</td><td style="text-align:right;mso-number-format:0.00;">8.45</td><td style="text-align:right;mso-number-format:0.00;">10.03</td><td>水产品</td><td>远洋渔业：2011年末投入运营的国际901和国际902两艘鱿鱼钓船，开赴西南大西洋渔场作业，船队规模进一步扩大。公司在西非的渔业基地运作成熟，生产和销售经验丰富，竞争优势明显；</td><td></td><td style="text-align:right;mso-number-format:0.;">24</td><td style="text-align:right;mso-number-format:0.00;">6557155000.00</td></tr><tr><td>600257.SH</td><td>大湖股份</td><td style="text-align:right;mso-number-format:0.00;">10.13</td><td style="text-align:right;mso-number-format:0.00;">9.99</td><td>水产品</td><td>公司主要从事“大湖”牌水产品养殖、加工、销售等。公司是国内最大的淡水养殖企业，拥有长期使用权的天然湖泊面积近180万亩，，占我国已养殖湖泊和水库面积的4.9%，位居国内第一。公司将打造“种苗繁育-大湖散养-水产品粗加工-水产品深加工-冷链物流配送-定点专供(千店工程)”的水产品全产业链，从而实现从“湖面到餐桌”的安全、健康、诚信的产业链。</td><td></td><td style="text-align:right;mso-number-format:0.;">15</td><td style="text-align:right;mso-number-format:0.00;">4874932700.00</td></tr><tr><td>600097.SH</td><td>开创国际</td><td style="text-align:right;mso-number-format:0.00;">11.08</td><td style="text-align:right;mso-number-format:0.00;">5.32</td><td>水产品</td><td>公司主要从事远洋渔业捕捞，海淡水产品养殖，渔船、渔业机械、船舶设备及配件、绳网及相关产品、日用百货的销售，仓储服务，信息技术服务，经营进出口业务等。公司集大型远洋拖网船队和远洋金枪鱼围网船队两大优势生产性资产于一身，目标是将建成规模效益国内第一、国际领先的远洋渔业企业。公司2013年的收入计划：实现全年捕捞产量10万吨，主营业务收入10.7亿元，净利润1.3亿元。</td><td></td><td style="text-align:right;mso-number-format:0.;">8</td><td style="text-align:right;mso-number-format:0.00;">2669577100.00</td></tr><tr><td>300094.SZ</td><td>国联水产</td><td style="text-align:right;mso-number-format:0.00;">7.34</td><td style="text-align:right;mso-number-format:0.00;">4.56</td><td>水产品</td><td>公司是国内最大的对虾输美企业，已经由单一的对虾加工出口企业转型为一家覆盖对虾、罗非鱼、金鲳鱼等多产品精加工和深加工的食品公司。</td><td></td><td style="text-align:right;mso-number-format:0.;">15</td><td style="text-align:right;mso-number-format:0.00;">8111470000.00</td></tr><tr><td>	002069.SZ</td><td>獐子岛</td><td style="text-align:right;mso-number-format:0.00;">5.11</td><td style="text-align:right;mso-number-format:0.00;">4.07</td><td>水产品</td><td>公司主要产品品种包括虾夷扇贝、刺参、皱纹盘鲍和海胆，公司是国内最大的海珍品底播增养殖企业，独立开发海域养殖面积居全国同行业之首，虾夷扇贝底播增殖面积、产量居全国首位。2012年，“獐子岛”首次跨进世界品牌实验室颁布的“2012年《中国500最具价值品牌》排行榜”，公司的“獐子岛”品牌价值被评为40.85亿元。2013年10月在深交所互动平台披露，公司依托北纬39度地域资源优势，拥有2000余平方公里远离大陆的国家一类清洁海域。</td><td></td><td style="text-align:right;mso-number-format:0.;">11</td><td style="text-align:right;mso-number-format:0.00;">3628747400.00</td></tr><tr><td>600467.SH</td><td>好当家</td><td style="text-align:right;mso-number-format:0.00;">2.86</td><td style="text-align:right;mso-number-format:0.00;">1.78</td><td>水产品</td><td>海珍养殖领先企业：公司为亚洲最大规模的工厂化海珍养殖基地，拥有2.94万亩水面使用权、7.6万平方米的工厂化养殖车间和年产达3万吨的冷冻食品加工车间，公司在总部虎山镇海域拥有1.7万亩养殖面积，可存养海参9000万头，设计年产能2500吨。
+2010年好当家"即食大虾"成功申请了山东省名牌产品，至此，公司拥有1个中国驰名商标，2个中国名牌和5个山东名牌，2010年公司荣获首届威海市长质量奖，山东省冷冻调理食品行业十大品牌，山东省冷冻调理食品行业标准化生产基地，2010年度中国食品安全年会食品安全示范单位，"农业产业化行业十强龙头企业"等荣誉称号。</td><td></td><td style="text-align:right;mso-number-format:0.;">8</td><td style="text-align:right;mso-number-format:0.00;">4178443700.00</td></tr><tr><td>	002124.SZ</td><td>天邦食品</td><td style="text-align:right;mso-number-format:0.00;">4.61</td><td style="text-align:right;mso-number-format:0.00;">1.32</td><td>水产品</td><td>2017年4月26日投资者关系活动记录表显示：公司目前已经建成以虾类产品为代表的水产品一整套产业链，并将围绕水产品全产业链继续深入拓展。</td><td></td><td style="text-align:right;mso-number-format:0.;">11</td><td style="text-align:right;mso-number-format:0.00;">7089494600.00</td></tr><tr><td>	002100.SZ</td><td>天康生物</td><td style="text-align:right;mso-number-format:0.00;">7.23</td><td style="text-align:right;mso-number-format:0.00;">0.42</td><td>水产品</td><td>公司专业浮性水产饲料厂建设项目计划使用募集资金2,980.00万元，实际使用1,484.74万元，较原计划节余1,495.26万元。</td><td></td><td style="text-align:right;mso-number-format:0.;">23</td><td style="text-align:right;mso-number-format:0.00;">9794783500.00</td></tr><tr><td>300189.SZ</td><td>神农科技</td><td style="text-align:right;mso-number-format:0.00;">3.70</td><td style="text-align:right;mso-number-format:0.00;">0.27</td><td>水产品</td><td>公司拟收购海南宝路水产科技有限公司不低于51%股权，该经营范围为水产科技开发；水产养殖和经营；水产苗种繁育（不含我国特有的珍贵优良品种）；收购农副产品；货物进出口；技术进出口；水产品冷冻加工；水产品批发和零售。</td><td></td><td style="text-align:right;mso-number-format:0.;">16</td><td style="text-align:right;mso-number-format:0.00;">3563284100.00</td></tr><tr><td>	002696.SZ</td><td>百洋股份</td><td style="text-align:right;mso-number-format:0.00;">8.00</td><td style="text-align:right;mso-number-format:0.00;">-0.37</td><td>水产品</td><td>百洋水产是一家集水产科技研发、水产种苗选育、水产养殖、水产技术服务及水产饲料、水产食品、水产生物制品、水产即食菜品、美容保健品的生产、加工、出口和国内贸易为一体的农业产业化国家重点龙头企业。</td><td></td><td style="text-align:right;mso-number-format:0.;">18</td><td style="text-align:right;mso-number-format:0.00;">2748333400.00</td></tr><tr><td>	002086.SZ</td><td>*ST东洋</td><td style="text-align:right;mso-number-format:0.00;">2.63</td><td style="text-align:right;mso-number-format:0.00;">-0.76</td><td>水产品</td><td>公司主营业务为海洋水产品加工和海水养殖，其中海参养殖是公司海水养殖的传统主导业务。公司坚持科学养殖，构建海底牧场，进行底播刺参养殖，发展基于生态系统的可持续海水养殖模式。以三文鱼为代表的名贵鱼养殖是公司海水养殖另一主导业务，公司与中科院海洋研究所联合开发了大西洋鲑封闭节能生产体系，建造了全国最大世界领先的大西洋鲑工厂化封闭循环水养殖体系。
+公司将以配子体克隆技术为依托，进一步完善海带种质保存，品种培育和苗种繁育良种化生产体系，培育高产早厚成，抗强光，适宜薄嫩菜加工新品系2个，较现有普通养殖品种平均增产20%以上，省内优良品种推广覆盖率达30%以上，形成具有自主知识产权发明专利3项。引进名贵鱼种2-3个，形成大菱鲆，牙鲆鱼，夏日鲆等鲆鲽鱼规模养殖能力，并形成以海参为主海珍品养殖能力。在巩固扩大鱼片冷藏加工项目同时，重点开发鱼糜制品，调理海产品，海参即食食品等。</td><td></td><td style="text-align:right;mso-number-format:0.;">14</td><td style="text-align:right;mso-number-format:0.00;">1656293100.00</td></tr></table>
+        </body>
+        </html>

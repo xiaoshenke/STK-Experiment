@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+            <html xmlns='http://www.w3.org/1999/xhtml'>
+            <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+            <title></title>
+            <style>
+            td{
+                text-align:center;
+                font-size:12px;
+                font-family:Arial, Helvetica, sans-serif;
+                border:#1C7A80 1px solid;
+                color:#152122;
+    }
+    table,tr{
+        border-style:none;
+    }
+    .centerTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:center;
+    }
+    .leftTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:left;
+    }
+    </style>
+        </head>
+
+        <body>
+        <table border='1'><tr><td class="centerTitle">股票代码</td><td class="centerTitle">股票简称</td><td class="centerTitle">现价(元)</td><td class="centerTitle">涨跌幅(%)</td><td class="centerTitle">所属概念</td><td class="centerTitle">概念解析</td><td class="centerTitle">概念资讯</td><td class="centerTitle">所属概念数量(个)</td><td class="leftTitle">a股流通市值(元)2023.08.01</td></tr><tr><td>301289.SZ</td><td>国缆检测</td><td style="text-align:right;mso-number-format:0.00;">43.62</td><td style="text-align:right;mso-number-format:0.00;">20.00</td><td>超导概念</td><td>2023年3月10日互动易显示：公司根据工业产品分类、标准体系以及用户需求，将公司检验检测业务主要划分为中高压线缆、低压电缆、通信电缆及光纤光缆、电工材料及电器附件、能力验证五大领域。目前超导电缆主要归为中高压线缆领域，公司大力发展试验检测技术与条件建设，包括高温超导电缆及系统测试实验室的条件完善与能力建设工作。公司的控股股东上海电缆研究所有限公司是上海国际超导科技有限公司的第二大股东。公司作为专业线缆检测机构，参与了上海35kV公里级超导电缆示范工程的检测服务和技术支持工作。</td><td></td><td style="text-align:right;mso-number-format:0.;">11</td><td style="text-align:right;mso-number-format:0.00;">1105762680.00</td></tr><tr><td>600577.SH</td><td>精达股份</td><td style="text-align:right;mso-number-format:0.00;">4.79</td><td style="text-align:right;mso-number-format:0.00;">10.12</td><td>超导概念</td><td>上海超导是上海市“十二五”期间特别培育的战略性高科技企业。公司的核心产品有非标定制的中高端真空镀膜设备、性能卓越的二代高温超导带材及带材生产线、二代高温超导应用产品，是国际上少有的能同时在产业链上、中、下游提供高质量产品的公司。公司持有上海超导18.2866%的股份。</td><td></td><td style="text-align:right;mso-number-format:0.;">15</td><td style="text-align:right;mso-number-format:0.00;">9559956200.00</td></tr><tr><td>600595.SH</td><td>中孚实业</td><td style="text-align:right;mso-number-format:0.00;">3.28</td><td style="text-align:right;mso-number-format:0.00;">10.07</td><td>超导概念</td><td>公司承担的国家"十一五"科技支撑计划项目"低温低电压铝电解技术应用示范"和国家"863"计划重点项目"高温超导电缆示范工程"分别顺利通过国家科技部验收。</td><td></td><td style="text-align:right;mso-number-format:0.;">7</td><td style="text-align:right;mso-number-format:0.00;">13003822800.00</td></tr><tr><td>600361.SH</td><td>创新新材</td><td style="text-align:right;mso-number-format:0.00;">5.84</td><td style="text-align:right;mso-number-format:0.00;">9.98</td><td>超导概念</td><td>据2022年年报：在铝杆及线缆领域，公司连续多年参与国家高强超导线缆标准制定，与国缆研究所和电科院密切合作，十三五期间国家西电东输项目 70%以上的特高压导线中标单位采购了公司的产品。</td><td></td><td style="text-align:right;mso-number-format:0.;">9</td><td style="text-align:right;mso-number-format:0.00;">2733487700.00</td></tr><tr><td>600468.SH</td><td>百利电气</td><td style="text-align:right;mso-number-format:0.00;">5.73</td><td style="text-align:right;mso-number-format:0.00;">9.98</td><td>超导概念</td><td>据2022年半年度报告：?超导电力技术是本公司的战略性技术创新业务。公司控股子公司北京英纳超导技术有限公司是国内较早成立的专业研发高温超导材料的企业，该公司具有铋系高温超导线材的研发优势，承担过多项国家 863 项目、科技部重大专项、北京市重大科技计划等重大超导项目，该公司研发的“高性能铋系高温超导长带材的研制与开发”曾获得国务院国家科学技术进步二等奖。超导产业目前仍处于以技术研发和示范工程为主的阶段，产业化进程有待进一步发展。 </td><td></td><td style="text-align:right;mso-number-format:0.;">11</td><td style="text-align:right;mso-number-format:0.00;">6232723400.00</td></tr><tr><td>	000962.SZ</td><td>东方钽业</td><td style="text-align:right;mso-number-format:0.00;">13.58</td><td style="text-align:right;mso-number-format:0.00;">9.96</td><td>超导概念</td><td>公司2022年非公开发行A股股票预案显示：超导铌材作为铌超导腔的基础功能材料，铌超导腔作为各类粒子加速器的关键核心部件，是国家重大科技基础设施研究项目的重要支撑，是实现科技强国的重要保障。公司的发展战略为“围绕钽铌产业做精做强， 开拓新型材料持续发展”。 做好大科学项目所需铌超导腔配套工作，成为国内超导铌材的主要供应基地。</td><td></td><td style="text-align:right;mso-number-format:0.;">12</td><td style="text-align:right;mso-number-format:0.00;">5986467500.00</td></tr><tr><td>600105.SH</td><td>永鼎股份</td><td style="text-align:right;mso-number-format:0.00;">6.97</td><td style="text-align:right;mso-number-format:0.00;">9.94</td><td>超导概念</td><td>据2022年12月15日互动易回复：公司持续提升高温超导带材性能，拓阔加深超导业务“护城河”。公司以业内独有的磁通钉扎技术，不断研制应用于高强磁场工况下的高载流超导带材，积极推进高温超导材料在超导感应加热和可控核聚变堆的应用。上半年，公司加速推动强磁场应用的高温超导材料的产业化。二代高温超导带材应用于超导金属感应加热设备，取得了超导技术工业化应用的新突破和多项重要的应用成果，公司准时高效地完成了大批量特种高场高温超导带材的供货工作；在可控核聚变堆应用方面，公司顺利通过可控核聚变反应堆所用的高温超导带材前期测试评估工作，获得高温超导带材合同，其中首批超导带材已完成交货工作。在超导电力方面，公司与国网合作落地实施的“高温超导直流电缆示范工程”，已完成该超导电缆项目厂区内的收放卷、运输、铺设模拟试验工作。</td><td></td><td style="text-align:right;mso-number-format:0.;">26</td><td style="text-align:right;mso-number-format:0.00;">9626291300.00</td></tr><tr><td>688122.SH</td><td>西部超导</td><td style="text-align:right;mso-number-format:0.00;">56.65</td><td style="text-align:right;mso-number-format:0.00;">7.07</td><td>超导概念</td><td>公司主要从事高端钛合金材料、超导产品及高性能高温合金的研发、生产和销售。</td><td></td><td style="text-align:right;mso-number-format:0.;">10</td><td style="text-align:right;mso-number-format:0.00;">36803494000.00</td></tr><tr><td>600973.SH</td><td>宝胜股份</td><td style="text-align:right;mso-number-format:0.00;">5.52</td><td style="text-align:right;mso-number-format:0.00;">6.56</td><td>超导概念</td><td>据官微：2023年1月14日，设计最大时速达1000km/h的超高速低真空管道磁浮交通系统（简称“高速飞车”）取得新突破，该系统全尺寸试验线（一期）首次超导航行试验，在山西省大同市阳高县高速飞车试验基地取得成功，这在国内尚属首次。在本次试验中，宝胜研制开发的专用电缆产品及电气集成化模组产品采用低释放高导热、高柔性大功率脉冲等设计技术，针对真空环境及脉冲工况做了大量研究及验证，在确保电缆及电气产品安全性及可靠性的前提下，圆满完成设计及制造任务。</td><td></td><td style="text-align:right;mso-number-format:0.;">25</td><td style="text-align:right;mso-number-format:0.00;">7569941700.00</td></tr><tr><td>600363.SH</td><td>联创光电</td><td style="text-align:right;mso-number-format:0.00;">37.61</td><td style="text-align:right;mso-number-format:0.00;">6.30</td><td>超导概念</td><td>据2022年11月22日互动易回复：随着广亚批量化订单合作协议的签订，超导累计订单已超过50台，并且仍在加大市场推广，目前正和多家企业进行商谈，现阶段联创超导感应加热设备产能已达到年产50台左右，未来2年产能将逐步达到200台的水平。并还将启动基于超导磁体技术的多方向应用设备的研究和制造。</td><td></td><td style="text-align:right;mso-number-format:0.;">22</td><td style="text-align:right;mso-number-format:0.00;">16946229000.00</td></tr><tr><td>	002533.SZ</td><td>金杯电工</td><td style="text-align:right;mso-number-format:0.00;">8.60</td><td style="text-align:right;mso-number-format:0.00;">5.91</td><td>超导概念</td><td>据2022年9月15日互动易：金杯电工电磁线有限公司研发了“新型超导绕组材料-铌三锡（Nb3Sn）超导卢瑟福电缆的研发”项目。</td><td></td><td style="text-align:right;mso-number-format:0.;">20</td><td style="text-align:right;mso-number-format:0.00;">5396482200.00</td></tr><tr><td>600522.SH</td><td>中天科技</td><td style="text-align:right;mso-number-format:0.00;">15.89</td><td style="text-align:right;mso-number-format:0.00;">0.95</td><td>超导概念</td><td> 
+据公司2022年半年度报告：随着 10kV 三相同轴高温交流超导电缆正式投入使用，公司积极开展超导电缆企业标准制定工作，完成《额定电压 35kV(Um=40.5kV)及以下高温超导电缆》企业标准编制，适用于单芯、三芯一体、三相同轴等高温超导电缆产品，形成高温超导电缆系列化、规范化技术文件，为承接各类高温超导电缆产品做好技术储备。报告期内，在开展多种用途的高温超导电缆产品研制的同时，全力保障超导同步调相机项目的按期完成。此外，公司与多家客户和科研院所展开交流，讨论落实合作开展超导输电共性关键技术研究、新型超导电力装备基础和关键技术研究、高温超导磁体关键技术研究等。</td><td></td><td style="text-align:right;mso-number-format:0.;">35</td><td style="text-align:right;mso-number-format:0.00;">54231770000.00</td></tr></table>
+        </body>
+        </html>

@@ -3,7 +3,7 @@
 *.pyc
 secret
 *.csv
-*.xls
+#*.xls
 *.xls2
 *.jpg
 *.png

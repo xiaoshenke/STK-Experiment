@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+            <html xmlns='http://www.w3.org/1999/xhtml'>
+            <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+            <title></title>
+            <style>
+            td{
+                text-align:center;
+                font-size:12px;
+                font-family:Arial, Helvetica, sans-serif;
+                border:#1C7A80 1px solid;
+                color:#152122;
+    }
+    table,tr{
+        border-style:none;
+    }
+    .centerTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:center;
+    }
+    .leftTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:left;
+    }
+    </style>
+        </head>
+
+        <body>
+        <table border='1'><tr><td class="centerTitle">股票代码</td><td class="centerTitle">股票简称</td><td class="centerTitle">现价(元)</td><td class="centerTitle">涨跌幅(%)</td><td class="centerTitle">所属概念</td><td class="centerTitle">概念解析</td><td class="centerTitle">概念资讯</td><td class="centerTitle">所属概念数量(个)</td><td class="leftTitle">a股流通市值(元)2022.12.28</td></tr><tr><td>300562.SZ</td><td>乐心医疗</td><td style="text-align:right;mso-number-format:0.00;">12.04</td><td style="text-align:right;mso-number-format:0.00;">20.04</td><td>血氧仪</td><td>2022年12月19日互动易回复：公司目前已量产的智能可穿戴手环、手表产品具备血氧饱和监测功能，同时还具备心率监测、睡眠监测、呼吸训练以及支持多种运动模式等健康管理功能。</td><td></td><td style="text-align:right;mso-number-format:0.;">15</td><td style="text-align:right;mso-number-format:0.00;">1732188700.00</td></tr><tr><td>300869.SZ</td><td>康泰医学</td><td style="text-align:right;mso-number-format:0.00;">34.44</td><td style="text-align:right;mso-number-format:0.00;">14.80</td><td>血氧仪</td><td>2022年12月17日公司互动回复：公司的血氧仪性价比高、性能优异，深受全球客户青睐。公司生产工艺成熟，拥有全产业链生产模式，具有血氧仪大批量生产能力。</td><td></td><td style="text-align:right;mso-number-format:0.;">12</td><td style="text-align:right;mso-number-format:0.00;">5512946300.00</td></tr><tr><td>300753.SZ</td><td>爱朋医疗</td><td style="text-align:right;mso-number-format:0.00;">19.96</td><td style="text-align:right;mso-number-format:0.00;">14.71</td><td>血氧仪</td><td>据2021年年报：子公司上海诺斯清生物科技有限公司生产脉搏血氧仪产品。</td><td></td><td style="text-align:right;mso-number-format:0.;">7</td><td style="text-align:right;mso-number-format:0.00;">1497249600.00</td></tr><tr><td>300246.SZ</td><td>宝莱特</td><td style="text-align:right;mso-number-format:0.00;">18.53</td><td style="text-align:right;mso-number-format:0.00;">13.47</td><td>血氧仪</td><td>2022年3月4日公司互动回复：公司的M70系列脉搏血氧仪携带便利、结构紧密、数据清晰易读，适用于家用血氧饱和度测量。</td><td></td><td style="text-align:right;mso-number-format:0.;">9</td><td style="text-align:right;mso-number-format:0.00;">2576687600.00</td></tr><tr><td>	002614.SZ</td><td>奥佳华</td><td style="text-align:right;mso-number-format:0.00;">10.01</td><td style="text-align:right;mso-number-format:0.00;">10.00</td><td>血氧仪</td><td>2022年12月19日公司互动回复：公司旗下品牌medisana的血氧仪等产品在京东、天猫等电商平台零售。</td><td></td><td style="text-align:right;mso-number-format:0.;">17</td><td style="text-align:right;mso-number-format:0.00;">4412271000.00</td></tr><tr><td>301087.SZ</td><td>可孚医疗</td><td style="text-align:right;mso-number-format:0.00;">38.86</td><td style="text-align:right;mso-number-format:0.00;">9.04</td><td>血氧仪</td><td>2022年12月22日公司互动回复：公司产品品类丰富，其中健康监测类产品有体温计、血氧仪、新冠抗原检测试剂盒等产品，可用于日常健康监测需求。</td><td></td><td style="text-align:right;mso-number-format:0.;">16</td><td style="text-align:right;mso-number-format:0.00;">3362911400.00</td></tr><tr><td>	002980.SZ</td><td>华盛昌</td><td style="text-align:right;mso-number-format:0.00;">41.25</td><td style="text-align:right;mso-number-format:0.00;">6.62</td><td>血氧仪</td><td>2022年12月19日公司互动回复：公司正在积极推进血氧仪产品的国内医疗注册认证相关事宜。</td><td></td><td style="text-align:right;mso-number-format:0.;">10</td><td style="text-align:right;mso-number-format:0.00;">1375002800.00</td></tr><tr><td>300206.SZ</td><td>理邦仪器</td><td style="text-align:right;mso-number-format:0.00;">12.70</td><td style="text-align:right;mso-number-format:0.00;">5.57</td><td>血氧仪</td><td>2022年12月21日公司互动回复：公司业务相关的设备主要包括：病人监护仪、心电图机、血气分析仪、家用指式血氧仪。</td><td></td><td style="text-align:right;mso-number-format:0.;">13</td><td style="text-align:right;mso-number-format:0.00;">4323563400.00</td></tr><tr><td>300026.SZ</td><td>红日药业</td><td style="text-align:right;mso-number-format:0.00;">5.82</td><td style="text-align:right;mso-number-format:0.00;">5.24</td><td>血氧仪</td><td>2021年12月31日公司互动回复：公司全资子公司超思电子覆盖脉搏血氧仪、基层医疗与家用健康三大产品线，其中脉搏血氧产品包括指夹、手持、腕式和台式等百余款型号，可满足院线诊所以及家庭等多个应用场景下医护人员和呼吸慢病病人的使用需求。</td><td></td><td style="text-align:right;mso-number-format:0.;">19</td><td style="text-align:right;mso-number-format:0.00;">15706702000.00</td></tr><tr><td>	002223.SZ</td><td>鱼跃医疗</td><td style="text-align:right;mso-number-format:0.00;">32.83</td><td style="text-align:right;mso-number-format:0.00;">4.86</td><td>血氧仪</td><td>2022年11月24日公司互动回复：公司血氧仪产品可连续快速准确监测血氧饱和度及脉率指标。</td><td></td><td style="text-align:right;mso-number-format:0.;">23</td><td style="text-align:right;mso-number-format:0.00;">30788258000.00</td></tr><tr><td>	002870.SZ</td><td>香山股份</td><td style="text-align:right;mso-number-format:0.00;">27.85</td><td style="text-align:right;mso-number-format:0.00;">4.03</td><td>血氧仪</td><td>根据公司招股说明书：公司自主研发指尖式脉搏血氧仪，已实现小批试产。</td><td></td><td style="text-align:right;mso-number-format:0.;">6</td><td style="text-align:right;mso-number-format:0.00;">3071481300.00</td></tr><tr><td>300003.SZ</td><td>乐普医疗</td><td style="text-align:right;mso-number-format:0.00;">22.67</td><td style="text-align:right;mso-number-format:0.00;">3.37</td><td>血氧仪</td><td>2022年1月12日互动易回复：公司新冠检测类医疗器械包括但不限于新冠抗体检测试剂盒、新冠抗原检测试剂盒、全自动医用PCR分析系统、核酸提取仪、核酸提取试剂、血氧仪等检测试剂及设备等抗疫相关产品。</td><td></td><td style="text-align:right;mso-number-format:0.;">30</td><td style="text-align:right;mso-number-format:0.00;">36592501000.00</td></tr><tr><td>	002432.SZ</td><td>九安医疗</td><td style="text-align:right;mso-number-format:0.00;">54.83</td><td style="text-align:right;mso-number-format:0.00;">2.68</td><td>血氧仪</td><td>2022年12月16日公司互动回复：公司推出额温计、血氧仪、试剂盒等防疫相关产品。</td><td></td><td style="text-align:right;mso-number-format:0.;">20</td><td style="text-align:right;mso-number-format:0.00;">26397905000.00</td></tr></table>
+        </body>
+        </html>

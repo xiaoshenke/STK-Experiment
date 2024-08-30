@@ -24,9 +24,6 @@ python realtime/observe/mao.py set --mimic $mimic
 echo python realtime/observe/upstp.py set --mimic $mimic
 python realtime/observe/upstp.py set --mimic $mimic
 
-echo python realtime/observe/chaozuo.py set --mimic $mimic
-python realtime/observe/chaozuo.py set --mimic $mimic
-
 echo python realtime/observe/stocks.py set --mimic $mimic
 python realtime/observe/stocks.py set --mimic $mimic
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+            <html xmlns='http://www.w3.org/1999/xhtml'>
+            <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+            <title></title>
+            <style>
+            td{
+                text-align:center;
+                font-size:12px;
+                font-family:Arial, Helvetica, sans-serif;
+                border:#1C7A80 1px solid;
+                color:#152122;
+    }
+    table,tr{
+        border-style:none;
+    }
+    .centerTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:center;
+    }
+    .leftTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:left;
+    }
+    </style>
+        </head>
+
+        <body>
+        <table border='1'><tr><td class="centerTitle">股票代码</td><td class="centerTitle">股票简称</td><td class="centerTitle">现价(元)</td><td class="centerTitle">涨跌幅(%)</td><td class="centerTitle">所属概念</td><td class="centerTitle">概念解析</td><td class="centerTitle">概念资讯</td><td class="centerTitle">所属概念数量(个)</td><td class="leftTitle">a股流通市值(元)2019.04.10</td><td class="centerTitle">所属同花顺行业</td></tr><tr><td>600150.SH</td><td>中国船舶</td><td style="text-align:right;mso-number-format:0.00;">27.02</td><td style="text-align:right;mso-number-format:0.00;">10.02</td><td>船舶升级概念</td><td>公司是一家非汽车交运设备属性的上市公司，其主要经营船舶建造、船舶维修、船舶配套等。</td><td></td><td style="text-align:right;mso-number-format:0.;">18</td><td style="text-align:right;mso-number-format:0.00;">37236737000.00</td><td>国防军工-国防军工-船舶制造</td></tr><tr><td>600685.SH</td><td>中船防务</td><td style="text-align:right;mso-number-format:0.00;">21.03</td><td style="text-align:right;mso-number-format:0.00;">7.46</td><td>船舶升级概念</td><td>公司拥有一座4万、二座6万吨级造船船台和一座5万吨船坞，造船码头岸线1466米，可设计建造符合世界各主要船级社规范的6万载重吨下的各种船舶。
+年造船能力约70万吨；作为中国第一、世界第三的灵便型液货船制造商，产品范围已从成品油轮、原油轮拓展到化学品船，并由原3－5万载重吨扩展至2－6万载重吨。
+2013年公司实现船舶开工13艘，下水9艘，完工11艘/49.87万载重吨。海工完工1艘FPSO改装分包工程及PANCAKE模块工程等。</td><td></td><td style="text-align:right;mso-number-format:0.;">18</td><td style="text-align:right;mso-number-format:0.00;">17266568000.00</td><td>国防军工-国防军工-船舶制造</td></tr><tr><td>600072.SH</td><td>中船科技</td><td style="text-align:right;mso-number-format:0.00;">17.24</td><td style="text-align:right;mso-number-format:0.00;">0.17</td><td>船舶升级概念</td><td>公司是我国大型钢结构、成套机械工程制造基地,以大型钢结构工程、机械制造、船配件为主要产品。</td><td></td><td style="text-align:right;mso-number-format:0.;">16</td><td style="text-align:right;mso-number-format:0.00;">10363433800.00</td><td>国防军工-国防军工-船舶制造</td></tr><tr><td>300008.SZ</td><td>天海防务</td><td style="text-align:right;mso-number-format:0.00;">4.34</td><td style="text-align:right;mso-number-format:0.00;">-1.37</td><td>船舶升级概念</td><td>公司已形成船舶及海洋工程现代设计业务；以设计为先导的EPC业务以及船舶工程监理服务等服务业务，和以游艇设计制造及辅助产业为主导的高附加值船舶及消费产品业务这三大业务领域。</td><td></td><td style="text-align:right;mso-number-format:0.;">10</td><td style="text-align:right;mso-number-format:0.00;">2614460700.00</td><td>国防军工-国防军工-船舶制造</td></tr><tr><td>	000039.SZ</td><td>中集集团</td><td style="text-align:right;mso-number-format:0.00;">15.45</td><td style="text-align:right;mso-number-format:0.00;">-2.53</td><td>船舶升级概念</td><td>公司是中国最早的集装箱专业生产厂和最早的中外合资企业之一,主要经营集装箱、道路运输车辆、罐式储运设备、机场设备制造和销售服务。</td><td></td><td style="text-align:right;mso-number-format:0.;">28</td><td style="text-align:right;mso-number-format:0.00;">19574401000.00</td><td>机械设备-通用设备-金属制品</td></tr><tr><td>	002552.SZ</td><td>宝鼎科技</td><td style="text-align:right;mso-number-format:0.00;">8.42</td><td style="text-align:right;mso-number-format:0.00;">-3.44</td><td>船舶升级概念</td><td>公司专注于大型铸锻件的研发、生产和销售，产品作为装备制造业所必须的关键基础部件，主要应用于船舶、电力、工程机械和石油化工等行业。公司是国内唯一同时拥有CCS、DNV、NK、RINA、GL、ABS、KR、BV等全球十大主流船级社认证的大型铸锻件生产企业，在船舶配套件领域优势明显。</td><td></td><td style="text-align:right;mso-number-format:0.;">6</td><td style="text-align:right;mso-number-format:0.00;">1683252600.00</td><td>机械设备-通用设备-机械基础件</td></tr><tr><td>601890.SH</td><td>亚星锚链</td><td style="text-align:right;mso-number-format:0.00;">7.52</td><td style="text-align:right;mso-number-format:0.00;">-3.95</td><td>船舶升级概念</td><td>公司是一家从事船用锚链和海洋系泊链的生产企业。</td><td></td><td style="text-align:right;mso-number-format:0.;">8</td><td style="text-align:right;mso-number-format:0.00;">7224282000.00</td><td>国防军工-国防军工-船舶制造</td></tr></table>
+        </body>
+        </html>

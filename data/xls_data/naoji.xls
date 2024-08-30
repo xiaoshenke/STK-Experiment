@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+            <html xmlns='http://www.w3.org/1999/xhtml'>
+            <head>
+            <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+            <title></title>
+            <style>
+            td{
+                text-align:center;
+                font-size:12px;
+                font-family:Arial, Helvetica, sans-serif;
+                border:#1C7A80 1px solid;
+                color:#152122;
+    }
+    table,tr{
+        border-style:none;
+    }
+    .centerTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:center;
+    }
+    .leftTitle{
+        background:#7DDCF0;
+        color:#FFFFFF;
+        font-weight:bold;
+        text-align:left;
+    }
+    </style>
+        </head>
+
+        <body>
+        <table border='1'><tr><td class="centerTitle">股票代码</td><td class="centerTitle">股票简称</td><td class="centerTitle">现价(元)</td><td class="centerTitle">涨跌幅(%)</td><td class="centerTitle">所属概念</td><td class="centerTitle">概念解析</td><td class="centerTitle">概念资讯</td><td class="centerTitle">所属概念数量(个)</td><td class="leftTitle">a股流通市值(元)2023.05.30</td></tr><tr><td>300753.SZ</td><td>爱朋医疗</td><td style="text-align:right;mso-number-format:0.00;">22.80</td><td style="text-align:right;mso-number-format:0.00;">20.00</td><td>脑机接口</td><td>2020年8月21日互动易回复：2019年度公司对包含微电脑注药泵外壳、硅胶管、电池、微电脑芯片在内的多项原材料进行了品质提升。</td><td></td><td style="text-align:right;mso-number-format:0.;">8</td><td style="text-align:right;mso-number-format:0.00;">1698153700.00</td></tr><tr><td>	002173.SZ</td><td>创新医疗</td><td style="text-align:right;mso-number-format:0.00;">9.54</td><td style="text-align:right;mso-number-format:0.00;">10.04</td><td>脑机接口</td><td>创新医疗并未直接开展脑机接口技术的研发工作，公司通过参股脑机接口技术公司——杭州博灵医疗科技有限公司的方式，间接介入到了该前沿技术领域。</td><td></td><td style="text-align:right;mso-number-format:0.;">8</td><td style="text-align:right;mso-number-format:0.00;">3580245900.00</td></tr><tr><td>300678.SZ</td><td>中科信息</td><td style="text-align:right;mso-number-format:0.00;">50.01</td><td style="text-align:right;mso-number-format:0.00;">9.00</td><td>脑机接口</td><td>2021年公司年度报告显示，中科信息持续开发的医疗设备物联网、基于多组学肿瘤疗效与预后预测、“脑机接口”等新技术/产品均取得阶段性成果。</td><td></td><td style="text-align:right;mso-number-format:0.;">37</td><td style="text-align:right;mso-number-format:0.00;">13900458000.00</td></tr><tr><td>301293.SZ</td><td>三博脑科</td><td style="text-align:right;mso-number-format:0.00;">98.48</td><td style="text-align:right;mso-number-format:0.00;">7.20</td><td>脑机接口</td><td>2023年5月6日公司互动：脑机接口技术在神经医学方面的临床诊疗及神经康复领域均有较大的应用前景，三博脑科作为“医教研”一体化的学院型医疗机构，始终关注脑机接口技术在医疗领域的应用和发展，也参与临床应用的基础应用和探索。</td><td></td><td style="text-align:right;mso-number-format:0.;">8</td><td style="text-align:right;mso-number-format:0.00;">3360555400.00</td></tr><tr><td>300459.SZ</td><td>汤姆猫</td><td style="text-align:right;mso-number-format:0.00;">6.87</td><td style="text-align:right;mso-number-format:0.00;">5.53</td><td>脑机接口</td><td>--</td><td></td><td style="text-align:right;mso-number-format:0.;">36</td><td style="text-align:right;mso-number-format:0.00;">20615381000.00</td></tr><tr><td>300793.SZ</td><td>佳禾智能</td><td style="text-align:right;mso-number-format:0.00;">21.55</td><td style="text-align:right;mso-number-format:0.00;">3.91</td><td>脑机接口</td><td>2023年5月8日互动易回复：全资子公司思派康拥有发明专利脑电波采集通信系统、通信帧的生成装置和读取装置，该专利技术采取12个通道的脑电传感器的脑电波头戴设备，用于打游戏时，通过该头戴设备控制鼠标左移，右移，上移，下移，点击等。</td><td></td><td style="text-align:right;mso-number-format:0.;">16</td><td style="text-align:right;mso-number-format:0.00;">7108596700.00</td></tr><tr><td>600775.SH</td><td>南京熊猫</td><td style="text-align:right;mso-number-format:0.00;">10.15</td><td style="text-align:right;mso-number-format:0.00;">1.81</td><td>脑机接口</td><td>据2022年年报：上半年，公司数字产业研究院的“面向光缆精准监测的数字孪生应急预警系统关键技术研发”项目和电子制造公司的“基于脑机接口技术的多模态人机交互系统集成研发项目” 分别获批江苏省重点研发计划（产业前瞻与关键核心技术），信息产业公司和通信科技公司获 2022 年南京市工业和信息化发展专项专精特新企业支持资金。</td><td></td><td style="text-align:right;mso-number-format:0.;">21</td><td style="text-align:right;mso-number-format:0.00;">6819161100.00</td></tr><tr><td>	002338.SZ</td><td>奥普光电</td><td style="text-align:right;mso-number-format:0.00;">32.90</td><td style="text-align:right;mso-number-format:0.00;">0.70</td><td>脑机接口</td><td>--</td><td></td><td style="text-align:right;mso-number-format:0.;">17</td><td style="text-align:right;mso-number-format:0.00;">7895802600.00</td></tr><tr><td>	002925.SZ</td><td>盈趣科技</td><td style="text-align:right;mso-number-format:0.00;">20.03</td><td style="text-align:right;mso-number-format:0.00;">-0.35</td><td>脑机接口</td><td>2023年5月23日公司互动：公司与天津大学医学部和海河实验室的合作目前处于前期立项交流阶段，包括人工神经康复机器人、脑机疲劳驾驶监测、数字脑电图机等创新项目，同时参与承办天津大学牵头主办的6月19日全国首届脑机接口大会暨脑机接口问世50周年庆典。</td><td></td><td style="text-align:right;mso-number-format:0.;">23</td><td style="text-align:right;mso-number-format:0.00;">14739092000.00</td></tr><tr><td>300007.SZ</td><td>汉威科技</td><td style="text-align:right;mso-number-format:0.00;">19.60</td><td style="text-align:right;mso-number-format:0.00;">-2.10</td><td>脑机接口</td><td>--</td><td></td><td style="text-align:right;mso-number-format:0.;">35</td><td style="text-align:right;mso-number-format:0.00;">5527359800.00</td></tr></table>
+        </body>
+        </html>

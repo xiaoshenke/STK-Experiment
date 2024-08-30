@@ -66,6 +66,16 @@ then
 	echo python realtime/observe/mao.py open_last
 	python realtime/observe/mao.py open_last --day $day --time_str $time_str
 
+elif [[ $type == "pan" ]]
+then
+	echo python realtime/observe/upstp.py open_last --day $day --time_str $time_str
+	python realtime/observe/upstp.py open_last --day $day --time_str $time_str
+
+	echo python realtime/observe/code_types.py open_last --day $day --time_str $time_str
+	python realtime/observe/code_types.py open_last --day $day --time_str $time_str
+
+	echo python realtime/observe/change.py open_last --day $day --time_str $time_str
+	python realtime/observe/change.py open_last --day $day --time_str $time_str
 elif [[ $type == "jingjia" ]] || [[ $type == "jj" ]]
 then
 	echo python realtime/observe/jingjia.py open_last
