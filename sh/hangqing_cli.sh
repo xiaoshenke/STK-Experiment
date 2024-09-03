@@ -68,10 +68,10 @@ then
 	echo python realtime/hangqing_cli.py zhendang $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/hangqing_cli.py zhendang $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
-elif [[ $hq_type == "itrend" ]] || [[ $hq_type == "trend2" ]]
+elif [[ $hq_type =~ "itrend" ]] || [[ $hq_type =~ "trend2" ]]
 then
-	echo python realtime/flush_cli.py flush_itrend $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/flush_cli.py flush_itrend $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	echo python realtime/flush_cli.py flush_itrend $type --itrend_str $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/flush_cli.py flush_itrend $type --itrend_str $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
 elif [[ $hq_type =~ "pull" ]]
 then
