@@ -100,7 +100,7 @@ then
 elif [[ $type == "code_types" ]] || [[ $type == "code-types" ]] || [[ $type == "codetypes" ]]
 then
 	echo python realtime/observe/code_types.py open_last --mode $mode
-	python realtime/observe/code_types.py open_last --day $day --time_str $time_str --check_expire True --mode $mode
+	python realtime/observe/code_types.py open_last --day $day --time_str $time_str --mode $mode
 
 elif [[ $type == "top_btw" ]]
 then
