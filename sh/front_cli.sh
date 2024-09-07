@@ -46,7 +46,7 @@ do
                 ignore_cache=$1
                 ;;
         -help | --help)
-		echo usage sh/realtime/flush_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] [--subs bbb] type
+		echo usage sh/front_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] type eva [fronts]
                 exit 1
                 ;;
         *)
@@ -59,9 +59,9 @@ do
 			front_type=$1
 		elif [ $now -eq 2 ]
 		then
-			back_type=$1
-		else
 			fronts=$1
+		else
+			back_type=$1
 		fi
 		declare -i now=$now+1
                 ;;
@@ -84,15 +84,15 @@ if [ $# -eq 3 ]
 then
 	type=$1
 	front_type=$2
-	back_type=$3
+	fronts=$3
 fi
 
-if [ $# -eq 3 ]
+if [ $# -gt 3 ]
 then
 	type=$1
 	front_type=$2
-	back_type=$3
-	fronts=$4
+	fronts=$3
+	back_type=$4
 fi
 
 path=`pwd`
@@ -100,6 +100,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 is_code_types=$(python realtime/flush_cli.py is_code_types "$type")
 
+######## code-types branch logic
 if [[ $is_code_types == "1" ]]
 then
 	echo ########## 为code-types类型
@@ -109,6 +110,7 @@ then
 	exit 2
 fi
 
+####### flush front branch logic
 echo python realtime/flush_cli.py flush_front $type $front_type --day $day --time_str $time_str --mode $mode --back $back_type --fronts $fronts --subs $subs --ignore_cache $ignore_cache
 
 python realtime/flush_cli.py flush_front $type $front_type --day $day --time_str $time_str --mode $mode --back $back_type --fronts $fronts --subs $subs --ignore_cache $ignore_cache
