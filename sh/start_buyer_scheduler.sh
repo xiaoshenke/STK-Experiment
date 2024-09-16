@@ -3,11 +3,26 @@
 export PYTHONUNBUFFERED=1
 
 mimic=0
-if [ $# -eq 1 ]
-then
-	mimic=$1
-fi
+mode="default"
 
-echo python engine/scheduler/buyer/cli.py start_engine_mode --mimic_open $mimic 
-nohup python engine/scheduler/buyer/cli.py start_engine_mode --debug 0 --mimic_open $mimic >>scheduler.buyer.log 2>&1 &
+while [ -n "$1" ]
+do 
+	case "$1" in 
+	-mimic | --mimic)
+		shift
+		mimic=$1
+		;;
+	-mode | --mode)
+		shift
+		mode=$1
+		;;
+	*)
+		break
+		;;
+	esac
+	shift
+done
+
+echo python engine/scheduler/buyer/cli.py start_engine_mode --mode $mode --mimic_open $mimic 
+nohup python engine/scheduler/buyer/cli.py start_engine_mode --debug 0 --mode $mode --mimic_open $mimic >>scheduler.buyer.log 2>&1 &
 
