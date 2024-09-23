@@ -135,8 +135,8 @@ then
 
 elif [[ $type == "index" ]]
 then
-	echo python realtime/observe/index.py open_last
-	python realtime/observe/index.py open_last --day $day --time_str $time_str
+	echo python realtime/observe/index.py open_last 
+	python realtime/observe/index.py open_last --day $day --time_str $time_str --mode $mode
 
 elif [[ $type == "stocks" ]]
 then
