@@ -7,7 +7,7 @@ time_str=#
 mode=#
 
 type=''
-flush_type='buy'
+flush_type='simple'
 front_type=#
 fronts_type=#
 ignore_cache=0
@@ -87,7 +87,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 is_code_types=$(python realtime/flush_cli.py is_code_types $type)
 is_eva=$(python realtime/flush_cli.py is_front_type $flush_type)
 
-if [[ $type == "evaed" ]]
+if [[ $type =~ "evaed" ]]
 then
 	echo python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
 	python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
