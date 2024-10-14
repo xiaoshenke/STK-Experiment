@@ -32,7 +32,7 @@ do
                 ignore_cache=$1
                 ;;
         -help | --help)
-		echo usage sh/hangqing_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] type
+		echo usage sh/hangqing_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] zhendang|zhuxian|trends|itrend|youzi
                 exit 1
                 ;;
         *)
