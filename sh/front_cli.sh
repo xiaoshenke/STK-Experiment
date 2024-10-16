@@ -12,20 +12,21 @@ fronts=#
 subs=#
 back_type=#
 ignore_cache=0
+debug=0
 
 now=0
 while [ -n "$1" ]
 do 
-        case "$1" in 
-        -day | --day)
+	case "$1" in 
+	-day | --day)
                 shift
                 day=$1
                 ;;
-        -time_str | --time_str)
+	-time_str | --time_str)
                 shift
                 time_str=$1
                 ;;
-        -mode | --mode)
+	-mode | --mode)
                 shift
                 mode=$1
                 ;;
@@ -41,14 +42,18 @@ do
 		shift
 		subs=$1
 		;;
+	-debug | --debug)
+		shift
+		debug=$1
+		;;
 	-ignore_cache | --ignore_cache)
-                shift
-                ignore_cache=$1
-                ;;
-        -help | --help)
+		shift
+		ignore_cache=$1
+		;;
+	-help | --help)
 		echo usage sh/front_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] type eva [fronts]
-                exit 1
-                ;;
+		exit 1
+		;;
         *)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -118,7 +123,7 @@ then
 fi
 
 ####### flush front branch logic
-echo python realtime/flush_cli.py flush_front $type $front_type --day $day --time_str $time_str --mode $mode --back $back_type --fronts $fronts --subs $subs --ignore_cache $ignore_cache
+echo python realtime/flush_cli.py flush_front $type $front_type --day $day --time_str $time_str --mode $mode --back $back_type --fronts $fronts --subs $subs --ignore_cache $ignore_cache --debug $debug
 
-python realtime/flush_cli.py flush_front $type $front_type --day $day --time_str $time_str --mode $mode --back $back_type --fronts $fronts --subs $subs --ignore_cache $ignore_cache
+python realtime/flush_cli.py flush_front $type $front_type --day $day --time_str $time_str --mode $mode --back $back_type --fronts $fronts --subs $subs --ignore_cache $ignore_cache --debug $debug
 

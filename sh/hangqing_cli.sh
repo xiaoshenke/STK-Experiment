@@ -98,6 +98,11 @@ then
 	echo python realtime/hangqing_cli.py zhuxian $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/hangqing_cli.py zhuxian $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
+elif [[ $hq_type == "chaoduan" ]] || [[ $hq_type == "cd" ]]
+then
+	echo python realtime/hangqing_cli.py chaoduan $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/hangqing_cli.py chaoduan $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
 elif [[ $hq_type =~ "zhudong" ]]
 then
 	echo python realtime/hangqing_cli.py zhudong $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
@@ -107,6 +112,11 @@ elif [[ $hq_type =~ "jinji" ]]
 then
 	echo python realtime/hangqing_cli.py jinji $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
 	python realtime/hangqing_cli.py jinji $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
+elif [[ $hq_type =~ "zhushen" ]]
+then
+	echo python realtime/hangqing_cli.py zhusheng $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
+	python realtime/hangqing_cli.py zhusheng $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
 elif [[ $hq_type =~ "trend" ]]
 then
