@@ -92,6 +92,11 @@ then
 	echo python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
 	python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
 
+elif [[ $is_code_types == "1" ]] && [[ $is_eva == "1" ]]
+then
+	echo 不支持code-types+eva类型 不过可以  sh/front_cli.sh $type $flush_type --mode $mode --day $day --time_str $time_str
+	exit 2
+
 elif [[ $is_code_types == "1" ]]
 then
 	echo python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache

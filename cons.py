@@ -2,7 +2,7 @@
 # coding=utf-8
 
 # 09:25而不是09:30作为open时区 见<2024-10-07 应对09:25~30分变更为可交易时间政策做一下engine的更改>
-OPEN_IS_0925 = True
+OPEN_IS_0925 = False
 
 SERVER_PORT = 1234
 PLAN_REPORTER_SERVER_PORT = 1222

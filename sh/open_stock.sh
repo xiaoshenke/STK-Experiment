@@ -77,7 +77,13 @@ else
 fi
 
 # if it is open browser,just open it
-if [ $open_type -eq 1  ]
+if [ $open_type -eq 1  ] && [[ ${origin_code:0:1} == "8" ]]
+then
+	url=http://quote.eastmoney.com/bj/$origin_code.html
+	echo going to open url:$url ...
+	open $url
+	exit 2
+elif [ $open_type -eq 1  ]
 then
 	_code=$1
 	url=http://stockpage.10jqka.com.cn/$_code
