@@ -118,6 +118,11 @@ then
 	echo python realtime/hangqing_cli.py zhusheng $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
 	python realtime/hangqing_cli.py zhusheng $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
+elif [[ $hq_type =~ "qieh" ]]
+then
+	echo python realtime/hangqing_cli.py qiehuan $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
+	python realtime/hangqing_cli.py qiehuan $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
 elif [[ $hq_type =~ "trend" ]]
 then
 	echo python realtime/hangqing_cli.py days_trend $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
