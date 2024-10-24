@@ -63,7 +63,7 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-if [[ $hq_type == "zhendang" ]]
+if [[ $hq_type == "zhendang" ]] || [[ $hq_type == "zd" ]]
 then
 	echo python realtime/hangqing_cli.py zhendang $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/hangqing_cli.py zhendang $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
