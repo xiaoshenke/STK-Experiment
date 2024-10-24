@@ -10,7 +10,7 @@ mode=#
 hq_type='zhendang'
 type=''
 ignore_cache=0
-
+debug=0
 now=0
 while [ -n "$1" ]
 do 
@@ -27,6 +27,10 @@ do
                 shift
                 mode=$1
                 ;;
+	-debug | --debug)
+		shift
+		debug=$1
+		;;
 	-ignore_cache | --ignore_cache)
                 shift
                 ignore_cache=$1
@@ -120,8 +124,8 @@ then
 
 elif [[ $hq_type =~ "qieh" ]]
 then
-	echo python realtime/hangqing_cli.py qiehuan $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
-	python realtime/hangqing_cli.py qiehuan $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	echo python realtime/hangqing_cli.py qiehuan $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --debug $debug
+	python realtime/hangqing_cli.py qiehuan $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --debug $debug
 
 elif [[ $hq_type =~ "trend" ]]
 then
