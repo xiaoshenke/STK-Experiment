@@ -11,7 +11,7 @@ front_type=#
 fronts=#
 subs=#
 back_type=#
-ignore_cache=0
+ignore_cache=1
 debug=0
 
 now=0
