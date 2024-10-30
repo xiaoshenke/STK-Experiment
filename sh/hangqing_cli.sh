@@ -67,7 +67,12 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-if [[ $hq_type == "zhendang" ]] || [[ $hq_type == "zd" ]]
+if [[ $hq_type =~ ".hist" ]] || [[ $hq_type =~ ".times" ]]
+then
+	echo python realtime/stage/cli.py get $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/stage/cli.py get $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
+elif [[ $hq_type == "zhendang" ]] || [[ $hq_type == "zd" ]]
 then
 	echo python realtime/hangqing_cli.py zhendang $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/hangqing_cli.py zhendang $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
@@ -116,6 +121,11 @@ elif [[ $hq_type =~ "zhudong" ]]
 then
 	echo python realtime/hangqing_cli.py zhudong $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
 	python realtime/hangqing_cli.py zhudong $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
+elif [[ $hq_type =~ "bodong" ]]
+then
+	echo python realtime/hangqing_cli.py bodong $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
+	python realtime/hangqing_cli.py bodong $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
 elif [[ $hq_type =~ "jinji" ]]
 then
