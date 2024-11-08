@@ -12,3 +12,6 @@ fi
 echo cp realtime/realtime.properties ../stk_daily/$day/
 cp realtime/realtime.properties ../stk_daily/$day/
 
+echo cp realtime/pan.properties ../stk_daily/$day/
+cp realtime/pan.properties ../stk_daily/$day/
+
