@@ -15,3 +15,6 @@ sh/start_code_types_observe.sh --mode pan
 echo 起buyer scheduler... sh/start_buyer_scheduler.sh --mode pan
 sh/start_buyer_scheduler.sh --mode pan
 
+echo 起pan observe.. python engine/observe/pan/cli.py start_engine_mode
+nohup python engine/observe/pan/cli.py start_engine_mode >>observe.pan.log 2>&1 &
+

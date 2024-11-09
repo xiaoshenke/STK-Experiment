@@ -15,6 +15,7 @@ secret
 *.out
 *.txt
 *.properties
+realtime/pan.properties
 png
 !data/csv_data/calAll.csv
 data/csv_data/*.csv

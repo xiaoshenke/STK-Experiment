@@ -43,3 +43,6 @@ python realtime/observe/xls.py set --running_mode $mode
 echo python realtime/observe/jingjia.py set --running_mode $mode
 python realtime/observe/jingjia.py set --running_mode $mode
 
+echo python realtime/observe/pan.py set --running_mode $mode
+python realtime/observe/pan.py set --running_mode $mode
+
