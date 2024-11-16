@@ -73,7 +73,6 @@ def get_codes_dir(day=''):
 def get_xls_dir(day=''):
 	return "%s/xls/"%get_daily_dir(day)
 
-
 # 用于engine.stage.xls的cache
 def get_xls_stage_dir(day=''):
 	return '%s/xls_stage/'%get_daily_dir(day)
