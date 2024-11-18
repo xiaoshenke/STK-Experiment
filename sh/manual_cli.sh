@@ -58,10 +58,10 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 is_xls=$(python realtime/manual_cli.py is_xls $type)
 
-if [[ $type == "pool" ]]
+if [[ $type =~ "pool" ]]
 then
-	echo python realtime/manual_cli.py pool --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/manual_cli.py pool --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	echo python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
 elif [[ $type == "codetypes" ]] || [[ $type == "code_types" ]] 
 then
