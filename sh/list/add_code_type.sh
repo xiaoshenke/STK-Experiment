@@ -5,21 +5,30 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
 code_type=#
+desc=#
 
-if [ $# -lt 1 ]
-then
-	echo Usage: sh/list/code_type.sh [code-type]
-	exit 2
-fi
+now=0
+while [ -n "$1" ]
+do 
+	case "$1" in 
+	-day | --day)
+		shift
+		day=$1
+		;;
+	*)
+		# set value to type|flush_type by now-flag
+		if [ $now -eq 0 ]
+		then
+			code_type=$1
+		elif [ $now -eq 1 ]
+		then
+			desc=$1
+		fi
+		declare -i now=$now+1
+		;;
+	esac
+	shift
+done
 
-if [ $# -eq 1 ]
-then
-	code_type=$1
-elif [ $# -gt 1 ]
-then
-	code_type=$1
-	day=$2
-fi
-
-echo python realtime/code_type/reg_cli.py add $code_type --day $day
-python realtime/code_type/reg_cli.py add $code_type --day $day
+echo python realtime/code_type/reg_cli.py add $code_type --day $day --reason $desc
+python realtime/code_type/reg_cli.py add $code_type --day $day --reason $desc
