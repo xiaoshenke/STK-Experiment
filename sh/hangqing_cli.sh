@@ -67,7 +67,7 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-if [[ $hq_type =~ ".hist" ]] || [[ $hq_type =~ ".times" ]]
+if [[ $hq_type =~ ".hist" ]] || [[ $hq_type =~ ".times" ]] || [[ $hq_type =~ ".cross" ]]
 then
 	echo python realtime/stage/cli.py get $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/stage/cli.py get $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
