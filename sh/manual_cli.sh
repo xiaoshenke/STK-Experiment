@@ -84,6 +84,8 @@ then
 	python realtime/manual_cli.py xls $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
 else
-	echo 当前不支持类型$type
+	#echo 当前不支持类型$type
+	echo python realtime/observe/pan.py do_manual $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/observe/pan.py do_manual $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 fi
 
