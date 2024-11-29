@@ -6,7 +6,7 @@ day=#
 time_str=#
 mode='now'
 type=''
-bp_type='default'
+bp_type='youzi'
 ignore_cache=1
 debug=0
 open=0
@@ -67,9 +67,15 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
+is_list=$(python realtime/buyer_plan_cli.py is_list $type)
 is_code_type=$(python realtime/buyer_plan_cli.py is_code_type $type)
 
-if [[ $is_code_type == "1" ]]
+if [[ $is_list == "1" ]]
+then
+	echo python realtime/buyer_plan_cli.py pool --day $day --time_str $time_str --mode $mode $type $bp_type
+	python realtime/buyer_plan_cli.py pool --day $day --time_str $time_str --mode $mode $type $bp_type
+
+elif [[ $is_code_type == "1" ]]
 then
 
 	echo python realtime/buyer_plan_cli.py xls --day $day --time_str $time_str --mode $mode $type $bp_type
