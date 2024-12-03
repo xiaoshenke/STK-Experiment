@@ -2,6 +2,9 @@
 
 echo ATTENTION: wrap realtime/buyer_plan_cli.py 
 
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
 day=#
 time_str=#
 mode='now'
@@ -36,7 +39,8 @@ do
 		ignore_cache=$1
 		;;
 	-help | --help)
-		echo usage sh/eva_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] type eva [fronts]
+		#echo usage sh/eva_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] type eva [fronts]
+		python realtime/buyer_plan_cli.py help
 		exit 1
 		;;
         *)
@@ -74,6 +78,11 @@ if [[ $is_list == "1" ]]
 then
 	echo python realtime/buyer_plan_cli.py pool --day $day --time_str $time_str --mode $mode $type $bp_type
 	python realtime/buyer_plan_cli.py pool --day $day --time_str $time_str --mode $mode $type $bp_type
+
+elif [[ $type == "yztl" ]] || [[ $type == "youzi_tuoli" ]] 
+then
+	echo python realtime/buyer_plan_cli.py youzi_tuoli --day $day --time_str $time_str --mode $mode 
+	python realtime/buyer_plan_cli.py youzi_tuoli --day $day --time_str $time_str --mode $mode 
 
 elif [[ $type == "yzzd" ]] || [[ $type == "youzi" ]] || [[ $type == "youzi_zhudao" ]] 
 then
