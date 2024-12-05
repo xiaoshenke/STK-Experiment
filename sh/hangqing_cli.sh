@@ -107,6 +107,11 @@ then
 	echo python realtime/hangqing_cli.py zhuxian $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/hangqing_cli.py zhuxian $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
+elif [[ $hq_type == "tidui" ]] || [[ $hq_type =~ "tiduis" ]]
+then
+	echo python realtime/hangqing_cli.py tidui $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/hangqing_cli.py tidui $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
 elif [[ $hq_type == "realtime" ]] || [[ $hq_type =~ "realtimes" ]]
 then
 	echo python realtime/hangqing_cli.py realtime $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
