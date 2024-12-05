@@ -89,6 +89,11 @@ then
 	echo python realtime/buyer_plan_cli.py wenhe --day $day --time_str $time_str --mode $mode 
 	python realtime/buyer_plan_cli.py wenhe --day $day --time_str $time_str --mode $mode 
 
+elif [[ $type == "gwwhfq" ]] || [[ $type == "wenhe_tuichao" ]] || [[ $type == "whtc" ]] 
+then
+	echo python realtime/buyer_plan_cli.py gaowei_wenhe_fenqi --day $day --time_str $time_str --mode $mode 
+	python realtime/buyer_plan_cli.py gaowei_wenhe_fenqi --day $day --time_str $time_str --mode $mode 
+
 elif [[ $type == "yztl" ]] || [[ $type == "youzi_tuoli" ]] 
 then
 	echo python realtime/buyer_plan_cli.py youzi_tuoli --day $day --time_str $time_str --mode $mode 
