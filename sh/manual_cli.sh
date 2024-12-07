@@ -7,6 +7,7 @@ time_str=#
 mode='now'
 
 type=''
+tag=#
 ignore_cache=1
 
 now=0
@@ -21,6 +22,11 @@ do
 		shift
 		time_str=$1
 		;;
+	-tag | --tag)
+		shift
+		tag=$1
+		;;
+	
 	-mode | --mode)
 		shift
 		mode=$1
@@ -38,6 +44,9 @@ do
 		if [ $now -eq 0 ]
 		then
 			type=$1
+		elif [ $now -eq 1 ]
+		then
+			tag=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -58,7 +67,12 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 is_xls=$(python realtime/manual_cli.py is_xls $type)
 
-if [[ $type =~ "pool" ]]
+if [[ $type =~ "clear" ]]
+then
+	echo python realtime/manual_cli.py clear $type --tag $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/manual_cli.py clear $type --tag $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
+elif [[ $type =~ "pool" ]]
 then
 	echo python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
