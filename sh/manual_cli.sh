@@ -8,6 +8,7 @@ mode='now'
 
 type=''
 tag=#
+codes=#
 ignore_cache=1
 
 now=0
@@ -47,6 +48,7 @@ do
 		elif [ $now -eq 1 ]
 		then
 			tag=$1
+			codes=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -69,6 +71,18 @@ is_xls=$(python realtime/manual_cli.py is_xls $type)
 
 if [[ $type =~ "clear" ]]
 then
+	if [[ $type =~ "code_types" ]] || [[ $type =~ "codetypes" ]]
+	then
+		echo 当前指定了清除code-types,这个操作是比较严重的 因此只能通过调用原生命令实现:  python realtime/manual_cli.py clear $type --tag "$tag" --day $day 
+		echo ""
+		exit 2
+	elif [[ $type =~ "codes" ]] || [[ $type =~ "code_type" ]] || [[ $type =~ "codetype" ]]
+	then
+		echo python realtime/manual_cli.py clear_code_type $codes --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+		python realtime/manual_cli.py clear_code_type $codes --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+		exit 2
+	fi
+	
 	echo python realtime/manual_cli.py clear $type --tag $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/manual_cli.py clear $type --tag $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
