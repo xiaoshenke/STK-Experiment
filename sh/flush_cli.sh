@@ -86,6 +86,10 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 is_code_types=$(python realtime/flush_cli.py is_code_types $type)
 is_eva=$(python realtime/flush_cli.py is_front_type $flush_type)
+# reset value to last character
+is_eva=${is_eva:0-1:1}
+
+echo "sh/flush_cli.sh is_code_types:$is_code_types is_eva:$is_eva"
 
 if [[ $type =~ "evaed" ]]
 then
