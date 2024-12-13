@@ -86,6 +86,16 @@ then
 	echo python realtime/manual_cli.py clear $type --tag $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/manual_cli.py clear $type --tag $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
+elif [[ $type =~ "codes_version" ]] || [[ $type =~ "codesversion" ]]
+then
+	echo python realtime/manual_cli.py codes_version $codes --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/manual_cli.py codes_version $codes --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
+elif [[ $type =~ "version" ]]
+then
+	echo python realtime/manual_cli.py version $type --tag $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/manual_cli.py version $type --tag $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
 elif [[ $type =~ "pool" ]]
 then
 	echo python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache

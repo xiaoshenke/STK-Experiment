@@ -84,6 +84,11 @@ then
 	echo python realtime/buyer_plan_cli.py maichong --day $day --time_str $time_str --mode $mode $type
 	python realtime/buyer_plan_cli.py maichong --day $day --time_str $time_str --mode $mode $type
 
+elif [[ $type == "zsbd" ]] || [[ $type == "zhishu_bingdian" ]]
+then
+	echo python realtime/buyer_plan_cli.py zhishu_bingdian --day $day --time_str $time_str --mode $mode 
+	python realtime/buyer_plan_cli.py zhishu_bingdian --day $day --time_str $time_str --mode $mode 
+
 elif [[ $type == "lhgk" ]] || [[ $type == "lihao_gaokai" ]]
 then
 	echo python realtime/buyer_plan_cli.py lihao_gaokai --day $day --time_str $time_str --mode $mode 
