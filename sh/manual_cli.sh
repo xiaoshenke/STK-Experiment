@@ -49,6 +49,9 @@ do
 		then
 			tag=$1
 			codes=$1
+		elif [ $now -eq 2 ]
+		then
+			tag=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -85,6 +88,22 @@ then
 	
 	echo python realtime/manual_cli.py clear $type --tag $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/manual_cli.py clear $type --tag $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
+elif [[ $type =~ "checkout" ]] 
+then
+	if [[ $type =~ "code_types" ]] || [[ $type =~ "codetypes" ]]
+	then
+		echo 'checkou-code-types'
+
+	elif [[ $type =~ "codes" ]] || [[ $type =~ "code_type" ]] || [[ $type =~ "codetype" ]]
+	then
+		echo python realtime/manual_cli.py checkout_codes $codes --tag_str $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+		python realtime/manual_cli.py checkout_codes $codes --tag_str $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+		exit 2
+	fi
+
+	echo python realtime/manual_cli.py checkout $type --tag_str $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/manual_cli.py checkout $type --tag_str $tag --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
 elif [[ $type =~ "codes_version" ]] || [[ $type =~ "codesversion" ]]
 then
