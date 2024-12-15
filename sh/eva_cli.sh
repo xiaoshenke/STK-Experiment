@@ -77,6 +77,6 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type
+echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug
 
-python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type
+python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug

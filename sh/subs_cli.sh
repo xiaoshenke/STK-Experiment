@@ -85,6 +85,10 @@ if [[ $operate == "info" ]] || [[ $operate == "trend" ]]
 then
 	echo python realtime/subs_cli.py info --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type
 	python realtime/subs_cli.py info --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type
+elif [[ ${operate:0:6} == "stage:" ]]
+then
+	echo python realtime/subs_cli.py stage --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type $operate
+	python realtime/subs_cli.py stage --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type $operate
 elif [[ $operate == "flush" ]]
 then
 	echo python realtime/subs_cli.py flush --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type
