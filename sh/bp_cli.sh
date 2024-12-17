@@ -103,11 +103,20 @@ elif [[ $type == "wenhe" ]]
 then
 	echo python realtime/buyer_plan_cli.py wenhe --day $day --time_str $time_str --mode $mode 
 	python realtime/buyer_plan_cli.py wenhe --day $day --time_str $time_str --mode $mode 
-
 elif [[ $type == "gwwhfq" ]] || [[ $type == "wenhe_tuichao" ]] || [[ $type == "whtc" ]] 
 then
 	echo python realtime/buyer_plan_cli.py gaowei_wenhe_fenqi --day $day --time_str $time_str --mode $mode 
 	python realtime/buyer_plan_cli.py gaowei_wenhe_fenqi --day $day --time_str $time_str --mode $mode 
+
+elif [[ $type == "gwdiban" ]] || [[ $type == "gbdiban" ]] || [[ $type == "gaowei_diban" ]] 
+then
+	echo python realtime/buyer_plan_cli.py gaowei_diban --day $day --time_str $time_str --mode $mode 
+	python realtime/buyer_plan_cli.py gaowei_diban --day $day --time_str $time_str --mode $mode 
+
+elif [[ $type == "cdjiasu" ]] || [[ $type == "chaoduan_jiasu" ]]
+then
+	echo python realtime/buyer_plan_cli.py chaoduan_jiasu --day $day --time_str $time_str --mode $mode 
+	python realtime/buyer_plan_cli.py chaoduan_jiasu --day $day --time_str $time_str --mode $mode 
 
 elif [[ $type == "yztl" ]] || [[ $type == "youzi_tuoli" ]] 
 then

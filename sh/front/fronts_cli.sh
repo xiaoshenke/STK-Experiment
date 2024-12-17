@@ -12,7 +12,9 @@ fronts=#
 subs=#
 back_type=#
 ignore_cache=1
-operate='flush'
+
+# update 2024-12-17: flush->info
+operate='info'
 debug=0
 
 now=0
@@ -85,9 +87,14 @@ then
 	echo python realtime/fronts_cli.py info $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache
 	python realtime/fronts_cli.py info $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache
 	exit 2
+elif [[ $operate == "flush" ]]
+then
+
+	echo python realtime/fronts_cli.py flush $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache
+	python realtime/fronts_cli.py flush $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache
+
+else
+	echo sh/front/fronts_cli.sh not support operate:$operate
+
 fi
-
-echo python realtime/fronts_cli.py flush $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache
-python realtime/fronts_cli.py flush $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache
-
 
