@@ -12,6 +12,7 @@ fronts=#
 subs=#
 back_type=#
 ignore_cache=1
+open=0
 
 # update 2024-12-17: flush->info
 operate='info'
@@ -22,9 +23,9 @@ while [ -n "$1" ]
 do 
 	case "$1" in 
 	-day | --day)
-                shift
-                day=$1
-                ;;
+		shift
+		day=$1
+		;;
 	-time_str | --time_str)
                 shift
                 time_str=$1
@@ -37,6 +38,10 @@ do
                 shift
                 back_type=$1
                 ;;
+	-open | --open)
+		shift
+		open=$1
+		;;
 	-fronts | --fronts)
 		shift
 		fronts=$1
@@ -90,8 +95,8 @@ then
 elif [[ $operate == "flush" ]]
 then
 
-	echo python realtime/fronts_cli.py flush $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache
-	python realtime/fronts_cli.py flush $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache
+	echo python realtime/fronts_cli.py flush $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache --open $open
+	python realtime/fronts_cli.py flush $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache --open $open
 
 else
 	echo sh/front/fronts_cli.sh not support operate:$operate
