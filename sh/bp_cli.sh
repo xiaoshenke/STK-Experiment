@@ -89,6 +89,11 @@ then
 	echo python realtime/buyer_plan_cli.py zhishu_bingdian --day $day --time_str $time_str --mode $mode 
 	python realtime/buyer_plan_cli.py zhishu_bingdian --day $day --time_str $time_str --mode $mode 
 
+elif [[ $type == "ddhn" ]] || [[ $type == "dadie_huinuan" ]]
+then
+	echo python realtime/buyer_plan_cli.py dadie_huinuan --day $day --time_str $time_str --mode $mode 
+	python realtime/buyer_plan_cli.py dadie_huinuan --day $day --time_str $time_str --mode $mode 
+
 elif [[ $type == "lhgk" ]] || [[ $type == "lihao_gaokai" ]]
 then
 	echo python realtime/buyer_plan_cli.py lihao_gaokai --day $day --time_str $time_str --mode $mode 
@@ -117,6 +122,11 @@ elif [[ $type == "cdjiasu" ]] || [[ $type == "chaoduan_jiasu" ]]
 then
 	echo python realtime/buyer_plan_cli.py chaoduan_jiasu --day $day --time_str $time_str --mode $mode 
 	python realtime/buyer_plan_cli.py chaoduan_jiasu --day $day --time_str $time_str --mode $mode 
+
+elif [[ $type == "cddaibeng" ]] || [[ $type == "chaoduan_daibeng" ]]
+then
+	echo python realtime/buyer_plan_cli.py chaoduan_daibeng --day $day --time_str $time_str --mode $mode 
+	python realtime/buyer_plan_cli.py chaoduan_daibeng --day $day --time_str $time_str --mode $mode 
 
 elif [[ $type == "yztl" ]] || [[ $type == "youzi_tuoli" ]] 
 then
