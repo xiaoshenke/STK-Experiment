@@ -128,6 +128,11 @@ then
 	echo python realtime/buyer_plan_cli.py chaoduan_daibeng --day $day --time_str $time_str --mode $mode 
 	python realtime/buyer_plan_cli.py chaoduan_daibeng --day $day --time_str $time_str --mode $mode 
 
+elif [[ $type == "lhdaibeng" ]] || [[ $type == "lianghua_daibeng" ]]
+then
+	echo python realtime/buyer_plan_cli.py lianghua_daibeng --day $day --time_str $time_str --mode $mode 
+	python realtime/buyer_plan_cli.py lianghua_daibeng --day $day --time_str $time_str --mode $mode 
+
 elif [[ $type == "yztl" ]] || [[ $type == "youzi_tuoli" ]] 
 then
 	echo python realtime/buyer_plan_cli.py youzi_tuoli --day $day --time_str $time_str --mode $mode 
