@@ -46,7 +46,7 @@ do
 		shift
 		fronts=$1
 		;;
-	-fronts | --front | --front_type | -front_type)
+	-front | --front | --front_type | -front_type | --eva | -eva)
 		shift
 		front_type=$1
 		;;
