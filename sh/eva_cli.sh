@@ -9,6 +9,7 @@ mode='now'
 type=''
 front_type=''
 back_type=#
+fake=#
 ignore_cache=1
 debug=0
 open=0
@@ -26,9 +27,13 @@ do
                 time_str=$1
                 ;;
 	-mode | --mode)
-                shift
-                mode=$1
-                ;;
+		shift
+		mode=$1
+		;;
+	-fake | --fake)
+		shift
+		fake=$1
+		;;
 	-back | --back)
                 shift
                 back_type=$1
@@ -77,6 +82,6 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug
+echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug --fake $fake
 
-python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug
+python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug --fake $fake
