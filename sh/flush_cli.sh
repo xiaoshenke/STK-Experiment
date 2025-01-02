@@ -102,6 +102,11 @@ then
 	echo python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
+elif [[ $flush_type =~ "op:" ]] || [[ $flush_type =~ "operate:" ]]
+then
+	echo python realtime/flush_cli.py do_operate $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/flush_cli.py do_operate $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
 elif [[ $flush_type =~ "pull_info" ]] || [[ $flush_type =~ "pullinfo" ]]
 then
 	echo python realtime/flush_cli.py pull_info $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
