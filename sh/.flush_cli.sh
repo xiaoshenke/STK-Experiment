@@ -41,7 +41,7 @@ do
 		ignore_cache=$1
 		;;
 	-help | --help)
-		echo usage sh/realtime/flush_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] type [pull_info|stage:]
+		echo usage sh/realtime/flush_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] type
 		exit 1
 		;;
 	*)
@@ -91,26 +91,15 @@ is_eva=${is_eva:0-1:1}
 
 echo "sh/flush_cli.sh is_code_types:$is_code_types is_eva:$is_eva"
 
-if [[ $is_code_types != "1" ]] 
+if [[ $type =~ "evaed" ]]
 then
-	echo $type 不是切片池,当前仅支持切片池类型
-	exit 2
-fi
+	echo python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
+	python realtime/flush_cli.py flush $type --day $day --time_str $time_str --mode $mode --flush_type $flush_type --ignore_cache $ignore_cache
 
-if [[ $flush_type =~ "stage:" ]]
+elif [[ $flush_type =~ "buyer" ]]
 then
-	echo python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-
-elif [[ $flush_type =~ "pull_info" ]] || [[ $flush_type =~ "pullinfo" ]]
-then
-	echo python realtime/flush_cli.py pull_info $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/flush_cli.py pull_info $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-
-elif [[ $flush_type == "simple" ]]
-then
-	echo python realtime/flush_cli.py simple_flush $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/flush_cli.py simple_flush $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	echo python realtime/flush_cli.py flush_buyer $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/flush_cli.py flush_buyer $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
 elif [[ $is_code_types == "1" ]] && [[ $is_eva == "1" ]]
 then
