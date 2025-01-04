@@ -13,7 +13,7 @@ do
 		force=$1
 		;;	
         -help | --help)
-		echo usage sh/config/write_xls.sh key val
+		echo usage sh/pan/write_xls.sh key val
                 exit 1
                 ;;
         *)
@@ -33,14 +33,14 @@ done
 if [ ${#key} -eq 0 ]
 then
 	echo key empty.
-	echo usage sh/config/write_xls.sh key val
+	echo usage sh/pan/write_xls.sh key val
 	exit 1
 fi
 
 if [ ${#val} -eq 0 ]
 then
 	echo val empty.
-	echo usage sh/config/write_xls.sh key val
+	echo usage sh/pan/write_xls.sh key val
 	exit 1
 fi
 
