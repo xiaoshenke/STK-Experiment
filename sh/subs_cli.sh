@@ -81,21 +81,32 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
+is_eva=$(python realtime/subs_cli.py is_front_type $operate)
+is_eva=${is_eva:0-1:1}
+
+echo "sh/subs_cli.sh is_eva:$is_eva"
+
 if [[ $operate == "info" ]] || [[ $operate == "trend" ]]
 then
 	echo python realtime/subs_cli.py info --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type
 	python realtime/subs_cli.py info --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type
+
 elif [[ ${operate:0:6} == "stage:" ]]
 then
 	echo python realtime/subs_cli.py stage --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type $operate
 	python realtime/subs_cli.py stage --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type $operate
+
 elif [[ $operate == "flush" ]]
 then
 	echo python realtime/subs_cli.py flush --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type
 	python realtime/subs_cli.py flush --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type
+
+elif [[ $is_eva == "1" ]]
+then
+	echo python realtime/subs_cli.py front --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type $operate
+	python realtime/subs_cli.py front --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type $operate
+
 else
-#	echo python realtime/subs_cli.py front --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type $operate
-#	python realtime/subs_cli.py front --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type $operate
 
 	echo python realtime/flush_cli.py flush_subs $code_type $subs_type --front_type $operate --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
         python realtime/flush_cli.py flush_subs $code_type $subs_type --front_type $operate --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
