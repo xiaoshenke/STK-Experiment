@@ -2,6 +2,9 @@
 
 echo ATTENTION: FLUSH-CMDS CLI
 
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
 day=#
 time_str=#
 mode=#
@@ -37,7 +40,8 @@ do
 		ignore_cache=$1
 		;;
 	-help | --help)
-		echo usage sh/realtime/flush_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] type [pull_info|stage:]
+		#echo usage sh/realtime/flush_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] type [pull_info|stage:]
+		python realtime/flush_cli.py help
 		exit 1
 		;;
 	*)
@@ -56,9 +60,6 @@ do
 	esac
 	shift
 done
-
-path=`pwd`
-export PYTHONPATH=$path:$PYTHONPATH
 
 is_code_types=$(python realtime/flush_cli.py is_code_types $type)
 is_eva=$(python realtime/flush_cli.py is_front_type $flush_type)
