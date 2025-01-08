@@ -69,13 +69,13 @@ then
 elif [[ $type == "pan" ]]
 then
 	echo python realtime/observe/upstp.py open_last --day $day --time_str $time_str
-	python realtime/observe/upstp.py open_last --day $day --time_str $time_str
+	python realtime/observe/upstp.py open_last --day $day --time_str $time_str --check_expire True
 
 	echo python realtime/observe/code_types.py open_last --day $day --time_str $time_str
 	python realtime/observe/code_types.py open_last --day $day --time_str $time_str
 
 	echo python realtime/observe/change.py open_last --day $day --time_str $time_str
-	python realtime/observe/change.py open_last --day $day --time_str $time_str
+	python realtime/observe/change.py open_last --day $day --time_str $time_str --check_expire True
 
 	echo python realtime/observe/index.py open_last --day $day --time_str $time_str
 	python realtime/observe/index.py open_last --day $day --time_str $time_str
@@ -83,6 +83,8 @@ then
 	echo python realtime/observe/pan.py open_last --day $day --time_str $time_str
 	python realtime/observe/pan.py open_last --day $day --time_str $time_str
 
+	echo python realtime/observe/xls.py open_last --day $day --time_str $time_str
+	python realtime/observe/xls.py open_last --day $day --time_str $time_str
 
 elif [[ $type == "jingjia" ]] || [[ $type == "jj" ]]
 then
@@ -130,6 +132,7 @@ elif [[ $type == "xls" ]]
 then
 	echo python realtime/observe/xls.py open_last
 	python realtime/observe/xls.py open_last --day $day --time_str $time_str
+
 elif [[ $type == "buyer" ]] || [[ $type == "buy" ]]
 then
 	#echo python realtime/buyer/observe_cli.py open_last
