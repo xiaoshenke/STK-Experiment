@@ -84,4 +84,4 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug --fake $fake
 
-python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug --fake $fake
+python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug --fake $fake --do_log 1
