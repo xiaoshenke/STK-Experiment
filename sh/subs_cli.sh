@@ -86,7 +86,7 @@ is_eva=${is_eva:0-1:1}
 
 echo "sh/subs_cli.sh is_eva:$is_eva"
 
-if [[ $operate == "info" ]] || [[ $operate == "trend" ]]
+if [[ $operate == "info" ]] || [[ $operate == "trend" ]] || [[ $operate == "size" ]]
 then
 	echo python realtime/subs_cli.py info --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type
 	python realtime/subs_cli.py info --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache $code_type $subs_type
