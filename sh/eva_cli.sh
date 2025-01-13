@@ -14,18 +14,19 @@ ignore_cache=1
 debug=0
 open=0
 now=0
+log=1
 
 while [ -n "$1" ]
 do 
 	case "$1" in 
 	-day | --day)
-                shift
-                day=$1
-                ;;
+		shift
+		day=$1
+		;;
 	-time_str | --time_str)
-                shift
-                time_str=$1
-                ;;
+		shift
+		time_str=$1
+		;;
 	-mode | --mode)
 		shift
 		mode=$1
@@ -34,10 +35,14 @@ do
 		shift
 		fake=$1
 		;;
+	-log | --log)
+		shift
+		log=$1
+		;;
 	-back | --back)
-                shift
-                back_type=$1
-                ;;
+		shift
+		back_type=$1
+		;;
 	-debug | --debug)
 		shift
 		debug=$1
@@ -82,6 +87,6 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug --fake $fake
+echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug --fake $fake --do_log $log
 
-python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug --fake $fake --do_log 1
+python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open $open --back $back_type --debug $debug --fake $fake --do_log $log
