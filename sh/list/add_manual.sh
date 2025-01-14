@@ -42,6 +42,6 @@ then
 	python realtime/code_type/tmp_cli.py add_manual $code_type $codes --day $day 
 	exit 2
 fi
-echo python realtime/code_type/reg_cli.py add_manual $code_type $codes --day $day 
-python realtime/code_type/reg_cli.py add_manual $code_type $codes --day $day 
+echo python realtime/code_type/reg_cli.py add_manual $code_type $codes --day $day --do_log 1
+python realtime/code_type/reg_cli.py add_manual $code_type $codes --day $day --do_log 1
 

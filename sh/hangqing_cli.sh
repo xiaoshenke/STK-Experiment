@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo ATTENTION: FLUSH-CMDS CLI
+echo ATTENTION: HANGQING-CMDS CLI
 
 day=#
 time_str=#
