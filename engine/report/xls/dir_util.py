@@ -11,7 +11,7 @@ def get_dir_by(day,time_str,xls,type,fix=0.0):
 	return '%s/%s/%s/%s/'%(get_xls_report_dir(day),time_str.replace(':',''),xls,type)
 
 def get_dir_by_eva(day,time_str,xls,eva):
-	if time_str == '15:00:00':
+	if time_str == '15:00:00' and not 'index' in eva:
 		from util.dir_util import get_report_dir
 		return '%s/%s/%s/'%(get_report_dir(day),xls,eva)
 
