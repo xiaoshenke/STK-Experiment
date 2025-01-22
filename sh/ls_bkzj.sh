@@ -7,6 +7,6 @@ then
 	day=$1
 fi
 
-echo ls ../stk_daily/$day/apply | grep bkzj
+echo "ls ../stk_daily/$day/apply/ | grep bkzj"
 ls ../stk_daily/$day/apply | grep bkzj
 

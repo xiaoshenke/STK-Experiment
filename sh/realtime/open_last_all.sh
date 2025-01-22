@@ -86,6 +86,9 @@ then
 	echo python realtime/observe/xls.py open_last --day $day --time_str $time_str
 	python realtime/observe/xls.py open_last --day $day --time_str $time_str
 
+	echo python realtime/observe/buyer.py open_last
+	python realtime/observe/buyer.py open_last --day $day --time_str $time_str --check_expire True
+
 elif [[ $type == "jingjia" ]] || [[ $type == "jj" ]]
 then
 	echo python realtime/observe/jingjia.py open_last
