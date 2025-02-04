@@ -5,6 +5,7 @@ back=""
 #echo "$@"
 id=0
 force=1
+debug=0
 day=`date +'%Y-%m-%d'`
 
 # extract parameters
@@ -26,6 +27,10 @@ do
 	-back|--back)
 		back=$2
 		shift
+		;;
+	-debug|--debug)
+		shift
+		debug=$1
 		;;
 	*)
 		#break
@@ -54,9 +59,9 @@ fi
 
 if [ ${#back} -gt 1 ]
 then
-	echo python realtime/query_cli.py open $id --day $day --open_mode $mode --back $back --force $force
-	python realtime/query_cli.py open $id --day $day --open_mode $mode --back $back --force $force
+	echo python realtime/query_cli.py open $id --day $day --open_mode $mode --back $back --force $force --debug $debug
+	python realtime/query_cli.py open $id --day $day --open_mode $mode --back $back --force $force --debug $debug
 else
-	echo python realtime/query_cli.py open $id --day $day --open_mode $mode --force $force
-	python realtime/query_cli.py open $id --day $day --open_mode $mode --force $force
+	echo python realtime/query_cli.py open $id --day $day --open_mode $mode --force $force --debug $debug
+	python realtime/query_cli.py open $id --day $day --open_mode $mode --force $force --debug $debug
 fi

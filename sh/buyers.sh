@@ -24,7 +24,7 @@ do
 		type=$1
 		;;
 	-help | --help)
-		#echo usage sh/open_buyers.sh [--day abc] [--type xyz]
+		echo python engine/caop/buyers/cli.py help
 		python engine/caop/buyers/cli.py help
 		exit 1
 		;;

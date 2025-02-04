@@ -32,3 +32,4 @@ done
 
 echo python realtime/code_type/reg_cli.py add $code_type --day $day --reason $desc
 python realtime/code_type/reg_cli.py add $code_type --day $day --reason $desc
+
