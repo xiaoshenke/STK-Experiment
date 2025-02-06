@@ -193,6 +193,9 @@ then
 	echo python realtime/observe/mline.py open_last
 	python realtime/observe/mline.py open_last --day $day --time_str $time_str --key $key
 
+	echo python realtime/observe/index.py open_last --mode $mode
+	python realtime/observe/index.py open_last --day $day --time_str $time_str --key $key --mode $mode
+
 	echo python realtime/observe/pools.py open_last --mode $mode
 	python realtime/observe/pools.py open_last --day $day --time_str $time_str --key $key --mode $mode
 
