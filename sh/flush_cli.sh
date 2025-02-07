@@ -10,7 +10,8 @@ time_str=#
 mode=#
 
 type=''
-flush_type='simple'
+# update 2025-02-07: simple->trend
+flush_type='trend'
 front_type=#
 operate='info'
 ignore_cache=0
