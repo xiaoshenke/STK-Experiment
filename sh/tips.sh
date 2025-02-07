@@ -2,6 +2,9 @@
 
 echo ATTENTION: OPEN-TIPS CLI
 
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
 day=#
 
 # 先走一个读取逻辑,设置一下type的值 这个值是前一次打开text文件时记录的
@@ -20,7 +23,8 @@ do
 		type=$1
 		;;
 	-help | --help)
-		echo usage sh/open_tips.sh [--day abc] [--type xyz]
+		#echo usage sh/open_tips.sh [--day abc] [--type xyz]
+		python engine/caop/tips/cli.py help
                 exit 1
                 ;;
         *)
@@ -37,9 +41,6 @@ do
 	esac
 	shift
 done
-
-path=`pwd`
-export PYTHONPATH=$path:$PYTHONPATH
 
 echo python engine/caop/tips/cli.py open --day $day --type $type
 python engine/caop/tips/cli.py open --day $day --type $type

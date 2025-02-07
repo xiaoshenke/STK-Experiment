@@ -125,6 +125,11 @@ then
 	echo python realtime/manual_cli.py buyer --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
         python realtime/manual_cli.py buyer --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
+elif [[ $type == "youzi" ]] || [[ $type == "chaoduan" ]] 
+then
+	echo python realtime/manual_cli.py youzi --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+        python realtime/manual_cli.py youzi --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
 elif [[ $type == "codetypes" ]] || [[ $type == "code_types" ]] 
 then
 	echo python realtime/manual_cli.py code_types --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
