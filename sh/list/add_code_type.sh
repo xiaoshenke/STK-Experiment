@@ -30,6 +30,6 @@ do
 	shift
 done
 
-echo python realtime/code_type/reg_cli.py add $code_type --day $day --reason $desc
-python realtime/code_type/reg_cli.py add $code_type --day $day --reason $desc
+echo python realtime/code_type/reg_cli.py add $code_type --day $day --reason $desc --do_log 1
+python realtime/code_type/reg_cli.py add $code_type --day $day --reason $desc --do_log 1
 

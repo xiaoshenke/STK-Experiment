@@ -71,6 +71,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 #	exit 2
 
 is_xls=$(python realtime/manual_cli.py is_xls $type)
+echo is_xls:$is_xls
 
 if [[ $type =~ "clear" ]]
 then
@@ -79,6 +80,7 @@ then
 		echo 当前指定了清除code-types,这个操作是比较严重的 因此只能通过调用原生命令实现:  python realtime/manual_cli.py clear $type --tag "$tag" --day $day 
 		echo ""
 		exit 2
+
 	elif [[ $type =~ "codes" ]] || [[ $type =~ "code_type" ]] || [[ $type =~ "codetype" ]]
 	then
 		echo python realtime/manual_cli.py clear_code_type $codes --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
