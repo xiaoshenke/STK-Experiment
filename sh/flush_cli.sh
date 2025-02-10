@@ -72,6 +72,8 @@ is_eva=${is_eva:0-1:1}
 
 is_operate=$(python realtime/flush_cli.py is_valid_operate $flush_type)
 
+can_be_fronts_fenbu=$(python realtime/flush_cli.py can_be_fronts_fenbu $flush_type)
+
 echo "sh/flush_cli.sh is_code_types:$is_code_types is_eva:$is_eva is_operate:$is_operate"
 
 if [[ $is_code_types != "1" ]] 
@@ -81,7 +83,7 @@ then
 fi
 
 # 特殊处理fronts fenbu
-if [[ $flush_type =~ "stage:" ]] || [[ $flush_type =~ "fronts_fenbu:" ]] || [[ $flush_type =~ "frontsfenbu:" ]]
+if [[ $flush_type =~ "stage:" ]] || [[ $flush_type =~ "fronts_fenbu:" ]] || [[ $flush_type =~ "frontsfenbu:" ]] || [[ $can_be_fronts_fenbu == "1" ]]
 then
 	echo python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
