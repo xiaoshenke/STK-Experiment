@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Usage: sh/list/code_type.sh [day]
+
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
