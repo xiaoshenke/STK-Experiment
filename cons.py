@@ -48,6 +48,7 @@ FENGPIAN_OBSERVE_SERVER_PORT = 1277
 JINGJIA_OBSERVE_SERVER_PORT = 1278
 INDEX_OBSERVE_SERVER_PORT = 1279
 PAN_OBSERVE_SERVER_PORT = 1280
+BUYER_SCHEDULER_SERVER_PORT = 1281
 
 # @update_advisor对应的port
 NODE_UPDATER_SERVER_PORT = 1291
@@ -66,6 +67,8 @@ FENSHI_API = 'tencent'
 # properties文件名称
 REALTIME_PROPERTIES_FILE = 'realtime/realtime.properties'
 PAN_PROPERTIES_FILE = 'realtime/pan.properties'
+
+BUYER_CONFIG_PROPERTIES_FILE = 'buyer.config.properties'
 
 USER = 'wuxian'
 
