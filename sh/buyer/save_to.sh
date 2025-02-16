@@ -18,11 +18,11 @@ do
 		juben=$1
 		;;
 	*)
-		day=$1
+		juben=$1
 		;;
 	esac
 	shift
 done
 
-echo python engine/observe/buyer/config_cli.py open_config --day $day --juben $juben
-python engine/observe/buyer/config_cli.py open_config --day $day --juben $juben
+echo python engine/observe/buyer/config_cli.py save_to --day $day $juben
+python engine/observe/buyer/config_cli.py save_to --day $day $juben
