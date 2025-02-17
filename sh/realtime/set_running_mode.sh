@@ -34,8 +34,8 @@ python realtime/observe/upstp.py set --running_mode $mode
 echo python realtime/observe/chaoduan.py set --running_mode $mode
 python realtime/observe/chaoduan.py set --running_mode $mode
 
-echo python realtime/observe/buyer.py set --running_mode $mode
-python realtime/observe/buyer.py set --running_mode $mode
+#echo python realtime/observe/buyer.py set --running_mode $mode
+#python realtime/observe/buyer.py set --running_mode $mode
 
 echo python engine/scheduler/buyer/buyer.py set --running_mode $mode
 python engine/scheduler/buyer/buyer.py set --running_mode $mode
