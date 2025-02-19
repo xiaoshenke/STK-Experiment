@@ -22,6 +22,10 @@ do
 		shift
 		type=$1
 		;;
+	-mode | --mode)
+		echo 输入了错误的参数: mode
+		exit 1
+		;;
 	-help | --help)
 		#echo usage sh/open_tips.sh [--day abc] [--type xyz]
 		python engine/caop/tips/cli.py help
