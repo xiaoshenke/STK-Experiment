@@ -17,6 +17,10 @@ do
 		shift
 		juben=$1
 		;;
+	-help | --help)
+		echo Usage: sh/buyer/open_config.sh [day] --juben abc
+		exit 2
+		;;
 	*)
 		day=$1
 		;;
