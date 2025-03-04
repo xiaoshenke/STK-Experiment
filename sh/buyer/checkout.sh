@@ -18,7 +18,7 @@ do
 		juben=$1
 		;;
 	-help | --help)
-		echo Usage: sh/buyer/checkecout.sh juben --day abc
+		echo Usage: sh/buyer/checkout.sh juben --day abc
 		exit 2
 		;;
 	*)

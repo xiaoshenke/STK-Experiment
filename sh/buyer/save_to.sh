@@ -17,6 +17,10 @@ do
 		shift
 		juben=$1
 		;;
+	-help | --help)
+		echo Usage: sh/buyer/save_to.sh juben --day abc
+		exit 2
+		;;
 	*)
 		juben=$1
 		;;
