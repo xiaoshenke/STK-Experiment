@@ -5,6 +5,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
 juben=#
+force=0
 
 while [ -n "$1" ]
 do 
@@ -17,8 +18,12 @@ do
 		shift
 		juben=$1
 		;;
+	-force | --force)
+		shift
+		force=$1
+		;;
 	-help | --help)
-		echo Usage: sh/buyer/save_to.sh juben --day abc
+		echo Usage: sh/buyer/save_to.sh juben --day abc [--force xyz]
 		exit 2
 		;;
 	*)
@@ -28,5 +33,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/config_cli.py save_to --day $day $juben
-python engine/observe/buyer/config_cli.py save_to --day $day $juben
+echo python engine/observe/buyer/config_cli.py save_to --day $day $juben --force $force
+python engine/observe/buyer/config_cli.py save_to --day $day $juben --force $force
