@@ -72,6 +72,16 @@ then
 	echo python realtime/manual_buyer_cli.py save_to $branch --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --clear $clear
 	python realtime/manual_buyer_cli.py save_to $branch --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --clear $clear
 
+elif [[ $operate == "checkout" ]] 
+then
+	echo python realtime/manual_buyer_cli.py checkout $branch --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
+	python realtime/manual_buyer_cli.py checkout $branch --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
+
+elif [[ $operate == "version" ]] || [[ $operate =~ "cur" ]]
+then
+	echo python realtime/manual_buyer_cli.py version  --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache 
+	python realtime/manual_buyer_cli.py version  --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
 else
 	echo 当前不支持类型$operate,branch:$branch
 fi

@@ -67,7 +67,10 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-if [[ $hq_type =~ ".hist" ]] || [[ $hq_type =~ ".times" ]] || [[ $hq_type =~ ".cross" ]]
+is_lei_cross=$(python realtime/hangqing_cli.py is_lei_cross_stage $hq_type)
+echo is_lei_cross:$is_lei_cross
+
+if [[ $hq_type =~ ".hist" ]] || [[ $hq_type =~ ".times" ]] || [[ $hq_type =~ ".cross" ]] || [[ $is_lei_cross == "1" ]]
 then
 	echo python realtime/stage/cli.py get $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/stage/cli.py get $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache

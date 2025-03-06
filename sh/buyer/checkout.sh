@@ -30,3 +30,8 @@ done
 
 echo python engine/observe/buyer/config_cli.py checkout --day $day $juben
 python engine/observe/buyer/config_cli.py checkout --day $day $juben
+
+echo 
+echo 考虑把所有的buyer配置也进行save to?     
+echo sh/manual/buyer_cli.sh save_to $juben --day $day
+
