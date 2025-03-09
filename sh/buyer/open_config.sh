@@ -22,7 +22,7 @@ do
 		exit 2
 		;;
 	*)
-		day=$1
+		juben=$1
 		;;
 	esac
 	shift
