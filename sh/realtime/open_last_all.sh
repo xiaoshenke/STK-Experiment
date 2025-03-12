@@ -194,7 +194,8 @@ then
 	python realtime/observe/mline.py open_last --day $day --time_str $time_str --key $key
 
 	echo python realtime/observe/index.py open_last --mode $mode
-	python realtime/observe/index.py open_last --day $day --time_str $time_str --key $key --mode $mode
+	python realtime/observe/index.py open_last --day $day --time_str $time_str --mode $mode
+# --key $key
 
 	echo python realtime/observe/pools.py open_last --mode $mode
 	python realtime/observe/pools.py open_last --day $day --time_str $time_str --key $key --mode $mode
@@ -207,6 +208,9 @@ then
 
 	echo python realtime/observe/chaoduan.py open_last
 	python realtime/observe/chaoduan.py open_last --day $day --time_str $time_str 
+
+	echo python realtime/observe/buyer.py open_last
+	python realtime/observe/buyer.py open_last --day $day --time_str $time_str 
 
 	echo python realtime/observe/code_types.py open_last --mode $mode
 	python realtime/observe/code_types.py open_last --day $day --time_str $time_str --check_expire True --mode $mode

@@ -15,6 +15,10 @@ def get_dir_by_eva(day,time_str,xls,eva):
 		from util.dir_util import get_report_dir
 		return '%s/%s/%s/'%(get_report_dir(day),xls,eva)
 
+	if time_str == '11:30:00' and not 'index' in eva:
+		from util.dir_util import get_noon_report_dir
+		return '%s/%s/%s/'%(get_noon_report_dir(day),xls,eva)
+
 	from util.dir_util import get_xls_report_dir
 	return '%s/%s/%s/%s/'%(get_xls_report_dir(day),time_str.replace(':',''),xls,eva)
 
@@ -32,6 +36,8 @@ def parse_dir(dir):
 
 	if 'xls_report' in dir:
 		geshi = 'xls_report'
+	elif 'noon_report' in dir:
+		geshi = 'noon_report'
 	elif 'report' in dir:
 		geshi = 'report'
 	
@@ -55,6 +61,9 @@ def parse_dir(dir):
 	elif geshi == 'report':
 		idx2 = idx
 		time_str = '15:00:00'
+	elif geshi == 'noon_report':
+		idx2 = idx
+		time_str = '11:30:00'
 
 	idx3 = dir.find('/',idx2+1)
 	idx4 = dir.find('/',idx3+1)
