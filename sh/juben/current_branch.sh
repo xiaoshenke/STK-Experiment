@@ -21,5 +21,5 @@ do
 	shift
 done
 
-echo ls ../stk_daily/$day/buyer/|sort
-ls ../stk_daily/$day/buyer/|sort
+echo ls ../stk_daily/$day/juben/|sort
+ls ../stk_daily/$day/juben/|sort
