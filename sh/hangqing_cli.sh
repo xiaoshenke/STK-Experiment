@@ -68,12 +68,19 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 is_lei_cross=$(python realtime/hangqing_cli.py is_lei_cross_stage $hq_type)
-echo is_lei_cross:$is_lei_cross
+can_be_stage=$(python realtime/hangqing_cli.py can_be_stage_type $hq_type)
+
+echo is_lei_cross:$is_lei_cross,can_be_stage:$can_be_stage
 
 if [[ $hq_type =~ ".hist" ]] || [[ $hq_type =~ ".times" ]] || [[ $hq_type =~ ".cross" ]] || [[ $is_lei_cross == "1" ]]
 then
 	echo python realtime/stage/cli.py get $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/stage/cli.py get $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
+elif [[ $can_be_stage == "1" ]]
+then
+	echo python realtime/hangqing_cli.py do_stage $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/hangqing_cli.py do_stage $type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
 elif [[ $hq_type == "zhendang" ]] || [[ $hq_type == "zd" ]]
 then
@@ -94,6 +101,11 @@ elif [[ $hq_type =~ "change" ]]
 then
 	echo python realtime/hangqing_cli.py change $type --change_type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/hangqing_cli.py change $type --change_type $hq_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
+elif [[ $hq_type == "pulls" ]]
+then
+	echo python realtime/hangqing_cli.py pulls $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/hangqing_cli.py pulls $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
 elif [[ $hq_type =~ "pull" ]]
 then
