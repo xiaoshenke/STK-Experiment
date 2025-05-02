@@ -154,7 +154,7 @@ def save_net_error(msg):
 	except Exception,e:
 		pass
 
-# cpu issure单独做成日至
+# cpu issure单独做成日志
 cpu_issure_logger = get_common_daily_logger('cpu_issure','cpu_issure')
 def save_cpu_issure(msg):
 	try:
@@ -162,7 +162,7 @@ def save_cpu_issure(msg):
 	except Exception,e:
 		pass
 
-# flush cli的信息单独做成日至
+# flush cli的信息单独做成日志
 flush_logger = get_common_daily_logger('flush','flush')
 def save_flush(msg):
 	try:
@@ -170,11 +170,19 @@ def save_flush(msg):
 	except Exception,e:
 		pass
 
-# zao observe(早盘架构组件)单独做成日至
+# zao observe(早盘架构组件)单独做成日志
 zao_observe_logger = get_common_daily_logger('zao_observe','zao_observe')
 def save_zao_observe(msg):
 	try:
 		zao_observe_logger.info(str(msg))
+	except Exception,e:
+		pass
+
+# pool相关的组件单独做成日志
+pool_observe_logger = get_common_daily_logger('pool_observe','pool_observe')
+def save_pool_observe(msg):
+	try:
+		pool_observe_logger.info(str(msg))
 	except Exception,e:
 		pass
 
