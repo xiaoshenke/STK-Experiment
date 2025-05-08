@@ -10,7 +10,7 @@ then
 	mode=$1
 fi
 
-echo nohup python engine/observe/caozuo/cli.py start_engine_mode --running_mode $mode --mimic_open true 
-nohup python engine/observe/caozuo/cli.py start_engine_mode --running_mode $mode --mimic_open true >>observe.caozuo.log 2>&1 &
+echo nohup python engine/observe/caozuo/cli.py start_engine_mode --running_mode $mode --mimic_open false
+nohup python engine/observe/caozuo/cli.py start_engine_mode --running_mode $mode --mimic_open false >>observe.caozuo.log 2>&1 &
 
 
