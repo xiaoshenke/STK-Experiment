@@ -82,6 +82,11 @@ then
 	echo python realtime/observe/caozuo.py get_operate --day $day --time_str $time_str --mode $mode
 	python realtime/observe/caozuo.py get_operate --day $day --time_str $time_str --mode $mode
 
+elif [[ $operate_type =~ "get_cod" ]] || [[ $operate_type =~ "codes" ]]
+then
+	echo python realtime/observe/caozuo.py get_codes --day $day --time_str $time_str --mode $mode
+	python realtime/observe/caozuo.py get_codes --day $day --time_str $time_str --mode $mode
+
 elif [[ $operate_type == "get_xls" ]]
 then
 	echo python realtime/observe/caozuo.py get_xls $type2 --day $day --time_str $time_str --mode $mode
