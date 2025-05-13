@@ -145,7 +145,7 @@ then
 elif [[ $is_xls == "1" ]]
 then
 	echo python realtime/manual_cli.py xls $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/manual_cli.py xls $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/manual_cli.py xls $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --do_log 1
 
 else
 	#echo 当前不支持类型$type

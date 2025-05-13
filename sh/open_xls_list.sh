@@ -9,6 +9,7 @@ fi
 
 open_mode=jpg
 time_str=#
+fenshi_type=#
 
 now=0
 while [ -n "$1" ]
@@ -22,6 +23,12 @@ do
 		shift
 		open_mode=$1
 		;;
+	-fenshi_type | --fenshi_type)
+		shift
+		fenshi_type=$1
+		;;
+
+
 	-time_str | --time_str)
 		shift
 		time_str=$1
@@ -42,6 +49,6 @@ done
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python engine/xls/open_cli.py open_xls_list $xls_list --open_mode $open_mode --time_str $time_str
-python engine/xls/open_cli.py open_xls_list $xls_list --open_mode $open_mode --time_str $time_str
+echo python engine/xls/open_cli.py open_xls_list $xls_list --open_mode $open_mode --time_str $time_str --fenshi_type $fenshi_type
+python engine/xls/open_cli.py open_xls_list $xls_list --open_mode $open_mode --time_str $time_str --fenshi_type $fenshi_type
 
