@@ -6,7 +6,7 @@ echo 起数据下载器... sh/start_jingjia_advisor.sh
 sh/start_jingjia_advisor.sh
 
 echo 起观察组件... sh/start_jingjia_observe.sh
-sh/start_jingjia_observe.sh
+sh/observe/start_jingjia_observe.sh
 
 echo 起buyer scheduler... sh/start_buyer_scheduler.sh
 sh/start_buyer_scheduler.sh 
