@@ -8,7 +8,8 @@ export PYTHONPATH=$path:$PYTHONPATH
 day=#
 
 # 先走一个读取逻辑,设置一下type的值 这个值是前一次打开text文件时记录的
-type=$(python realtime/properties_cli.py read_tips_type)
+#type=$(python realtime/properties_cli.py read_tips_type)
+type=#
 
 now=0
 while [ -n "$1" ]

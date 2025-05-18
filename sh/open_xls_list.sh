@@ -50,5 +50,5 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 echo python engine/xls/open_cli.py open_xls_list $xls_list --open_mode $open_mode --time_str $time_str --fenshi_type $fenshi_type
-python engine/xls/open_cli.py open_xls_list $xls_list --open_mode $open_mode --time_str $time_str --fenshi_type $fenshi_type
+python engine/xls/open_cli.py open_xls_list $xls_list --open_mode $open_mode --time_str $time_str --fenshi_type $fenshi_type --do_log 1
 
