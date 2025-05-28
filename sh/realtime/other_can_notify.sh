@@ -10,7 +10,7 @@ then
 	can_notify=$1
 fi
 
-echo "对caozuo observe进行can_notify设置操作."
+echo "对caozuo observe进行can_notify设置操作,can-notify:$can_notify."
 
 if [ $can_notify -eq 1 ]
 then

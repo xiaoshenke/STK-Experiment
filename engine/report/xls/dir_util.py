@@ -17,7 +17,7 @@ def get_dir_by_eva(day,time_str,xls,eva):
 
 	if time_str == '11:30:00' and not 'index' in eva:
 		from util.dir_util import get_noon_report_dir
-		xls = xls.replace('*','..')
+		xls = xls.replace('*','..').replace('xls:','xls.')
 		return '%s/%s/%s/'%(get_noon_report_dir(day),xls,eva)
 
 	from util.dir_util import get_xls_report_dir
@@ -70,7 +70,7 @@ def parse_dir(dir):
 	idx4 = dir.find('/',idx3+1)
 	xls = dir[idx3+1:idx4]
 	if geshi == 'noon_report':
-		xls = xls.replace('..','*')
+		xls = xls.replace('..','*').replace('xls.','xls:')
 
 	idx5 = dir.find('/',idx4+1)
 	type = dir[idx4+1:idx5]
