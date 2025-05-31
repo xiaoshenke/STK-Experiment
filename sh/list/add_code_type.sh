@@ -15,6 +15,10 @@ do
 		shift
 		day=$1
 		;;
+	-reason | --reason | -desc| --desc)
+		shift
+		desc=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -31,5 +35,5 @@ do
 done
 
 echo python realtime/code_type/reg_cli.py add $code_type --day $day --reason $desc --do_log 1
-python realtime/code_type/reg_cli.py add $code_type --day $day --reason $desc --do_log 1
+python realtime/code_type/reg_cli.py add $code_type --day $day --reason "$desc" --do_log 1
 
