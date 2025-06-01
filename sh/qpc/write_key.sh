@@ -4,11 +4,16 @@ key=''
 val=''
 force=0
 reason=#
+day=`date +'%Y-%m-%d'`
 
 now=0
 while [ -n "$1" ]
 do 
         case "$1" in 
+	-day | --day)
+                shift
+                day=$1
+                ;;
 	-force | --force | --froce)
 		shift
 		force=$1
