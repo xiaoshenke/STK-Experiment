@@ -122,6 +122,13 @@ then
 	echo python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
+# 添加maoding计算支持
+elif [[ ${type:0:3} == "md:" ]] || [[ ${type:0:8} == "maoding:" ]]
+then
+
+	echo python realtime/caop/maoding.py get --xls $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/caop/maoding.py get --xls $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
 elif [[ $type =~ "buyer" ]]
 then
 	echo python realtime/manual_cli.py buyer --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
