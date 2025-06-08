@@ -10,6 +10,7 @@ type=''
 tag=#
 codes=#
 ignore_cache=1
+debug=0
 
 now=0
 while [ -n "$1" ]
@@ -22,6 +23,10 @@ do
 	-time_str | --time_str)
 		shift
 		time_str=$1
+		;;
+	-debug | --debug)
+		shift
+		debug=$1
 		;;
 	-tag | --tag)
 		shift
@@ -156,7 +161,7 @@ then
 
 else
 	#echo 当前不支持类型$type
-	echo python realtime/observe/pan.py do_manual $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/observe/pan.py do_manual $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	echo python realtime/observe/pan.py do_manual $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --debug $debug
+	python realtime/observe/pan.py do_manual $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --debug $debug
 fi
 
