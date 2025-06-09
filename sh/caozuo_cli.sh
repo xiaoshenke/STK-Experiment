@@ -97,6 +97,11 @@ then
 	echo python realtime/observe/caozuo.py get_xls $operate_type --day $day --time_str $time_str --mode $mode
 	python realtime/observe/caozuo.py get_xls $operate_type --day $day --time_str $time_str --mode $mode
 
+elif [[ ${operate_type:0:3} == "qpc" ]]
+then
+	echo python realtime/observe/caozuo.py get_qpc $operate_type --day $day --time_str $time_str --mode $mode
+	python realtime/observe/caozuo.py get_qpc $operate_type --day $day --time_str $time_str --mode $mode
+
 elif [[ $operate_type =~ "list" ]]
 then
 	#echo python realtime/observe/caozuo.py last --day $day 

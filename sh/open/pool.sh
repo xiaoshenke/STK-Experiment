@@ -45,6 +45,9 @@ done
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --do_log 1
+#echo python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+#python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --do_log 1
+
+echo python engine/caop/tips/cli.py open_manual_pool --day $day --time_str $time_str --mode $mode --do_log 1
+python engine/caop/tips/cli.py open_manual_pool --day $day --time_str $time_str --mode $mode --do_log 1
 
