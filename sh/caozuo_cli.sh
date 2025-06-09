@@ -102,6 +102,12 @@ then
 	echo python realtime/observe/caozuo.py get_qpc $operate_type --day $day --time_str $time_str --mode $mode
 	python realtime/observe/caozuo.py get_qpc $operate_type --day $day --time_str $time_str --mode $mode
 
+elif [[ ${operate_type:0:3} == "buy" ]]
+then
+	echo python realtime/observe/caozuo.py get_buyer $operate_type --day $day --time_str $time_str --mode $mode
+	python realtime/observe/caozuo.py get_buyer $operate_type --day $day --time_str $time_str --mode $mode
+
+
 elif [[ $operate_type =~ "list" ]]
 then
 	#echo python realtime/observe/caozuo.py last --day $day 
