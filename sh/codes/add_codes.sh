@@ -8,6 +8,13 @@ code_type=#
 desc=#
 group=#
 now=0
+
+if [ $# -lt 2 ]
+then
+	echo Usage: sh/codes/add_codes.sh code-type group [--day ] [--reason ]
+        day=$1
+fi
+
 while [ -n "$1" ]
 do 
 	case "$1" in 
@@ -21,7 +28,7 @@ do
 		;;
 	-group | --group)
 		shift
-		desc=$1
+		group=$1
 		;;
 	*)
 		# set value to type|flush_type by now-flag
@@ -30,7 +37,7 @@ do
 			code_type=$1
 		elif [ $now -eq 1 ]
 		then
-			desc=$1
+			group=$1
 		fi
 		declare -i now=$now+1
 		;;
