@@ -29,4 +29,4 @@ do
 done
 
 echo python engine/observe/buyer/config_cli.py open_config --day $day --juben $juben
-python engine/observe/buyer/config_cli.py open_config --day $day --juben $juben
+python engine/observe/buyer/config_cli.py open_config --day $day --juben $juben --do_log 1

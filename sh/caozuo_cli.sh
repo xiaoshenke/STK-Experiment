@@ -107,6 +107,10 @@ then
 	echo python realtime/observe/caozuo.py get_buyer $operate_type --day $day --time_str $time_str --mode $mode
 	python realtime/observe/caozuo.py get_buyer $operate_type --day $day --time_str $time_str --mode $mode
 
+elif [[ $operate_type =~ "pool_silu" ]] || [[ $operate_type =~ "poolsilu" ]]
+then
+	echo python realtime/observe/caozuo.py get_pool_silu $operate_type --day $day --time_str $time_str --mode $mode
+	python realtime/observe/caozuo.py get_pool_silu $operate_type --day $day --time_str $time_str --mode $mode
 
 elif [[ $operate_type =~ "list" ]]
 then
@@ -115,9 +119,7 @@ then
 	
 	echo find ../stk_daily/$day/caozuo/
 	find ../stk_daily/$day/caozuo/
-
 else
 	echo 不支持operate_type:$operate_type type2:$type2
 
 fi
-
