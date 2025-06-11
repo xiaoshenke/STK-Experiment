@@ -31,8 +31,11 @@ do
 		if [ $now -eq 0 ]
 		then
 			code_type=$1
-			declare -i now=$now+1
+		elif [ $now -eq 1 ]
+		then
+			desc=$1
 		fi
+		declare -i now=$now+1
 		;;
 	esac
 	shift
