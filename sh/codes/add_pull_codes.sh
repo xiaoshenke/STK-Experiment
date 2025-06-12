@@ -1,18 +1,14 @@
 #!/bin/bash
 
-path=`pwd`
-export PYTHONPATH=$path:$PYTHONPATH
-
 day=`date +'%Y-%m-%d'`
 code_type=#
 desc=#
-group=#
 now=0
 
-if [ $# -lt 2 ]
+if [ $# -lt 1 ]
 then
-	echo Usage: sh/codes/add_codes.sh code-type group [--day ] [--reason ]
-      	exit 2
+	echo Usage: sh/codes/add_pull_codes.sh code-type [--day ] [--reason ]
+	exit 2
 fi
 
 while [ -n "$1" ]
@@ -37,7 +33,7 @@ do
 			code_type=$1
 		elif [ $now -eq 1 ]
 		then
-			group=$1
+			desc=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -45,6 +41,6 @@ do
 	shift
 done
 
-echo python realtime/code_type/reg_cli.py add $code_type --day $day --reason $desc --group $group --do_log 1
-python realtime/code_type/reg_cli.py add $code_type --day $day --reason "$desc" --group $group --do_log 1
+echo sh/codes/add_codes.sh $code_type pull --day $day --reason $desc
+sh/codes/add_codes.sh $code_type pull --day $day --reason $desc
 

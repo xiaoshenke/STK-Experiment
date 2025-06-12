@@ -13,4 +13,4 @@ then
 fi
 
 echo python realtime/code_type/reg_cli.py last --day $day
-python realtime/code_type/reg_cli.py last --day $day
+python realtime/code_type/reg_cli.py last --day $day --do_log 1

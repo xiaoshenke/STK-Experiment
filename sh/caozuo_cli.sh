@@ -110,7 +110,7 @@ then
 elif [[ $operate_type =~ "pool_silu" ]] || [[ $operate_type =~ "poolsilu" ]]
 then
 	echo python realtime/observe/caozuo.py get_pool_silu $operate_type --day $day --time_str $time_str --mode $mode
-	python realtime/observe/caozuo.py get_pool_silu $operate_type --day $day --time_str $time_str --mode $mode
+	python realtime/observe/caozuo.py get_pool_silu $operate_type --day $day --time_str $time_str --mode $mode --do_log 1
 
 elif [[ $operate_type =~ "list" ]]
 then
