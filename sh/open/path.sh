@@ -9,6 +9,7 @@ fi
 
 day=#
 dir=#
+back='info'
 
 now=0
 while [ -n "$1" ]
@@ -17,6 +18,10 @@ do
 	-day | --day)
 		shift
 		day=$1
+		;;
+	-back | --back)
+		shift
+		back=$1
 		;;
 	-help | --help)
 		echo usage sh/open/path.sh time_str [--day abc] 
@@ -32,5 +37,5 @@ done
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python realtime/open_cli.py open --day $day "$dir" --back info
-python realtime/open_cli.py open --day $day "$dir" --back info
+echo python realtime/open_cli.py open --day $day "$dir" --back $back
+python realtime/open_cli.py open --day $day "$dir" --back $back
