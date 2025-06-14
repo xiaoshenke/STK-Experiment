@@ -29,8 +29,10 @@ do
 		if [ $now -eq 0 ]
 		then
 			key=$1
-		else
+		elif [ $now -eq 1 ]
 			val=$1
+		elif [ $now -eq 2 ]
+			desc=$1
 		fi
 		declare -i now=$now+1
                 ;;

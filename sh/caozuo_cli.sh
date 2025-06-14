@@ -112,6 +112,12 @@ then
 	echo python realtime/observe/caozuo.py get_pool_silu $operate_type --day $day --time_str $time_str --mode $mode
 	python realtime/observe/caozuo.py get_pool_silu $operate_type --day $day --time_str $time_str --mode $mode --do_log 1
 
+elif [[ $operate_type =~ "message" ]] || [[ $operate_type =~ "msg" ]]
+then
+	echo python realtime/observe/caozuo.py get_message $operate_type --day $day --time_str $time_str --mode $mode
+	python realtime/observe/caozuo.py get_message $operate_type --day $day --time_str $time_str --mode $mode 
+#--do_log 1
+
 elif [[ $operate_type =~ "list" ]]
 then
 	#echo python realtime/observe/caozuo.py last --day $day 
