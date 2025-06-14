@@ -71,6 +71,7 @@ def parse_dir(dir):
 	xls = dir[idx3+1:idx4]
 	if geshi == 'noon_report':
 		xls = xls.replace('..','*').replace('xls.','xls:')
+	xls = xls.replace('alias.','alias=')
 
 	idx5 = dir.find('/',idx4+1)
 	type = dir[idx4+1:idx5]

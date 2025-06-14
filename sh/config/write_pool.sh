@@ -3,7 +3,7 @@
 key=''
 val=''
 force=0
-
+desc=#
 now=0
 while [ -n "$1" ]
 do 
@@ -12,8 +12,16 @@ do
 		shift
 		force=$1
 		;;	
+	-day | --day)
+                shift
+                day=$1
+                ;;
+	-reason | --reason | -desc | --desc | -detail | --detail)
+		shift
+		desc=$1
+		;;
         -help | --help)
-		echo usage sh/config/write_pool.sh key val
+		echo usage sh/config/write_pool.sh key val [--day] [--force] [--reason|desc]
                 exit 1
                 ;;
         *)
@@ -47,6 +55,6 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python realtime/properties_cli.py write_pool $key $val --force $force
-python realtime/properties_cli.py write_pool $key $val --force $force
+echo python realtime/properties_cli.py write_pool $key $val --force $force --day $day --desc $desc
+python realtime/properties_cli.py write_pool $key $val --force $force --day $day --desc $desc --do_log 1
 
