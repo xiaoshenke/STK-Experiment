@@ -54,5 +54,5 @@ do
 done
 
 echo sh/message/add_message.sh $message chaoduan --xls $xls --day $day --time_str $time_str --mode $mode --detail $detail
-sh/message/add_message.sh $message chaoduan --xls $xls --day $day --time_str $time_str --mode $mode --detail $detail
+sh/message/add_message.sh "$message" chaoduan --xls $xls --day $day --time_str $time_str --mode $mode --detail $detail
 
