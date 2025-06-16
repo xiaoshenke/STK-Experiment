@@ -18,7 +18,7 @@ do
 		shift
 		force=$1
 		;;	
-	-reason | --reason)
+	-reason | --reason | -desc | --desc)
 		shift
 		reason=$1
 		;;
@@ -31,8 +31,12 @@ do
 		if [ $now -eq 0 ]
 		then
 			key=$1
-		else
+		elif [ $now -eq 1 ]
+		then
 			val=$1
+		elif [ $now -eq 2 ]
+		then
+			reason=$1
 		fi
 		declare -i now=$now+1
                 ;;
@@ -59,3 +63,4 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 echo python realtime/qpc_cli.py add --day $day $key $val --force $force --reason $reason
 python realtime/qpc_cli.py add --day $day $key $val --force $force --reason $reason
+

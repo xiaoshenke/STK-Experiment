@@ -2,6 +2,7 @@
 
 key=''
 val=''
+day=#
 force=0
 desc=#
 now=0
@@ -30,8 +31,10 @@ do
 		then
 			key=$1
 		elif [ $now -eq 1 ]
+		then
 			val=$1
 		elif [ $now -eq 2 ]
+		then
 			desc=$1
 		fi
 		declare -i now=$now+1
