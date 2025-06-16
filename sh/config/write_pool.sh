@@ -14,9 +14,9 @@ do
 		force=$1
 		;;	
 	-day | --day)
-                shift
-                day=$1
-                ;;
+		shift
+		day=$1
+		;;
 	-reason | --reason | -desc | --desc | -detail | --detail)
 		shift
 		desc=$1
