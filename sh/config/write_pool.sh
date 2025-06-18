@@ -5,7 +5,9 @@ val=''
 day=#
 force=0
 desc=#
+mode=#
 now=0
+
 while [ -n "$1" ]
 do 
         case "$1" in 
@@ -16,6 +18,10 @@ do
 	-day | --day)
 		shift
 		day=$1
+		;;
+	-mode | --mode)
+		shift
+		mode=$1
 		;;
 	-reason | --reason | -desc | --desc | -detail | --detail)
 		shift
@@ -60,6 +66,6 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python realtime/properties_cli.py write_pool $key $val --force $force --day $day --desc $desc
-python realtime/properties_cli.py write_pool $key $val --force $force --day $day --desc $desc --do_log 1
+echo python realtime/properties_cli.py write_pool $key $val --force $force --day $day --mode $mode --desc $desc
+python realtime/properties_cli.py write_pool $key $val --force $force --day $day --mode $mode --desc $desc --do_log 1
 

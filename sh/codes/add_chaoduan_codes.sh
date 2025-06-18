@@ -4,6 +4,7 @@ day=`date +'%Y-%m-%d'`
 code_type=#
 desc=#
 now=0
+mode='plan'
 
 if [ $# -lt 1 ]
 then
@@ -17,6 +18,10 @@ do
 	-day | --day)
 		shift
 		day=$1
+		;;
+	-mode | --mode)
+		shift
+		mode=$1
 		;;
 	-reason | --reason | -desc| --desc)
 		shift
@@ -41,6 +46,6 @@ do
 	shift
 done
 
-echo sh/codes/add_codes.sh $code_type chaoduan --day $day --reason $desc
-sh/codes/add_codes.sh $code_type chaoduan --day $day --reason $desc
+echo sh/codes/add_codes.sh $code_type chaoduan --day $day --mode $mode --reason $desc
+sh/codes/add_codes.sh $code_type chaoduan --day $day --mode $mode --reason $desc
 

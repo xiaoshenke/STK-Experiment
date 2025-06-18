@@ -8,12 +8,18 @@ code_type=#
 desc=#
 group=#
 now=0
+mode='plan'
+
 while [ -n "$1" ]
 do 
 	case "$1" in 
 	-day | --day)
 		shift
 		day=$1
+		;;
+	-mode | --mode)
+		shift
+		mode=$1
 		;;
 	-reason | --reason | -desc| --desc)
 		shift
@@ -38,6 +44,6 @@ do
 	shift
 done
 
-echo python realtime/code_type/reg_cli.py add $code_type --day $day --reason $desc --group $group --do_log 1
-python realtime/code_type/reg_cli.py add $code_type --day $day --reason "$desc" --group $group --do_log 1
+echo python realtime/code_type/reg_cli.py add $code_type --day $day --mode $mode --reason $desc --group $group --do_log 1
+python realtime/code_type/reg_cli.py add $code_type --day $day --mode $mode --reason "$desc" --group $group --do_log 1
 
