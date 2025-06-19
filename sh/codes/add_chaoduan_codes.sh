@@ -8,7 +8,7 @@ mode='plan'
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/codes/add_chaoduan_codes.sh code-type [--day ] [--reason ]
+	echo Usage: sh/codes/add_chaoduan_codes.sh code-type [--day ] [--mode ] [--reason ]
 	exit 2
 fi
 
