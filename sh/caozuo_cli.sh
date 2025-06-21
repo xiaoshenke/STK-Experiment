@@ -13,6 +13,7 @@ mode=#
 operate_type='get'
 type2='#'
 ignore_cache=0
+desc=#
 
 now=0
 while [ -n "$1" ]
@@ -29,6 +30,10 @@ do
 	-mode | --mode)
 		shift
 		mode=$1
+		;;
+	-desc | --desc | --reason | -reason)
+		shift
+		desc=$1
 		;;
 	-eva | --eva | --front | -front | --front_type | -front_type)
 		shift
@@ -50,6 +55,7 @@ do
 		elif [ $now -eq 1 ]
 		then
 			type2=$1
+			desc=$1
 		else
 			type2=$1
 		fi
@@ -113,10 +119,15 @@ then
 	python realtime/observe/caozuo.py get_message $operate_type --day $day --time_str $time_str --mode $mode 
 #--do_log 1
 
+elif [[ ${operate_type:0:3} == "eva" ]]
+then
+	echo python realtime/observe/caozuo.py get_eva $operate_type --day $day --time_str $time_str --mode $mode --reason $desc
+	python realtime/observe/caozuo.py get_eva $operate_type --day $day --time_str $time_str --mode $mode --reason $desc --do_log 1
+
 elif [[ $operate_type =~ "buyer_silu" ]] || [[ $operate_type =~ "buyersilu" ]]
 then
-	echo python realtime/observe/caozuo.py get_buyer_silu $operate_type --day $day --time_str $time_str --mode $mode
-	python realtime/observe/caozuo.py get_buyer_silu $operate_type --day $day --time_str $time_str --mode $mode --do_log 1
+	echo python realtime/observe/caozuo.py get_buyer_silu $operate_type --day $day --time_str $time_str --mode $mode --reason $desc
+	python realtime/observe/caozuo.py get_buyer_silu $operate_type --day $day --time_str $time_str --mode $mode --reason $desc --do_log 1
 
 elif [[ ${operate_type:0:3} == "buy" ]]
 then
