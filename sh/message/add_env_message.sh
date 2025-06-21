@@ -12,7 +12,7 @@ time_str=#
 now=0
 xls=#
 
-if [ $# -lt 2 ]
+if [ $# -lt 1 ]
 then
 	echo Usage: sh/message/add_env_message.sh message [--day ] [--mode ] [--reason ]
       	exit 2

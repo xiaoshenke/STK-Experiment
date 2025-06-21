@@ -102,11 +102,6 @@ then
 	echo python realtime/observe/caozuo.py get_qpc $operate_type --day $day --time_str $time_str --mode $mode
 	python realtime/observe/caozuo.py get_qpc $operate_type --day $day --time_str $time_str --mode $mode
 
-elif [[ ${operate_type:0:3} == "buy" ]]
-then
-	echo python realtime/observe/caozuo.py get_buyer $operate_type --day $day --time_str $time_str --mode $mode
-	python realtime/observe/caozuo.py get_buyer $operate_type --day $day --time_str $time_str --mode $mode
-
 elif [[ $operate_type =~ "pool_silu" ]] || [[ $operate_type =~ "poolsilu" ]]
 then
 	echo python realtime/observe/caozuo.py get_pool_silu $operate_type --day $day --time_str $time_str --mode $mode
@@ -117,6 +112,16 @@ then
 	echo python realtime/observe/caozuo.py get_message $operate_type --day $day --time_str $time_str --mode $mode
 	python realtime/observe/caozuo.py get_message $operate_type --day $day --time_str $time_str --mode $mode 
 #--do_log 1
+
+elif [[ $operate_type =~ "buyer_silu" ]] || [[ $operate_type =~ "buyersilu" ]]
+then
+	echo python realtime/observe/caozuo.py get_buyer_silu $operate_type --day $day --time_str $time_str --mode $mode
+	python realtime/observe/caozuo.py get_buyer_silu $operate_type --day $day --time_str $time_str --mode $mode --do_log 1
+
+elif [[ ${operate_type:0:3} == "buy" ]]
+then
+	echo python realtime/observe/caozuo.py get_buyer $operate_type --day $day --time_str $time_str --mode $mode
+	python realtime/observe/caozuo.py get_buyer $operate_type --day $day --time_str $time_str --mode $mode
 
 elif [[ $operate_type =~ "list" ]]
 then
