@@ -56,6 +56,7 @@ do
 		then
 			type2=$1
 			desc=$1
+			day=$1
 		else
 			type2=$1
 		fi
@@ -93,16 +94,6 @@ then
 	echo python realtime/observe/caozuo.py get_codes --day $day --time_str $time_str --mode $mode
 	python realtime/observe/caozuo.py get_codes --day $day --time_str $time_str --mode $mode
 
-elif [[ $operate_type == "get_xls" ]]
-then
-	echo python realtime/observe/caozuo.py get_xls $type2 --day $day --time_str $time_str --mode $mode
- 	python realtime/observe/caozuo.py get_xls $type2 --day $day --time_str $time_str --mode $mode
-
-elif [[ $is_xls == "1" ]]
-then
-	echo python realtime/observe/caozuo.py get_xls $operate_type --day $day --time_str $time_str --mode $mode
-	python realtime/observe/caozuo.py get_xls $operate_type --day $day --time_str $time_str --mode $mode
-
 elif [[ ${operate_type:0:3} == "qpc" ]]
 then
 	echo python realtime/observe/caozuo.py get_qpc $operate_type --day $day --time_str $time_str --mode $mode
@@ -133,6 +124,17 @@ elif [[ ${operate_type:0:3} == "buy" ]]
 then
 	echo python realtime/observe/caozuo.py get_buyer $operate_type --day $day --time_str $time_str --mode $mode
 	python realtime/observe/caozuo.py get_buyer $operate_type --day $day --time_str $time_str --mode $mode
+
+elif [[ $operate_type == "get_xls" ]]
+then
+	echo python realtime/observe/caozuo.py get_xls $type2 --day $day --time_str $time_str --mode $mode
+ 	python realtime/observe/caozuo.py get_xls $type2 --day $day --time_str $time_str --mode $mode
+
+elif [[ $is_xls == "1" ]]
+then
+	echo python realtime/observe/caozuo.py get_xls $operate_type --day $day --time_str $time_str --mode $mode
+	python realtime/observe/caozuo.py get_xls $operate_type --day $day --time_str $time_str --mode $mode
+
 
 elif [[ $operate_type =~ "list" ]]
 then
