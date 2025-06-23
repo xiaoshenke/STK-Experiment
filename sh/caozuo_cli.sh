@@ -56,7 +56,7 @@ do
 		then
 			type2=$1
 			desc=$1
-			day=$1
+			#day=$1
 		else
 			type2=$1
 		fi
@@ -124,6 +124,11 @@ elif [[ ${operate_type:0:3} == "buy" ]]
 then
 	echo python realtime/observe/caozuo.py get_buyer $operate_type --day $day --time_str $time_str --mode $mode
 	python realtime/observe/caozuo.py get_buyer $operate_type --day $day --time_str $time_str --mode $mode
+
+elif [[ ${operate_type:0:4} == "silu" ]]
+then
+	echo python realtime/observe/caozuo.py get_silu $operate_type --day $day --time_str $time_str --mode $mode
+	python realtime/observe/caozuo.py get_silu $operate_type --day $day --time_str $time_str --mode $mode
 
 elif [[ $operate_type == "get_xls" ]]
 then

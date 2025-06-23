@@ -6,6 +6,7 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 day=#
+mode='now'
 
 # 先走一个读取逻辑,设置一下type的值 这个值是前一次打开text文件时记录的
 #type=$(python realtime/properties_cli.py read_tips_type)
@@ -18,6 +19,10 @@ do
 	-day | --day)
 		shift
 		day=$1
+		;;
+	-mode | --mode)
+		shift
+		mode=$1
 		;;
  	-type | --type)
 		shift
@@ -48,5 +53,5 @@ do
 done
 
 echo python engine/caop/tips/cli.py open --day $day --type $type
-python engine/caop/tips/cli.py open --day $day --type $type
+python engine/caop/tips/cli.py open --day $day --type $type --do_log 1
 
