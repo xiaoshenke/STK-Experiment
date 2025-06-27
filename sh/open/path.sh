@@ -24,11 +24,18 @@ do
 		back=$1
 		;;
 	-help | --help)
-		echo usage sh/open/path.sh time_str [--day abc] 
+		echo usage sh/open/path.sh path [day] [--day abc] 
 		exit 1
 		;;
 	*)
-		dir=$1
+		if [ $now -eq 0 ]
+		then
+			dir=$1
+		elif [ $now -eq 1 ]
+		then
+			day=$1
+		fi
+		declare -i now=$now+1
 		;;
 	esac
 	shift
@@ -38,4 +45,4 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 echo python realtime/open_cli.py open --day $day "$dir" --back $back
-python realtime/open_cli.py open --day $day "$dir" --back $back
+python realtime/open_cli.py open --day $day "$dir" --back $back --do_log 1
