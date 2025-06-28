@@ -127,8 +127,8 @@ then
 
 elif [[ ${operate_type:0:4} == "silu" ]]
 then
-	echo python realtime/observe/caozuo.py get_silu $operate_type --day $day --time_str $time_str --mode $mode
-	python realtime/observe/caozuo.py get_silu $operate_type --day $day --time_str $time_str --mode $mode
+	echo python realtime/observe/caozuo.py get_silu $operate_type --day $type2 --time_str $time_str --mode $mode
+	python realtime/observe/caozuo.py get_silu $operate_type --day $type2 --time_str $time_str --mode $mode
 
 elif [[ $operate_type == "get_xls" ]]
 then
