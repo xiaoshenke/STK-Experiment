@@ -41,7 +41,7 @@ do
 			val=$1
 		elif [ $now -eq 2 ]
 		then
-			desc=$1
+			day=$1
 		fi
 		declare -i now=$now+1
                 ;;
