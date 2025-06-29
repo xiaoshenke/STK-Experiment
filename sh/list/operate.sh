@@ -6,6 +6,7 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
+size=25
 
 while [ -n "$1" ]
 do 
@@ -13,6 +14,10 @@ do
 	-day | --day)
 		shift
 		day=$1
+		;;
+	-size | --size)
+		shift
+		size=$1
 		;;
 	*)
 		day=$1
@@ -28,8 +33,8 @@ fi
 
 dir="/Users/wuxian/Desktop/stk_daily/$day//queryable_source//operate.hist.csv"
 
-echo head -n 25 $dir
+echo head -n $size $dir
 echo ""
 
-head -n 25 $dir
+head -n $size $dir
 

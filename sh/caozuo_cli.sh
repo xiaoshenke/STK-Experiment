@@ -112,8 +112,8 @@ then
 
 elif [[ ${operate_type:0:3} == "eva" ]]
 then
-	echo python realtime/observe/caozuo.py get_eva $operate_type --day $day --time_str $time_str --mode $mode --reason $desc
-	python realtime/observe/caozuo.py get_eva $operate_type --day $day --time_str $time_str --mode $mode --reason $desc --do_log 1
+	echo python realtime/observe/caozuo.py get_eva $operate_type --day $type2 --time_str $time_str --mode $mode --reason $desc
+	python realtime/observe/caozuo.py get_eva $operate_type --day $type2 --time_str $time_str --mode $mode --reason $desc --do_log 1
 
 elif [[ $operate_type =~ "buyer_silu" ]] || [[ $operate_type =~ "buyersilu" ]]
 then

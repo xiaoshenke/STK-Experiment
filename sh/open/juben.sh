@@ -5,6 +5,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
 juben=#
+do_log=1
 
 while [ -n "$1" ]
 do 
@@ -17,6 +18,10 @@ do
 		shift
 		juben=$1
 		;;
+        -do_log | --do_log)
+		shift
+		do_log=$1
+		;;
 	-help | --help)
 		echo Usage: sh/buyer/open_config.sh [day] --juben abc
 		exit 2
@@ -28,5 +33,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/config_cli.py open_config --day $day --juben $juben
-python engine/observe/buyer/config_cli.py open_config --day $day --juben $juben --do_log 1
+echo python engine/observe/buyer/config_cli.py open_config --day $day --juben $juben --do_log $do_log
+python engine/observe/buyer/config_cli.py open_config --day $day --juben $juben --do_log $do_log
