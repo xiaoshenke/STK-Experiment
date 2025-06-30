@@ -28,7 +28,7 @@ fi
 dir="/Users/wuxian/Desktop/stk_daily/$day/juben//"
 
 echo ls $dir
-ls $dir
+ls $dir|grep properties
 
 file="/Users/wuxian/Desktop/stk_daily/$day/juben/buyer.config.properties"
 if [ -f "$file" ]
