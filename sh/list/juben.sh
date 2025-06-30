@@ -30,7 +30,7 @@ dir="/Users/wuxian/Desktop/stk_daily/$day/juben//"
 echo ls $dir
 ls $dir
 
-file='/Users/wuxian/Desktop/stk_daily/$day/juben/buyer.config.properties'
+file="/Users/wuxian/Desktop/stk_daily/$day/juben/buyer.config.properties"
 if [ -f "$file" ]
 then
 	echo ""
