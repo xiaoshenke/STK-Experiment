@@ -15,6 +15,7 @@ flush_type='trend'
 front_type=#
 operate='info'
 ignore_cache=0
+show_config=0
 
 now=0
 while [ -n "$1" ]
@@ -31,6 +32,10 @@ do
 	-mode | --mode)
 		shift
 		mode=$1
+		;;
+	-show_config | --show_config | --showconfig)
+		shift
+		show_config=$1
 		;;
 	-eva | --eva | --front | -front | --front_type | -front_type)
 		shift
@@ -88,8 +93,8 @@ fi
 # 特殊处理fronts fenbu
 if [[ $flush_type =~ "stage:" ]] || [[ $flush_type =~ "fronts_fenbu:" ]] || [[ $flush_type =~ "frontsfenbu:" ]] || [[ $can_be_fronts_fenbu == "1" ]] || [[ $is_fenbu_stager_kind == "1" ]] || [[ $can_be_stage == "1" ]]
 then
-	echo python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	echo python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --show_config $show_config
+	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --show_config $show_config
 
 elif [[ $is_operate == "1" ]]
 then
