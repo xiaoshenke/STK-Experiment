@@ -13,6 +13,7 @@ subs=#
 back_type=#
 ignore_cache=1
 open=0
+log=1
 
 # update 2024-12-17: flush->info
 operate='info'
@@ -34,6 +35,10 @@ do
                 shift
                 mode=$1
                 ;;
+        -log | --do_log | --log)
+		shift
+		log=$1
+		;;
 	-back | --back)
                 shift
                 back_type=$1
@@ -90,13 +95,13 @@ export PYTHONPATH=$path:$PYTHONPATH
 if [[ $operate == "info" ]]
 then
 	echo python realtime/fronts_cli.py info $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache
-	python realtime/fronts_cli.py info $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache --do_log 1
+	python realtime/fronts_cli.py info $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache --do_log $log
 	exit 2
 
 elif [[ $operate == "flush" ]]
 then
 	echo python realtime/fronts_cli.py flush $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache --open $open
-	python realtime/fronts_cli.py flush $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache --open $open --do_log 1
+	python realtime/fronts_cli.py flush $type $fronts --day $day --time_str $time_str --mode $mode --front_type $front_type --ignore_cache $ignore_cache --open $open --do_log $log
 
 else
 	echo sh/front/fronts_cli.sh not support operate:$operate

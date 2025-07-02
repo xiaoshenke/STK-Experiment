@@ -15,6 +15,7 @@ debug=0
 open=0
 now=0
 log=1
+open_jpg=1
 
 while [ -n "$1" ]
 do 
@@ -35,9 +36,13 @@ do
 		shift
 		fake=$1
 		;;
-	-log | --log)
+	-log | --do_log | --log)
 		shift
 		log=$1
+		;;
+	-open_jpg | --open_jpg)
+		shift
+		open_jpg=$1
 		;;
 	-back | --back)
 		shift
@@ -89,4 +94,4 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --fake $fake --do_log $log
 
-python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --fake $fake --do_log $log --open_txt 1
+python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --fake $fake --do_log $log --open_txt 1 --open_jpg $open_jpg

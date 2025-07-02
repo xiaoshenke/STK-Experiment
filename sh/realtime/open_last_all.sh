@@ -98,6 +98,12 @@ elif [[ $type == "chaoduan" ]]
 then
 	echo python realtime/observe/chaoduan.py open_last
 	python realtime/observe/chaoduan.py open_last --day $day --time_str $time_str 
+
+elif [[ $type == "juben" ]]
+then
+        echo python realtime/observe/juben.py open_last
+        python realtime/observe/juben.py open_last --day $day --time_str $time_str
+
 elif [[ $type == "high" ]]
 then
 	echo python realtime/observe/high.py open_last

@@ -7,6 +7,6 @@ then
 	mode=$1
 fi
 
-echo python realtime/observe/buyer.py set --running_mode $mode
-python realtime/observe/buyer.py set --running_mode $mode
+echo python realtime/observe/juben.py set --running_mode $mode
+python realtime/observe/juben.py set --running_mode $mode
 
