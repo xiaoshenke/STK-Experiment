@@ -16,6 +16,7 @@ front_type=#
 operate='info'
 ignore_cache=0
 show_config=0
+log=1
 
 now=0
 while [ -n "$1" ]
@@ -44,6 +45,10 @@ do
 	-ignore_cache | --ignore_cache)
 		shift
 		ignore_cache=$1
+		;;
+        -log | --do_log | --log)
+		shift
+		log=$1
 		;;
 	-help | --help)
 		#echo usage sh/realtime/flush_cli.sh [--day abc] [--time_str xyz] [--mode aaa ] type [pull_info|stage:]
@@ -93,8 +98,8 @@ fi
 # 特殊处理fronts fenbu
 if [[ $flush_type =~ "stage:" ]] || [[ $flush_type =~ "fronts_fenbu:" ]] || [[ $flush_type =~ "frontsfenbu:" ]] || [[ $can_be_fronts_fenbu == "1" ]] || [[ $is_fenbu_stager_kind == "1" ]] || [[ $can_be_stage == "1" ]]
 then
-	echo python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --show_config $show_config
-	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --show_config $show_config
+	echo python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log
+	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log
 
 elif [[ $is_operate == "1" ]]
 then
@@ -108,8 +113,8 @@ then
 
 elif [[ $is_eva == "1" ]] && [[ $operate == "info" ]]
 then
-	echo python realtime/flush_cli.py front_info $type $flush_type --day $day --time_str $time_str --mode $mode
-	python realtime/flush_cli.py front_info $type $flush_type --day $day --time_str $time_str --mode $mode
+	echo python realtime/flush_cli.py front_info $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log
+	python realtime/flush_cli.py front_info $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log
 
 elif [[ $is_eva == "1" ]] && [[ $operate == "flush" ]]
 then
