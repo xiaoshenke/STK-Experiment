@@ -146,6 +146,11 @@ elif [[ $operate_type =~ "list" ]]
 then
 	#echo python realtime/observe/caozuo.py last --day $day 
 	#python realtime/observe/caozuo.py last --day $day 
+
+	if [[ $day == "#" ]]
+	then
+		day=`date +'%Y-%m-%d'`
+	fi
 	
 	echo find ../stk_daily/$day/caozuo/
 	find ../stk_daily/$day/caozuo/
