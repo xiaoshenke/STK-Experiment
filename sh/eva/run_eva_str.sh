@@ -6,6 +6,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 day=`date +'%Y-%m-%d'`
 eva_str=#
 now=0
+add=0
 mode='now'
 
 if [ $# -lt 1 ]
@@ -25,6 +26,10 @@ do
 		shift
 		mode=$1
 		;;
+	-add | --add_codes | --add)
+		shift
+		add=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -40,5 +45,5 @@ do
 	shift
 done
 
-echo python engine/eva_str/cli.py run_str $eva_str --day $day --mode $mode
-python engine/eva_str/cli.py run_str $eva_str --day $day --mode $mode
+echo python engine/eva_str/cli.py run_str $eva_str --day $day --mode $mode --add $add
+python engine/eva_str/cli.py run_str $eva_str --day $day --mode $mode --add $add
