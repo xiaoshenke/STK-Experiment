@@ -25,7 +25,7 @@ then
 	day=$1
 fi
 
-dir="/Users/wuxian/Desktop/stk_daily/$day/juben//"
+dir="/Users/wuxian/Desktop/stk_daily/$day/juben/"
 
 echo ls $dir
 ls $dir|grep properties
@@ -34,6 +34,7 @@ file="/Users/wuxian/Desktop/stk_daily/$day/juben/buyer.config.properties"
 if [ -f "$file" ]
 then
 	echo ""
+	echo cat "$dir/*.properties"
 	echo cat $file
 	cat $file
 fi

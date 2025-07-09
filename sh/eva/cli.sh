@@ -8,6 +8,7 @@ mode='now'
 
 type=''
 front_type=''
+desc=#
 back_type=#
 fake=#
 ignore_cache=1
@@ -36,6 +37,10 @@ do
 	-fake | --fake)
 		shift
 		fake=$1
+		;;
+	-desc | --desc | --reason | -reason)
+		shift
+		desc=$1
 		;;
 	-log | --do_log | --log)
 		shift
@@ -77,6 +82,9 @@ do
 		elif [ $now -eq 1 ]
 		then
 			front_type=$1
+		elif [ $now -eq 2 ]
+		then
+			desc=$1
 		fi
 		declare -i now=$now+1
                 ;;
@@ -97,6 +105,6 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --fake $fake --do_log $log --add $add
+echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --fake $fake --do_log $log --add $add --desc $desc
 
-python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --fake $fake --do_log $log --open_txt 1 --open_jpg $open_jpg --add $add
+python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --fake $fake --do_log $log --open_txt 1 --open_jpg $open_jpg --add $add --desc $desc
