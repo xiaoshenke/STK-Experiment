@@ -6,6 +6,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 day=`date +'%Y-%m-%d'`
 key=#
 now=0
+time_str=#
 mode='now'
 
 if [ $# -lt 1 ]
@@ -20,6 +21,10 @@ do
 	-day | --day)
 		shift
 		day=$1
+		;;
+	-time_str | --time_str)
+		shift
+		time_str=$1
 		;;
 	-mode | --mode)
 		shift
@@ -40,5 +45,5 @@ do
 	shift
 done
 
-echo python realtime/observe/juben.py run_key $key --day $day --mode $mode
-python realtime/observe/juben.py run_key $key --day $day --mode $mode
+echo python realtime/observe/juben.py run_key $key --day $day --mode $mode --time_str $time_str
+python realtime/observe/juben.py run_key $key --day $day --mode $mode --time_str $time_str
