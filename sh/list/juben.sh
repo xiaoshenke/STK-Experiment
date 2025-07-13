@@ -34,7 +34,7 @@ file="/Users/wuxian/Desktop/stk_daily/$day/juben/buyer.config.properties"
 if [ -f "$file" ]
 then
 	echo ""
-	echo cat "$dir/*.properties"
+	echo cat "$dir/buyer*.properties"
 	echo cat $file
 	cat $file
 fi
