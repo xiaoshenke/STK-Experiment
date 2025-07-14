@@ -7,6 +7,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 day=#
 time_str=#
+time_str2=#
 mode=#
 
 type=''
@@ -29,6 +30,7 @@ do
 	-time_str | --time_str)
 		shift
 		time_str=$1
+		time_str2=$1
 		;;
 	-mode | --mode)
 		shift
@@ -65,6 +67,7 @@ do
 			flush_type=$1
 		else
 			operate=$1
+			time_str2=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -98,18 +101,18 @@ fi
 # 特殊处理fronts fenbu
 if [[ $flush_type =~ "stage:" ]] || [[ $flush_type =~ "fronts_fenbu:" ]] || [[ $flush_type =~ "frontsfenbu:" ]] || [[ $can_be_fronts_fenbu == "1" ]] || [[ $is_fenbu_stager_kind == "1" ]] || [[ $can_be_stage == "1" ]]
 then
-	echo python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log
-	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log
+	echo python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log
+	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log
 
 elif [[ $is_operate == "1" ]]
 then
-	echo python realtime/flush_cli.py do_operate $type op:$flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/flush_cli.py do_operate $type op:$flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	echo python realtime/flush_cli.py do_operate $type op:$flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache
+	python realtime/flush_cli.py do_operate $type op:$flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache
 
 elif [[ $flush_type =~ "op:" ]] || [[ $flush_type =~ "operate:" ]]
 then
-	echo python realtime/flush_cli.py do_operate $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/flush_cli.py do_operate $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	echo python realtime/flush_cli.py do_operate $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache
+	python realtime/flush_cli.py do_operate $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache
 
 elif [[ $is_eva == "1" ]] && [[ $operate == "info" ]]
 then

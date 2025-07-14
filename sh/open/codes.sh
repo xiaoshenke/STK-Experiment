@@ -10,7 +10,7 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 codes=$1
-open_code='jpg'
+open_mode='jpg'
 
 while [ -n "$1" ]
 do 
