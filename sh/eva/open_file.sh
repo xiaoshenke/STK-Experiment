@@ -28,5 +28,5 @@ do
 	shift
 done
 
-python engine/observe/eva/file_cli.py open_config --day $day
-python engine/observe/eva/file_cli.py open_config --day $day --do_log 1
+echo python engine/observe/oeva/file_cli.py open_config --day $day
+python engine/observe/oeva/file_cli.py open_config --day $day --do_log 1

@@ -20,6 +20,10 @@ function do_trigger {
 	then
 		echo python realtime/observe/code_types.py trigger
 		python realtime/observe/code_types.py trigger
+	elif [[ $type == 'evas' ]] || [[ $type == 'eva' ]]
+	then
+		echo python realtime/observe/evas.py trigger
+		python realtime/observe/evas.py trigger
 	else
 		echo python realtime/observe/$type.py trigger
 		python realtime/observe/$type.py trigger
