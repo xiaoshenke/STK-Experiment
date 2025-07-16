@@ -11,6 +11,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 codes=$1
 open_mode='jpg'
+now=0
 
 while [ -n "$1" ]
 do 
