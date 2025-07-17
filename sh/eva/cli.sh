@@ -19,6 +19,7 @@ log=1
 add=0
 level=0
 open_jpg=1
+do_report=1
 
 while [ -n "$1" ]
 do 
@@ -50,6 +51,10 @@ do
 	-log | --do_log | --log)
 		shift
 		log=$1
+		;;
+	-do_report | --do_report | --report)
+		shift
+		do_report=$1
 		;;
 	-add | --add_codes | --add)
 		shift
@@ -110,7 +115,7 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --do_log $log --add $add --desc $desc --level $level
+echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --do_log $log --do_report $do_report --open_jpg $open_jpg --add $add --desc $desc --level $level
 
-python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --do_log $log --open_txt 1 --open_jpg $open_jpg --add $add --desc $desc --level $level
+python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --do_log $log --do_report $do_report --open_txt 1 --open_jpg $open_jpg --add $add --desc $desc --level $level
 # --fake $fake
