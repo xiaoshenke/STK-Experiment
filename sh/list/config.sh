@@ -35,7 +35,7 @@ else
 	dir="../stk_daily/$day/realtime.properties"
 fi
 
-echo cat "$dir|grep pool."
+echo cat "$dir  |grep pool."
 echo ""
 
 cat $dir|grep pool.

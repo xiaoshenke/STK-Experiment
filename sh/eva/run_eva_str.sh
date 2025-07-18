@@ -8,6 +8,7 @@ eva_str=#
 now=0
 add=0
 mode='now'
+operate='flush'
 
 if [ $# -lt 1 ]
 then
@@ -26,6 +27,10 @@ do
 		shift
 		mode=$1
 		;;
+	-operate | --operate)
+		shift
+		operate=$1
+		;;
 	-add | --add_codes | --add)
 		shift
 		add=$1
@@ -37,7 +42,10 @@ do
 			eva_str=$1
 		elif [ $now -eq 1 ]
 		then
-			day=$1
+			operate=$1
+		elif [ $now -eq 2 ]
+		then
+			day=$day
 		fi
 		declare -i now=$now+1
 		;;
@@ -45,5 +53,5 @@ do
 	shift
 done
 
-echo python engine/eva_str/cli.py run_str $eva_str --day $day --mode $mode --add $add
-python engine/eva_str/cli.py run_str $eva_str --day $day --mode $mode --add $add
+echo python engine/eva_str/cli.py run_str $eva_str --day $day --mode $mode --add $add --operate $operate
+python engine/eva_str/cli.py run_str $eva_str --day $day --mode $mode --add $add --operate $operate
