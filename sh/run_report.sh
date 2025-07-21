@@ -27,8 +27,7 @@ echo "
 sleep 2
 
 echo $ap python eva/cli.py do_eva db102 dstp --mode close
-python eva/cli.py do_eva db102 dstp --mode close --open 0 --day $day 
-# --silent 1
+python eva/cli.py do_eva db102 dstp --mode close --open 0 --day $day  --silent 1
 
 echo "
 "
