@@ -9,6 +9,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 day=#
 #`date +'%Y-%m-%d'`
 day2=#
+day3=#
 time_str=#
 mode=#
 
@@ -61,7 +62,7 @@ do
 			day2=$1
 		elif [ $now -eq 2 ]
 		then
-			day2=$1
+			day3=$1
 		else
 			type2=$1
 		fi
@@ -91,8 +92,8 @@ then
 
 elif [[ $operate_type =~ "gene" ]]
 then
-	echo python realtime/observe/caozuo.py gene_id_str $type2 --day $day2 --time_str $time_str --mode $mode
-	python realtime/observe/caozuo.py gene_id_str $type2 --day $day2 --time_str $time_str --mode $mode
+	echo python realtime/observe/caozuo.py gene_id_str $type2 --day $day3 --time_str $time_str --mode $mode
+	python realtime/observe/caozuo.py gene_id_str $type2 --day $day3 --time_str $time_str --mode $mode
 
 elif [[ $operate_type =~ "get_oper" ]] || [[ $operate_type =~ "oper" ]]
 then
