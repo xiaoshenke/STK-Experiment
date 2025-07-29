@@ -9,6 +9,7 @@ now=0
 add=0
 mode='now'
 operate='flush'
+time_str=#
 
 if [ $# -lt 1 ]
 then
@@ -26,6 +27,10 @@ do
 	-mode | --mode)
 		shift
 		mode=$1
+		;;
+	-time_str | --time_str)
+		shift
+		time_str=$1
 		;;
 	-operate | --operate)
 		shift
@@ -53,5 +58,5 @@ do
 	shift
 done
 
-echo python engine/eva_str/cli.py run_str $eva_str --day $day --mode $mode --add $add --operate $operate
-python engine/eva_str/cli.py run_str $eva_str --day $day --mode $mode --add $add --operate $operate
+echo python engine/eva_str/cli.py run_str $eva_str --day $day --time_str $time_str --mode $mode --add $add --operate $operate
+python engine/eva_str/cli.py run_str $eva_str --day $day --time_str $time_str --mode $mode --add $add --operate $operate
