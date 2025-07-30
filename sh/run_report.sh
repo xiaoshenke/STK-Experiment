@@ -58,6 +58,14 @@ echo "
 
 sleep 2
 
+echo $ap python engine/stage/xls/exp_cli.py day_stages db102s*dgx3_2 bodong --names xls,score,score2,total,good,bad,upstp,crash,weak --size 6
+python engine/stage/xls/exp_cli.py day_stages db102s*dgx3_2 bodong --names xls,score,score2,total,good,bad,upstp,crash,weak --size 6 --day $day 
+
+echo "
+"
+
+sleep 2
+
 echo $ap python realtime/stage/cli.py gets list:db43,db32,db31 uptrend2:mode=noon --mode close
 python realtime/stage/cli.py gets list:db43,db32,db31 uptrend2:mode=noon --mode close --silent 1 --day $day 
 
