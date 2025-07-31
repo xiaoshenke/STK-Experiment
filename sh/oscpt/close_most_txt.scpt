@@ -15,7 +15,9 @@ on run argv
 	tell application "TextEdit"
 		log "TextEdit的窗口数量: " & count of windows
 		repeat with i from (count of windows) to endNum by -1
-			log "Close Window " & i & ": " & (name of window i)
+			set docRef to document of window i
+			set filePath to path of docRef
+			log "Close Window " & i & ": " & (name of window i) & "  path:  " & filePath
 			close window i
 		end repeat
 	end tell
