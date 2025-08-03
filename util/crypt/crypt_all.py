@@ -12,7 +12,8 @@ SECRET_FILE = "secret"
 
 ignore_list = [ "common.txt","threadpool.py","README.md","crypt_all.py","crypt_cli.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py","updater.py","__init__.py","dir_util.py","crontab.py",".DS_Store","realtime.properties",".gitignore" ]
 
-ignore_dirs = ["/.git","/csv_data","/other","/data"]
+ignore_dirs = [ "/.git","/csv_data","/other","/data" ]
+#,"/sh" ]
 
 def get_base_dir():
 	# 要求必须在工程下执行
@@ -106,6 +107,8 @@ def uncrypt_file(file,aes,base_dir=None,debug=False):
 			print u'should_apply_crypt return false.'
 		return
 	if file.endswith(".py"):
+		return
+	if file.endswith('.sh') or file.endswith('.scpt') or file.endswith('.properties'):
 		return
 
 	if not aes:
