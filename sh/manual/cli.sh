@@ -124,9 +124,9 @@ then
 
 elif [[ $type == "pool" ]]
 then
-	echo python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-
+	#echo python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	#python realtime/manual_cli.py pool $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	echo call sh/open/pool.sh --day $day  instead!!
 # 添加maoding计算支持
 elif [[ ${type:0:3} == "md:" ]] || [[ ${type:0:8} == "maoding:" ]]
 then
