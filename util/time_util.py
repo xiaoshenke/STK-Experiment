@@ -4,9 +4,17 @@
 import datetime
 import calendar
 
-def unix_to_str(t):
+# update 2025-08-10: 做一个try catch 
+def unix_to_str(t,safe_mode=True):
 	import time
-	return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(t))
+	if not safe_mode:
+		return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(t))
+
+	try:
+		return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(t))
+	except Exception,e:
+		print e
+	return '2000-01-01 00:00:00'
 
 def get_month_start(month,year=2018):
 	return '%d-%02d-01'%(year,month)
