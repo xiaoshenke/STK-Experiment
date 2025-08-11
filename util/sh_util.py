@@ -32,5 +32,24 @@ def sh_wrapper_string(args,out=PIPE):
 			ret = ret + out
     	return ret
 
+# util API:
+def call_shell_and_return_msgs(cmd):
+	print u'\n>>>>>>>>>>>>>>>>>>>>>>> running shell command: %s,wait...........\n'%(cmd)
+
+	import time
+	start = time.time()
+
+	import os
+	sub = os.popen( cmd )
+	ret = sub.readlines()
+
+	from util.mini import to_float2
+	cost = time.time()-start
+	cost = to_float2(cost)
+	msg = u'\n调用shell结束 花费:%s 秒\n'%(cost)
+	print msg
+
+	return ret
+
 if __name__ == "__main__":
 	pass

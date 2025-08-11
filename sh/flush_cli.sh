@@ -123,6 +123,11 @@ then
 	echo python realtime/flush_cli.py do_operate $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache
 	python realtime/flush_cli.py do_operate $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache
 
+elif [[ $flush_type == "simple" ]] || [[ $flush_type == "flush" ]]
+then
+	echo python realtime/flush_cli.py simple_flush $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/flush_cli.py simple_flush $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+
 elif [[ $is_eva == "1" ]] && [[ $operate == "info" ]]
 then
 	echo python realtime/flush_cli.py front_info $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log
@@ -137,11 +142,6 @@ elif [[ $flush_type =~ "pull_info" ]] || [[ $flush_type =~ "pullinfo" ]]
 then
 	echo python realtime/flush_cli.py pull_info $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 	python realtime/flush_cli.py pull_info $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-
-elif [[ $flush_type == "simple" ]]
-then
-	echo python realtime/flush_cli.py simple_flush $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/flush_cli.py simple_flush $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
 else
 	echo 不支持type:$type flush-type:$flush_type
