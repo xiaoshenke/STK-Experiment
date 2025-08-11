@@ -13,7 +13,8 @@ def unix_to_str(t,safe_mode=True):
 	try:
 		return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(t))
 	except Exception,e:
-		print e
+		#print e
+		pass
 	return '2000-01-01 00:00:00'
 
 def get_month_start(month,year=2018):

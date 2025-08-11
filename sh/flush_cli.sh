@@ -37,6 +37,9 @@ do
 		shift
 		mode=$1
 		;;
+	-debug | --debug)
+		shift
+		;;
 	-show_config | --show_config | --showconfig)
 		shift
 		show_config=$1
@@ -96,7 +99,7 @@ is_operate=$(python realtime/flush_cli.py is_valid_operate $flush_type)
 can_be_fronts_fenbu=$(python realtime/flush_cli.py can_be_fronts_fenbu $flush_type)
 is_fenbu_stager_kind=$(python realtime/flush_cli.py is_fenbu_stager_kind $flush_type)
 
-echo "sh/flush_cli.sh is_code_types:$is_code_types is_eva:$is_eva is_operate:$is_operate can_be_stage:$can_be_stage"
+echo "sh/flush_cli.sh is_code_types:$is_code_types is_eva:$is_eva is_operate:$is_operate can_be_stage:$can_be_stage operate:$operate"
 
 if [[ $is_code_types != "1" ]] 
 then
@@ -127,8 +130,8 @@ then
 
 elif [[ $is_eva == "1" ]] && [[ $operate == "flush" ]]
 then
-	echo python realtime/flush_cli.py flush_front $type $flush_type --day $day --time_str $time_str --mode $mode
-	python realtime/flush_cli.py flush_front $type $flush_type --day $day --time_str $time_str --mode $mode
+	echo python realtime/flush_cli.py flush_front $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log
+	python realtime/flush_cli.py flush_front $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log
 
 elif [[ $flush_type =~ "pull_info" ]] || [[ $flush_type =~ "pullinfo" ]]
 then
