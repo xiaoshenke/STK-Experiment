@@ -19,6 +19,7 @@ ignore_cache=0
 try_file=1
 show_config=0
 log=1
+do_comb=0
 
 now=0
 while [ -n "$1" ]
@@ -43,6 +44,10 @@ do
 	-show_config | --show_config | --showconfig)
 		shift
 		show_config=$1
+		;;
+	-do_comb | --do_comb | --do_comp)
+		shift
+		do_comb=$1
 		;;
 	-try_file | --try_file)
 		shift
@@ -135,8 +140,8 @@ then
 
 elif [[ $is_eva == "1" ]] && [[ $operate == "flush" ]]
 then
-	echo python realtime/flush_cli.py flush_front $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log
-	python realtime/flush_cli.py flush_front $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log
+	echo python realtime/flush_cli.py flush_front $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log --do_comb $do_comb
+	python realtime/flush_cli.py flush_front $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log --do_comb $do_comb
 
 elif [[ $flush_type =~ "pull_info" ]] || [[ $flush_type =~ "pullinfo" ]]
 then
