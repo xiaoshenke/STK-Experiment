@@ -45,7 +45,7 @@ do
 		shift
 		show_config=$1
 		;;
-	-do_comb | --do_comb | --do_comp)
+	-do_comb | --do_comb | --comb | --comp | --do_comp)
 		shift
 		do_comb=$1
 		;;
@@ -128,10 +128,10 @@ then
 	echo python realtime/flush_cli.py do_operate $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache
 	python realtime/flush_cli.py do_operate $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache
 
-elif [[ $flush_type == "simple" ]] || [[ $flush_type == "flush" ]]
+elif [[ $flush_type =~ "simple" ]] || [[ $flush_type == "flush" ]]
 then
-	echo python realtime/flush_cli.py simple_flush $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
-	python realtime/flush_cli.py simple_flush $type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	echo python realtime/flush_cli.py simple_flush $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
+	python realtime/flush_cli.py simple_flush $type $flush_type --day $day --time_str $time_str --mode $mode --ignore_cache $ignore_cache
 
 elif [[ $is_eva == "1" ]] && [[ $operate == "info" ]]
 then
