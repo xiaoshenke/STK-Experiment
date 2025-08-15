@@ -14,7 +14,8 @@ secret
 *.xls1
 *.out
 *.txt
-*.properties
+#*.properties
+realtime/realtime.properties
 realtime/pan.properties
 png
 !data/csv_data/calAll.csv
