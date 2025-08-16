@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo ATTENTION: FLUSH-CMDS CLI
-
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
@@ -19,6 +17,7 @@ ignore_cache=0
 try_file=1
 show_config=0
 log=1
+silent=0
 do_comb=0
 
 now=0
@@ -37,6 +36,10 @@ do
 	-mode | --mode)
 		shift
 		mode=$1
+		;;
+	-silent | --silent)
+		shift
+		silent=$1
 		;;
 	-debug | --debug)
 		shift
@@ -89,6 +92,11 @@ do
 	shift
 done
 
+if [ $silent -ne 1 ]
+then
+	echo ATTENTION: FLUSH-CMDS CLI
+fi
+
 is_code_types=$(python realtime/flush_cli.py is_code_types $type)
 # reset value to last character
 is_code_types=${is_code_types:0-1:1}
@@ -104,7 +112,10 @@ is_operate=$(python realtime/flush_cli.py is_valid_operate $flush_type)
 can_be_fronts_fenbu=$(python realtime/flush_cli.py can_be_fronts_fenbu $flush_type)
 is_fenbu_stager_kind=$(python realtime/flush_cli.py is_fenbu_stager_kind $flush_type)
 
-echo "sh/flush_cli.sh is_code_types:$is_code_types is_eva:$is_eva is_operate:$is_operate can_be_stage:$can_be_stage operate:$operate"
+if [ $silent -ne 1 ]
+then
+	echo "sh/flush_cli.sh is_code_types:$is_code_types is_eva:$is_eva is_operate:$is_operate can_be_stage:$can_be_stage operate:$operate"
+fi
 
 if [[ $is_code_types != "1" ]] 
 then
@@ -116,7 +127,7 @@ fi
 if [[ $flush_type =~ "stage:" ]] || [[ $flush_type =~ "fronts_fenbu:" ]] || [[ $flush_type =~ "frontsfenbu:" ]] || [[ $can_be_fronts_fenbu == "1" ]] || [[ $is_fenbu_stager_kind == "1" ]] || [[ $can_be_stage == "1" ]]
 then
 	echo python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log --try_file $try_file
-	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log --try_file $try_file
+	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log --try_file $try_file --silent $silent
 
 elif [[ $is_operate == "1" ]]
 then
@@ -152,4 +163,3 @@ else
 	echo 不支持type:$type flush-type:$flush_type
 
 fi
-
