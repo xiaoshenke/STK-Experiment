@@ -15,6 +15,7 @@ front_type=#
 operate='info'
 ignore_cache=0
 try_file=1
+open_file=1
 show_config=0
 log=1
 silent=0
@@ -41,6 +42,12 @@ do
 		shift
 		silent=$1
 		;;
+	-open_file | --open_file)
+		shift
+		open_file=$1
+		;;
+
+
 	-debug | --debug)
 		shift
 		;;
@@ -146,8 +153,8 @@ then
 
 elif [[ $is_eva == "1" ]] && [[ $operate == "info" ]]
 then
-	echo python realtime/flush_cli.py front_info $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log
-	python realtime/flush_cli.py front_info $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log
+	echo python realtime/flush_cli.py front_info $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log --open_file $open_file
+	python realtime/flush_cli.py front_info $type $flush_type --day $day --time_str $time_str --mode $mode --do_log $log --open_file $open_file
 
 elif [[ $is_eva == "1" ]] && [[ $operate == "flush" ]]
 then
