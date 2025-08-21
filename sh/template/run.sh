@@ -5,6 +5,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
 template=#
+template2=#
 now=0
 time_str=#
 mode='now'
@@ -12,7 +13,7 @@ mode='now'
 if [ $# -lt 1 ]
 then
 	echo Usage: sh/juben/run_template.sh template [--day ] 
-      	exit 2
+	exit 2
 fi
 
 while [ -n "$1" ]
@@ -37,13 +38,21 @@ do
 			template=$1
 		elif [ $now -eq 1 ]
 		then
-			day=$1
+			template2=$1
 		fi
 		declare -i now=$now+1
 		;;
 	esac
 	shift
 done
+
+if [[ $template2 != "#" ]]
+then
+	echo python realtime/observe/juben.py run_template "$template->$template2" --day $day --mode $mode --time_str $time_str
+	python realtime/observe/juben.py run_template "$template->$template2" --day $day --mode $mode --time_str $time_str
+
+	exit 2
+fi
 
 echo python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str
 python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str
