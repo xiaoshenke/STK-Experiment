@@ -5,12 +5,12 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
 xls=#
-template=#
+template=buyer
 now=0
 time_str=#
 mode='now'
 
-if [ $# -lt 2 ]
+if [ $# -lt 1 ]
 then
 	echo Usage: sh/juben/run_xls_template.sh xls template [--day ] 
 	exit 2
