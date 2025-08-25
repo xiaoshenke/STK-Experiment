@@ -34,4 +34,5 @@ do
 	shift
 done
 
+echo 注意:打开的是具体的plan文件,而不是模板文件
 python engine/observe/plan/template_cli.py open_file $type --day $day

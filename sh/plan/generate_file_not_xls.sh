@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 用于生成题材的文件 比如sh/plan/generate_xls_file.sh jungong xx_normal,那么就会根据xx_normal.template.properties文件生成一下jungong.plan.properties文件
+# 用于生成非题材的文件 比如sh/plan/generate_file_not_xls.sh xxx,那么就会根据xxx.template.properties文件生成一下xxx.plan.properties文件
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
@@ -15,7 +15,7 @@ force=0
 
 if [ $# -lt 2 ]
 then
-	echo Usage: sh/juben/run_template.sh template [--day ] 
+	echo Usage: sh/plan/generate_file_not_xls.sh template [--day ]
 	exit 2
 fi
 
