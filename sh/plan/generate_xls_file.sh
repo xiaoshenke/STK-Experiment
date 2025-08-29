@@ -53,7 +53,7 @@ done
 
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 
-file1="/Users/wuxian/Desktop/stk_daily/$day/plan/$xls.plan.properties"
+file1="/Users/wuxian/Desktop/stk_daily/$day/template/$xls.plan.properties"
 file2="$cur_dir/engine/observe/plan/template/$template.template.properties"
 
 # 检验file1是否已经存在

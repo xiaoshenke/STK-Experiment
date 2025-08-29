@@ -11,7 +11,7 @@ mode='plan'
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/juben/run_template.sh template [--day ] 
+	echo Usage: sh/plan/run_template.sh template [--day ] 
 	exit 2
 fi
 

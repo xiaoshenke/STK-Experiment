@@ -12,7 +12,7 @@ mode='now'
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/juben/run_xls_template.sh xls template [--day ] 
+	echo Usage: sh/buyer/run_xls_template.sh xls template [--day ] 
 	exit 2
 fi
 
@@ -30,6 +30,12 @@ do
 	-mode | --mode)
 		shift
 		mode=$1
+		;;
+	-help | --help)
+		echo Usage: sh/buyer/run_xls_template.sh xls template [--day ]
+		echo ""
+		head -n 15 engine/caop/buyers/template/run_xls_template.py
+		exit 2
 		;;
 	*)
 		# set value to type|flush_type by now-flag

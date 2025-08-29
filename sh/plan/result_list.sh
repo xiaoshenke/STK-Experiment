@@ -6,8 +6,8 @@ then
         day=$1
 fi
 
-echo "ls ../stk_daily/$day/plan//  |grep RunTemp"
-ls ../stk_daily/$day/plan//|grep RunTemp
+echo "ls ../stk_daily/$day/plan//  |grep Run |grep Temp"
+ls ../stk_daily/$day/plan//|grep Run|grep Temp
 
 echo ""
 echo "open \"../stk_daily/$day/plan/\""

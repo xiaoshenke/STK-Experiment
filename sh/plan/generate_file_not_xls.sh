@@ -53,15 +53,8 @@ done
 
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 
-file1="/Users/wuxian/Desktop/stk_daily/$day/plan/$template.plan.properties"
+file1="/Users/wuxian/Desktop/stk_daily/$day/template/$template.plan.properties"
 file2="$cur_dir/engine/observe/plan/template/$template2.template.properties"
-
-# 检验file1是否已经存在
-#if [ -f "$file1" ]
-#then
-#	echo 想要生成的文件已经存在: $file1
-#	exit 2
-#fi
 
 if [ ! -f "$file2" ]
 then
