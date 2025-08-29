@@ -25,16 +25,16 @@ then
 	day=$1
 fi
 
-dir="/Users/wuxian/Desktop/stk_daily/$day/juben/"
+dir="/Users/wuxian/Desktop/stk_daily/$day/template/"
 
 echo ls $dir
-ls $dir|grep properties
+ls $dir|grep juben[.]properties
 
-file="/Users/wuxian/Desktop/stk_daily/$day/juben/buyer.config.properties"
+file="/Users/wuxian/Desktop/stk_daily/$day/template/default.juben.properties"
 if [ -f "$file" ]
 then
 	echo ""
-	echo cat "$dir/buyer*.properties"
+	echo cat "$dir/*juben.properties"
 	echo cat $file
 	cat $file
 fi

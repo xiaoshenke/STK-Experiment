@@ -75,6 +75,7 @@ REALTIME_PROPERTIES_FILE = 'realtime/realtime.properties'
 PAN_PROPERTIES_FILE = 'realtime/pan.properties'
 
 BUYER_CONFIG_PROPERTIES_FILE = 'buyer.config.properties'
+DEFAULT_JUBEN_PROPERTIES_FILE = 'default.juben.properties'
 
 USER = 'wuxian'
 
