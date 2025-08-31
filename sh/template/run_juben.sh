@@ -4,7 +4,7 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
-template='default'
+template='manual'
 now=0
 time_str=#
 mode='now'

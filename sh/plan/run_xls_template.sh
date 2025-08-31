@@ -39,6 +39,9 @@ do
 		elif [ $now -eq 1 ]
 		then
 			template=$1
+		elif [ $now -eq 2 ]
+		then
+			day=$1
 		fi
 		declare -i now=$now+1
 		;;

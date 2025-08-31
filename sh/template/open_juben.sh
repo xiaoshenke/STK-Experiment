@@ -4,14 +4,14 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
-juben=#
+juben='manual'
 do_log=1
 
-if [ $# -lt 1 ]
-then
-	echo Usage: sh/template/open_juben.sh juben [day]
-	exit 2
-fi
+#if [ $# -lt 1 ]
+#then
+#	echo Usage: sh/template/open_juben.sh juben [day]
+#	exit 2
+#fi
 
 now=0
 while [ -n "$1" ]

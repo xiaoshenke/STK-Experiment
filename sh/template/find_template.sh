@@ -50,6 +50,7 @@ done
 
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 template_dir=/Users/wuxian/Desktop/stk_daily/$day/template/
+plan_dir=/Users/wuxian/Desktop/stk_daily/$day/plan/
 
 echo "开始进行搜索"
 echo "## 手工剧本 find $template_dir | grep juben.properties|grep $template"
@@ -95,6 +96,16 @@ else
 	echo "$result"
 fi
 
+echo ""
+echo "## plan计算结果文件 find $plan_dir |grep Run|grep Template| grep $template"
+result=$( ls $plan_dir |grep Run|grep Template| grep $template)
+if [ ${#result} -eq 0 ]
+then
+	echo 寻找失败
+else
+	echo 成功找到文件如下:
+	echo "$result"
+fi
 
 echo ""
 echo "## buyer手工文件 find $template_dir | grep evafile.properties|grep $template"
