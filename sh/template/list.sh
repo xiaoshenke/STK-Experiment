@@ -11,8 +11,12 @@ echo 版块模版列表
 ls engine/observe/buyer/template/|grep xx_|grep [.]properties|sort
 
 echo ""
-echo "行情列表 find engine/observe/buyer/template/|grep -v xx_|grep [.]properties"
+echo "行情列表 find engine/observe/buyer/template/ |grep -v xx_|grep [.]properties"
 ls engine/observe/buyer/template/|grep -v xx_|grep [.]properties|sort
+
+echo ""
+echo "observe.buyer下的juben模板文件  find engine/observe/buyer/template/ |grep -v xx_|grep juben[.]properties"
+ls engine/observe/buyer/template/|grep -v xx_|grep juben[.]properties|sort
 
 echo ""
 echo "find engine/observe/buyer/template/"

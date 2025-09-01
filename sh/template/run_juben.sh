@@ -9,11 +9,11 @@ now=0
 time_str=#
 mode='now'
 
-if [ $# -lt 1 ]
-then
-	echo Usage: sh/juben/run_template.sh template [--day ] 
-	exit 2
-fi
+#if [ $# -lt 1 ]
+#then
+#	echo Usage: sh/juben/run_template.sh template [--day ] 
+#	exit 2
+#fi
 
 while [ -n "$1" ]
 do 

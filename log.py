@@ -132,6 +132,9 @@ default_advisor_logger = get_common_daily_logger('default_advisor','default_advi
 # cli操作日志
 cli_logger = get_common_daily_logger('cli','cli')
 
+# template操作日志
+template_logger = get_common_daily_logger('template','template')
+
 # operate日志
 operate_logger = get_common_daily_logger('operate','operate')
 

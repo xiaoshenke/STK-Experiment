@@ -9,6 +9,7 @@ template=buyer
 now=0
 time_str=#
 mode='now'
+ignore_cache=0
 
 if [ $# -lt 1 ]
 then
@@ -31,6 +32,10 @@ do
 		shift
 		mode=$1
 		;;
+	-ignore_cache | --ignore_cache)
+		shift
+		ignore_cache=$1
+		;;
 	-help | --help)
 		echo Usage: sh/buyer/run_xls_template.sh xls template [--day ]
 		echo ""
@@ -45,6 +50,9 @@ do
 		elif [ $now -eq 1 ]
 		then
 			template=$1
+		elif [ $now -eq 2 ]
+		then
+			day=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -52,6 +60,6 @@ do
 	shift
 done
 
-echo python engine/caop/buyers/template/cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str
-python engine/caop/buyers/template/cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str
+echo python engine/caop/buyers/template/cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
+python engine/caop/buyers/template/cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
 
