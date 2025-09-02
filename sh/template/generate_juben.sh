@@ -62,11 +62,15 @@ then
 fi
 
 file=#
+file0="$cur_dir/engine/observe/buyer/template/$template2.juben.properties"
 file1="$cur_dir/engine/observe/buyer/template/$template2.template.properties"
 file2="$cur_dir/engine/observe/plan/template/$template2.template.properties"
 file3="$cur_dir/engine/caop/buyers/template/$template2.buyer.properties"
 
-if [ -f "$file1" ]
+if [ -f "$file0" ]
+then
+	file=$file0
+elif [ -f "$file1" ]
 then
 	file=$file1
 elif [ -f "$file2" ]
