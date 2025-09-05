@@ -70,3 +70,6 @@ sed -i "" "s/xx/$xls/g" $file1
 echo ""
 echo "最终生成的文件内容如下:"
 cat $file1
+
+echo ""
+echo 手工打开文件:  open $file1

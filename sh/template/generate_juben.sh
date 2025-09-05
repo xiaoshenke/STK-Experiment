@@ -35,6 +35,10 @@ do
 		shift
 		mode=$1
 		;;
+	-help | --help)
+		echo "Usage: sh/template/generate_juben.sh template [template2](支持名字不同)"
+		exit 2
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -94,3 +98,5 @@ echo ""
 echo "最终生成的文件内容如下:"
 cat $target
 
+echo ""
+echo 打开文件:open $target
