@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 仅用于根据模板(observe/buyer/template/xls.juben.properties)生成题材的剧本文件(即stk_daily/template/xxx.juben.properties) 
-# Usage: sh/template/generate_xls_juben.sh xls [--day ]
+# Usage: sh/template/generate_xls_juben.sh xls [template2] [--day ] 	-> 注意这里的template2 即支持指定名字,默认为xls
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
@@ -11,11 +11,12 @@ now=0
 time_str=#
 mode='plan'
 xls=#
+template2='xls'
 force=0
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/template/generate_xls_juben.sh xls [--day ]
+	echo Usage: sh/template/generate_xls_juben.sh xls [template2] [--day ]
 	exit 2
 fi
 
@@ -41,7 +42,7 @@ do
 			xls=$1
 		elif [ $now -eq 1 ]
 		then
-			day=$1
+			template2=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -52,12 +53,19 @@ done
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 
 file1="/Users/wuxian/Desktop/stk_daily/$day/template/$xls.juben.properties"
-file2="$cur_dir/engine/observe/buyer/template/xls.juben.properties"
+
+file2="$cur_dir/engine/observe/buyer/template/$template2.juben.properties"
 
 # 检验file1是否已经存在
 if [ -f "$file1" ]
 then
 	echo 想要生成的xls文件已经存在: $file1
+	exit 2
+fi
+
+if [ ! -f "$file2" ]
+then
+	echo 模板剧本文件: $file2 不存在,是否输入错误 比如改为 sh/template/generate_xls_juben.sh $xls xx_$template2  ?
 	exit 2
 fi
 

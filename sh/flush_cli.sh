@@ -18,6 +18,7 @@ try_file=1
 open_file=1
 silent=0
 show_config=0
+sort=1
 log=1
 do_comb=0
 
@@ -37,6 +38,10 @@ do
 	-mode | --mode)
 		shift
 		mode=$1
+		;;
+	-sort | --sort)
+		shift
+		sort=$1
 		;;
 	-silent | --silent)
 		shift
@@ -61,7 +66,6 @@ do
 		shift
 		try_file=$1
 		;;
-	
 	-eva | --eva | --front | -front | --front_type | -front_type)
 		shift
 		front_type=$1
@@ -131,8 +135,8 @@ fi
 # 特殊处理fronts fenbu
 if [[ $flush_type =~ "stage:" ]] || [[ $flush_type =~ "fronts_fenbu:" ]] || [[ $flush_type =~ "frontsfenbu:" ]] || [[ $can_be_fronts_fenbu == "1" ]] || [[ $is_fenbu_stager_kind == "1" ]] || [[ $can_be_stage == "1" ]]
 then
-	echo python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log --try_file $try_file
-	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log --try_file $try_file --silent $silent
+	echo python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log --try_file $try_file --sort $sort
+	python realtime/flush_cli.py do_stage $type $flush_type --day $day --time_str $time_str2 --mode $mode --ignore_cache $ignore_cache --show_config $show_config --do_log $log --try_file $try_file --silent $silent --sort $sort
 
 elif [[ $is_operate == "1" ]]
 then
