@@ -104,6 +104,7 @@ done
 if [ $silent -ne 1 ]
 then
 	echo ATTENTION: FLUSH-CMDS CLI
+	echo flush_type:$flush_type
 fi
 
 is_code_types=$(python realtime/flush_cli.py is_code_types $type)
