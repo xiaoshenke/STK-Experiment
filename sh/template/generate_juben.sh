@@ -2,6 +2,7 @@
 
 # 用于生成剧本文件,会依次尝试xx.template,xx.plan.xx.buyer
 # 注意: 这里支持template2,此时会根据template2生成template的文件 即支持不同名文件的生成
+# 注意: 不进行replace的操作
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
