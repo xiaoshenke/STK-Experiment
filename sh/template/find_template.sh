@@ -52,79 +52,81 @@ cur_dir=/Users/wuxian/Desktop/STK-Experiment
 template_dir=/Users/wuxian/Desktop/stk_daily/$day/template/
 plan_dir=/Users/wuxian/Desktop/stk_daily/$day/plan/
 
-echo "开始进行搜索"
-echo "## 手工剧本 find $template_dir | grep juben.properties|grep $template"
 result=$( ls $template_dir | grep juben.properties|grep $template )
 if [ ${#result} -eq 0 ]
 then
-	echo 寻找失败
+	echo 尝试寻找手工剧本$template_dir 下数据失败
 else
+	echo "开始进行搜索"
+	echo "## 手工剧本 find $template_dir | grep juben.properties|grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
 fi
 
-echo ""
-echo "## 默认的模板文件 find $cur_dir/engine/observe/buyer/template/ | grep $template"
 result=$( ls $cur_dir/engine/observe/buyer/template/ | grep $template )
 if [ ${#result} -eq 0 ]
 then
-	echo 寻找失败
+	echo 尝试寻找$cur_dir/engine/observe/buyer/template/ 下数据失败
 else
+	echo ""
+	echo "## 默认的模板文件 find $cur_dir/engine/observe/buyer/template/ | grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
+	echo ""
 fi
 
-echo ""
-echo "## plan手工文件 find $template_dir | grep plan.properties|grep $template"
 result=$( ls $template_dir | grep plan.properties|grep $template )
 if [ ${#result} -eq 0 ]
 then
-	echo 寻找失败
+	echo 尝试寻找plan手工文件 $template_dir 数据失败
 else
+	echo ""
+	echo "## plan手工文件 find $template_dir | grep plan.properties|grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
 fi
 
-echo ""
-echo "## plan模板文件 find $cur_dir/engine/observe/plan/template/ | grep $template"
 result=$( ls $cur_dir/engine/observe/plan/template/| grep $template)
 if [ ${#result} -eq 0 ]
 then
-	echo 寻找失败
+	echo 尝试寻找plan模板文件 $cur_dir/engine/observe/plan/template/ 数据失败
 else
+	echo ""
+	echo "## plan模板文件 find $cur_dir/engine/observe/plan/template/ | grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
+	echo ""
 fi
 
-echo ""
-echo "## plan计算结果文件 find $plan_dir |grep Run|grep Template| grep $template"
 result=$( ls $plan_dir |grep Run|grep Template| grep $template)
 if [ ${#result} -eq 0 ]
 then
-	echo 寻找失败
+	echo 尝试寻找plan计算结果文件 $plan_dir 数据失败
 else
+	echo ""
+	echo "## plan计算结果文件 find $plan_dir |grep Run|grep Template| grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
 fi
 
-echo ""
-echo "## buyer手工文件 find $template_dir | grep evafile.properties|grep $template"
 result=$( ls $template_dir | grep evafile.properties|grep $template )
 if [ ${#result} -eq 0 ]
 then
-	echo 寻找失败
+	echo 尝试寻找buyer手工文件 $template_dir 数据失败
 else
+	echo ""
+	echo "## buyer手工文件 find $template_dir | grep evafile.properties|grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
 fi
 
-echo ""
-echo "## buyer模板文件 find $cur_dir/engine/caop/buyers/template/ |grep $template"
 result=$( ls $cur_dir/engine/caop/buyers/template/|grep $template)
 if [ ${#result} -eq 0 ]
 then
-	echo 寻找失败
+	echo 尝试寻找buyer模板文件 $cur_dir/engine/caop/buyers/template/ 数据失败
 else
+	echo ""
+	echo "## buyer模板文件 find $cur_dir/engine/caop/buyers/template/ |grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
 fi
