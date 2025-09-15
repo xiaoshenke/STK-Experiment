@@ -107,6 +107,7 @@ else
 	echo "## plan计算结果文件 find $plan_dir |grep Run|grep Template| grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
+	echo ""
 fi
 
 result=$( ls $template_dir | grep evafile.properties|grep $template )
@@ -118,6 +119,7 @@ else
 	echo "## buyer手工文件 find $template_dir | grep evafile.properties|grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
+	echo ""
 fi
 
 result=$( ls $cur_dir/engine/caop/buyers/template/|grep $template)
