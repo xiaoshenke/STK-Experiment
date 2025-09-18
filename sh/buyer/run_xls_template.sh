@@ -9,6 +9,7 @@ template=buyer
 now=0
 time_str=#
 mode='now'
+operate='flush'
 ignore_cache=0
 
 if [ $# -lt 1 ]
@@ -32,6 +33,10 @@ do
 		shift
 		mode=$1
 		;;
+	-operate | --operate | -operater | --operater)
+		shift
+		operate=$1
+		;;
 	-ignore_cache | --ignore_cache)
 		shift
 		ignore_cache=$1
@@ -52,7 +57,7 @@ do
 			template=$1
 		elif [ $now -eq 2 ]
 		then
-			day=$1
+			operate=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -60,6 +65,6 @@ do
 	shift
 done
 
-echo python engine/caop/buyers/template/cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
-python engine/caop/buyers/template/cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
+echo python engine/caop/buyers/template/cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache --operate $operate
+python engine/caop/buyers/template/cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache --operate $operate
 

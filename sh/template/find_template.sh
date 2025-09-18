@@ -131,5 +131,8 @@ else
 	echo "## buyer模板文件 find $cur_dir/engine/caop/buyers/template/ |grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
+	echo ""
 fi
+
+echo ""
 
