@@ -50,6 +50,7 @@ done
 
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 template_dir=/Users/wuxian/Desktop/stk_daily/$day/template/
+caozuo_dir=/Users/wuxian/Desktop/stk_daily/$day/caozuo/
 plan_dir=/Users/wuxian/Desktop/stk_daily/$day/plan/
 
 result=$( ls $template_dir | grep juben.properties|grep $template )
@@ -70,6 +71,18 @@ then
 else
 	echo ""
 	echo "## 默认的模板文件 find $cur_dir/engine/observe/buyer/template/ | grep $template"
+	echo 成功找到文件如下:
+	echo "$result"
+	echo ""
+fi
+
+result=$( ls $caozuo_dir | grep Run|grep Templa| grep $template )
+if [ ${#result} -eq 0 ]
+then
+	echo 尝试寻找$caozuo_dir 下的模板运算结果数据失败
+else
+	echo ""
+	echo "## 模板文件的计算结果数据 find $caozuo_dir | grep Run|grep Templa | grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
 	echo ""
