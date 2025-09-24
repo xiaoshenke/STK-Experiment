@@ -9,6 +9,7 @@ template2=#
 now=0
 time_str=#
 mode='now'
+operate='info'
 
 if [ $# -lt 1 ]
 then
@@ -38,7 +39,8 @@ do
 			template=$1
 		elif [ $now -eq 1 ]
 		then
-			template2=$1
+			#template2=$1
+			operate=$1
 		elif [ $now -eq 2 ]
 		then
 			day=$1
@@ -57,5 +59,5 @@ then
 	exit 2
 fi
 
-echo python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str
-python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str
+echo python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate
+python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate
