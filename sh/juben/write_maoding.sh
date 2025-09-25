@@ -20,5 +20,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/config_cli.py write_maoding --day $day $maoding
-python engine/observe/buyer/config_cli.py write_maoding --day $day $maoding
+echo python engine/observe/juben/config_cli.py write_maoding --day $day $maoding
+python engine/observe/juben/config_cli.py write_maoding --day $day $maoding

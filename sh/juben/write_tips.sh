@@ -20,5 +20,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/config_cli.py write_tips --day $day $tips
-python engine/observe/buyer/config_cli.py write_tips --day $day $tips
+echo python engine/observe/juben/config_cli.py write_tips --day $day $tips
+python engine/observe/juben/config_cli.py write_tips --day $day $tips

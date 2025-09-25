@@ -33,5 +33,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/config_cli.py open_config --day $day --juben $juben --do_log $do_log
-python engine/observe/buyer/config_cli.py open_config --day $day --juben $juben --do_log $do_log
+echo python engine/observe/juben/config_cli.py open_config --day $day --juben $juben --do_log $do_log
+python engine/observe/juben/config_cli.py open_config --day $day --juben $juben --do_log $do_log

@@ -20,5 +20,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/config_cli.py write_yudingyi --day $day $yudingyi
-python engine/observe/buyer/config_cli.py write_yudingyi --day $day $yudingyi
+echo python engine/observe/juben/config_cli.py write_yudingyi --day $day $yudingyi
+python engine/observe/juben/config_cli.py write_yudingyi --day $day $yudingyi

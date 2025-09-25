@@ -9,8 +9,8 @@ fi
 
 
 echo ""
-echo "行情列表 find engine/observe/buyer/template/ |grep xx_i|grep [.]properties|sort"
-ls engine/observe/buyer/template/|grep xx_i|grep [.]properties|sort
+echo "行情列表 find engine/observe/juben/template/ |grep xx_i|grep [.]properties|sort"
+ls engine/observe/juben/template/|grep xx_i|grep [.]properties|sort
 
 echo ""
 

@@ -5,7 +5,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
 xls=#
-template=buyer
+template='buyer'
 now=0
 time_str=#
 mode='now'

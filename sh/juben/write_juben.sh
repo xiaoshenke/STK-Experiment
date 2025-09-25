@@ -20,5 +20,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/config_cli.py write_juben --day $day $juben
-python engine/observe/buyer/config_cli.py write_juben --day $day $juben
+echo python engine/observe/juben/config_cli.py write_juben --day $day $juben
+python engine/observe/juben/config_cli.py write_juben --day $day $juben

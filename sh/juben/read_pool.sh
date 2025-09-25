@@ -19,5 +19,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/config_cli.py read_pool --day $day
-python engine/observe/buyer/config_cli.py read_pool --day $day 
+echo python engine/observe/juben/config_cli.py read_pool --day $day
+python engine/observe/juben/config_cli.py read_pool --day $day 

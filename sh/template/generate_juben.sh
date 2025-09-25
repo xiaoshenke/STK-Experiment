@@ -67,8 +67,8 @@ then
 fi
 
 file=#
-file0="$cur_dir/engine/observe/buyer/template/$template2.juben.properties"
-file1="$cur_dir/engine/observe/buyer/template/$template2.template.properties"
+file0="$cur_dir/engine/observe/juben/template/$template2.juben.properties"
+file1="$cur_dir/engine/observe/juben/template/$template2.template.properties"
 file2="$cur_dir/engine/observe/plan/template/$template2.template.properties"
 file3="$cur_dir/engine/caop/buyers/template/$template2.buyer.properties"
 

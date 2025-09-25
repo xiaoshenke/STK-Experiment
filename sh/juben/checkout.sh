@@ -28,8 +28,8 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/config_cli.py checkout --day $day $juben
-python engine/observe/buyer/config_cli.py checkout --day $day $juben
+echo python engine/observe/juben/config_cli.py checkout --day $day $juben
+python engine/observe/juben/config_cli.py checkout --day $day $juben
 
 echo 
 echo 考虑把所有的buyer配置也进行checkout?     
