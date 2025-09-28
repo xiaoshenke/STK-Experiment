@@ -50,3 +50,9 @@ fi
 
 echo open $file
 open $file
+
+# 思考: 如何判定是否已经存在对应的listner? 否则会2次启动对应的listner
+echo ""
+cmd="sh/buyer/start_file_listener.sh $type --day $day"
+echo 可以启动对应的listener:  $cmd
+echo ""
