@@ -45,5 +45,7 @@ then
 	exit 2
 fi
 
-echo "python engine/observe/buyer/listener_cli.py start_engine_mode $type --day $day  log:observe.buyer.xx_$type.log"
-nohup python engine/observe/buyer/listener_cli.py start_engine_mode $type --day $day >>observe.buyer.xx_$type.log 2>&1 &
+dir=/Users/wuxian/Desktop/stk_daily/$day/
+
+echo "python engine/observe/buyer/listener_cli.py start_engine_mode $type --day $day  log: $dir/observe.buyer.xx_$type.log"
+nohup python engine/observe/buyer/listener_cli.py start_engine_mode $type --day $day >>$dir/observe.buyer.xx_$type.log 2>&1 &
