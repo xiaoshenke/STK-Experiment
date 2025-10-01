@@ -2,14 +2,12 @@
 
 export PYTHONUNBUFFERED=1
 
-type=''
-
 day=`date +'%Y-%m-%d'`
 now=0
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/buyer/start_file_listener.sh type [--day ]
+	echo Usage: sh/buyer/start_file_listener.sh type 
 	exit 2
 fi
 
