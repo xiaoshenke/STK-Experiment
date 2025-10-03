@@ -46,3 +46,5 @@ echo ""
 
 echo 启动监听器: sh/buyer/start_file_listener.sh $type --day $day
 sh/buyer/start_file_listener.sh $type --day $day
+
+echo ""
