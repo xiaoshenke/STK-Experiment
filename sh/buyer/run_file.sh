@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 运行指定文件(默认为eva)的买点文件
+
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
@@ -8,12 +10,6 @@ file='eva'
 now=0
 time_str=#
 mode='now'
-
-#if [ $# -lt 1 ]
-#then
-#	echo Usage: sh/juben/run_file.sh file [--day ] 
-#	exit 2
-#fi
 
 while [ -n "$1" ]
 do 
