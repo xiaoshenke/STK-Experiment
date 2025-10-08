@@ -68,3 +68,6 @@ cp $file2 $file1
 echo ""
 echo "最终生成的文件内容如下:"
 cat $file1
+
+echo ""
+echo 可以手工打开文件: open $file1

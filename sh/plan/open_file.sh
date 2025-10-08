@@ -4,10 +4,16 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
-template='manual'
+type=#
 now=0
 time_str=#
-mode='now'
+mode='plan'
+
+if [ $# -lt 1 ]
+then
+	echo Usage: sh/plan/open_file.sh type [--day ] 
+	exit 2
+fi
 
 while [ -n "$1" ]
 do 
@@ -28,7 +34,7 @@ do
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
 		then
-			template=$1
+			type=$1
 		elif [ $now -eq 1 ]
 		then
 			day=$1
@@ -39,5 +45,5 @@ do
 	shift
 done
 
-echo python realtime/observe/juben.py run_juben $template --day $day --mode $mode --time_str $time_str
-python realtime/observe/juben.py run_juben $template --day $day --mode $mode --time_str $time_str
+echo python engine/plan2/node/manual_node.py make $type $day
+python engine/plan2/node/manual_node.py make $type $day
