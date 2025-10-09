@@ -7,7 +7,7 @@ then
 fi
 
 echo "ls ../stk_daily/$day/buyer//  |grep Run|grep Temp"
-ls ../stk_daily/$day/buyer//|grep Run |grep Temp
+ls ../stk_daily/$day/buyer//|grep Run 
 
 echo ""
 echo "open \"../stk_daily/$day/buyer/\""

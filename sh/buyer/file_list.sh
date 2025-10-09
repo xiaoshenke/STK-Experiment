@@ -15,5 +15,5 @@ echo "find $dir |grep [.]properties"
 ls $dir |grep [.]properties|sort
 
 echo ""
-
+echo open $dir
 
