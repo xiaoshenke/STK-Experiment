@@ -15,11 +15,11 @@ do
 		day=$1
 		;;
 	-help | --help)
-		echo Usage: sh/buyer/open_config.sh [day] --juben abc
+		echo Usage: sh/buyer/open_file.sh type [day]
 		exit 2
 		;;
 	*)
-		# set value to type|flush_type by now-flag
+		# set value to type|day by now-flag
 		if [ $now -eq 0 ]
 		then
 			type=$1
@@ -33,8 +33,8 @@ do
 	shift
 done
 
-dir=/Users/wuxian/Desktop/stk_daily/$day/buyer/
-file=$dir/$type.properties
+buyer_dir=/Users/wuxian/Desktop/stk_daily/$day/buyer/
+file=$buyer_dir/$type.properties
 
 if [ ! -f "$file" ]
 then
@@ -51,8 +51,9 @@ fi
 echo open $file
 open $file
 
-# 思考: 如何判定是否已经存在对应的listner? 否则会2次启动对应的listner
+# 思考: 如何判定是否已经存在对应的listener? 否则会2次启动对应的listener
 echo ""
 cmd="sh/buyer/start_file_listener.sh $type --day $day"
 echo 可以启动对应的listener:  $cmd
 echo ""
+
