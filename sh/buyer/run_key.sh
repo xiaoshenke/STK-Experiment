@@ -4,16 +4,16 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
-template=#
+key=#
+type=#
 now=0
 time_str=#
 mode='now'
-ignore_cache=0
 
-if [ $# -lt 1 ]
+if [ $# -lt 2 ]
 then
-	echo Usage: sh/juben/run_template.sh template [--day ] 
-	exit 2
+	echo Usage: sh/buyer/run_key.sh key type [--day ] 
+      	exit 2
 fi
 
 while [ -n "$1" ]
@@ -31,16 +31,15 @@ do
 		shift
 		mode=$1
 		;;
-	-ignore_cache | --ignore_cache)
-		shift
-		ignore_cache=$1
-		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
 		then
-			template=$1
+			key=$1
 		elif [ $now -eq 1 ]
+		then
+			type=$1
+		elif [ $now -eq 2 ]
 		then
 			day=$1
 		fi
@@ -50,6 +49,6 @@ do
 	shift
 done
 
-echo python engine/caop/buyers/template/cli.py run_template $template --day $day --mode $mode --time_str $time_str
-python engine/caop/buyers/template/cli.py run_template $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
+echo python engine/observe/buyer/file_cli.py run_key $key $type --day $day --mode $mode --time_str $time_str
+python engine/observe/buyer/file_cli.py run_key $key $type --day $day --mode $mode --time_str $time_str
 
