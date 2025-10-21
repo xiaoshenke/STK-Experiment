@@ -9,7 +9,8 @@ template2=#
 now=0
 time_str=#
 mode='now'
-operate='info'
+operate='flush'
+ignore_cache=0
 
 if [ $# -lt 1 ]
 then
@@ -32,6 +33,14 @@ do
 		shift
 		mode=$1
 		;;
+	-operate | --operate)
+		shift
+		operate=$1
+		;;
+	-ignore_cache | --ignore_cache)
+		shift
+		ignore_cache=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -51,13 +60,13 @@ do
 	shift
 done
 
-if [[ $template2 != "#" ]]
-then
-	echo python realtime/observe/juben.py run_template "$template->$template2" --day $day --mode $mode --time_str $time_str
-	python realtime/observe/juben.py run_template "$template->$template2" --day $day --mode $mode --time_str $time_str
+#if [[ $template2 != "#" ]]
+#then
+#	echo python realtime/observe/juben.py run_template "$template->$template2" --day $day --mode $mode --time_str $time_str
+#	python realtime/observe/juben.py run_template "$template->$template2" --day $day --mode $mode --time_str $time_str
 
-	exit 2
-fi
+#	exit 2
+#fi
 
 echo python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate
-python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate
+python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache

@@ -9,6 +9,7 @@ template=#
 now=0
 time_str=#
 mode='now'
+operate='flush'
 
 if [ $# -lt 2 ]
 then
@@ -31,6 +32,10 @@ do
 		shift
 		mode=$1
 		;;
+	-operate| --operate)
+		shift
+		operate=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -41,7 +46,7 @@ do
 			template=$1
 		elif [ $now -eq 2 ]
 		then
-			day=$1
+			operate=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -49,6 +54,6 @@ do
 	shift
 done
 
-echo python realtime/observe/juben.py run_template "$xls->$template" --day $day --mode $mode --time_str $time_str	
-python realtime/observe/juben.py run_template "$xls->$template" --day $day --mode $mode --time_str $time_str
+echo python realtime/observe/juben.py run_template "$xls->$template" --day $day --mode $mode --time_str $time_str --operate $operate	
+python realtime/observe/juben.py run_template "$xls->$template" --day $day --mode $mode --time_str $time_str --operate $operate
 
