@@ -135,6 +135,9 @@ cli_logger = get_common_daily_logger('cli','cli')
 # 剧本/模板相关的日志
 jfile_logger = get_common_daily_logger('jfile','jfile')
 
+# tracing相关的日志
+tracing_logger = get_common_daily_logger('tracing','tracing')
+
 # template操作日志
 template_logger = get_common_daily_logger('template','template')
 
