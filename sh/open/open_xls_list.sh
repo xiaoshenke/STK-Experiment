@@ -17,7 +17,7 @@ now=0
 while [ -n "$1" ]
 do 
 	case "$1" in 
-	-open_mode | --open_mode)
+	-open_mode | --open_mode | -openmode | --openmode)
 		shift
 		open_mode=$1
 		;;

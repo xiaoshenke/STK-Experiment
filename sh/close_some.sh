@@ -2,7 +2,8 @@
 # only work in mac os
 
 # 保留的窗口数量默认为2
-keep=2
+# 2->1
+keep=1
 if [ $# -eq 1 ]
 then
         keep=$1

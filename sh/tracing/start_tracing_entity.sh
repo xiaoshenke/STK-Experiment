@@ -5,6 +5,7 @@ export PYTHONUNBUFFERED=1
 type='eva'
 
 day=`date +'%Y-%m-%d'`
+end_at=#
 now=0
 
 if [ $# -lt 1 ]
@@ -20,12 +21,19 @@ do
 		shift
 		day=$1
 		;;
+	-end | -end_at | --end | --end_at)
+		shift
+		end_at=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
 		then
 			type=$1
 		elif [ $now -eq 1 ]
+		then
+			end_at=$1
+		elif [ $now -eq 2 ]
 		then
 			day=$1
 		fi
@@ -47,5 +55,5 @@ fi
 
 dir=/Users/wuxian/Desktop/stk_daily/$day/
 
-echo "python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day  log: $dir/observe.tracing.xx_$type.log"
-nohup python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day >>$dir/observe.tracing.xx_$type.log 2>&1 &
+echo "python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day --end_at $end_at  log: $dir/observe.tracing.xx_$type.log"
+nohup python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day --end_at $end_at  >>$dir/observe.tracing.xx_$type.log 2>&1 &
