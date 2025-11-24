@@ -18,6 +18,9 @@ echo "
 
 "
 
+echo $ap python eva/cli.py do_eva db43 jinji --mode close
+python eva/cli.py do_eva db43 jinji --mode close --open 0 --day $day  --silent 1 
+
 echo $ap python realtime/stage/cli.py get db32*CODES_BAN size --mode close
 python realtime/stage/cli.py get db32*CODES_BAN size --mode close --silent 1 --day $day 
 
