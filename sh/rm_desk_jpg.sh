@@ -10,3 +10,9 @@ if [ $png_size -gt 0 ]
 then
 	rm ../*.png
 fi
+
+gif_size=$(ls ..|grep [.]gif|wc -l)
+if [ $gif_size -gt 0 ]
+then
+	rm ../*.gif
+fi
