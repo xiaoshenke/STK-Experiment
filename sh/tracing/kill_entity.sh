@@ -12,8 +12,8 @@ fi
 type=$1
 
 # 打印当前的所有listener进程
-ps aux|grep python |grep entity_cli|grep -v grep 
-echo ""
+#ps aux|grep python |grep entity_cli|grep -v grep 
+#echo ""
 
 listens=$(ps aux|grep python |grep entity_cli|grep -v grep | awk '{print $2 "," $14}')
 listens=($listens)
