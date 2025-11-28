@@ -13,6 +13,8 @@ xls=#
 type='default'
 to_name=#
 force=0
+# 标志位=1的话 会去刷新一下tracing observe
+flush=1
 
 if [ $# -lt 1 ]
 then
@@ -26,6 +28,10 @@ do
 	-day | --day)
 		shift
 		day=$1
+		;;
+	-force | --force)
+		shift
+		force=$1
 		;;
 	*)
 		# set value to type|flush_type by now-flag
@@ -56,7 +62,10 @@ file3=$(python engine/observe/juben/template/file_cli.py try_find_template_file 
 find=""
 
 # 检验file1是否已经存在
-if [ -f "$to_file" ]
+if [ -f "$to_file" ] || [ $force -eq 1 ]
+then
+	echo 想要生成的xls文件已经存在,但标志位force=1,因此会覆盖旧文件
+elif [ -f "$to_file" ]
 then
 	echo 想要生成的xls文件已经存在,无须操作: $to_file
 	exit 2
@@ -117,4 +126,11 @@ cat $to_file
 echo ""
 echo 手工打开文件:  open $to_file
 echo ""
+
+# 最后 如果标志位=1,那么刷新一下tracing(因为efile文件修改了 自然应该进行一次新的刷新)
+if [ $flush -eq 1 ]
+then
+	echo 标志位flush=1,因此刷新一下tracing文件
+	sh/tracing/flush_one.sh efiles:$xls
+fi
 

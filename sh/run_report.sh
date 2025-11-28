@@ -18,6 +18,8 @@ echo "
 
 "
 
+python cmd.py build_apply_by_fenshi db43 $day 15:00:00
+
 echo $ap python eva/cli.py do_eva db43 jinji --mode close
 python eva/cli.py do_eva db43 jinji --mode close --open 0 --day $day  --silent 1 
 
