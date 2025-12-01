@@ -23,6 +23,9 @@ python cmd.py build_apply_by_fenshi db43 $day 15:00:00
 echo $ap python eva/cli.py do_eva db43 jinji --mode close
 python eva/cli.py do_eva db43 jinji --mode close --open 0 --day $day  --silent 1 
 
+echo $ap python realtime/stage/cli.py get db44 jinji.cross5 --mode close --day $day
+python realtime/stage/cli.py get db44 jinji.cross5 --mode close --day $day
+
 echo $ap python realtime/stage/cli.py get db32*CODES_BAN size --mode close
 python realtime/stage/cli.py get db32*CODES_BAN size --mode close --silent 1 --day $day 
 
