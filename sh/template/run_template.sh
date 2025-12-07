@@ -37,7 +37,7 @@ do
 		shift
 		operate=$1
 		;;
-	-ignore_cache | --ignore_cache)
+	-ignore_cache | --ignore_cache | -ignore | --ignore)
 		shift
 		ignore_cache=$1
 		;;
