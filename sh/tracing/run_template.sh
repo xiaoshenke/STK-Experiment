@@ -4,15 +4,15 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
-template=#
+type=#
 now=0
 time_str=#
-mode='plan'
+mode='now'
 ignore_cache=0
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/plan/run_template.sh template [--day ] 
+	echo Usage: sh/tracing/run_codes.sh type [--day ] 
 	exit 2
 fi
 
@@ -31,7 +31,7 @@ do
 		shift
 		mode=$1
 		;;
-	-ignore_cache | --ignore_cache | -ignore | --ignore)
+	-ignore_cache | --ignore_cache)
 		shift
 		ignore_cache=$1
 		;;
@@ -39,7 +39,7 @@ do
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
 		then
-			template=$1
+			type=$1
 		elif [ $now -eq 1 ]
 		then
 			day=$1
@@ -50,6 +50,5 @@ do
 	shift
 done
 
-echo python engine/observe/plan/template_cli.py run_template $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
-python engine/observe/plan/template_cli.py run_template $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
-
+echo python engine/observe/tracing/run_cli.py run_codes temp:$type --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
+python engine/observe/tracing/run_cli.py run_codes temp:$type --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache

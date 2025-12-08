@@ -9,6 +9,7 @@ template=#
 now=0
 time_str=#
 mode='plan'
+ignore_cache=0
 
 if [ $# -lt 2 ]
 then
@@ -31,6 +32,10 @@ do
 		shift
 		mode=$1
 		;;
+	-ignore_cache | --ignore_cache | -ignore | --ignore)
+		shift
+		ignore_cache=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -49,6 +54,6 @@ do
 	shift
 done
 
-echo python engine/observe/plan/template_cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str
-python engine/observe/plan/template_cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str
+echo python engine/observe/plan/template_cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
+python engine/observe/plan/template_cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
 
