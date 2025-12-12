@@ -46,7 +46,13 @@ do
 		exit 1
 		;;
 	*)
-		xls_list=$1
+		if [ $now -eq 0 ]
+                then
+			xls_list=$1
+		elif [ $now -eq 1 ]
+		then
+			open_mode=$1
+		fi
 		;;
 	esac
 	shift
