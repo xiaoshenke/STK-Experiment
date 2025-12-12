@@ -21,6 +21,8 @@ echo "
 python cmd.py build_apply_by_fenshi db43 $day 15:00:00
 
 echo "
+
+
 "
 
 echo $ap python eva/cli.py do_eva db43 jinji --mode close
@@ -30,6 +32,14 @@ echo "
 "
 
 sleep 1
+
+echo $ap python realtime/stage/cli.py get db62 ban_total:min=4.cross5 --mode close --day $day
+python realtime/stage/cli.py get db62 ban_total:min=4.cross5 --mode close --day $day --silent 1
+
+sleep 1
+
+echo "
+"
 
 echo $ap python realtime/stage/cli.py get db44 jinji.cross5 --mode close --day $day
 python realtime/stage/cli.py get db44 jinji.cross5 --mode close --day $day --silent 1
