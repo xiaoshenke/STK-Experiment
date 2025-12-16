@@ -26,6 +26,10 @@ do
 		shift
 		day=$1
 		;;
+	-force | --force)
+                shift
+                force=$1
+                ;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -50,8 +54,8 @@ cur_dir=/Users/wuxian/Desktop/STK-Experiment
 to_file="/Users/wuxian/Desktop/stk_daily/$day/buyer/$to_name.properties"
 file1="$cur_dir/engine/observe/buyer/template/$type.buyer.properties"
 
-# 检验file1是否已经存在
-if [ -f "$to_file" ]
+# 检验file1是否已经存在 且force标志位 != 1
+if [ -f "$to_file" ] && [ $force -ne 1 ]
 then
 	echo 想要生成的buyer文件已经存在,无须操作: $to_file
 	exit 2

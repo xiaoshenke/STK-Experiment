@@ -147,6 +147,9 @@ operate_logger = get_common_daily_logger('operate','operate')
 # crontab日志
 crontab_logger = get_common_daily_logger('crontab','crontab')
 
+# running-mode=clean的时候的日志
+clean_event_logger = get_common_daily_logger('clean_event','clean_event')
+
 def log_slow(msg):
 	try:
 		slow_logger = get_common_daily_logger('slow','slow')
