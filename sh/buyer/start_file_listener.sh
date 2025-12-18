@@ -38,10 +38,12 @@ done
 alread_exists=$( sh/buyer/check_listener_exists.sh $type )
 # reset value to last character
 alread_exists=${alread_exists:0-1:1}
+dir=/Users/wuxian/Desktop/stk_daily/$day/
 
 if [[ $alread_exists == "1" ]]
 then
-	echo 尝试启动对买点文件类型:$type 的监听器 但是检查到系统中已经存在对应的进程 因此无视本次调度.
+	echo 尝试启动对买点文件类型:$type 的监听器 但是检查到系统中已经存在对应的进程 因此无视本次调度. 
+	echo 可以手工查看日志: $dir/observe.buyer.xx_$type.log
 	exit 2
 fi
 
