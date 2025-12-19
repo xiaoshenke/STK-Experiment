@@ -23,7 +23,9 @@ then
 	ps aux|grep python |grep entity_cli|grep -v grep 
 
 	echo ""
+	ps aux|grep python |grep entity_cli|grep start_engine_mode|grep -v grep | awk '{print $14 ,$18}'
+	echo ""
+else
+	ps aux|grep python |grep entity_cli|grep start_engine_mode|grep -v grep | awk '{print $14}'
 fi
-
-ps aux|grep python |grep entity_cli|grep start_engine_mode|grep -v grep | awk '{print $14}'
 
