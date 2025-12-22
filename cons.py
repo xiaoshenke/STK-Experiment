@@ -64,6 +64,10 @@ JINGJIA_UPDATER_SERVER_PORT = 1292
 
 STANDBY_SERVER_PORT = 1293
 
+TRACING_START_PORT = 1401
+TRACING_MID_PORT = 1450
+TRACING_MAX_PORT = 1499
+
 # update 2023-12-13: 主用api为腾讯api(有时候会被限流) 备用api为sina(接口不稳定 有时候返回空数据)
 # update 2023-12-13: 再次确认了sina的接口....返回的数据正确性有问题,但是单个code又没有问题 只会在大量数据下有问题
 # 可选: sina , tencent
