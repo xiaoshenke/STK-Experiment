@@ -8,6 +8,7 @@ type=#
 now=0
 time_str=#
 mode='now'
+operate='flush'
 ignore_cache=0
 
 if [ $# -lt 1 ]
@@ -42,13 +43,20 @@ do
 			type=$1
 		elif [ $now -eq 1 ]
 		then
-			day=$1
+			operate=$1
 		fi
 		declare -i now=$now+1
 		;;
 	esac
 	shift
 done
+
+if [[ $operate == 'info' ]]
+then
+	echo python engine/observe/tracing/run_cli.py run_codes eva_str0:$type --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
+	python engine/observe/tracing/run_cli.py run_codes eva_str0:$type --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
+	exit 2
+fi
 
 echo python engine/observe/tracing/run_cli.py run_codes eva_str:$type --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
 python engine/observe/tracing/run_cli.py run_codes eva_str:$type --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache

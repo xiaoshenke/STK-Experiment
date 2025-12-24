@@ -79,3 +79,5 @@ cat $to_file
 
 echo ""
 echo 手工打开文件:  open $to_file
+
+open $to_file
