@@ -54,11 +54,18 @@ then
 fi
 
 valid=$(python engine/observe/tracing/entity_cli.py check_valid_type $type $day 09:30:00)
-valid=${valid:0-1:1}
-if [[ $valid == "0" ]]
+_valid=${valid:0-1:1}
+if [[ $_valid == "0" ]]
 then
 	echo 尝试启动对买点文件类型:$type 的监听器 但是python engine/observe/tracing/entity_cli.py check_valid_type 返回false
+
+	echo ""
+	echo ""
+	
+	python engine/observe/tracing/entity_cli.py check_valid_type $type $day 09:30:00
 	exit 2
+else
+	echo 通过了python engine/observe/tracing/entity_cli.py check_valid_type 的校验 可以成功启动...
 fi
 
 dir=/Users/wuxian/Desktop/stk_daily/$day/
