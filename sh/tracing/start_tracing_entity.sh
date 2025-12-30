@@ -7,6 +7,7 @@ type='eva'
 day=`date +'%Y-%m-%d'`
 end_at=#
 now=0
+sort=0
 
 if [ $# -lt 1 ]
 then
@@ -24,6 +25,10 @@ do
 	-end | -end_at | --end | --end_at)
 		shift
 		end_at=$1
+		;;
+	-sort | --sort)
+		shift
+		sort=$1
 		;;
 	*)
 		# set value to type|flush_type by now-flag
@@ -66,9 +71,11 @@ then
 	exit 2
 else
 	echo 通过了python engine/observe/tracing/entity_cli.py check_valid_type 的校验 可以成功启动...
+	echo ""
+	echo ""
 fi
 
 dir=/Users/wuxian/Desktop/stk_daily/$day/
 
-echo "python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day --end_at $end_at  log: $dir/observe.tracing.xx_$type.log"
-nohup python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day --end_at $end_at  >>$dir/observe.tracing.xx_$type.log 2>&1 &
+echo "python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day --end_at $end_at --sort $sort log: $dir/observe.tracing.xx_$type.log"
+nohup python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day --end_at $end_at --sort $sort >>$dir/observe.tracing.xx_$type.log 2>&1 &
