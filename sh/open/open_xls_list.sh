@@ -53,6 +53,7 @@ do
 		then
 			open_mode=$1
 		fi
+		declare -i now=$now+1
 		;;
 	esac
 	shift
