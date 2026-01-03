@@ -27,9 +27,9 @@ do
 		day=$1
 		;;
 	-force | --force)
-                shift
-                force=$1
-                ;;
+		shift
+		force=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -48,6 +48,12 @@ do
 	esac
 	shift
 done
+
+if [[ ! $to_name =~ ".trace" ]]
+then
+	echo 当前配置的to_name:$to_name 不符合 xxx.trace的格式 请输入正确的格式
+	exit 2
+fi
 
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 
@@ -72,8 +78,20 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
+# 做一下校验replace kv逻辑
+check_replace=$(python engine/observe/juben/template/juben_cli.py check_xls_by_replace_kv $xls $file1)
+
+if [[ $check_replace == "0" ]]
+then
+	echo python engine/observe/juben/template/juben_cli.py check_xls_by_replace_kv 返回0,说明输入的xls:$xls 和对应文件中的replace kv不匹配
+	exit 2
+fi
+
 echo "复制文件 cp $file1 $to_file"
 cp $file1 $to_file
+
+echo "进行内容替换 sed -i 's/xx/$xls/g' $to_file"
+sed -i "" "s/xx/$xls/g" $to_file
 
 echo ""
 echo "最终生成的文件内容如下:"
