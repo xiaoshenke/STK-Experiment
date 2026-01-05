@@ -9,7 +9,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 day=`date +'%Y-%m-%d'`
 now=0
 xls=#
-type='xx_default'
+type='default'
 to_name=#
 force=0
 
@@ -31,14 +31,13 @@ do
 		force=$1
 		;;
 	*)
-		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
 		then
 			xls=$1
 			to_name=$xls.trace
 		elif [ $now -eq 1 ]
 		then
-			type=xx_$1
+			type=$1
 		elif [ $now -eq 2 ]
 		then
 			to_name=$1
@@ -58,14 +57,15 @@ fi
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 
 to_file="/Users/wuxian/Desktop/stk_daily/$day/buyer/$to_name.properties"
-file1="$cur_dir/engine/observe/tracing/template/$type.tracing.properties"
+file1="$cur_dir/engine/observe/tracing/template/xx_$type.tracing.properties"
 
 echo 尝试通过模板$file1 进行生成....
 
 # 检验file1是否已经存在 且force标志位 != 1
 if [ -f "$to_file" ] && [ $force -ne 1 ]
 then
-	echo 想要生成的buyer文件已经存在,无须操作: $to_file
+	cmd="sh/tracing/generate_xls_tracing.sh $xls $type --force 1"
+	echo 想要生成的buyer文件已经存在,无须操作: $to_file ,考虑: $cmd
 	exit 2
 fi
 
@@ -93,6 +93,8 @@ cp $file1 $to_file
 echo "进行内容替换 sed -i 's/xx/$xls/g' $to_file"
 sed -i "" "s/xx/$xls/g" $to_file
 
+echo "from_template=$file1" >> $to_file
+
 echo ""
 echo "最终生成的文件内容如下:"
 cat $to_file
@@ -100,4 +102,4 @@ cat $to_file
 echo ""
 echo 手工打开文件:  open $to_file
 
-open $to_file
+#open $to_file
