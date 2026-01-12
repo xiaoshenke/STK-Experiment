@@ -93,6 +93,7 @@ cp $file1 $to_file
 echo "进行内容替换 sed -i 's/xx/$xls/g' $to_file"
 sed -i "" "s/xx/$xls/g" $to_file
 
+echo "" >> $to_file
 echo "from_template=$file1" >> $to_file
 
 echo ""
