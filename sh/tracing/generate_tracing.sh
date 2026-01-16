@@ -50,7 +50,7 @@ done
 
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 
-to_file="/Users/wuxian/Desktop/stk_daily/$day/tracing/$type.trace.properties"
+to_file="/Users/wuxian/Desktop/stk_daily/$day/buyer/$type.trace.properties"
 file1="$cur_dir/engine/observe/tracing/template/$from_type.tracing.properties"
 
 # 检验file1是否已经存在 且force标志位 != 1
