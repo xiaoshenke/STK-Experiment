@@ -26,7 +26,7 @@ echo "
 "
 
 echo $ap python eva/cli.py do_eva db43 jinji --mode close
-python eva/cli.py do_eva db43 jinji --mode close --open 0 --day $day  --silent 1 
+python eva/cli.py do_eva db43 jinji --mode close --open 0 --day $day  --silent 1 --call_from run_report
 
 echo "
 "
@@ -42,7 +42,7 @@ echo "
 "
 
 echo $ap python realtime/stage/cli.py get db44 jinji.cross5 --mode close --day $day
-python realtime/stage/cli.py get db44 jinji.cross5 --mode close --day $day --silent 1
+python realtime/stage/cli.py get db44 jinji.cross5 --mode close --day $day --silent 1 
 
 echo "
 "
@@ -56,7 +56,7 @@ echo "
 sleep 2
 
 echo $ap python eva/cli.py do_eva db102 dstp --mode close
-python eva/cli.py do_eva db102 dstp --mode close --open 0 --day $day  --silent 1
+python eva/cli.py do_eva db102 dstp --mode close --open 0 --day $day  --silent 1 --call_from run_report
 
 echo "
 "

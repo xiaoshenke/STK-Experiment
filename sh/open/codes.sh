@@ -11,6 +11,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 codes=$1
 open_mode='jpg'
+force=0
 now=0
 
 while [ -n "$1" ]
@@ -19,6 +20,10 @@ do
 	-open_mode | --open_mode | -openmode | --openmode)
 		shift
 		open_mode=$1
+		;;
+	-force | --force)
+		shift
+		force=$1
 		;;
 	*)
 		# set value to type|flush_type by now-flag
@@ -35,6 +40,6 @@ do
 	shift
 done
 
-echo python realtime/code/cli.py open $codes --open_mode $open_mode
-python realtime/code/cli.py open $codes --open_mode $open_mode
+echo python realtime/code/cli.py open $codes --open_mode $open_mode --force $force
+python realtime/code/cli.py open $codes --open_mode $open_mode --force $force
 
