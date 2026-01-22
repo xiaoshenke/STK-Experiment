@@ -11,7 +11,9 @@ front_type=''
 desc=#
 back_type=#
 fake=#
-ignore_cache=1
+
+# update 2026-01-22: ignore_cache:1->0
+ignore_cache=0
 debug=0
 open=0
 now=0

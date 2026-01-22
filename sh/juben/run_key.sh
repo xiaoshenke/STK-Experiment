@@ -8,6 +8,7 @@ key=#
 now=0
 time_str=#
 mode='now'
+debug=0
 
 if [ $# -lt 1 ]
 then
@@ -30,6 +31,10 @@ do
 		shift
 		mode=$1
 		;;
+	-debug | --debug)
+		shift
+		debug=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -45,5 +50,5 @@ do
 	shift
 done
 
-echo python realtime/observe/juben.py run_key $key --day $day --mode $mode --time_str $time_str
-python realtime/observe/juben.py run_key $key --day $day --mode $mode --time_str $time_str
+echo python realtime/observe/juben.py run_key $key --day $day --mode $mode --time_str $time_str --debug $debug
+python realtime/observe/juben.py run_key $key --day $day --mode $mode --time_str $time_str --debug $debug
