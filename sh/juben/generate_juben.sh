@@ -49,7 +49,6 @@ done
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 
 to_file="/Users/wuxian/Desktop/stk_daily/$day/juben/$type.properties"
-file1="$cur_dir/engine/observe/tracing/template/$from_type.tracing.properties"
 
 # 检验file1是否已经存在 且force标志位 != 1
 if [ -f "$to_file" ] && [ $force -ne 1 ]
@@ -58,21 +57,41 @@ then
 	exit 2
 fi
 
-if [ ! -f "$file1" ]
+file1="$cur_dir/engine/observe/tracing/template/$from_type.tracing.properties"
+file2="$cur_dir/engine/observe/juben/template/$from_type.juben.properties"
+file3="$cur_dir/engine/observe/juben/template/$from_type.properties"
+
+file=#
+if [ -f "$file1" ]
 then
-	echo 模板剧本文件: $file1 不存在,是否输入错误?
+	file=$file1
+elif [ -f "$file2" ]
+then
+	file=$file2
+elif [ -f "$file3" ]
+then
+	file=$file3
+fi
+
+if [[ $file == "#" ]]
+then
+	echo 找不到模板文件,生成文件失败
 	exit 2
 fi
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo "复制文件 cp $file1 $to_file"
-cp $file1 $to_file
+echo "复制文件 cp $file $to_file"
+cp $file $to_file
+
+echo "" >> $to_file
+echo "from_template=$file" >> $to_file
 
 echo ""
 echo "最终生成的文件内容如下:"
 cat $to_file
+
 
 echo ""
 echo 手工打开文件:  open $to_file
