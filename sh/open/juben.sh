@@ -4,7 +4,9 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
-juben=#
+
+# update 2026-01-27: #->juben
+juben='juben'
 do_log=1
 
 while [ -n "$1" ]
