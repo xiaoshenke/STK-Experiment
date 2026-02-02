@@ -2,6 +2,10 @@
 
 # 搜索当前所有可能的template文件
 
+# 功能包括:
+# 1, 搜索engine/eva-str/export下的.py模板
+# 2, 搜索eva-str的计算结果 格式@/Desktop/stk_daily/2026-02-02//caozuo//RunEvaStrNode_xxx.txt
+
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
@@ -75,13 +79,13 @@ else
 	echo ""
 fi
 
-result=$( ls $caozuo_dir | grep Run|grep Templa| grep $template )
+result=$( ls $caozuo_dir | grep Run|grep RunEvaStr| grep $template )
 if [ ${#result} -eq 0 ]
 then
 	echo 尝试寻找$caozuo_dir 下的模板运算结果数据失败
 else
 	echo ""
-	echo "## 模板文件的计算结果数据 find $caozuo_dir | grep Run|grep Templa | grep $template"
+	echo "## 模板文件的计算结果数据 find $caozuo_dir | grep Run|grep RunEvaStr | grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
 	echo ""
