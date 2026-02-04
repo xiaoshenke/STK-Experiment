@@ -5,6 +5,7 @@ export PYTHONUNBUFFERED=1
 type='eva'
 
 day=`date +'%Y-%m-%d'`
+start_at=#
 end_at=#
 now=0
 sort=0
@@ -25,6 +26,10 @@ do
 	-end | -end_at | --end | --end_at)
 		shift
 		end_at=$1
+		;;
+	-start | -start_at | --start | --start_at)
+		shift
+		start_at=$1
 		;;
 	-sort | --sort)
 		shift
@@ -77,5 +82,5 @@ fi
 
 dir=/Users/wuxian/Desktop/stk_daily/$day/
 
-echo "python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day --end_at $end_at --sort $sort log: $dir/observe.tracing.xx_$type.log"
-nohup python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day --end_at $end_at --sort $sort >>$dir/observe.tracing.xx_$type.log 2>&1 &
+echo "python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day --end_at $end_at --sort $sort --start_at $start_at log: $dir/observe.tracing.xx_$type.log"
+nohup python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day --end_at $end_at --sort $sort --start_at $start_at >>$dir/observe.tracing.xx_$type.log 2>&1 &
