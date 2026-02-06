@@ -47,3 +47,6 @@ done
 
 echo python engine/plan2/node/manual_node.py make $type $day
 python engine/plan2/node/manual_node.py make $type $day
+
+cmd="sh/plan/open_file.sh $type"
+sh/log/log_to_operate.sh "$cmd" "OPEN-PLAN-FILE"

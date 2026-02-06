@@ -80,4 +80,9 @@ cat $to_file
 echo ""
 echo 手工打开文件:  open $to_file
 
+# 落日志
+cmd="sh/buyer/generate_buyer.sh $type $to_name"
+sh/log/log_to_operate.sh "$cmd" "GENERATE_BUYER"
+
+
 open $to_file

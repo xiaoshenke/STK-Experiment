@@ -84,3 +84,7 @@ dir=/Users/wuxian/Desktop/stk_daily/$day/
 
 echo "python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day --end_at $end_at --sort $sort --start_at $start_at log: $dir/observe.tracing.xx_$type.log"
 nohup python engine/observe/tracing/entity_cli.py start_engine_mode $type --day $day --end_at $end_at --sort $sort --start_at $start_at >>$dir/observe.tracing.xx_$type.log 2>&1 &
+
+cmd="sh/tracing/start_tracing_entity.sh $type --start_at $start_at --end_at $end_at"
+sh/log/log_to_operate.sh "$cmd" "START-TRACING"
+

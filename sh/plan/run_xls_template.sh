@@ -57,3 +57,5 @@ done
 echo python engine/observe/plan/template_cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
 python engine/observe/plan/template_cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache
 
+cmd="sh/plan/run_xls_template.sh $xls $template --day $day"
+sh/log/log_to_operate.sh "$cmd" "RUN-PLAN-XLS-TEMPLATE"

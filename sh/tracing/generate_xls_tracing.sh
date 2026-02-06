@@ -48,6 +48,8 @@ do
 	shift
 done
 
+cmd="sh/tracing/generate_xls_tracing.sh $xls $type $to_name"
+
 if [[ ! $to_name =~ ".trace" ]]
 then
 	echo 当前配置的to_name:$to_name 不符合 xxx.trace的格式 请输入正确的格式
@@ -102,5 +104,7 @@ cat $to_file
 
 echo ""
 echo 手工打开文件:  open $to_file
+
+sh/log/log_to_operate.sh "$cmd" "GENERATE_XLS_TRACING"
 
 #open $to_file
