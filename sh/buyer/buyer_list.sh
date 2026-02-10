@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: sh/list/code_type.sh [day]
+# Usage: sh/buyer/buyer_list.sh [day]
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
