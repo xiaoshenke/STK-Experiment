@@ -12,5 +12,6 @@ then
 	day=$1
 fi
 
+echo ""
 echo python engine/observe/buyer/server/reg_cli.py load_schedules --day $day 
 python engine/observe/buyer/server/reg_cli.py load_schedules --day $day
