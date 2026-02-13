@@ -16,3 +16,6 @@ echo ""
 
 echo ">>>>>>> before call osascript sh/oscpt/close_most_txt.scpt $keep"
 osascript sh/oscpt/close_most_txt.scpt $keep
+
+cmd="sh/close_some.sh $keep"
+sh/log/log_to_operate.sh "$cmd" "CLOSE_SOME"
