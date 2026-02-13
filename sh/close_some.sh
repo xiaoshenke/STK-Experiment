@@ -6,7 +6,7 @@
 keep=1
 if [ $# -eq 1 ]
 then
-        keep=$1
+	keep=$1
 fi
 
 echo ">>>>>>> before call osascript sh/oscpt/close_most_jpg.scpt $keep"
