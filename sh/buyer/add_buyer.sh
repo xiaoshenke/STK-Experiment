@@ -3,6 +3,12 @@
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
+if [ $# -lt 1 ]
+then
+	echo Usage: sh/buyer/add_buyer.sh xx [name] [reason]
+	exit 2
+fi
+
 day=`date +'%Y-%m-%d'`
 code_type=#
 desc=#
