@@ -2,6 +2,9 @@
 
 export PYTHONUNBUFFERED=1
 
+echo 起open-txt-manager.. sh/window/start_open_txt_manager.sh
+sh/window/start_open_txt_manager.sh
+
 echo 起juben observe... sh/juben/start_juben_observe.sh 
 sh/juben/start_juben_observe.sh 
 
