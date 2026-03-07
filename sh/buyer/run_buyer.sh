@@ -4,7 +4,7 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
-eva_str=#
+type=#
 now=0
 add=0
 mode='now'
@@ -13,7 +13,7 @@ time_str=#
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/eva/run_eva_str.sh eva_str [--day ] 
+	echo Usage: sh/buyer/run_buyer.sh type [--day ] 
       	exit 2
 fi
 
@@ -44,7 +44,7 @@ do
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
 		then
-			eva_str=$1
+			type=$1
 		elif [ $now -eq 1 ]
 		then
 			operate=$1
@@ -58,5 +58,15 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/runner/cli.py run $eva_str --day $day --time_str $time_str --mode $mode 
-python engine/observe/buyer/runner/cli.py run $eva_str --day $day --time_str $time_str --mode $mode 
+do_register=$(python engine/observe/buyer/runner/cli.py may_register_first $type)
+if [[ $do_register == "1" ]]
+then
+	echo "检测到必须先注册到buyer recorder中 即: sh/buyer/add_buyer.sh \"$type\" --day $day --print_run_msg 1"
+	exit 2
+
+	#id=$(python engine/observe/buyer/runner/cli.py register_type_and_return $type --day $day)
+	#type=$id
+fi
+
+echo python engine/observe/buyer/runner/cli.py run $type --day $day --time_str $time_str --mode $mode 
+python engine/observe/buyer/runner/cli.py run $type --day $day --time_str $time_str --mode $mode 

@@ -15,6 +15,7 @@ desc=#
 name=#
 now=0
 mode='plan'
+print_run_msg=0
 
 while [ -n "$1" ]
 do 
@@ -26,6 +27,10 @@ do
 	-mode | --mode)
 		shift
 		mode=$1
+		;;
+	-print_run_msg | --print_run_msg)
+		shift
+		print_run_msg=$1
 		;;
 	-reason | --reason | -desc| --desc)
 		shift
@@ -49,5 +54,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/reg_cli.py add $code_type --name $name --day $day --mode $mode --reason "$desc"
-python engine/observe/buyer/reg_cli.py add $code_type --name $name --day $day --mode $mode --reason "$desc" 
+echo python engine/observe/buyer/reg_cli.py add $code_type --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg
+python engine/observe/buyer/reg_cli.py add $code_type --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg
