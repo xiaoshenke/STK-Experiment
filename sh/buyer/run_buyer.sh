@@ -44,7 +44,7 @@ do
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
 		then
-			type=$1
+			type="$1"
 		elif [ $now -eq 1 ]
 		then
 			operate=$1
