@@ -92,8 +92,10 @@ echo ""
 echo "最终生成的文件内容如下:"
 cat $to_file
 
-
 echo ""
 echo 手工打开文件:  open $to_file
 
 open $to_file
+
+cmd="sh/juben/generate_juben.sh $type $from_type --to-file $to_file"
+sh/log/log_to_operate.sh "$cmd" "GENERATE-JUBEN"
