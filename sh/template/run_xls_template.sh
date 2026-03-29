@@ -10,6 +10,7 @@ now=0
 time_str=#
 mode='now'
 operate='flush'
+ignore_cache=0
 
 if [ $# -lt 2 ]
 then
@@ -31,6 +32,10 @@ do
 	-mode | --mode)
 		shift
 		mode=$1
+		;;
+	-ignore_cache | --ignore_cache | -ignore | --ignore)
+		shift
+		ignore_cache=$1
 		;;
 	-operate| --operate)
 		shift
@@ -55,5 +60,5 @@ do
 done
 
 echo python realtime/observe/juben.py run_template "$xls->$template" --day $day --mode $mode --time_str $time_str --operate $operate	
-python realtime/observe/juben.py run_template "$xls->$template" --day $day --mode $mode --time_str $time_str --operate $operate
+python realtime/observe/juben.py run_template "$xls->$template" --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache
 
