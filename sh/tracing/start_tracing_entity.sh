@@ -27,7 +27,7 @@ do
 		shift
 		end_at=$1
 		;;
-	-start | -start_at | --start | --start_at)
+	-start | -start_at | --start | --start_at | --time_str)
 		shift
 		start_at=$1
 		;;

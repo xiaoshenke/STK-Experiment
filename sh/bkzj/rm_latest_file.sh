@@ -16,6 +16,7 @@ do
 		time_str=$1
 		;;
 	*)
+		time_str=$1
 		;;
 	esac
 	shift
