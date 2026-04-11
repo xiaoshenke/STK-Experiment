@@ -55,4 +55,4 @@ do
 done
 
 echo python engine/observe/buyer/reg_cli.py add $code_type --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg
-python engine/observe/buyer/reg_cli.py add $code_type --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg
+python engine/observe/buyer/reg_cli.py add "$code_type" --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg
