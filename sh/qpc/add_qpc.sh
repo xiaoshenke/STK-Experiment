@@ -28,18 +28,15 @@ do
 		reason=$1
 		;;
         -help | --help)
-		echo usage sh/qpc/write_key.sh key val
+		echo usage sh/qpc/add_qpc.sh val
                 exit 1
                 ;;
         *)
 		# set value to type|front by now-flag
 		if [ $now -eq 0 ]
 		then
-			key=$1
-		elif [ $now -eq 1 ]
-		then
 			val=$1
-		elif [ $now -eq 2 ]
+		elif [ $now -eq 1 ]
 		then
 			reason=$1
 		fi
@@ -49,23 +46,16 @@ do
         shift
 done
 
-if [ ${#key} -eq 0 ]
-then
-	echo key empty.
-	echo usage sh/qpc/write_key.sh key val
-	exit 1
-fi
-
 if [ ${#val} -eq 0 ]
 then
 	echo val empty.
-	echo usage sh/qpc/write_key.sh key val
+	echo usage sh/qpc/add_qpc.sh val
 	exit 1
 fi
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python realtime/qpc_cli.py add --day $day $key $val --force $force --reason $reason --flush $flush
-python realtime/qpc_cli.py add --day $day $key $val --force $force --reason $reason --flush $flush
+echo python realtime/qpc_cli.py add2 --day $day $val --force $force --reason $reason --flush $flush
+python realtime/qpc_cli.py add2 --day $day $val --force $force --reason $reason --flush $flush
 
