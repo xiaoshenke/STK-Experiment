@@ -7,11 +7,12 @@ day=`date +'%Y-%m-%d'`
 code_type=#
 desc=#
 name=#
-mode='plan'
+mode='now'
 sort=-1
 start=#
 end=#
-flush=1
+flush=0
+max_times=-1
 
 now=0
 
@@ -29,6 +30,10 @@ do
         -sort | --sort)
 		shift
 		sort=$1
+		;;
+	-max_times | --max_times | -times | --times)
+		shift
+		max_times=$1
 		;;
         -start | --start)
 		shift
@@ -65,5 +70,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/server/reg_cli.py add $code_type --sort $sort --start $start --end $end --day $day --mode $mode --reason "$desc"
-python engine/observe/buyer/server/reg_cli.py add $code_type --flush_now $flush --sort $sort --start $start --end $end --day $day --mode $mode --reason "$desc" 
+echo python engine/observe/buyer/server/reg_cli.py add $code_type --sort $sort --start $start --end $end --day $day --mode $mode --reason "$desc" --max_times $max_times
+python engine/observe/buyer/server/reg_cli.py add $code_type --flush_now $flush --sort $sort --start $start --end $end --day $day --mode $mode --reason "$desc" --max_times $max_times
