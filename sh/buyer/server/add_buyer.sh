@@ -11,7 +11,7 @@ mode='now'
 sort=-1
 start=#
 end=#
-flush=0
+flush=1
 max_times=-1
 
 now=0

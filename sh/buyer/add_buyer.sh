@@ -14,7 +14,7 @@ code_type=#
 desc=#
 name=#
 now=0
-mode='plan'
+mode='now'
 print_run_msg=0
 flush=0
 

@@ -6,15 +6,15 @@ export PYTHONPATH=$path:$PYTHONPATH
 day=`date +'%Y-%m-%d'`
 time_str=#
 code_type=#
-fronts_type=#
+fronts_type='rup'
 desc=#
 group=#
 now=0
-mode='plan'
+mode='now'
 
-if [ $# -lt 2 ]
+if [ $# -lt 1 ]
 then
-	echo Usage: sh/codes/add_codes.sh code-type group [--day ] [--reason ]
+	echo Usage: sh/codes/find_fronts.sh code-type [fronts-type]
       	exit 2
 fi
 
