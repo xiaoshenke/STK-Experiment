@@ -1,16 +1,55 @@
 #!/bin/bash
-# usage sh/bkzj/get_xls.sh BKxxx
-
-if [ $# -ne 1 ]
-then
-	echo Usage: sh/bkzj/get_xls.sh BKxxx
-	exit 2
-fi
-
-code=$1
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python engine/xls/bk/bk_loader.py find_xls $code
-python engine/xls/bk/bk_loader.py find_xls $code
+day=`date +'%Y-%m-%d'`
+type=#
+now=0
+time_str=#
+mode='now'
+ignore_cache=0
+
+if [ $# -lt 1 ]
+then
+	echo Usage: sh/bkzj/get_xls.sh BKxxx | sh/bkzj/get_xls.sh find_xls:bkzj.top
+	exit 2
+fi
+
+while [ -n "$1" ]
+do 
+	case "$1" in 
+	-day | --day)
+		shift
+		day=$1
+		;;
+	-time_str | --time_str)
+		shift
+		time_str=$1
+		;;
+	-mode | --mode)
+		shift
+		mode=$1
+		;;
+	-ignore_cache | --ignore_cache)
+		shift
+		ignore_cache=$1
+		;;
+	*)
+		# set value to type|flush_type by now-flag
+		if [ $now -eq 0 ]
+		then
+			type=$1
+		elif [ $now -eq 1 ]
+		then
+			day=$1
+		fi
+		declare -i now=$now+1
+		;;
+	esac
+	shift
+done
+
+echo python engine/candi/node/wrap/find_xls_candi.py find_xls $type --day $day --mode $mode --time_str $time_str
+python engine/candi/node/wrap/find_xls_candi.py find_xls $type --day $day --mode $mode --time_str $time_str 
+
