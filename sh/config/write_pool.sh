@@ -69,3 +69,5 @@ export PYTHONPATH=$path:$PYTHONPATH
 echo python realtime/properties_cli.py write_pool $key $val --force $force --day $day --mode $mode --desc $desc
 python realtime/properties_cli.py write_pool $key $val --force $force --day $day --mode $mode --desc $desc --do_log 1
 
+cmd="sh/config/write_pool.sh $key $val --force $force --day $day --mode $mode --desc $desc"
+sh/log/log_to_operate.sh "$cmd" "CONFIG-WRITE-POOL"

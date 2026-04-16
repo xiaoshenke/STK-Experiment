@@ -17,7 +17,8 @@ ignore_cache=0
 debug=0
 open=0
 now=0
-log=1
+# update 2026-04-16: log:1->0
+log=0
 add=0
 level=0
 silent=0

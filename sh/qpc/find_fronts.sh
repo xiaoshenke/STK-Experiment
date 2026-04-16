@@ -59,3 +59,5 @@ done
 echo python python realtime/caop/code_types.py find_fronts $code_type $fronts_type --day $day --mode $mode --time_str $time_str
 python realtime/caop/code_types.py find_fronts $code_type $fronts_type --day $day --mode $mode --time_str $time_str
 
+cmd="sh/qpc/find_fronts.sh $code_type $fronts_type --day $day --mode $mode --time_str $time_str"
+sh/log/log_to_operate.sh "$cmd" "QPC-FIND-FRONTS"
