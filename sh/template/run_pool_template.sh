@@ -49,6 +49,8 @@ do
 	shift
 done
 
-echo python realtime/observe/juben.py run_pool_template "$pool->$template" --day $day --mode $mode --time_str $time_str	
-python realtime/observe/juben.py run_pool_template "$pool->$template" --day $day --mode $mode --time_str $time_str
+#echo python realtime/observe/juben.py run_pool_template "$pool->$template" --day $day --mode $mode --time_str $time_str	
+#python realtime/observe/juben.py run_pool_template "$pool->$template" --day $day --mode $mode --time_str $time_str
 
+echo python realtime/observe/juben.py run_pool_template $pool $template  --day $day --mode $mode --time_str $time_str
+python realtime/observe/juben.py run_pool_template $pool $template  --day $day --mode $mode --time_str $time_str
