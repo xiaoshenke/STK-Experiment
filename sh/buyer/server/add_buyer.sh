@@ -31,7 +31,7 @@ do
 		shift
 		sort=$1
 		;;
-	-max_times | --max_times | -times | --times)
+	-max_times | --max_times | -times | --times | -maxs | --maxs)
 		shift
 		max_times=$1
 		;;

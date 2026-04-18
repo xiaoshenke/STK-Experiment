@@ -59,6 +59,6 @@ do
 	shift
 done
 
-echo python realtime/observe/juben.py run_template "$xls->$template" --day $day --mode $mode --time_str $time_str --operate $operate	
-python realtime/observe/juben.py run_template "$xls->$template" --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache
+echo python realtime/observe/juben.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache
+python realtime/observe/juben.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache
 

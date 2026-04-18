@@ -34,6 +34,6 @@ do
 	shift
 done
 
-echo sh/template/run_xls_template.sh $xls pull_analyze --day $day --mode $mode --time_str $time_str
-sh/template/run_xls_template.sh $xls pull_analyze --day $day --mode $mode --time_str $time_str
+echo sh/template/run_xls_template.sh $xls xls_baozha --day $day --mode $mode --time_str $time_str
+sh/template/run_xls_template.sh $xls xls_baozha --day $day --mode $mode --time_str $time_str
 

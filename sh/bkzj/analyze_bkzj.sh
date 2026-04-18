@@ -7,7 +7,7 @@ then
 fi
 
 day=`date +'%Y-%m-%d'`
-time_str=#
+time_str='0'
 mode='now'
 
 xls=#
@@ -34,6 +34,9 @@ do
 	shift
 done
 
-echo sh/template/run_pool_template.sh $xls analyze_bkzj --day $day --mode $mode
-sh/template/run_pool_template.sh $xls analyze_bkzj --day $day --mode $mode
+cmd="sh/bkzj/analyze_bkzj.sh $xls --day $day --time_str $time_str --mode $mode"
+sh/log/log_to_operate.sh "$cmd" "ANALYZE-BKZJ"
+
+echo sh/template/run_pool_template.sh $xls analyze_bkzj --day $day --mode $mode --time_str $time_str
+sh/template/run_pool_template.sh $xls analyze_bkzj --day $day --mode $mode --time_str $time_str
 
