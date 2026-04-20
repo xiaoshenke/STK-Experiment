@@ -6,7 +6,6 @@ export PYTHONPATH=$path:$PYTHONPATH
 day=`date +'%Y-%m-%d'`
 time_str='0'
 code_type=#
-type='0'
 now=0
 mode='now'
 
@@ -36,9 +35,6 @@ do
 		if [ $now -eq 0 ]
 		then
 			code_type=$1
-		elif [ $now -eq 1 ]
-		then
-			type=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -46,9 +42,10 @@ do
 	shift
 done
 
-cmd="sh/codes/analyze_codes.sh $code_type --type $type --day $day --mode $mode --time_str $time_str"
-sh/log/log_to_operate.sh "$cmd" "CODES-ANALYZE-CODES"
+cmd="sh/codes/bkzj.sh $code_type --day $day --mode $mode --time_str $time_str"
+sh/log/log_to_operate.sh "$cmd" "CODES-GET-BKZJ"
 
-echo python realtime/code_type/analyze_cli.py analyze_codes $code_type --type $type --day $day --mode $mode --time_str $time_str
-python realtime/code_type/analyze_cli.py analyze_codes $code_type --type $type --day $day --mode $mode --time_str $time_str
+echo sh/template/run_xls_template.sh $code_type bkzj --day $day --mode $mode --time_str $time_str
+sh/template/run_xls_template.sh $code_type bkzj --day $day --mode $mode --time_str $time_str
+
 
