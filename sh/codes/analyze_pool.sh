@@ -45,7 +45,8 @@ done
 cmd="sh/codes/analyze_pool.sh $code_type --day $day --mode $mode --time_str $time_str"
 sh/log/log_to_operate.sh "$cmd" "CODES-ANALYZE-POOL"
 
-echo sh/template/run_xls_template.sh $code_type analyze_pool --day $day --mode $mode --time_str $time_str
-sh/template/run_xls_template.sh $code_type analyze_pool --day $day --mode $mode --time_str $time_str
+#echo sh/template/run_xls_template.sh $code_type analyze_pool --day $day --mode $mode --time_str $time_str
+#sh/template/run_xls_template.sh $code_type analyze_pool --day $day --mode $mode --time_str $time_str
 
-
+echo python realtime/code_type/analyze_cli.py analyze_pool $code_type --type $type --day $day --mode $mode --time_str $time_str
+python realtime/code_type/analyze_cli.py analyze_pool $code_type --type $type --day $day --mode $mode --time_str $time_str
