@@ -5,16 +5,21 @@ val=''
 force=0
 reason=#
 flush=0
+mode='now'
 day=`date +'%Y-%m-%d'`
 
 now=0
 while [ -n "$1" ]
 do 
-        case "$1" in 
+	case "$1" in 
 	-day | --day)
-                shift
-                day=$1
-                ;;
+		shift
+		day=$1
+		;;
+	-mode | --mode)
+		shift
+		mode=$1
+		;;
 	-force | --force | --froce)
 		shift
 		force=$1
@@ -56,6 +61,6 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python realtime/qpc_cli.py fast_flush --day $day $val --force $force --reason $reason --flush $flush
-python realtime/qpc_cli.py fast_flush --day $day $val --force $force --reason $reason --flush $flush
+echo python realtime/qpc_cli.py fast_flush --day $day $val --force $force --reason $reason --flush $flush --mode $mode
+python realtime/qpc_cli.py fast_flush --day $day $val --force $force --reason $reason --flush $flush --mode $mode
 
