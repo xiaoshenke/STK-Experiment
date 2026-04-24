@@ -77,7 +77,7 @@ else
 	echo ""
 fi
 
-result=$( ls $caozuo_dir | grep Run|grep Templa| grep $template )
+result=$( ls $caozuo_dir | grep Run|grep Templa| grep $template |grep -v download )
 if [ ${#result} -eq 0 ]
 then
 	echo 尝试寻找$caozuo_dir 下的模板运算结果数据失败
