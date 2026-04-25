@@ -2,15 +2,16 @@
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/xls/plan/find_subs.sh xxx [day]
+	echo Usage: sh/xls/plan/analyze_dadan.sh [xxx] [day]
 	exit 2
 fi
+
+xls='bkzj.cdadan:limit=15*find_xls'
 
 day=`date +'%Y-%m-%d'`
 time_str='0'
 mode='plan'
 
-xls='bkzj.cdadan:limit=15*find_xls'
 now=0
 
 while [ -n "$1" ]
