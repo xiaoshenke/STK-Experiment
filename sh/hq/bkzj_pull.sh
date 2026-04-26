@@ -1,7 +1,7 @@
 #!/bin/bash
 
 day=`date +'%Y-%m-%d'`
-time_str=#
+time_str='0'
 mode='now'
 
 while [ -n "$1" ]
@@ -25,6 +25,6 @@ do
 	shift
 done
 
-echo sh/template/run_template.sh bkzj_pull --day $day --mode $mode
-sh/template/run_template.sh bkzj_pull --day $day --mode $mode
+echo sh/template/run_template.sh bkzj_pull --day $day --mode $mode --time_str $time_str
+sh/template/run_template.sh bkzj_pull --day $day --mode $mode --time_str $time_str
 

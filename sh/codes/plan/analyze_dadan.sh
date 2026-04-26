@@ -6,7 +6,7 @@ then
 	exit 2
 fi
 
-xls='bkzj.cdadan:limit=15*find_xls'
+xls='bkzj.cdadan:limit=18*find_xls'
 
 day=`date +'%Y-%m-%d'`
 time_str='0'
