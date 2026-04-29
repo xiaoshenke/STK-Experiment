@@ -14,3 +14,6 @@ export PYTHONPATH=$path:$PYTHONPATH
 echo python realtime/properties_cli.py write_use_pool $val 
 python realtime/properties_cli.py write_use_pool $val
 
+cmd="sh/config/write_use_pool.sh $val"
+sh/log/log_to_operate.sh "$cmd" "USE-POOL"
+

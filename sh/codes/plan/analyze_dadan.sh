@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ $# -lt 1 ]
-then
-	echo Usage: sh/xls/plan/analyze_dadan.sh [xxx] [day]
-	exit 2
-fi
+#if [ $# -lt 1 ]
+#then
+#	echo Usage: sh/xls/plan/analyze_dadan.sh [xxx] [day]
+#	exit 2
+#fi
 
 xls='bkzj.cdadan:limit=18*find_xls'
 

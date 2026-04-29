@@ -14,3 +14,5 @@ export PYTHONPATH=$path:$PYTHONPATH
 echo python realtime/properties_cli.py write_always_add_realtime_xls $val 
 python realtime/properties_cli.py write_always_add_realtime_xls $val
 
+cmd="sh/config/always_add_realtime_xls.sh $val"
+sh/log/log_to_operate.sh "$cmd" "ALWAYS-ADD-REALTIME-XLS"
