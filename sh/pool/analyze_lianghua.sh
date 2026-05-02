@@ -1,18 +1,13 @@
 #!/bin/bash
 
-# 定位:分析版块池的bkzj数据
-
-#if [ $# -lt 1 ]
-#then
-#	echo Usage: sh/pool/analyze_bkzj.sh xxx
-#	exit 2
-#fi
+# 定位:分析版块池的20cm数据
 
 day=`date +'%Y-%m-%d'`
 time_str='0'
 mode='now'
 
 xls='use_pool'
+now=0
 
 while [ -n "$1" ]
 do 
@@ -30,14 +25,18 @@ do
 		mode=$1
 		;;
 	*)
-		xls=$1
+		if [ $now -eq 0 ]
+		then
+			xls=$1
+		elif [ $now -eq 1 ]
+		then
+			day=$1
+		fi
+		declare -i now=$now+1
 		;;
 	esac
 	shift
 done
-
-cmd="sh/bkzj/analyze_bkzj.sh $xls --day $day --time_str $time_str --mode $mode"
-sh/log/log_to_operate.sh "$cmd" "ANALYZE-BKZJ"
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
@@ -50,7 +49,10 @@ then
 	exit 2
 fi
 
+cmd="sh/pool/analyze_lianghuacm.sh $xls --day $day --time_str $time_str --mode $mode"
+sh/log/log_to_operate.sh "$cmd" "POOL-ANALYZE-LIANGHUA"
+
 #echo $pool_type
 
-echo sh/template/run_pool_template.sh $pool_type pool_bkzj --day $day --mode $mode
-sh/template/run_pool_template.sh $pool_type pool_bkzj --day $day --mode $mode
+echo sh/template/run_pool_template.sh $pool_type pool_lianghua --day $day --mode $mode
+sh/template/run_pool_template.sh $pool_type pool_lianghua --day $day --mode $mode

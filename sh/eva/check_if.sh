@@ -47,10 +47,7 @@ do
 			eva_str=$1
 		elif [ $now -eq 1 ]
 		then
-			operate=$1
-		elif [ $now -eq 2 ]
-		then
-			day=$day
+			day=$1
 		fi
 		declare -i now=$now+1
 		;;
