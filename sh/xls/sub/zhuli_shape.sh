@@ -1,8 +1,10 @@
 #!/bin/bash
 
+# 分析题材中的主力图形数据
+
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/xls/plan/analyze_shape.sh xxx [day]
+	echo Usage: sh/xls/plan/zhuli_shape.sh xxx [day]
 	exit 2
 fi
 
@@ -42,6 +44,6 @@ do
 	shift
 done
 
-echo sh/plan/run_xls_template.sh $xls analyze_shape --day $day 
-sh/plan/run_xls_template.sh $xls analyze_shape --day $day
+echo sh/plan/run_xls_template.sh $xls sub_zhuli_shape --day $day 
+sh/plan/run_xls_template.sh $xls sub_zhuli_shape --day $day
 
