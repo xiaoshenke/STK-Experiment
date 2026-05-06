@@ -2,6 +2,8 @@
 
 # Usage: sh/buyer/generate_xls_buyer.sh xls [type] [to-name] [--day]
 
+# 语义: 生成切片的买点模板
+
 # 定位: 用于根据@observe/buyer/template下的模板文件生成buyer文件
 # 注意: 会做replace的操作
 
@@ -11,7 +13,7 @@ export PYTHONPATH=$path:$PYTHONPATH
 day=`date +'%Y-%m-%d'`
 now=0
 xls=#
-type='buyer'
+type='qp_buyer'
 to_name=#
 force=0
 
@@ -20,7 +22,7 @@ flush=0
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/buyer/generate_xls_buyer.sh xls [type] [to-name] [--day]
+	echo Usage: sh/buyer/generate_qp_buyer.sh xls [type] [to-name] [--day]
 	exit 2
 fi
 
@@ -124,8 +126,8 @@ echo ""
 echo 手工打开文件:  open $to_file
 echo ""
 
-cmd="sh/buyer/generate_xls_buyer.sh $xls $type --start_at $start_at --end_at $end_at"
-sh/log/log_to_operate.sh "$cmd" "GENE-XLS-BUYER"
+cmd="sh/buyer/generate_qp_buyer.sh $xls $type --start_at $start_at --end_at $end_at"
+sh/log/log_to_operate.sh "$cmd" "GENE-QP-BUYER"
 
 # 最后 如果标志位=1,那么刷新一下tracing(因为efile文件修改了 自然应该进行一次新的刷新)
 if [ $flush -eq 1 ]
