@@ -26,5 +26,6 @@ sh/start_reporter_server.sh
 echo nohup python engine/observe/index/cli.py start_engine_mode 
 nohup python engine/observe/index/cli.py start_engine_mode >>observe.index.log 2>&1 &
 
-#echo nohup python engine/observe/buyer/cli.py start_engine_mode
-#nohup python engine/observe/buyer/cli.py start_engine_mode >>observe.buyer.log 2>&1 &
+echo ""
+echo ""
+
