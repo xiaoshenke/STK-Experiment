@@ -10,6 +10,7 @@ add=0
 mode='now'
 operate='flush'
 time_str=#
+debug=0
 
 if [ $# -lt 1 ]
 then
@@ -32,13 +33,9 @@ do
 		shift
 		time_str=$1
 		;;
-	-operate | --operate)
+	-debug | --debug)
 		shift
-		operate=$1
-		;;
-	-add | --add_codes | --add)
-		shift
-		add=$1
+		debug=$1
 		;;
 	*)
 		# set value to type|flush_type by now-flag
@@ -55,5 +52,8 @@ do
 	shift
 done
 
-echo python realtime/if_cli.py check_if $eva_str --day $day --time_str $time_str --mode $mode 
-python realtime/if_cli.py check_if "$eva_str" --day $day --time_str $time_str --mode $mode 
+echo python realtime/if_cli.py check_if $eva_str --day $day --time_str $time_str --mode $mode --debug $debug
+python realtime/if_cli.py check_if "$eva_str" --day $day --time_str $time_str --mode $mode --debug $debug
+
+echo ""
+echo ""
