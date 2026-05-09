@@ -8,18 +8,26 @@ while [ -n "$1" ]
 do 
         case "$1" in 
         -help | --help)
-		echo usage sh/qpc/read_key.sh key
-                exit 1
-                ;;	
+		echo usage sh/qpc/read_key.sh key [day]
+		exit 1
+		;;	
 	-day | --day)
-                shift
-                day=$1
-                ;;
-        *)
-		key=$1
+		shift
+		day=$1
 		;;
-        esac
-        shift
+	*)
+		# set value to type|front by now-flag
+		if [ $now -eq 0 ]
+		then
+			key=$1
+		elif [ $now -eq 1 ]
+		then
+			day=$1
+		fi
+		declare -i now=$now+1
+                ;;
+	esac
+	shift
 done
 
 if [ ${#key} -eq 0 ]

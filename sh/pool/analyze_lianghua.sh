@@ -41,6 +41,7 @@ done
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
+echo pool-type:$xls
 pool_type=$(python realtime/pool_cli.py get_realtime_pool $xls --day $day --mode $mode)
 
 if [ ${#pool_type} -lt 1 ]
