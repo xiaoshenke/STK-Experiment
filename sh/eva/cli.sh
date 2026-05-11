@@ -7,7 +7,7 @@ time_str=#
 mode='now'
 
 type=''
-front_type=''
+front_type='btw'
 desc=#
 back_type=#
 fake=#

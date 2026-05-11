@@ -5,14 +5,14 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
 pool=#
-template=#
+template='buyer'
 now=0
 time_str=#
 mode='now'
 
-if [ $# -lt 2 ]
+if [ $# -lt 1 ]
 then
-	echo Usage: sh/juben/run_pool_template.sh pool template [--day ] 
+	echo Usage: sh/buyer/run_qp_template.sh xls [template] [--day ] 
 	exit 2
 fi
 

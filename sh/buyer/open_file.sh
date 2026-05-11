@@ -57,3 +57,6 @@ cmd="sh/buyer/start_file_listener.sh $type --day $day"
 echo 可以启动对应的listener:  $cmd
 echo ""
 
+cmd="sh/buyer/open_file.sh $type"
+sh/log/log_to_operate.sh "$cmd" "OPEN-BUYER-FILE"
+

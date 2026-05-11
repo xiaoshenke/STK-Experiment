@@ -49,7 +49,7 @@ then
 	exit 2
 fi
 
-cmd="sh/pool/analyze_lianghuacm.sh $xls --day $day --time_str $time_str --mode $mode"
+cmd="sh/pool/rup_alot.sh $xls --day $day --time_str $time_str --mode $mode"
 sh/log/log_to_operate.sh "$cmd" "POOL-RUP-ALOT"
 
 #echo $pool_type
