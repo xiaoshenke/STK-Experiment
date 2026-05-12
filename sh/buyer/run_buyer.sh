@@ -9,7 +9,7 @@ now=0
 add=0
 mode='now'
 operate='flush'
-time_str=#
+time_str='0'
 
 if [ $# -lt 1 ]
 then
@@ -68,5 +68,13 @@ then
 	#type=$id
 fi
 
-echo python engine/observe/buyer/runner/cli.py run $type --day $day --time_str $time_str --mode $mode 
-python engine/observe/buyer/runner/cli.py run $type --day $day --time_str $time_str --mode $mode 
+is_single_id=$(python engine/observe/buyer/runner/cli.py is_single_id $type)
+if [[ $is_single_id == "1" ]]
+then
+	echo python engine/observe/buyer/server/flush_one.py flush $type $day $time_str --mode $mode
+	python engine/observe/buyer/server/flush_one.py flush $type $day $time_str --mode $mode
+
+else
+	echo python engine/observe/buyer/runner/cli.py run $type --day $day --time_str $time_str --mode $mode 
+	python engine/observe/buyer/runner/cli.py run $type --day $day --time_str $time_str --mode $mode 
+fi

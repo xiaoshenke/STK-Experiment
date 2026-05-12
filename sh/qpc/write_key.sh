@@ -2,7 +2,8 @@
 
 key=''
 val=''
-force=0
+# update 2026-05-12:0->1
+force=1
 reason=#
 flush=0
 day=`date +'%Y-%m-%d'`
