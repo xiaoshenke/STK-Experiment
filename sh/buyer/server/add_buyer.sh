@@ -39,7 +39,7 @@ do
 		shift
 		start=$1
 		;;
-        -end | --end)
+        -end | --end | -end_at | --end_at)
 		shift
 		end=$1
 		;;
