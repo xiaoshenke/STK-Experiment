@@ -13,7 +13,7 @@ time_str='0'
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/buyer/run_buyer.sh type [--day ] 
+	echo Usage: sh/buyer/run_buyer.sh id [--day ] 
       	exit 2
 fi
 
@@ -68,13 +68,22 @@ then
 	#type=$id
 fi
 
-is_single_id=$(python engine/observe/buyer/runner/cli.py is_single_id $type)
-if [[ $is_single_id == "1" ]]
+#is_single_id=$(python engine/observe/buyer/runner/cli.py is_single_id $type)
+#if [[ $is_single_id == "1" ]]
+
+is_valid_buyer_id=$(python engine/observe/buyer/runner/cli.py is_valid_buyer_id $type $day)
+echo is_valid_buyer_id:$is_valid_buyer_id
+# 取最后一个字符
+is_valid_buyer_id="${is_valid_buyer_id:${#is_valid_buyer_id}-1}"
+
+if [[ $is_valid_buyer_id == "1" ]]
 then
 	echo python engine/observe/buyer/server/flush_one.py flush $type $day $time_str --mode $mode
 	python engine/observe/buyer/server/flush_one.py flush $type $day $time_str --mode $mode
 
 else
+	echo ""
+	echo ""
 	echo python engine/observe/buyer/runner/cli.py run $type --day $day --time_str $time_str --mode $mode 
 	python engine/observe/buyer/runner/cli.py run $type --day $day --time_str $time_str --mode $mode 
 fi
