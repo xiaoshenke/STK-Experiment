@@ -35,7 +35,7 @@ do
 		shift
 		max_times=$1
 		;;
-        -start | --start)
+        -start | --start | -start_at | --start_at)
 		shift
 		start=$1
 		;;

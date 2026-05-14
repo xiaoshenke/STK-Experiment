@@ -55,5 +55,5 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-python realtime/operate2.py log $msg "HAND-SAVE" --day $day
+python realtime/operate2.py log "$msg" "HAND-SAVE" --day $day
 

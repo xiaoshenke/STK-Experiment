@@ -78,8 +78,11 @@ is_valid_buyer_id="${is_valid_buyer_id:${#is_valid_buyer_id}-1}"
 
 if [[ $is_valid_buyer_id == "1" ]]
 then
-	echo python engine/observe/buyer/server/flush_one.py flush $type $day $time_str --mode $mode
-	python engine/observe/buyer/server/flush_one.py flush $type $day $time_str --mode $mode
+	#echo python engine/observe/buyer/server/flush_one.py flush $type $day $time_str --mode $mode
+	#python engine/observe/buyer/server/flush_one.py flush $type $day $time_str --mode $mode
+
+	echo python engine/observe/buyer/server/flush_buyer_id.py flush $type $day $time_str --mode $mode
+	python engine/observe/buyer/server/flush_buyer_id.py flush $type $day $time_str --mode $mode
 
 else
 	echo ""
