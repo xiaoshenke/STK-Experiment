@@ -49,5 +49,10 @@ do
 	shift
 done
 
-echo python realtime/observe/juben.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str
-python realtime/observe/juben.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str
+# 旧版API
+#echo python realtime/observe/juben.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str
+#python realtime/observe/juben.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str
+
+# 新版API
+echo python engine/observe/buyer/runner/template_cli.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str
+python engine/observe/buyer/runner/template_cli.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str

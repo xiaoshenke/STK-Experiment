@@ -41,7 +41,11 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/file_cli.py run_file $file --day $day --mode $mode --time_str $time_str
-python engine/observe/buyer/file_cli.py run_file $file --day $day --mode $mode --time_str $time_str
+# 这个是旧的API
+#echo python engine/observe/buyer/file_cli.py run_file $file --day $day --mode $mode --time_str $time_str
+#python engine/observe/buyer/file_cli.py run_file $file --day $day --mode $mode --time_str $time_str
 
+# 现在使用新的API
+echo python engine/observe/buyer/runner/file_cli.py run $file --day $day --mode $mode --time_str $time_str
+python engine/observe/buyer/runner/file_cli.py run $file --day $day --mode $mode --time_str $time_str
 

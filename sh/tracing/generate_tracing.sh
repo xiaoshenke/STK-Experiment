@@ -4,6 +4,8 @@
 # 定位: 用于根据@observe/tracing/template下的模板文件生成tracing文件
 # 注意: 和@sh/tracing/generate_xls_tracing.sh 一样 生成的文件自带.trace后缀
 
+# 目标文件 xxxx-xx-xx/buyer/$type.trace.properties
+
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 

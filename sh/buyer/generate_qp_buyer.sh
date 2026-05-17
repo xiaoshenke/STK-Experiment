@@ -56,6 +56,12 @@ do
 	shift
 done
 
+if [[ ! $type =~ "qp" ]]
+then
+	echo 输入的type:$type 没有包含"qp"字符串
+	exit 2
+fi
+
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 
 to_file="/Users/wuxian/Desktop/stk_daily/$day/buyer/$to_name.properties"
