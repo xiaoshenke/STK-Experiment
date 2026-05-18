@@ -72,7 +72,7 @@ fi
 #if [[ $is_single_id == "1" ]]
 
 is_valid_buyer_id=$(python engine/observe/buyer/runner/cli.py is_valid_buyer_id $type $day)
-echo is_valid_buyer_id:$is_valid_buyer_id
+#echo is_valid_buyer_id:$is_valid_buyer_id
 # 取最后一个字符
 is_valid_buyer_id="${is_valid_buyer_id:${#is_valid_buyer_id}-1}"
 
