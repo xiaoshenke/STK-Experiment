@@ -9,10 +9,11 @@ template='buyer'
 now=0
 time_str=#
 mode='now'
+operate='flush'
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/buyer/run_qp_template.sh xls [template] [--day ] 
+	echo Usage: sh/buyer/run_qp_template.sh xls [template] [operate ] 
 	exit 2
 fi
 
@@ -31,6 +32,10 @@ do
 		shift
 		mode=$1
 		;;
+	-operate | --operate)
+		shift
+		operate=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -41,7 +46,7 @@ do
 			template=$1
 		elif [ $now -eq 2 ]
 		then
-			day=$1
+			operate=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -54,5 +59,5 @@ done
 #python realtime/observe/juben.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str
 
 # 新版API
-echo python engine/observe/buyer/runner/template_cli.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str
-python engine/observe/buyer/runner/template_cli.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str
+echo python engine/observe/buyer/runner/template_cli.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str --operate $operate 
+python engine/observe/buyer/runner/template_cli.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str --operate $operate 

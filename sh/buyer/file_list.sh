@@ -13,6 +13,18 @@ echo "先展示当前的模板文件"
 echo "find engine/observe/buyer/template/ |grep [.]properties"
 ls engine/observe/buyer/template/ | grep buyer[.]properties | sort
 
+# =================================================
+
+echo ""
+echo "然后展示eva-str/export/buyer下的文件"
+
+dir=engine/eva_str/export/buyer/
+
+echo "find $dir |grep [.]py|grep -v pyc|grep -v init__"
+ls $dir |grep [.]py|grep -v pyc|grep -v init__|sort
+
+# =================================================
+
 echo ""
 echo "然后展示当前手工配置的buyer文件"
 
@@ -23,4 +35,5 @@ ls $dir |grep [.]properties|sort
 
 echo ""
 echo open $dir
+
 

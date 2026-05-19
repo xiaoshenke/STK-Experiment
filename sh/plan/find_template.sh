@@ -14,7 +14,7 @@ force=0
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/template/find_template.sh template [--day ]
+	echo Usage: sh/plan/find_template.sh template [--day ]
 	exit 2
 fi
 
