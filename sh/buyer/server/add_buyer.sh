@@ -11,8 +11,9 @@ mode='now'
 sort=-1
 start=#
 end=#
-flush=1
+flush=0
 max_times=-1
+force=0
 
 now=0
 
@@ -47,7 +48,10 @@ do
 		shift
 		flush=$1
 		;;
-
+	-force | --force)
+		shift
+		force=$1
+		;;
 	-reason | --reason | -desc| --desc)
 		shift
 		desc=$1
@@ -70,5 +74,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/server/reg_cli.py add $code_type --sort $sort --start $start --end $end --day $day --mode $mode --reason "$desc" --max_times $max_times
-python engine/observe/buyer/server/reg_cli.py add $code_type --flush_now $flush --sort $sort --start $start --end $end --day $day --mode $mode --reason "$desc" --max_times $max_times
+echo python engine/observe/buyer/server/reg_cli.py add $code_type --sort $sort --start $start --end $end --day $day --mode $mode --reason "$desc" --max_times $max_times --force $force
+python engine/observe/buyer/server/reg_cli.py add $code_type --flush_now $flush --sort $sort --start $start --end $end --day $day --mode $mode --reason "$desc" --max_times $max_times --force $force

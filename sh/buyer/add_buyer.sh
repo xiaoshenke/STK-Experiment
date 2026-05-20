@@ -17,6 +17,7 @@ now=0
 mode='now'
 print_run_msg=0
 flush=0
+force=0
 
 while [ -n "$1" ]
 do 
@@ -33,6 +34,11 @@ do
 		shift
 		flush=$1
 		;;
+	-force | --force)
+		shift
+		force=$1
+		;;
+
 	-print_run_msg | --print_run_msg)
 		shift
 		print_run_msg=$1
@@ -59,5 +65,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/reg_cli.py add $code_type --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg --flush $flush
-python engine/observe/buyer/reg_cli.py add "$code_type" --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg --flush $flush
+echo python engine/observe/buyer/reg_cli.py add $code_type --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg --flush $flush --force $force
+python engine/observe/buyer/reg_cli.py add "$code_type" --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg --flush $flush --force $force
