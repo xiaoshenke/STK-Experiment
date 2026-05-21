@@ -9,6 +9,7 @@ now=0
 add=0
 mode='now'
 operate='flush'
+with_logic=-1
 time_str=#
 
 if [ $# -lt 1 ]
@@ -36,6 +37,10 @@ do
 		shift
 		operate=$1
 		;;
+	-with_logic | --with_logic | -logic| --logic)
+		shift
+		with_logic=$1
+		;;
 	-add | --add_codes | --add)
 		shift
 		add=$1
@@ -58,5 +63,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/runner/eva_str_cli.py run $eva_str --day $day --time_str $time_str --mode $mode 
-python engine/observe/buyer/runner/eva_str_cli.py run $eva_str --day $day --time_str $time_str --mode $mode 
+echo python engine/observe/buyer/runner/eva_str_cli.py run $eva_str --day $day --time_str $time_str --mode $mode --with_logic $with_logic
+python engine/observe/buyer/runner/eva_str_cli.py run $eva_str --day $day --time_str $time_str --mode $mode --with_logic $with_logic
