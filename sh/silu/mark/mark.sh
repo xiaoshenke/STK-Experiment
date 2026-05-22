@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# 临盘记录一些思路
-
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
@@ -14,7 +12,7 @@ mode='now'
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/silu/log.sh silu [day] 
+	echo Usage: sh/silu/mark/mark.sh silu [detail] 
       	exit 2
 fi
 
@@ -44,7 +42,7 @@ do
 			silu=$1
 		elif [ $now -eq 1 ]
 		then
-			day=$1
+			detail=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -52,6 +50,6 @@ do
 	shift
 done
 
-echo python tool/silu/reg_cli.py log $silu --day $day --time_str $time_str --mode $mode
-python tool/silu/reg_cli.py log $silu --day $day --time_str $time_str --mode $mode
+echo python tool/silu/reg_cli.py mark $silu --detail $detail --day $day --time_str $time_str --mode $mode
+python tool/silu/reg_cli.py mark $silu --detail $detail --day $day --time_str $time_str --mode $mode
 
