@@ -11,6 +11,7 @@ time_str=#
 mode='now'
 operate='flush'
 with_logic=-1
+desc='0'
 
 if [ $# -lt 1 ]
 then
@@ -37,12 +38,14 @@ do
 		shift
 		operate=$1
 		;;
+	-reason | --reason | -desc| --desc)
+		shift
+		desc=$1
+		;;
 	-with_logic | --with_logic | -logic| --logic)
 		shift
 		with_logic=$1
 		;;
-
-
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -66,5 +69,5 @@ done
 #python realtime/observe/juben.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str
 
 # 新版API
-echo python engine/observe/buyer/runner/template_cli.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str --operate $operate --with_logic $with_logic
-python engine/observe/buyer/runner/template_cli.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str --operate $operate --with_logic $with_logic
+echo python engine/observe/buyer/runner/template_cli.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str --operate $operate --with_logic $with_logic --desc "$desc" 
+python engine/observe/buyer/runner/template_cli.py run_qp_template $pool $template  --day $day --mode $mode --time_str $time_str --operate $operate --with_logic $with_logic --desc "$desc" 

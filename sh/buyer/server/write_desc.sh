@@ -13,7 +13,7 @@ now=0
 
 if [ $# -lt 2 ]
 then
-	echo Usage: sh/buyer/write_desc.sh id desc [--day ]
+	echo Usage: sh/buyer/server/write_desc.sh bid desc [--day ]
       	exit 2
 fi
 
@@ -47,6 +47,7 @@ do
 	shift
 done
 
+echo 实际会把desc写入到buyer-recorder,而不是server-recorder
 
 echo python engine/observe/buyer/reg_cli.py write_desc $code_type --day $day $desc
 python engine/observe/buyer/reg_cli.py write_desc $code_type --day $day $desc

@@ -1,11 +1,8 @@
 #!/bin/bash
 
-path=`pwd`
-export PYTHONPATH=$path:$PYTHONPATH
-
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/buyer/add_buyer.sh xx [name] [reason]
+	echo Usage: sh/buyer/add_buyer.sh xx [reason|desc]
 	exit 2
 fi
 
@@ -38,7 +35,6 @@ do
 		shift
 		force=$1
 		;;
-
 	-print_run_msg | --print_run_msg)
 		shift
 		print_run_msg=$1
@@ -64,6 +60,10 @@ do
 	esac
 	shift
 done
+
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
 
 echo python engine/observe/buyer/reg_cli.py add $code_type --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg --flush $flush --force $force
 python engine/observe/buyer/reg_cli.py add "$code_type" --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg --flush $flush --force $force

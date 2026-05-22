@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 定位: 给某个id手工添加desc,这个对临盘来说 非常的重要
+# 给某个切片加上message
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
@@ -13,7 +13,7 @@ now=0
 
 if [ $# -lt 2 ]
 then
-	echo Usage: sh/buyer/write_desc.sh id desc [--day ]
+	echo Usage: sh/codes/write_message.sh code-type msg [--day ]
       	exit 2
 fi
 
@@ -47,6 +47,6 @@ do
 	shift
 done
 
+echo python realtime/code_type/reg_cli.py write_desc $code_type --day $day $desc 
+python realtime/code_type/reg_cli.py write_desc $code_type --day $day $desc --do_log 1
 
-echo python engine/observe/buyer/reg_cli.py write_desc $code_type --day $day $desc
-python engine/observe/buyer/reg_cli.py write_desc $code_type --day $day $desc
