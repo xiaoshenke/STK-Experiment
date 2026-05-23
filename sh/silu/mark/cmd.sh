@@ -12,7 +12,7 @@ mode='now'
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/silu/mark/mark.sh silu [detail] 
+	echo Usage: sh/silu/mark/cmd.sh silu [detail] 
       	exit 2
 fi
 
@@ -50,6 +50,6 @@ do
 	shift
 done
 
-echo python tool/silu/reg_cli.py mark $silu --detail $detail --day $day --time_str $time_str --mode $mode
-python tool/silu/reg_cli.py mark "$silu" --detail "$detail" --day $day --time_str $time_str --mode $mode
+echo python tool/silu/reg_cli.py mark $silu --detail $detail --type cmd --day $day --time_str $time_str --mode $mode
+python tool/silu/reg_cli.py mark "$silu" --detail "$detail" --type cmd --day $day --time_str $time_str --mode $mode
 

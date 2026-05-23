@@ -41,7 +41,7 @@ do
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
 		then
-			silu=$1
+			silu="$1"
 		elif [ $now -eq 1 ]
 		then
 			day=$1
@@ -53,5 +53,5 @@ do
 done
 
 echo python tool/silu/reg_cli.py log $silu --day $day --time_str $time_str --mode $mode
-python tool/silu/reg_cli.py log $silu --day $day --time_str $time_str --mode $mode
+python tool/silu/reg_cli.py log "$silu" --day $day --time_str $time_str --mode $mode
 
