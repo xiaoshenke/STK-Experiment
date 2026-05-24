@@ -11,6 +11,7 @@ detail='0'
 time_str=#
 now=0
 mode='now'
+xls=#
 
 if [ $# -lt 1 ]
 then
@@ -37,6 +38,10 @@ do
 		shift
 		mode=$1
 		;;
+	-xls | --xls)
+		shift
+		xls=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -52,6 +57,5 @@ do
 	shift
 done
 
-echo python tool/silu/reg_cli.py log $silu --day $day --time_str $time_str --mode $mode
-python tool/silu/reg_cli.py log "$silu" --day $day --time_str $time_str --mode $mode
-
+echo python tool/silu/reg_cli.py log $silu --day $day --time_str $time_str --mode $mode --xls $xls
+python tool/silu/reg_cli.py log "$silu" --day $day --time_str $time_str --mode $mode --xls $xls
