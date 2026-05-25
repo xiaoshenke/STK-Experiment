@@ -285,7 +285,16 @@ def deal_cmd():
 		if len(sys.argv) < 4:
 			print "get_origin_name_from_list you have to input your py-list and crypted-name"
 			return
-		print get_origin_name_from_list(sys.argv[2].split("\n"),sys.argv[3])
+		if not sys.argv[3]:
+			return
+
+		# @TEST
+		#if 'aWZfY2hlY2tlci5weQ==' in sys.argv[3]:
+		#	print u'get_origin_name_from_list %s'%(sys.argv[3])
+		try:
+			print get_origin_name_from_list(sys.argv[2].split("\n"),sys.argv[3])
+		except Exception,e:
+			print u'get_origin_name_from_list of %s encount err:%s'%(sys.argv[3],e)
 		return
 
 	if sys.argv[1] == "-h":

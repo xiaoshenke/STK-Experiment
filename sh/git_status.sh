@@ -2,7 +2,8 @@
 # crypt version of git status
 # Usage: ./git_status.sh
 
-py_list=`find *|grep .py|grep -v "/[.]"|grep -v pyc|grep -v __init__`
+# update 2026-05-25: 出现py-list文件过多导致的奇怪bug 因此这里加上grep -v scheduler 用于减少大量文件来规避这个bug
+py_list=`find *|grep .py|grep -v scheduler|grep -v "/[.]"|grep -v pyc|grep -v __init__`
 
 #echo $py_list
 #[@]
@@ -35,7 +36,10 @@ function deal_before_track {
 	if [[ $word =~ "deleted" ]] || [[ $word =~ "modified" ]]
 	then
 		crypted=${word##* }
+		#echo 2
+		#echo $crypted
 		origin=$(python $CRYPT_ALL_FILE get_origin_name_from_list "${py_list[@]}" $crypted)
+		#echo 3
 		if [ ${#origin} -gt 1 ] && [[ ! $word =~ ".py" ]]
 		then
 			echo ${word%% *} $origin
