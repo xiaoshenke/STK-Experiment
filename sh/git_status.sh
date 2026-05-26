@@ -3,6 +3,7 @@
 # Usage: ./git_status.sh
 
 # update 2026-05-25: 出现py-list文件过多导致的奇怪bug 因此这里加上grep -v scheduler 用于减少大量文件来规避这个bug
+# 以后再出现这种sh/git-status.sh的bug 大部分时间都是这个原因引起的
 py_list=`find *|grep .py|grep -v scheduler|grep -v "/[.]"|grep -v pyc|grep -v __init__`
 
 #echo $py_list
