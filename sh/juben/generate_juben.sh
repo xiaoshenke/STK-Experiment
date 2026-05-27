@@ -2,6 +2,11 @@
 
 # Usage: sh/juben/generate_juben.sh type from_type [--day]
 
+# 依次尝试的文件包括
+# file1="$cur_dir/engine/observe/juben/template/$from_type.properties"
+# file2="$cur_dir/engine/observe/juben/template/$from_type.juben.properties"
+# file3="$cur_dir/engine/observe/tracing/template/$from_type.tracing.properties"
+
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
@@ -57,9 +62,9 @@ then
 	exit 2
 fi
 
-file1="$cur_dir/engine/observe/tracing/template/$from_type.tracing.properties"
+file1="$cur_dir/engine/observe/juben/template/$from_type.properties"
 file2="$cur_dir/engine/observe/juben/template/$from_type.juben.properties"
-file3="$cur_dir/engine/observe/juben/template/$from_type.properties"
+file3="$cur_dir/engine/observe/tracing/template/$from_type.tracing.properties"
 
 file=#
 if [ -f "$file1" ]
