@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# 定位:分析版块池的rup-alot数据
+# 定位:分析版块池的20cm数据
 
 day=`date +'%Y-%m-%d'`
 time_str='0'
 mode='now'
 
-xls='redu'
+xls='use_pool'
 now=0
 
 while [ -n "$1" ]
@@ -49,10 +49,10 @@ then
 	exit 2
 fi
 
-cmd="sh/pool/rup_alot.sh $xls --day $day --time_str $time_str --mode $mode"
-sh/log/log_to_operate.sh "$cmd" "POOL-RUP-ALOT"
+#cmd="sh/pool/analyze_upstp.sh $xls --day $day --time_str $time_str --mode $mode"
+#sh/log/log_to_operate.sh "$cmd" "POOL-ANALYZE-UPSTP"
 
 #echo $pool_type
 
-echo sh/template/run_pool_template.sh $pool_type pool_rup_alot --day $day --mode $mode
-sh/template/run_pool_template.sh $pool_type pool_rup_alot --day $day --mode $mode
+echo sh/template/run_pool_template.sh $pool_type pool_simple --day $day --mode $mode
+sh/template/run_pool_template.sh $pool_type pool_simple --day $day --mode $mode
