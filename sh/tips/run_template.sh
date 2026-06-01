@@ -10,7 +10,7 @@ now=0
 time_str=#
 mode='now'
 operate='flush'
-ignore_cache=1
+ignore_cache=0
 
 if [ $# -lt 1 ]
 then

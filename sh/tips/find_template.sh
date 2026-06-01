@@ -49,10 +49,10 @@ do
 done
 
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
-template_dir=$cur_dir/engine/observe/tips/template/
+template_dir=engine/observe/tips/template/
 caozuo_dir=/Users/wuxian/Desktop/stk_daily/$day/caozuo/
 
-result=$( ls $template_dir | grep tips.properties|grep $template )
+result=$( ls $cur_dir/$template_dir | grep tips.properties | grep $template )
 if [ ${#result} -eq 0 ]
 then
 	echo 尝试寻找tips模板文件 $template_dir 数据失败
