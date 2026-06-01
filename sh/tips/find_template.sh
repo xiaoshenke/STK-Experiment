@@ -64,13 +64,13 @@ else
 	echo ""
 fi
 
-result=$( ls $caozuo_dir |grep Run|grep Template| grep $template)
+result=$( ls $caozuo_dir |grep tips| grep $template)
 if [ ${#result} -eq 0 ]
 then
 	echo 尝试寻找caozuo计算结果文件 $caozuo_dir 数据失败
 else
 	echo ""
-	echo "## caozuo计算结果文件 find $caozuo_dir |grep Run|grep Template| grep $template"
+	echo "## caozuo计算结果文件 find $caozuo_dir |grep tips| grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
 	echo ""

@@ -2,6 +2,8 @@
 # only work in mac os
 
 has_changzhu=$(osascript sh/oscpt/has_changzhu_txt_window.scpt)
+echo has_changzhu:$has_changzhu
+
 if [[ $has_changzhu == "1" ]]
 then
 	echo 当前存在常驻窗口 因此调用 osascript sh/oscpt/close_txt2.scpt

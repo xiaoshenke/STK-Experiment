@@ -17,7 +17,7 @@ end getToday
 
 on mayFilterByName(name)
 	set todayVal to getToday()
-	if name starts with todayVal or name starts with "Manual-" then
+	if name starts with todayVal or name starts with "Manual-" or name starts with "tip" then
 		return true
 	else
 		return false
@@ -25,12 +25,9 @@ on mayFilterByName(name)
 
 end mayFilterByName
 
+
 tell application "TextEdit"
-
-	#repeat with eachWindow in windows
-	#repeat with i from (count of windows) down to 1	
-	#	set eachWindow to window i
-
+	# findChangzhu: 寻找常驻窗口
 	set findChangzhu to false
 	repeat with eachWindow in windows
 		set windowName to name of eachWindow
@@ -41,10 +38,9 @@ tell application "TextEdit"
 	end repeat
 
 	if findChangzhu then
-		log "1"
+		return "1"
 	else
-		log "0"
+		return "0"
 	end if
 end tell
-
 

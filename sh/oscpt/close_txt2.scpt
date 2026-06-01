@@ -17,7 +17,7 @@ end getToday
 
 on mayFilterByName(name)
 	set todayVal to getToday()
-	if name starts with todayVal or name starts with "Manual-" then
+	if name starts with todayVal or name starts with "Manual-" or name starts with "tip" then
 		return true
 	else
 		return false
