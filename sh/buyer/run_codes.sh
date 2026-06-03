@@ -12,11 +12,12 @@ mode='now'
 operate='flush'
 with_logic=-1
 time_str=#
+desc=#
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/eva/run_simple_eva.sh "aa->bb" or sh/eva/run_simple_eva.sh aa bb
-      	exit 2
+	echo Usage: sh/buyer/run_codes.sh xxx
+	exit 2
 fi
 
 while [ -n "$1" ]
@@ -33,6 +34,10 @@ do
 	-time_str | --time_str)
 		shift
 		time_str=$1
+		;;
+	-desc | --desc | --decs)
+		shift
+		desc=$1
 		;;
 	-operate | --operate | -op | --op)
 		shift
@@ -61,5 +66,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/runner/code_cli.py run $type --day $day --time_str $time_str --mode $mode --with_logic $with_logic
-python engine/observe/buyer/runner/code_cli.py run $type --day $day --time_str $time_str --mode $mode --with_logic $with_logic
+echo python engine/observe/buyer/runner/code_cli.py run $type --day $day --time_str $time_str --mode $mode --with_logic $with_logic --desc $desc
+python engine/observe/buyer/runner/code_cli.py run $type --day $day --time_str $time_str --mode $mode --with_logic $with_logic --desc $desc

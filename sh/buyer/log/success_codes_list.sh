@@ -29,5 +29,5 @@ fi
 echo ""
 echo "按照纪录到数据的时间戳 而不是计算时间戳进行逆序排序"
 
-echo python engine/observe/buyer/request/log_cli.py last --day $day
-python engine/observe/buyer/request/log_cli.py last --day $day
+echo python engine/observe/buyer/request/log_cli.py success_codes_list --day $day
+python engine/observe/buyer/request/log_cli.py success_codes_list --day $day
