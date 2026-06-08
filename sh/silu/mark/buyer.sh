@@ -61,6 +61,6 @@ done
 echo 其实是和@sh/silu/mark/chain.sh一样的 但为了做一个类型兼容 临盘的时候脑子不需要乱想
 echo ""
 
-echo python tool/silu/reg_cli.py mark "$silu" --type "buyer_chain" --detail "$detail" --day $day --time_str $time_str --mode $mode --xls $xls
-python tool/silu/reg_cli.py mark "$silu" --type "buyer_chain" --detail "$detail" --day $day --time_str $time_str --mode $mode --xls $xls --level 4
+echo python tool/silu/reg_cli.py chain "$silu" --type "buyer_chain" --detail "$detail" --day $day --time_str $time_str --mode $mode --xls $xls
+python tool/silu/reg_cli.py chain "$silu" --type "buyer_chain" --detail "$detail" --day $day --time_str $time_str --mode $mode --xls $xls --level 4
 
