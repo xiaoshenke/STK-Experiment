@@ -5,17 +5,17 @@ export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
 xls=#
-template='none'
+template='realtime_hq'
 now=0
 time_str=#
-mode='plan'
+mode='now'
 operate='flush'
 with_logic=-1
 ignore_cache=0
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/tips/run_qp_template.sh xls template [--day ] 
+	echo Usage: sh/buyer/tips/qp.sh your-xls [template] [operate] 
 	exit 2
 fi
 
