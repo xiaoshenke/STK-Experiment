@@ -58,5 +58,5 @@ do
 done
 
 echo python tool/silu/reg_cli.py mark "$silu" --type "fchain" --detail "$detail" --day $day --time_str $time_str --mode $mode --xls $xls
-python tool/silu/reg_cli.py mark "$silu" --type "fchain" --detail "$detail" --day $day --time_str $time_str --mode $mode --xls $xls --level 2
+python tool/silu/reg_cli.py mark "$silu" --type "fchain" --detail "$detail" --day $day --time_str $time_str --mode $mode --xls $xls --level 4
 
