@@ -71,7 +71,7 @@ then
 	echo 尝试寻找$cur_dir/engine/observe/juben/template/ 下数据失败
 else
 	echo ""
-	echo "## 默认的模板文件 find $cur_dir/engine/observe/juben/template/ | grep $template"
+	echo "## 默认的模板文件 find engine/observe/juben/template/ | grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
 	echo ""
