@@ -12,7 +12,8 @@ SECRET_FILE = "secret"
 
 ignore_list = [ "common.txt","threadpool.py","README.md","crypt_all.py","crypt_cli.py","time_util.py","secret","stk_lock.py","crypt_util.py","crypt_test","hack_urlopen.py","cons.py","sh_util.py","log.py","load_memory.py","print_exe_time.py","updater.py","__init__.py","dir_util.py","crontab.py",".DS_Store","realtime.properties",".gitignore" ]
 
-ignore_dirs = [ "/.git","/csv_data","/other","/data" ]
+ignore_dirs = [ "/.git","/csv_data","/other","xls_data" ]
+#,"/data" ]
 #,"/sh" ]
 
 def get_base_dir():
@@ -52,7 +53,8 @@ def should_apply_crypt(file):
 def crypt_file(file,aes,base_dir=None,debug=False):
 	if not should_apply_crypt(file):
 		return
-	if not file.endswith(".py"):
+	# update 2026-06-21: 支持对txt文件进行加密
+	if not file.endswith(".py") and not file.endswith(".txt"):
 		return
 
 	if not aes:
@@ -74,20 +76,25 @@ def crypt_file(file,aes,base_dir=None,debug=False):
 		text = f.read()
 		text_after = aes.encrypt(text)
 
-		to_file = base64.b64encode(file) if not base_dir else base_dir + seperator + base64.b64encode(file)
-
-                if DEBUG_OPEN:
+		# 仅对py类型的文件进行名字加密
+		name = base64.b64encode(file) if file.endswith('.py') else file
+		to_file = name if not base_dir else base_dir + seperator + name
+		if DEBUG_OPEN:
                         logger.debug("from file:%s, to file:%s",from_file,to_file)
 
 		if debug:
 			print 'from file:%s, to file:%s'%(from_file,to_file)
 		f_write = open(to_file,'w')
                 f_write.write(text_after)
-                if f:
-                    f.close()
-                    f = None
-                os.remove(from_file)
+		if f:
+			f.close()
+			f = None
+
+		# 如果from-file和to-file是同一个的话 不能进行删除
+		if file.endswith('.py'):
+                	os.remove(from_file)
         except Exception,e:
+		print e
 		logger.debug(e)
 		pass
 	finally:
@@ -126,7 +133,8 @@ def uncrypt_file(file,aes,base_dir=None,debug=False):
 		text = f.read()
 		text_after = aes.decrypt(text)
 
-		to_file = base64.b64decode(file) if not base_dir else base_dir + "/" + base64.b64decode(file)
+		name = base64.b64decode(file) if not file.endswith('.txt') else file
+		to_file = name if not base_dir else base_dir + "/" + name
                 if DEBUG_OPEN:
                         logger.debug("from file:%s,to file:%s",from_file,to_file)
 
@@ -138,7 +146,10 @@ def uncrypt_file(file,aes,base_dir=None,debug=False):
                 if f:
                         f.close()
                         f = None
-		os.remove(from_file)
+
+		# 只有生成的文件为py文件的时候 才删除原始文件
+		if to_file.endswith('.py'):
+			os.remove(from_file)
 	except Exception,e:
 		print e,from_file
 		pass

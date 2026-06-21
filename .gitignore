@@ -13,7 +13,7 @@ secret
 *.bat
 *.xls1
 *.out
-*.txt
+#*.txt
 #*.properties
 realtime/realtime.properties
 realtime/pan.properties
