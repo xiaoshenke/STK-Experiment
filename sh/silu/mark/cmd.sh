@@ -50,6 +50,6 @@ do
 	shift
 done
 
-echo python tool/silu/reg_cli.py mark $silu --detail $detail --type cmd --day $day --time_str $time_str --mode $mode
+echo python tool/silu/reg_cli.py mark "$silu" --detail $detail --type cmd --day $day --time_str $time_str --mode $mode
 python tool/silu/reg_cli.py mark "$silu" --detail "$detail" --type cmd --day $day --time_str $time_str --mode $mode
 
