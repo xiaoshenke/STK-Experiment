@@ -8,6 +8,12 @@ then
 fi
 
 echo "ls ../stk_daily/$day/apply/ | grep bkzj"
-ls ../stk_daily/$day/apply | grep bkzj
+
+#ls ../stk_daily/$day/apply | grep bkzj
+
+ls ../stk_daily/$day/apply | grep bkzj|while read word;do
+size=$(cat ../stk_daily/$day/apply/$word|wc -l)
+echo $word ,[$size]
+done
 
 echo "ls ../stk_daily/$day/apply/ | grep bkzj"
