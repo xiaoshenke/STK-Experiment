@@ -16,6 +16,9 @@ action='print'
 print_run_msg=0
 flush=0
 force=0
+hq='0'
+risk=-1
+type='0'
 
 while [ -n "$1" ]
 do 
@@ -48,6 +51,10 @@ do
 		shift
 		name=$1
 		;;
+	-type | --type)
+		shift
+		type=$1
+		;;
 	-risk | --risk)
 		shift
 		risk=$1
@@ -73,6 +80,6 @@ done
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python engine/observe/buyer/gene_cli.py generate "$code_type" --action $action --day $day --mode $mode --risk $risk --hq $hq
+echo python engine/observe/buyer/gene_cli.py generate "$code_type" --action $action --day $day --mode $mode --risk $risk --hq $hq --type $type
 
-python engine/observe/buyer/gene_cli.py generate "$code_type" --action $action --day $day --mode $mode --risk $risk --hq $hq
+python engine/observe/buyer/gene_cli.py generate "$code_type" --action $action --day $day --mode $mode --risk $risk --hq $hq --type $type
