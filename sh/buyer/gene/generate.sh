@@ -19,6 +19,7 @@ force=0
 hq='0'
 risk=-1
 type='0'
+rank=-1
 
 while [ -n "$1" ]
 do 
@@ -59,6 +60,10 @@ do
 		shift
 		risk=$1
 		;;
+	-rank | --rank)
+		shift
+		rank=$1
+		;;
 	-hq | --hq)
 		shift
 		hq=$1
@@ -80,6 +85,6 @@ done
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python engine/observe/buyer/gene_cli.py generate "$code_type" --action $action --day $day --mode $mode --risk $risk --hq $hq --type $type
+echo python engine/observe/buyer/gene_cli.py generate "$code_type" --action $action --day $day --mode $mode --risk $risk --hq $hq --type $type --rank $rank
 
-python engine/observe/buyer/gene_cli.py generate "$code_type" --action $action --day $day --mode $mode --risk $risk --hq $hq --type $type
+python engine/observe/buyer/gene_cli.py generate "$code_type" --action $action --day $day --mode $mode --risk $risk --hq $hq --type $type --rank $rank
