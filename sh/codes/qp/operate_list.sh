@@ -14,6 +14,7 @@ now=0
 if [ $# -lt 1 ]
 then
 	echo Usage: sh/codes/qp/operate_list.sh xx
+	echo 也可以: python engine/codes/recorder/operate_cli.py last
 	exit 2
 fi
 

@@ -11,6 +11,7 @@ code_type=#
 now=0
 add=0
 mode='now'
+flush_mode='memory'
 operate='flush'
 time_str='0'
 
@@ -39,6 +40,11 @@ do
 		shift
 		operate=$1
 		;;
+	-flush_mode | --flush_mode)
+		shift
+		flush_mode=$1
+		;;
+
 	-add | --add_codes | --add)
 		shift
 		add=$1
@@ -50,7 +56,7 @@ do
 			code_type="$1"
 		elif [ $now -eq 1 ]
 		then
-			day=$1
+			flush_mode=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -58,5 +64,5 @@ do
 	shift
 done
 
-echo python engine/codes/runner/cli.py run $code_type trend --day $day --time_str $time_str --mode $mode
-python engine/codes/runner/cli.py run $code_type trend --day $day --time_str $time_str --mode $mode 
+echo python engine/codes/runner/cli.py run $code_type trend --flush_mode $flush_mode --day $day --time_str $time_str --mode $mode
+python engine/codes/runner/cli.py run $code_type trend --flush_mode $flush_mode --day $day --time_str $time_str --mode $mode 
