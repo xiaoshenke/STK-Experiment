@@ -9,6 +9,7 @@ fi
 
 ids='-1'
 day=#
+chain_id=-1
 
 now=0
 while [ -n "$1" ]
@@ -21,6 +22,10 @@ do
 	-ids | --ids)
 		shift
 		ids=$1
+		;;
+	-chain_id | --chain_id | --chain)
+		shift
+		chain_id=$1
 		;;
 	-help | --help)
 		echo usage sh/open/ids.sh ids [--day abc] 
@@ -36,6 +41,6 @@ done
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python engine/opener/manual_cli.py open_ids $ids --day $day
-python engine/opener/manual_cli.py open_ids $ids --day $day
+echo python engine/opener/manual_cli.py open_ids $ids --day $day --chain_id $chain_id
+python engine/opener/manual_cli.py open_ids $ids --day $day --chain_id $chain_id
 

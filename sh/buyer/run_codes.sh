@@ -13,6 +13,7 @@ operate='flush'
 with_logic=-1
 time_str=#
 desc=#
+chain_id=-1
 
 if [ $# -lt 1 ]
 then
@@ -51,6 +52,10 @@ do
 		shift
 		add=$1
 		;;
+	-chain_id | --chain_id | --chain)
+		shift
+		chain_id=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -66,5 +71,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/runner/code_cli.py run $type --day $day --time_str $time_str --mode $mode --with_logic $with_logic --desc $desc
-python engine/observe/buyer/runner/code_cli.py run $type --day $day --time_str $time_str --mode $mode --with_logic $with_logic --desc $desc
+echo python engine/observe/buyer/runner/code_cli.py run $type --day $day --time_str $time_str --mode $mode --with_logic $with_logic --desc $desc --chain_id $chain_id
+python engine/observe/buyer/runner/code_cli.py run $type --day $day --time_str $time_str --mode $mode --with_logic $with_logic --desc $desc --chain_id $chain_id
