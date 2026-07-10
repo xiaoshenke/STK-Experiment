@@ -1,5 +1,5 @@
 #!/bin/bash
-# usage sh/ls_apply.sh [day]
+# usage sh/ls_fenshi.sh [day]
 
 day=`date +'%Y-%m-%d'`
 if [ $# -eq 1 ]

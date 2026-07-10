@@ -12,9 +12,12 @@ desc=#
 name=#
 now=0
 mode='now'
+msg='0'
+time_str='0'
 print_run_msg=0
 flush=0
 force=0
+chain_id=-1
 
 while [ -n "$1" ]
 do 
@@ -26,6 +29,14 @@ do
 	-mode | --mode)
 		shift
 		mode=$1
+		;;
+	-time_str | --time_str)
+		shift
+		time_str=$1
+		;;
+	-chain_id | --chain_id | --chain)
+		shift
+		chain_id=$1
 		;;
 	-flush | --flush)
 		shift
@@ -50,10 +61,10 @@ do
 	*)
 		if [ $now -eq 0 ]
 		then
-			code_type=$1
+			msg="$1"
 		elif [ $now -eq 1 ]
 		then 
-			desc=$1
+			chain_id=$1
 		fi
 		declare -i now=$now+1
 		;;
@@ -64,6 +75,6 @@ done
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
+echo python engine/recorder/chain/cli.py start "$msg" --chain_id $chain_id --day $day --mode $mode --time_str $time_str
+python engine/recorder/chain/cli.py start "$msg" --chain_id $chain_id --day $day --mode $mode --time_str $time_str
 
-echo python engine/observe/buyer/reg_cli.py add $code_type --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg --flush $flush --force $force
-python engine/observe/buyer/reg_cli.py add "$code_type" --name $name --day $day --mode $mode --reason "$desc" --print_run_msg $print_run_msg --flush $flush --force $force

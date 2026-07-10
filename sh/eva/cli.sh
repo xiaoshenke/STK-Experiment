@@ -25,6 +25,7 @@ silent=0
 call_from=0
 open_jpg=1
 do_report=1
+chain_id=-1
 
 while [ -n "$1" ]
 do 
@@ -60,6 +61,10 @@ do
 	-desc | --desc | --reason | -reason)
 		shift
 		desc=$1
+		;;
+	-chain_id | --chain_id | --chain)
+		shift
+		chain_id=$1
 		;;
 	-log | --do_log | --log)
 		shift
@@ -128,8 +133,8 @@ fi
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open 1 --do_log 1 --back $back_type [real] --call_from $call_from --open $open --do_log $log --ignore_cache $ignore_cache --debug $debug --do_report $do_report --open_jpg $open_jpg --add $add --desc $desc --level $level
+echo python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --open 1 --do_log 1 --back $back_type [real] --call_from $call_from --open $open --do_log $log --ignore_cache $ignore_cache --debug $debug --do_report $do_report --open_jpg $open_jpg --add $add --desc $desc --level $level --chain_id $chain_id
 
-python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --do_log $log --do_report $do_report --open_txt 1 --open_jpg $open_jpg --add $add --desc $desc --level $level --silent $silent --call_from $call_from
+python eva/cli.py do_eva --day $day --time_str $time_str --mode $mode $type $front_type --ignore_cache $ignore_cache --open $open --back $back_type --debug $debug --do_log $log --do_report $do_report --open_txt 1 --open_jpg $open_jpg --add $add --desc $desc --level $level --silent $silent --call_from $call_from --chain_id $chain_id
 
 # --fake $fake 
