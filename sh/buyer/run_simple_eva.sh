@@ -11,7 +11,9 @@ add=0
 mode='now'
 operate='flush'
 with_logic=-1
+chain_id=-1
 time_str=#
+desc='0'
 
 if [ $# -lt 1 ]
 then
@@ -46,6 +48,14 @@ do
 		shift
 		add=$1
 		;;
+        -desc | --desc | --decs | --reason)
+		shift
+		desc=$1
+		;;
+        -chain_id | --chain_id | --chain)
+		shift
+		chain_id=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -61,6 +71,6 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/runner/simple_eva_cli.py run $type $type2 --day $day --time_str $time_str --mode $mode --with_logic $with_logic
+echo python engine/observe/buyer/runner/simple_eva_cli.py run $type $type2 --day $day --time_str $time_str --mode $mode --with_logic $with_logic --desc $desc --chain_id $chain_id
 
-python engine/observe/buyer/runner/simple_eva_cli.py run $type $type2 --day $day --time_str $time_str --mode $mode --with_logic $with_logic
+python engine/observe/buyer/runner/simple_eva_cli.py run $type $type2 --day $day --time_str $time_str --mode $mode --with_logic $with_logic --desc $desc --chain_id $chain_id
