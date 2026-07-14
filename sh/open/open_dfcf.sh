@@ -11,9 +11,9 @@ fi
 
 code=$1
 
-if [[ $code == "zsHSI" ]]
+if [[ $code == "zsHSI" ]] || [[ $code == "zsKS11" ]]
 then 
-	url=http://quote.eastmoney.com/gb/zsHSI.html
+	url=http://quote.eastmoney.com/gb/$code.html
 	echo going to open url:$url ...
 	open $url
 	exit 1
