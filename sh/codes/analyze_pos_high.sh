@@ -13,7 +13,7 @@ mode='plan'
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/codes/analyze_trends_bad_subs.sh code-type 
+	echo Usage: sh/codes/analyze_pos_high.sh code-type 
       	exit 2
 fi
 
@@ -44,6 +44,6 @@ do
 	shift
 done
 
-echo sh/template/run_xls_template.sh $code_type analyze_trends_bad_subs --day $day --mode $mode --time_str $time_str
-sh/template/run_xls_template.sh $code_type analyze_trends_bad_subs --day $day --mode $mode --time_str $time_str
+echo sh/template/run_xls_template.sh $code_type analyze_pos_high --day $day --mode $mode --time_str $time_str
+sh/template/run_xls_template.sh $code_type analyze_pos_high --day $day --mode $mode --time_str $time_str
 
