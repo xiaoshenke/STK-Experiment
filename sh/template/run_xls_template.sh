@@ -56,7 +56,11 @@ do
 			template=$1
 		elif [ $now -eq 2 ]
 		then
-			operate=$1
+			#operate=$1
+			day=$1
+		elif [ $now -eq 3 ]
+		then
+			mode=$1
 		fi
 		declare -i now=$now+1
 		;;
