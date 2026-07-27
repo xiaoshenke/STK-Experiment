@@ -9,6 +9,7 @@ template=#
 now=0
 time_str=#
 mode='now'
+operate='flush'
 
 if [ $# -lt 2 ]
 then
@@ -31,6 +32,10 @@ do
 		shift
 		mode=$1
 		;;
+        -operate | --operate)
+		shift
+		operate=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -49,8 +54,5 @@ do
 	shift
 done
 
-#echo python realtime/observe/juben.py run_pool_template "$pool->$template" --day $day --mode $mode --time_str $time_str	
-#python realtime/observe/juben.py run_pool_template "$pool->$template" --day $day --mode $mode --time_str $time_str
-
-echo python realtime/observe/juben.py run_pool_template $pool $template  --day $day --mode $mode --time_str $time_str
-python realtime/observe/juben.py run_pool_template $pool $template  --day $day --mode $mode --time_str $time_str
+echo python realtime/observe/juben.py run_pool_template $pool $template  --day $day --mode $mode --time_str $time_str --operate $operate
+python realtime/observe/juben.py run_pool_template $pool $template  --day $day --mode $mode --time_str $time_str --operate $operate

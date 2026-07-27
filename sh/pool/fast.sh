@@ -54,5 +54,5 @@ fi
 
 #echo $pool_type
 
-echo sh/template/run_pool_template.sh $pool_type pool_fast --day $day --mode $mode
-sh/template/run_pool_template.sh $pool_type pool_fast --day $day --mode $mode
+echo sh/template/run_pool_template.sh $pool_type pool_fast --day $day --mode $mode --operate fast20
+sh/template/run_pool_template.sh $pool_type pool_fast --day $day --mode $mode --operate fast20
