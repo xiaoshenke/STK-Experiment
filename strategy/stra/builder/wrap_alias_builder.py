@@ -756,6 +756,8 @@ def build_wrap_alias_one(type,debug=False):
 		stra = try_parse_dgx1(type)
 	elif type == 'dgx1_2' or type == 'dgx_2':
 		stra = try_parse_dgx1_2(type)
+	elif type == 'dgx1_3':
+		stra = try_parse_dgx1_3(type)
 	elif type == 'dgx2':
 		stra = try_parse_dgx2(type)
 	elif type == 'dgx2_2':
@@ -772,6 +774,8 @@ def build_wrap_alias_one(type,debug=False):
 		stra = try_parse_dgx4_1(type)
 	elif type == 'dgx42' or type == 'dgx4_2':
 		stra = try_parse_dgx42_1(type)
+	elif type == 'dgx5_2':
+		stra = try_parse_dgx5_2(type)
 	elif type == 'dgx5':
 		stra = try_parse_dgx5(type)
 	elif type == 'dgx6':
@@ -1934,6 +1938,11 @@ def try_parse_dgx1_2(type):
 	from strategy.alias.dgxs_1 import Dgx_1_2Strategy
 	return Dgx_1_2Strategy()
 
+# example: dgx1_3
+def try_parse_dgx1_3(type):
+	from strategy.alias.dgxs_1 import Dgx_1_3Strategy
+	return Dgx_1_3Strategy()
+
 # example: dgx2
 def try_parse_dgx2(type):
 	from strategy.alias.dgxs_1 import Dgx_2Strategy
@@ -1973,6 +1982,11 @@ def try_parse_dgx4_1(type):
 def try_parse_dgx5(type):
 	from strategy.alias.dgxs_1 import Dgx_5Strategy
 	return Dgx_5Strategy()
+
+def try_parse_dgx5_2(type):
+	from strategy.alias.dgxs_1 import Dgx_5_2Strategy
+        return Dgx_5_2Strategy()
+
 
 # example: dgx6
 def try_parse_dgx6(type):
