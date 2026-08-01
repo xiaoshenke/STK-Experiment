@@ -1,7 +1,13 @@
 #!/bin/bash
 # usage sh/ls_fenshi.sh [day]
 
-day=`date +'%Y-%m-%d'`
+
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
+#day=`date +'%Y-%m-%d'`
+
+day=$(python util/sh_util.py get_today)
 if [ $# -eq 1 ]
 then
 	day=$1

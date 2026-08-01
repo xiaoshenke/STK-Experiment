@@ -51,5 +51,19 @@ def call_shell_and_return_msgs(cmd):
 
 	return ret
 
+import click
+
+@click.group()
+def cli():
+        """SH-UTIL CLI"""
+        pass
+
+@cli.command()
+def get_today():
+	from util.time_util import today
+	from util.cli_util import may_changed_by_realtime_configed_today
+        day = may_changed_by_realtime_configed_today( str(today()),silent=True )
+	print day
+
 if __name__ == "__main__":
-	pass
+        cli()

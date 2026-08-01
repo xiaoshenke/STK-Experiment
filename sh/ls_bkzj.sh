@@ -1,7 +1,13 @@
 #!/bin/bash
 # usage sh/ls_bkzj.sh [day]
 
-day=`date +'%Y-%m-%d'`
+#day=`date +'%Y-%m-%d'`
+
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
+#day=`date +'%Y-%m-%d'`
+
 if [ $# -eq 1 ]
 then
 	day=$1

@@ -14,6 +14,7 @@ mode='now'
 flush_mode='memory'
 operate='flush'
 time_str='0'
+chain_id=-1
 
 if [ $# -lt 1 ]
 then
@@ -40,6 +41,10 @@ do
 		shift
 		operate=$1
 		;;
+        -chain_id | --chain_id | --chain)
+		shift
+		chain_id=$1
+		;;
 	-flush_mode | --flush_mode)
 		shift
 		flush_mode=$1
@@ -64,5 +69,5 @@ do
 	shift
 done
 
-echo python engine/codes/runner/cli.py run $code_type can_be_buyer --flush_mode $flush_mode --day $day --time_str $time_str --mode $mode
-python engine/codes/runner/cli.py run $code_type can_be_buyer --flush_mode $flush_mode --day $day --time_str $time_str --mode $mode 
+echo python engine/codes/runner/cli.py run $code_type can_be_buyer --flush_mode $flush_mode --day $day --time_str $time_str --mode $mode --chain_id $chain_id
+python engine/codes/runner/cli.py run $code_type can_be_buyer --flush_mode $flush_mode --day $day --time_str $time_str --mode $mode --chain_id $chain_id

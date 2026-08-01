@@ -10,6 +10,7 @@ add=0
 mode='now'
 operate='flush'
 time_str=#
+chain_id=-1
 
 if [ $# -lt 1 ]
 then
@@ -36,6 +37,10 @@ do
 		shift
 		operate=$1
 		;;
+        -chain_id | --chain_id | --chain)
+		shift
+		chain_id=$1
+		;;
 	-add | --add_codes | --add)
 		shift
 		add=$1
@@ -58,5 +63,5 @@ do
 	shift
 done
 
-echo python engine/eva_str/cli.py run_str $eva_str --day $day --time_str $time_str --mode $mode --add $add --operate $operate
-python engine/eva_str/cli.py run_str $eva_str --day $day --time_str $time_str --mode $mode --add $add --operate $operate
+echo python engine/eva_str/cli.py run_str $eva_str --day $day --time_str $time_str --mode $mode --add $add --operate $operate --chain_id $chain_id
+python engine/eva_str/cli.py run_str $eva_str --day $day --time_str $time_str --mode $mode --add $add --operate $operate --chain_id $chain_id
