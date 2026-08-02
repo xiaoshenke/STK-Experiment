@@ -3,7 +3,10 @@
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-day=`date +'%Y-%m-%d'`
+#day=`date +'%Y-%m-%d'`
+
+day=$(python util/sh_util.py get_today)
+
 eva_str=#
 now=0
 add=0

@@ -1,7 +1,12 @@
 #!/bin/bash
 # usage sh/find_xls_report --day [day] a b c
 
-day=`date +'%Y-%m-%d'`
+#day=`date +'%Y-%m-%d'`
+
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+day=$(python util/sh_util.py get_today)
+
 while [ -n "$1" ]
 do 
 	case "$1" in 

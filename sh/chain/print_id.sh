@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: sh/list/code_type.sh [day]
+# Usage: sh/chain/print_id.sh [day]
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
@@ -11,7 +11,8 @@ then
 	exit 2
 fi
 
-day=`date +'%Y-%m-%d'`
+day=$(python util/sh_util.py get_today)
+
 time_str='0'
 now=0
 id=-1
