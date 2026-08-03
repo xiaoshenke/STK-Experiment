@@ -119,6 +119,9 @@ sleep 2
 echo $ap python engine/stage/market/exp_cli.py day_stages emotion3
 python engine/stage/market/exp_cli.py day_stages emotion3 --silent 1 --day $day 
 
+echo $ap python engine/stage/market/exp_cli.py day_stages amounts
+python engine/stage/market/exp_cli.py day_stages amounts --silent 1 --day $day
+
 echo "
 
 

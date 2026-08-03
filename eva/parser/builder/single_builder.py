@@ -147,6 +147,8 @@ def build_single_one(type,debug=False):
 		eva = try_parse_zhou2(type)
 	elif name in [ '3zhou','zhou3' ]:
 		eva = try_parse_zhou3(type)
+	elif name in [ '5zhou','zhou5' ]:
+		eva = try_parse_zhou5(type)
 
 	elif type.startswith( 'ever_upstp' ):
 		eva = try_parse_ever_upstp(type)
@@ -343,8 +345,10 @@ def try_parse_ggzj(type):
 			eva.set_max_zhanbi(float(k[1]))
 		elif k[0] == 'min_zhuli':
 			eva.set_min_zhuli(float(k[1]))
-                elif k[0] == 'max_zhuli':
+		elif k[0] == 'max_zhuli':
                         eva.set_max_zhuli(float(k[1]))
+		elif k[0] == 'sort':
+			eva.set_sort(k[1])
 	return eva
 
 # example: pull:fix_interval=600:min_pchg=0.5:max_pchg=:len=:t2=:mode=
@@ -1117,6 +1121,12 @@ def try_parse_zhou2(type):
 def try_parse_zhou3(type):
 	from eva.list.zhou.zhou3_eva import Zhou3Eva
 	eva = Zhou3Eva()
+	return eva
+
+# example: zhou5
+def try_parse_zhou5(type):
+	from eva.list.zhou.zhou5_eva import Zhou5Eva
+	eva = Zhou5Eva()
 	return eva
 
 # 语义: 日间图形弱转强
