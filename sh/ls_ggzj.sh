@@ -1,0 +1,24 @@
+#!/bin/bash
+# usage sh/ls_ggzj.sh [day]
+
+#day=`date +'%Y-%m-%d'`
+
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+day=$(python util/sh_util.py get_today)
+
+if [ $# -eq 1 ]
+then
+	day=$1
+fi
+
+echo "ls ../stk_daily/$day/apply/ | grep ggzj"
+
+#ls ../stk_daily/$day/apply | grep ggzj
+
+ls ../stk_daily/$day/apply | grep ggzj|while read word;do
+size=$(cat ../stk_daily/$day/apply/$word|wc -l)
+echo $word ,[$size]
+done
+
+echo "ls ../stk_daily/$day/apply/ | grep ggzj"
