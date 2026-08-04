@@ -11,6 +11,7 @@ time_str=#
 mode='now'
 operate='flush'
 ignore_cache=0
+chain_id=-1
 
 if [ $# -lt 1 ]
 then
@@ -32,6 +33,10 @@ do
 	-mode | --mode)
 		shift
 		mode=$1
+		;;
+        -chain_id | --chain_id | --chain)
+		shift
+		chain_id=$1
 		;;
 	-operate | --operate)
 		shift
@@ -60,5 +65,5 @@ do
 	shift
 done
 
-echo python realtime/observe/tips.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate
-python realtime/observe/tips.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache
+echo python realtime/observe/tips.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate --chain_id $chain_id
+python realtime/observe/tips.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id

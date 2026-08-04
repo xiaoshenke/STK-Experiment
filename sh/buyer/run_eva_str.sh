@@ -11,6 +11,9 @@ mode='now'
 operate='flush'
 with_logic=-1
 time_str=#
+chain_id=-1
+
+now=0
 
 if [ $# -lt 1 ]
 then
@@ -36,6 +39,10 @@ do
 	-operate | --operate)
 		shift
 		operate=$1
+		;;
+        -chain_id | --chain_id | --chain)
+		shift
+		chain_id=$1
 		;;
 	-with_logic | --with_logic | -logic| --logic)
 		shift
@@ -63,5 +70,5 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/runner/eva_str_cli.py run $eva_str --day $day --time_str $time_str --mode $mode --with_logic $with_logic
-python engine/observe/buyer/runner/eva_str_cli.py run $eva_str --day $day --time_str $time_str --mode $mode --with_logic $with_logic
+echo python engine/observe/buyer/runner/eva_str_cli.py run $eva_str --day $day --time_str $time_str --mode $mode --with_logic $with_logic --chain_id $chain_id
+python engine/observe/buyer/runner/eva_str_cli.py run $eva_str --day $day --time_str $time_str --mode $mode --with_logic $with_logic --chain_id $chain_id

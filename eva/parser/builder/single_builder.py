@@ -330,7 +330,7 @@ def build_single_one(type,debug=False):
 	deal_common_params(eva,commons)
 	return eva
 
-# example: ggzj
+# example: ggzj:bk=
 def try_parse_ggzj(type):
 	from eva.evas.ggzj_eva import GgzjEva
 	eva = GgzjEva()
@@ -349,6 +349,8 @@ def try_parse_ggzj(type):
                         eva.set_max_zhuli(float(k[1]))
 		elif k[0] == 'sort':
 			eva.set_sort(k[1])
+		elif k[0] == 'bk':
+			eva.set_bk(k[1])
 	return eva
 
 # example: pull:fix_interval=600:min_pchg=0.5:max_pchg=:len=:t2=:mode=
