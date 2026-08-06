@@ -41,6 +41,8 @@ def build_single_one(type,debug=False):
 	
 	if type.startswith( 'trd' ):
 		eva = try_parse_trd(type)
+	elif type.startswith( 'ggzj2' ):
+                eva = try_parse_ggzj2(type)
 	elif type.startswith( 'ggzj' ):
 		eva = try_parse_ggzj(type)
 	elif is_bound:
@@ -330,6 +332,13 @@ def build_single_one(type,debug=False):
 	deal_common_params(eva,commons)
 	return eva
 
+# example: ggzj2
+def try_parse_ggzj2(type):
+	from eva.evas.ggzj_eva import Ggzj2Eva
+	eva = Ggzj2Eva()
+
+	return eva
+
 # example: ggzj:bk=
 def try_parse_ggzj(type):
 	from eva.evas.ggzj_eva import GgzjEva
@@ -338,7 +347,6 @@ def try_parse_ggzj(type):
         params = type.split(':')
         for p in params[1:]:
 		k = p.split('=')
-                
 		if k[0] == 'min_zhanbi':
 			eva.set_min_zhanbi(float(k[1]))
 		elif k[0] == 'max_zhanbi': 
