@@ -28,5 +28,5 @@ do
 	shift
 done
 
-echo sh/tips/run_template.sh market --mode $mode
-sh/tips/run_template.sh market --mode $mode
+echo sh/tips/run_template.sh market --mode $mode --day $day
+sh/tips/run_template.sh market --mode $mode --day $day
