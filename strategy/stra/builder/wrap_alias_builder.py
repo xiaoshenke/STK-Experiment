@@ -624,6 +624,8 @@ def build_wrap_alias_one(type,debug=False):
 		stra = try_parse_ignores_1(type)
 	elif type in [ 'not:ignores','not_ignores','not:ignore','nignores' ]:
 		stra = try_parse_not_ignores(type)
+	elif name == 'not_drop':
+		stra = try_parse_not_drop(type)
 	elif type in [ 'new_dgx','new_dgx_1' ]:
 		stra = try_parse_new_dgx_1(type)
 	elif type in [ 'nnh','nnh1' ]:
@@ -1618,7 +1620,7 @@ def try_parse_main_pool(type):
 
 # example: not_main_pool
 def try_parse_not_main_pool(type):
-	from strategy.alias.not_main_pool import NotMainPoolStrategy
+	from strategy.alias.nots_1 import NotMainPoolStrategy
 	stra = NotMainPoolStrategy()
 	return stra
 
@@ -2346,8 +2348,21 @@ def try_parse_ignores_1(type):
 
 # example: not_ignores
 def try_parse_not_ignores(type):
-	from strategy.alias.not_ignores import NotIgnoresStrategy
+	from strategy.alias.nots_1 import NotIgnoresStrategy
 	return NotIgnoresStrategy()
+
+# example: not_drop:len=
+def try_parse_not_drop(type):
+	from strategy.alias.nots_1 import NotDrop_1Strategy
+	stra = NotDrop_1Strategy()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] == 'len':
+			stra.set_day_len(int(k[1]))
+	
+	return stra
 
 # example: new_dgx
 def try_parse_new_dgx_1(type):
