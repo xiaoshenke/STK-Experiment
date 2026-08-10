@@ -60,15 +60,14 @@ def build_no_one(type,debug=False):
 	elif type == 'no707_yangs1_1':
                 stra = try_parse_no707_yangs1_1(type)
 
-	# good-shape: 指图形有一点辨识度 不是路人图形
+	# xt+good-shape: 指图形有一点辨识度 不是路人图形
 	elif type == 'no301_goodshape_0':
 		stra = try_parse_no301_goodshape_0(type)
 	elif type == 'no301_goodshape_1':
                 stra = try_parse_no301_goodshape_1(type)
 	elif type == 'no301_goodshape_2':
                 stra = try_parse_no301_goodshape_2(type)
-
-	
+	# xt+suo-xt
 	elif type == 'no303_suoxt_0':
 		stra = try_parse_no303_suoxt_0(type)
 	elif type == 'no303_suoxt_1':
@@ -76,7 +75,60 @@ def build_no_one(type,debug=False):
 	elif type == 'no303_suoxt_2':
                 stra = try_parse_no303_suoxt_2(type)
 
+	# xt+long
+	elif type == 'no302_long_0':
+		stra = try_parse_no302_long_0(type)
+	elif type == 'no302_long_1':
+                stra = try_parse_no302_long_1(type)
+
+	# redu+mid
+	elif type == 'no401_mid_0':
+                stra = try_parse_no401_mid_0(type)
+	elif type == 'no401_mid_1':
+		stra = try_parse_no401_mid_1(type)
+	elif type == 'no401_mid_2':
+                stra = try_parse_no401_mid_2(type)
+	elif type == 'no401_mid_3':
+                stra = try_parse_no401_mid_3(type)
+	elif type == 'no401_mid_21':
+		stra = try_parse_no401_mid_21(type)
+	
 	return stra
+
+# example: no401_mid_0
+def try_parse_no401_mid_0(type):
+	from strategy.no.redu.mid.mids_1 import No401Mid_0Strategy
+	return No401Mid_0Strategy()
+
+# example: no401_mid_1
+def try_parse_no401_mid_1(type):
+	from strategy.no.redu.mid.mids_1 import No401Mid_1Strategy
+	return No401Mid_1Strategy()
+
+# example: no401_mid_2
+def try_parse_no401_mid_2(type):
+	from strategy.no.redu.mid.mids_1 import No401Mid_2Strategy
+	return No401Mid_2Strategy()
+
+# example: no401_mid_3
+def try_parse_no401_mid_3(type):
+	from strategy.no.redu.mid.mids_1 import No401Mid_3Strategy
+	return No401Mid_3Strategy()
+
+# example: no401_mid_21
+def try_parse_no401_mid_21(type):
+	from strategy.no.redu.mid.mids_2 import No401Mid_21Strategy
+	return No401Mid_21Strategy()
+
+# example: no302_long_0
+def try_parse_no302_long_0(type):
+	from strategy.no.xt.long.longs_1 import No302Long_0Strategy
+	return No302Long_0Strategy()
+
+# example: no302_long_1
+def try_parse_no302_long_1(type):
+	from strategy.no.xt.long.longs_1 import No302Long_1Strategy
+	return No302Long_1Strategy()
 
 # example: no303_suoxt_0
 def try_parse_no303_suoxt_0(type):

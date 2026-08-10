@@ -5,12 +5,12 @@
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-day=`date +'%Y-%m-%d'`
+day=$(python util/sh_util.py get_today)
 
 if [ $# -eq 1 ]
 then
 	day=$1
 fi
 
-echo python engine/codes/no_cli.py last
-python engine/codes/no_cli.py last
+echo python engine/codes/no_cli.py last --day $day
+python engine/codes/no_cli.py last --day $day
