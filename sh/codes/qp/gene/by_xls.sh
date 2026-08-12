@@ -75,5 +75,5 @@ do
 done
 
 
-echo python engine/gene/qp/xls/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str
-python engine/gene/qp/xls/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str
+echo python engine/gene/qp/xls/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id
+python engine/gene/qp/xls/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id
