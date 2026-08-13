@@ -337,6 +337,19 @@ def try_parse_ggzj2(type):
 	from eva.evas.ggzj_eva import Ggzj2Eva
 	eva = Ggzj2Eva()
 
+        params = type.split(':')
+        for p in params[1:]:
+		k = p.split('=')
+		if k[0] == 'min_zhanbi':
+			eva.set_min_zhanbi(float(k[1]))
+		elif k[0] == 'max_zhanbi': 
+			eva.set_max_zhanbi(float(k[1]))
+		elif k[0] == 'min_zhuli':
+			eva.set_min_zhuli(float(k[1]))
+		elif k[0] == 'max_zhuli':
+                        eva.set_max_zhuli(float(k[1]))
+		elif k[0] == 'sort':
+			eva.set_sort(k[1])
 	return eva
 
 # example: ggzj:bk=
