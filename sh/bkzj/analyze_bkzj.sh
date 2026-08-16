@@ -6,7 +6,8 @@ then
 	exit 2
 fi
 
-day=`date +'%Y-%m-%d'`
+day=$(python util/sh_util.py get_today)
+
 time_str='0'
 mode='now'
 
