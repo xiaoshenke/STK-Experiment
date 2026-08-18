@@ -11,6 +11,7 @@ time_str=#
 mode='now'
 operate='flush'
 ignore_cache=0
+chain_id=-1
 
 if [ $# -lt 1 ]
 then
@@ -36,6 +37,10 @@ do
 	-operate | --operate)
 		shift
 		operate=$1
+		;;
+        -chain_id | --chain_id | --chain)
+		shift
+		chain_id=$1
 		;;
 	-ignore_cache | --ignore_cache | -ignore | --ignore)
 		shift
@@ -68,5 +73,5 @@ done
 #	exit 2
 #fi
 
-echo python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate
-python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache
+echo python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate --chain_id $chain_id
+python realtime/observe/juben.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id
