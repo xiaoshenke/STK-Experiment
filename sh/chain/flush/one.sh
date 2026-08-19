@@ -4,7 +4,7 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 day=`date +'%Y-%m-%d'`
-code_type=#
+type=#
 now=0
 add=0
 mode='now'
@@ -14,7 +14,7 @@ no='0'
 
 if [ $# -lt 2 ]
 then
-	echo Usage: sh/codes/qp/run_no.sh code_type no [--day ] 
+	echo Usage: sh/chain/flush/one.sh type [--day ] 
       	exit 2
 fi
 
@@ -45,10 +45,7 @@ do
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
 		then
-			code_type="$1"
-		elif [ $now -eq 1 ]
-		then
-			no=$1
+			type="$1"
 		fi
 		declare -i now=$now+1
 		;;
@@ -56,5 +53,6 @@ do
 	shift
 done
 
-echo python engine/codes/runner/cli.py run $code_type $no --day $day --time_str $time_str --mode $mode
-python engine/codes/runner/cli.py run $code_type $no --day $day --time_str $time_str --mode $mode 
+echo python engine/observe/chain/runner/cli.py run $type --day $day --time_str $time_str --mode $mode
+python engine/observe/chain/runner/cli.py run $type --day $day --time_str $time_str --mode $mode
+
