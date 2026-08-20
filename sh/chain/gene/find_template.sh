@@ -56,22 +56,22 @@ caozuo_dir=/Users/wuxian/Desktop/stk_daily/$day/caozuo/
 result=$( ls $cur_dir/$template_dir | grep chain.properties | grep $template )
 if [ ${#result} -eq 0 ]
 then
-	echo 尝试寻找tips模板文件 $template_dir 数据失败
+	echo 尝试寻找chain模板文件 $template_dir 数据失败
 else
 	echo ""
-	echo "## tips模板文件 find $template_dir | grep chain.properties | grep $template"
+	echo "## chain模板文件 find $template_dir | grep chain.properties | grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
 	echo ""
 fi
 
-result=$( ls $caozuo_dir |grep tips| grep $template)
+result=$( ls $caozuo_dir |grep chain| grep $template)
 if [ ${#result} -eq 0 ]
 then
 	echo 尝试寻找caozuo计算结果文件 $caozuo_dir 数据失败
 else
 	echo ""
-	echo "## caozuo计算结果文件 find $caozuo_dir |grep tips| grep $template"
+	echo "## caozuo计算结果文件 find $caozuo_dir |grep chain| grep $template"
 	echo 成功找到文件如下:
 	echo "$result"
 	echo ""
