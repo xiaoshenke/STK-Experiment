@@ -41,6 +41,8 @@ def build_single_one(type,debug=False):
 	
 	if type.startswith( 'trd' ):
 		eva = try_parse_trd(type)
+	elif type.startswith('ggzj_pull'):
+		eva = try_parse_ggzj_pull(type)
 	elif type.startswith( 'ggzj2' ):
                 eva = try_parse_ggzj2(type)
 	elif type.startswith( 'ggzj' ):
@@ -334,7 +336,7 @@ def build_single_one(type,debug=False):
 
 # example: ggzj2
 def try_parse_ggzj2(type):
-	from eva.evas.ggzj_eva import Ggzj2Eva
+	from eva.evas.ggzj.ggzj_eva import Ggzj2Eva
 	eva = Ggzj2Eva()
 
         params = type.split(':')
@@ -354,7 +356,7 @@ def try_parse_ggzj2(type):
 
 # example: ggzj:bk=
 def try_parse_ggzj(type):
-	from eva.evas.ggzj_eva import GgzjEva
+	from eva.evas.ggzj.ggzj_eva import GgzjEva
 	eva = GgzjEva()
 
         params = type.split(':')
@@ -372,6 +374,25 @@ def try_parse_ggzj(type):
 			eva.set_sort(k[1])
 		elif k[0] == 'bk':
 			eva.set_bk(k[1])
+	return eva
+
+# example: ggzj_pull
+def try_parse_ggzj_pull(type):
+	from eva.evas.ggzj.ggzj_pull_eva import GgzjPullEva
+	eva = GgzjPullEva()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] in [ 'min','min_pchg' ]:
+			eva.set_min_pchg(float(k[1]))
+		elif k[0] == 'limit':
+			eva.set_limit(int(k[1]))
+		elif k[0] == 't2':
+			from util.param_util import fix_time_str
+			eva.set_t2(fix_time_str(k[1]))
+		elif k[0] == 'mode':
+			eva.set_mode(k[1])
 	return eva
 
 # example: pull:fix_interval=600:min_pchg=0.5:max_pchg=:len=:t2=:mode=

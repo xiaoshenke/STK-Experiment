@@ -12,6 +12,7 @@ mode='now'
 operate='flush'
 with_logic=-1
 ignore_cache=0
+chain_id=-1
 
 if [ $# -lt 2 ]
 then
@@ -45,6 +46,10 @@ do
         -with_logic | --with_logic | -logic| --logic)
 		shift
 		with_logic=$1
+		;;
+        -chain_id | --chain_id | --chain)
+		shift
+		chain_id=$1
 		;;
 	*)
 		# set value to type|flush_type by now-flag
@@ -81,7 +86,7 @@ then
 
 else
 
-	echo python realtime/observe/juben.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache
-	python realtime/observe/juben.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache
+	echo python realtime/observe/juben.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id
+	python realtime/observe/juben.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id
 
 fi
