@@ -16,7 +16,7 @@ echo "ls ../stk_daily/$day/apply/ | grep ggzj"
 
 #ls ../stk_daily/$day/apply | grep ggzj
 
-ls ../stk_daily/$day/apply |grep -v BK | grep ggzj|while read word;do
+ls ../stk_daily/$day/apply |grep -v BK | grep ggzj|grep -v "xls:ggzj"|while read word;do
 size=$(cat ../stk_daily/$day/apply/$word|wc -l)
 echo $word ,[$size]
 done

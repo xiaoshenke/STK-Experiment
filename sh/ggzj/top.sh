@@ -11,5 +11,5 @@ then
 	day=$1
 fi
 
-echo python engine/xls/cli.py apply_and_save xls:ggzj $day
-python engine/xls/cli.py apply_and_save xls:ggzj $day
+echo python engine/xls/cli.py apply_and_save ggzj $day
+python engine/xls/cli.py apply_and_save ggzj $day
