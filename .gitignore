@@ -13,6 +13,7 @@ secret
 *.bat
 *.xls1
 *.out
+*.json
 #*.txt
 #*.properties
 realtime/realtime.properties
