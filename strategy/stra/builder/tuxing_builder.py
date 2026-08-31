@@ -158,9 +158,13 @@ def build_tuxing_one(type,debug=False):
 
 	if name in [ 'zhendang','zhendan','zhend','zhengdang','zhengd','zd' ]:
 		stra = try_parse_zhendang_1(type)
-
 	elif name in [ 'zhendang2','zhendan2','zhend2','zhengdang2','zhengd2','zd2' ]:
 		stra = try_parse_zhendang_2(type)
+
+	if name in [ 'redu_pos','redu_pos1' ]:
+		stra = try_parse_redu_pos_1(type)
+	elif name == 'redu_pos2':
+		stra = try_parse_redu_pos_2(type)
 
 	# update 2026-01-16: 添加try_single逻辑
 	if not stra and may_try_single_type(origin):	
@@ -412,6 +416,20 @@ def try_parse_duoyang_2(type):
 def try_parse_duotrd_1(type):
 	from strategy.tuxing.duo_trds_1 import Duotrd_1Strategy
 	stra = Duotrd_1Strategy()
+
+	return stra
+
+# example: tx:redu_pos
+def try_parse_redu_pos_1(type):
+	from strategy.tuxing.redu_poss_1 import ReduPos_1Strategy
+	stra = ReduPos_1Strategy()
+
+	return stra
+
+# example: tx:redu_pos2
+def try_parse_redu_pos_2(type):
+	from strategy.tuxing.redu_poss_1 import ReduPos_2Strategy
+	stra = ReduPos_2Strategy()
 
 	return stra
 

@@ -68,7 +68,11 @@ def build_tuxing_one(type,debug=False):
 		eva = try_parse_newhigh_1(type)
 	elif name == 'reach_btw':
 		eva = try_parse_reach_btw_1(type)
-
+	elif name == 'trd_sum' or name == 'trd_sum1':
+		eva = try_parse_trd_sum_1(type)
+	elif name == 'trd_sum2':
+                eva = try_parse_trd_sum_2(type)
+	
 	# update 2026-01-16: 添加try_single逻辑
 	if not eva and may_try_single_type(origin):  
 		from eva.parser.builder.single_builder import build_single_one
@@ -148,9 +152,34 @@ def try_parse_newhigh_1(type):
 			eva.set_day_len(int(k[1]))
 	return eva
 
+# example: tx:reach_btw:len=
 def try_parse_reach_btw_1(type):
 	from eva.tuxing.reach_btws_1 import ReachBtw_1Eva
 	eva = ReachBtw_1Eva()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] == 'len':
+			eva.set_day_len(int(k[1]))
+	return eva
+
+# example: tx:trd_sum:len=
+def try_parse_trd_sum_1(type):
+	from eva.tuxing.trd_sums_1 import TrdSum_1Eva
+	eva = TrdSum_1Eva()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] == 'len':
+			eva.set_day_len(int(k[1]))
+	return eva
+
+# example: tx:trd_sum2:len=
+def try_parse_trd_sum_2(type):
+	from eva.tuxing.trd_sums_1 import TrdSum_2Eva
+	eva = TrdSum_2Eva()
 
 	params = type.split(':')
 	for p in params[1:]:
