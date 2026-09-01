@@ -61,6 +61,11 @@ def build_tuxing_one(type,debug=False):
 		stra = try_parse_dibu_1(type)
 	elif name == 'xt':
 		stra = try_parse_xt_1(type)
+	elif name in [ 'kuan_xt','kuan_xt1' ]:
+		stra = try_parse_kuan_xt_1(type)
+		
+	elif name in [ 'huoli','huoli1' ]:
+		stra = try_parse_huoli_1(type) 
 	
 	elif name in [ 'zouqiang' ]:
 		stra = try_parse_zouqiang_1(type)
@@ -182,6 +187,18 @@ def build_tuxing_one(type,debug=False):
 # 当前不做任何逻辑判断 直接返回true
 def may_try_single_type(type):
 	return False
+
+# example: tx:huoli:len=
+def try_parse_huoli_1(type):
+	from strategy.tuxing.huolis_1 import Huoli_1Strategy
+	stra = Huoli_1Strategy()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] in [ 'day_len','len' ]:
+			stra.set_day_len(int(k[1]))
+	return stra
 
 # example: tx:baodie
 def try_parse_baodie_1(type):
@@ -372,6 +389,12 @@ def try_parse_trends_good_1(type):
 def try_parse_xt_1(type):
 	from strategy.tuxing.xts_1 import Xt_1Strategy
 	stra = Xt_1Strategy()
+	return stra
+
+# example: tx:kuan_xt
+def try_parse_kuan_xt_1(type):
+	from strategy.tuxing.xts_1 import KuanXt_1Strategy	
+	stra = KuanXt_1Strategy()
 	return stra
 
 # example: tx:dibu

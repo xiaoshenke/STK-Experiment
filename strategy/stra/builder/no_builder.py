@@ -60,6 +60,12 @@ def build_no_one(type,debug=False):
 	elif type == 'no707_yangs1_1':
                 stra = try_parse_no707_yangs1_1(type)
 
+	elif type == 'no300_basic_0':
+		stra = try_parse_no300_basic_0(type)
+	elif type == 'no300_basic_1':
+		stra = try_parse_no300_basic_1(type)
+
+
 	# xt+good-shape: 指图形有一点辨识度 不是路人图形
 	elif type == 'no301_goodshape_0':
 		stra = try_parse_no301_goodshape_0(type)
@@ -158,6 +164,16 @@ def try_parse_no403_hot_2(type):
 def try_parse_no403_hot_3(type):
 	from strategy.no.redu.hot.hots_1 import No403Hot_3Strategy
 	return No403Hot_3Strategy()
+
+# example: no300_basic_0
+def try_parse_no300_basic_0(type):
+	from strategy.no.xt.basic.basics_1 import No300Basic_0Strategy
+	return No300Basic_0Strategy()
+
+# example: no300_basic_1
+def try_parse_no300_basic_1(type):
+	from strategy.no.xt.basic.basics_1 import No300Basic_1Strategy
+	return No300Basic_1Strategy()
 
 
 # example: no302_long_0
