@@ -66,6 +66,8 @@ def build_tuxing_one(type,debug=False):
 		
 	elif name in [ 'huoli','huoli1' ]:
 		stra = try_parse_huoli_1(type) 
+	elif name == 'huoli_alot':
+		stra = try_parse_huoli_alot_1(type)	
 	
 	elif name in [ 'zouqiang' ]:
 		stra = try_parse_zouqiang_1(type)
@@ -199,6 +201,19 @@ def try_parse_huoli_1(type):
 		if k[0] in [ 'day_len','len' ]:
 			stra.set_day_len(int(k[1]))
 	return stra
+
+# example: tx:huoli_alot
+def try_parse_huoli_alot_1(type):
+	from strategy.tuxing.huolis_1 import HuoliAlot_1Strategy
+	stra = HuoliAlot_1Strategy()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] in [ 'day_len','len' ]:
+			stra.set_day_len(int(k[1]))
+	return stra
+
 
 # example: tx:baodie
 def try_parse_baodie_1(type):
