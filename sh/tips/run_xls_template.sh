@@ -9,6 +9,7 @@ template=#
 now=0
 time_str=#
 mode='now'
+pool='0'
 operate='flush'
 with_logic=-1
 ignore_cache=0
@@ -39,6 +40,12 @@ do
 		shift
 		ignore_cache=$1
 		;;
+	-pool | --pool | -pool_type | --pool_type)
+		shift
+		pool=$1
+		;;
+
+
         -chain_id | --chain_id | --chain)
 		shift
 		chain_id=$1
@@ -73,6 +80,6 @@ do
 	shift
 done
 
-echo python realtime/observe/tips.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id
-python realtime/observe/tips.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id
+echo python realtime/observe/tips.py run_xls_template $xls $template --pool_type $pool --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id
+python realtime/observe/tips.py run_xls_template $xls $template --pool_type $pool --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id
 

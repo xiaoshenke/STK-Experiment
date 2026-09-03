@@ -9,6 +9,7 @@ template2=#
 now=0
 time_str=#
 mode='now'
+pool='0'
 operate='flush'
 ignore_cache=0
 chain_id=-1
@@ -46,6 +47,10 @@ do
 		shift
 		ignore_cache=$1
 		;;
+	-pool | --pool | -pool_type | --pool_type)
+		shift
+		pool=$1
+		;;
 	*)
 		# set value to type|flush_type by now-flag
 		if [ $now -eq 0 ]
@@ -65,5 +70,5 @@ do
 	shift
 done
 
-echo python realtime/observe/tips.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate --chain_id $chain_id
-python realtime/observe/tips.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id
+echo python realtime/observe/tips.py run_template $template --pool_type $pool --day $day --mode $mode --time_str $time_str --operate $operate --chain_id $chain_id
+python realtime/observe/tips.py run_template $template --pool_type $pool --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id
