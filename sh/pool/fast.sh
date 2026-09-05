@@ -1,8 +1,11 @@
 #!/bin/bash
 
 # 定位:分析版块池的20cm数据
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
 
-day=`date +'%Y-%m-%d'`
+day=$(python util/sh_util.py get_today)
+
 time_str='0'
 mode='now'
 

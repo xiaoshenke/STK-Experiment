@@ -10,7 +10,10 @@ then
 fi
 
 id='-1'
-day=#
+
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+day=$(python util/sh_util.py get_today)
 
 now=0
 while [ -n "$1" ]
@@ -41,9 +44,6 @@ do
 	esac
 	shift
 done
-
-path=`pwd`
-export PYTHONPATH=$path:$PYTHONPATH
 
 echo python tool/silu/reg_cli.py remove_id $id --day $day
 python tool/silu/reg_cli.py remove_id $id --day $day
