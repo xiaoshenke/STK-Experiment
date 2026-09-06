@@ -87,6 +87,11 @@ def build_no_one(type,debug=False):
 	elif type == 'no302_long_1':
                 stra = try_parse_no302_long_1(type)
 
+	elif type == 'no304_dst_1':
+		stra = try_parse_no304_dst_1(type)
+	elif type == 'no304_dst_2':
+                stra = try_parse_no304_dst_2(type)
+
 	# redu+mid
 	elif type == 'no401_mid_0':
                 stra = try_parse_no401_mid_0(type)
@@ -216,6 +221,16 @@ def try_parse_no301_goodshape_1(type):
 def try_parse_no301_goodshape_2(type):
 	from strategy.no.xt.basic.good_shapes_1 import No301GoodShapes_2Strategy
 	return No301GoodShapes_2Strategy()
+
+# example: no304_dst_1
+def try_parse_no304_dst_1(type):
+	from strategy.no.xt.bsd.duoshitis_1 import No304Duoshiti_1Strategy
+	return No304Duoshiti_1Strategy()
+
+# example: no304_dst_2
+def try_parse_no304_dst_2(type):
+	from strategy.no.xt.bsd.duoshitis_1 import No304Duoshiti_2Strategy
+	return No304Duoshiti_2Strategy()
 
 
 # example: no707_yangs1_1

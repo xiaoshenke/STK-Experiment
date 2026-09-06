@@ -69,6 +69,11 @@ def build_tuxing_one(type,debug=False):
 	elif name == 'huoli_alot':
 		stra = try_parse_huoli_alot_1(type)	
 	
+	elif name in [ 'dst','dst1' ]:
+		stra = try_parse_dst_1(type)
+	elif name == 'dst2':
+		stra = try_parse_dst_2(type)
+	
 	elif name in [ 'zouqiang' ]:
 		stra = try_parse_zouqiang_1(type)
 	elif name == 'qushi':
@@ -189,6 +194,17 @@ def build_tuxing_one(type,debug=False):
 # 当前不做任何逻辑判断 直接返回true
 def may_try_single_type(type):
 	return False
+
+# example: tx:dst
+def try_parse_dst_1(type):
+	from strategy.tuxing.dsts_1 import Dst_1Strategy
+	return Dst_1Strategy()
+
+# example: tx:dst2
+def try_parse_dst_2(type):
+	from strategy.tuxing.dsts_1 import Dst_2Strategy
+	return Dst_2Strategy()
+
 
 # example: tx:huoli:len=
 def try_parse_huoli_1(type):
