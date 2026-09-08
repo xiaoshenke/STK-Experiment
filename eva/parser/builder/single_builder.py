@@ -233,6 +233,9 @@ def build_single_one(type,debug=False):
 		eva = try_parse_hc_eva(type)
 	elif type.startswith('ho:') or type == 'ho':
 		eva = try_parse_ho_eva(type)
+	elif type.startswith( 'to_sum:' ) or type.startswith( 'sum:' ):
+		eva = try_parse_to_sum_eva(type)
+
 	elif type.startswith('btws'):
 		eva = try_parse_btws_eva(type)
 	#elif type.startswith('btw') or type == 'fast':
@@ -1782,6 +1785,16 @@ def try_parse_2day_good(type):
 def try_parse_btws_eva(type):
 	from eva.wrap.btws_eva import BtwsEva
 	return BtwsEva()
+
+# example: to_sum:col=
+def try_parse_to_sum_eva(type):
+	from eva.wrap.to_sum_eva import ToSumEva
+	eva = ToSumEva()
+
+	from util.param_util import get_param_from
+	col = get_param_from(type.split(':')[1:],'col')	
+	eva.set_col(col)
+	return eva
 
 # example: btw:min_pchg=1.0:max_pchg=4.0:asc=
 def try_parse_btw_eva(type):
