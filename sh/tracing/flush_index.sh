@@ -13,4 +13,4 @@ then
 fi
 
 echo python realtime/observe/tracing.py trigger  $type
-python realtime/observe/tracing.py trigger $type
+python realtime/observe/tracing.py trigger "$type"

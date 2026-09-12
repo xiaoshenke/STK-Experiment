@@ -16,7 +16,7 @@ do
 		shift
 		day=$1
 		;;
-	-dry_run | --dry_run | -dry-run | --dry-run)
+	-dry_run | --dry_run | -dry-run | --dry-run | -dry | --dry)
 		shift
 		dry_run=$1
 		;;
