@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: sh/buyer/generate_xls_buyer.sh xls [type] [to-name] [--day]
+# Usage: sh/buyer/template/generate_xls_buyer.sh xls [type] [to-name] [--day]
 
 # 定位: 用于根据@observe/buyer/template下的模板文件生成buyer文件
 # 注意: 会做replace的操作
