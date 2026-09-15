@@ -11,5 +11,11 @@ then
 	day=$1
 fi
 
+ls ../stk_daily/$day/fenshi_wholecodes/ |while read word;do
+size=$(cat ../stk_daily/$day/fenshi_wholecodes/$word|wc -l)
+echo $word ,[$size]
+done
+
 echo ls ../stk_daily/$day/fenshi_wholecodes/
-ls ../stk_daily/$day/fenshi_wholecodes/
+
+#ls ../stk_daily/$day/fenshi_wholecodes/

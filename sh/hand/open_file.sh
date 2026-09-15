@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# copy from @sh/buyer/open_file.sh
+
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
+day=`date +'%Y-%m-%d'`
+type='eva'
+now=0
+
+while [ -n "$1" ]
+do 
+	case "$1" in 
+	-day | --day)
+		shift
+		day=$1
+		;;
+	-help | --help)
+		echo Usage: sh/hand/open_file.sh type [day]
+		exit 2
+		;;
+	*)
+		# set value to type|day by now-flag
+		if [ $now -eq 0 ]
+		then
+			type=$1
+		elif [ $now -eq 1 ]
+		then
+			day=$1
+		fi
+		declare -i now=$now+1
+		;;
+	esac
+	shift
+done
+
+buyer_dir=/Users/wuxian/Desktop/stk_daily/$day/juben/
+file=$buyer_dir/$type.hand.properties
+
+if [ ! -f "$file" ]
+then
+	echo 不存在对应的模板文件 先进行模板生成 file:$file
+	
+	cur_dir=/Users/wuxian/Desktop/STK-Experiment
+	file2=$cur_dir/engine/observe/hand/template/default.hand.properties
+
+	echo cp $file2 $file
+	cp $file2 $file
+	echo ""
+fi
+
+echo open $file
+open $file
+
+# 思考: 如何判定是否已经存在对应的listener? 否则会2次启动对应的listener
+echo ""
+cmd="sh/hand/start_file_listener.sh $type --day $day"
+echo 可以启动对应的listener:  $cmd
+echo ""
+
+#cmd="sh/buyer/open_file.sh $type"
+#sh/log/log_to_operate.sh "$cmd" "OPEN-BUYER-FILE"
+
