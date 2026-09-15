@@ -51,5 +51,7 @@ fi
 
 dir=/Users/wuxian/Desktop/stk_daily/$day/
 
+python engine/observe/hand/listener_cli.py check_can_listen_to $type $day
+
 echo "python engine/observe/hand/listener_cli.py start_engine_mode $type --day $day  log: $dir/observe.hand.xx_$type.log"
 nohup python engine/observe/hand/listener_cli.py start_engine_mode $type --day $day >>$dir/observe.hand.xx_$type.log 2>&1 &

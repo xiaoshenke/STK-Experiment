@@ -75,12 +75,24 @@ export PYTHONPATH=$path:$PYTHONPATH
 echo "复制文件 cp $file1 $to_file"
 cp $file1 $to_file
 
+# 注意 下面的代码不容易理解 可以参考@https://chat.deepseek.com/a/chat/s/9c8f2246-9f35-4c17-9b64-28fddf06900e
+# 插入特定的字符串 使的我能清晰的知道这是一个手工文件 而不是模板
+sed -i '' "5a\\
+# 注意: 这是由模板生成的手工文件 文件路径: \\
+# ${to_file}\\
+\\
+" $to_file
+
+# 插入字符串结束 
+
 echo ""
 echo "最终生成的文件内容如下:"
 cat $to_file
 
 echo ""
 echo 手工打开文件:  open $to_file
+
+echo 可以继续启动对应的监听器: sh/hand/start_file_listener.sh $to_name
 
 # 落日志
 #cmd="sh/hand/generate_hand.sh $type $to_name"
