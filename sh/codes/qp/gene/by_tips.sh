@@ -16,7 +16,7 @@ ignore_cache=0
 chain_id=-1
 action='0'
 
-if [ $# -lt 2 ]
+if [ $# -lt 1 ]
 then
 	echo Usage: sh/codes/qp/gene/by_tips.sh [xls] template [--day ] 
 	exit 2

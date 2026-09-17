@@ -58,8 +58,7 @@ done
 
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 
-to_file="/Users/wuxian/Desktop/stk_daily/$day/hand/$to_name.hand.properties"
-
+to_file="/Users/wuxian/Desktop/stk_daily/$day/juben/$to_name.hand.properties"
 file1="$cur_dir/engine/observe/hand/template/xx_$type.hand.properties"
 
 #file2=$(python engine/caop/hands/template/file_cli.py try_find_template_file xx_$type --day $day)
@@ -120,6 +119,28 @@ cp $find $to_file
 echo "进行内容替换 sed -i 's/xx/$xls/g' $to_file"
 sed -i "" "s/xx/$xls/g" $to_file
 
+# 注意 下面的代码不容易理解 可以参考@https://chat.deepseek.com/a/chat/s/9c8f2246-9f35-4c17-9b64-28fddf06900e
+# 在插入之前 先特殊处理一下from-file
+from_file="$find"
+if [[ "$from_file" == *"STK-Experiment"* ]]
+then
+	from_file="${from_file#*STK-Experiment/}"
+fi
+
+# 同样处理to_file
+home="$HOME"
+to_file2="${to_file/#$home/~}"
+
+# 插入特定的字符串 使的我能清晰的知道这是一个手工文件 而不是模板
+sed -i '' "5a\\
+# 注意: 这是由模板生成的手工文件\\
+# 模板: ${from_file}\\
+# 存储: ${to_file2}\\
+\\
+" $to_file
+
+# 插入字符串结束 
+
 echo ""
 echo "最终生成的文件内容如下:"
 cat $to_file
@@ -127,6 +148,9 @@ cat $to_file
 echo ""
 echo 手工打开文件:  open $to_file
 echo ""
+
+
+echo 可以继续启动对应的监听器: sh/hand/start_file_listener.sh $to_name
 
 #cmd="sh/hand/generate_xls_hand.sh $xls $type --start_at $start_at --end_at $end_at"
 #sh/log/log_to_operate.sh "$cmd" "GENE-XLS-BUYER"

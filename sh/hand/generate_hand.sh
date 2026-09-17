@@ -76,10 +76,22 @@ echo "复制文件 cp $file1 $to_file"
 cp $file1 $to_file
 
 # 注意 下面的代码不容易理解 可以参考@https://chat.deepseek.com/a/chat/s/9c8f2246-9f35-4c17-9b64-28fddf06900e
+# 在插入之前 先特殊处理一下from-file
+from_file="$file1"
+if [[ "$from_file" == *"STK-Experiment"* ]]
+then
+        from_file="${from_file#*STK-Experiment/}"
+fi
+
+# 同样处理to_file
+home="$HOME"
+to_file2="${to_file/#$home/~}"
+
 # 插入特定的字符串 使的我能清晰的知道这是一个手工文件 而不是模板
 sed -i '' "5a\\
-# 注意: 这是由模板生成的手工文件 文件路径: \\
-# ${to_file}\\
+# 注意: 这是由模板生成的手工文件\\
+# 模板: ${from_file}\\
+# 存储: ${to_file2}\\
 \\
 " $to_file
 

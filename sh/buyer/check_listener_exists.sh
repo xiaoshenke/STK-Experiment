@@ -7,7 +7,7 @@ now=0
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/buyer/start_file_listener.sh type 
+	echo Usage: sh/buyer/check_listener_exists.sh type 
 	exit 2
 fi
 

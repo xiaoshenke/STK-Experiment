@@ -5,6 +5,7 @@
 export PYTHONUNBUFFERED=1
 
 type='eva'
+only_listener=1
 
 day=`date +'%Y-%m-%d'`
 now=0
@@ -21,6 +22,10 @@ do
 	-day | --day)
 		shift
 		day=$1
+		;;
+	-only_listener | --only_listener | -only | --only)
+		shift
+		only_listener=$1
 		;;
 	*)
 		# set value to type|flush_type by now-flag
@@ -53,5 +58,5 @@ dir=/Users/wuxian/Desktop/stk_daily/$day/
 
 python engine/observe/hand/listener_cli.py check_can_listen_to $type $day
 
-echo "python engine/observe/hand/listener_cli.py start_engine_mode $type --day $day  log: $dir/observe.hand.xx_$type.log"
-nohup python engine/observe/hand/listener_cli.py start_engine_mode $type --day $day >>$dir/observe.hand.xx_$type.log 2>&1 &
+echo "python engine/observe/hand/listener_cli.py start_engine_mode $type --only_listener $only_listener --day $day  log: $dir/observe.hand.xx_$type.log"
+nohup python engine/observe/hand/listener_cli.py start_engine_mode $type --only_listener $only_listener --day $day >>$dir/observe.hand.xx_$type.log 2>&1 &

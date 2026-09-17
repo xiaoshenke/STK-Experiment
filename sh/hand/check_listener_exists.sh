@@ -5,6 +5,8 @@ export PYTHONUNBUFFERED=1
 day=`date +'%Y-%m-%d'`
 now=0
 
+silent=0
+
 if [ $# -lt 1 ]
 then
 	echo Usage: sh/hand/check_listener_exists.sh type 
@@ -13,9 +15,17 @@ fi
 
 type=$1
 
-ps aux|grep python |grep hand|grep listener_cli|grep -v grep 
+if [ $# -ge 2 ]
+then
+	silent=$2
+fi
 
-echo ""
+if [ $silent -eq 0 ]
+then
+	ps aux|grep python |grep hand|grep listener_cli|grep -v grep 
+
+	echo ""
+fi
 
 listens=$(ps aux|grep python |grep hand|grep listener_cli|grep -v grep | awk '{print $14}')
 listens=($listens)
