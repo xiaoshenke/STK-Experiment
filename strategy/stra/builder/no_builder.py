@@ -92,6 +92,9 @@ def build_no_one(type,debug=False):
 	elif type == 'no304_dst_2':
                 stra = try_parse_no304_dst_2(type)
 
+	elif type == 'no400_mid_1':
+		stra = try_parse_no400_mid_1(type)
+
 	# redu+mid
 	elif type == 'no401_mid_0':
                 stra = try_parse_no401_mid_0(type)
@@ -124,6 +127,12 @@ def build_no_one(type,debug=False):
 def try_parse_no407_pos_1(type):
 	from strategy.no.redu.pos_high.pos_highs_1 import No407Pos_1Strategy
 	return No407Pos_1Strategy()
+
+# example: no400_mid_1
+def try_parse_no400_mid_1(type):
+	from strategy.no.redu.mid.mids_0 import No400Mid_1Strategy
+	return No400Mid_1Strategy()
+
 
 # example: no401_mid_0
 def try_parse_no401_mid_0(type):

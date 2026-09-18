@@ -104,6 +104,8 @@ def build_single_one(type,debug=False):
 	elif name in [ 'izouqiang','izouq','izq' ]:
 		eva = try_parse_izouqiang(type)
 
+	elif name in [ 'pull_or_higher' ]:
+		eva = try_parse_pull_or_higher_eva(type)
 	elif name in [ 'xt_pull','xtpull','xt_npull','xtnpull' ]:
 		eva = try_parse_xt_pull_eva(type)
 	elif name in [ 'fast_pull','fastpull' ]:
@@ -999,6 +1001,19 @@ def try_parse_shizhi(type):
 def try_parse_xt_higher_eva(type):
 	from eva.list.higher.xt_higher_eva import XtHigherEva
 	return XtHigherEva()
+
+# example: pull_or_higher:mode=:min=
+def try_parse_pull_or_higher_eva(type):
+	from eva.list.pull.pull_or_higher_eva import PullOrHigherEva
+	eva = PullOrHigherEva()
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] in [ 'mode' ]:
+			eva.set_mode(k[1])
+		elif k[0] in [ 'min','min_pull','min_pchg' ]:
+			eva.set_min_pull(float(k[1]))
+	return eva
 
 # example: xt_pull
 def try_parse_xt_pull_eva(type):

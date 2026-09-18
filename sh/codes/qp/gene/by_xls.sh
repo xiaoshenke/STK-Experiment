@@ -14,6 +14,7 @@ operate='flush'
 with_logic=-1
 ignore_cache=0
 chain_id=-1
+action='0'
 
 if [ $# -lt 2 ]
 then
@@ -40,7 +41,11 @@ do
 		shift
 		ignore_cache=$1
 		;;
-        -chain_id | --chain_id | --chain)
+	-action| --action)
+		shift
+		action=$1
+		;;
+	-chain_id | --chain_id | --chain)
 		shift
 		chain_id=$1
 		;;
@@ -75,5 +80,5 @@ do
 done
 
 
-echo python engine/gene/qp/xls/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id
-python engine/gene/qp/xls/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id
+echo python engine/gene/qp/xls/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id --action $action
+python engine/gene/qp/xls/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id --action $action
