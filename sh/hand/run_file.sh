@@ -16,7 +16,7 @@ chain_id=-1
 
 if [ $# -lt 1 ]
 then
-	echo Usage: sh/hand/run_template.sh template [--day ] 
+	echo Usage: sh/hand/run_file.sh template [--day ] 
 	exit 2
 fi
 
@@ -70,5 +70,5 @@ do
 	shift
 done
 
-echo python realtime/observe/hand.py run_template $template --pool_type $pool --day $day --mode $mode --time_str $time_str --operate $operate --chain_id $chain_id
-python realtime/observe/hand.py run_template $template --pool_type $pool --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id
+echo python realtime/observe/hand.py run_file $template --pool_type $pool --day $day --mode $mode --time_str $time_str --operate $operate --chain_id $chain_id
+python realtime/observe/hand.py run_file $template --pool_type $pool --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id
