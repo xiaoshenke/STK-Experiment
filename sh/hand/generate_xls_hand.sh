@@ -10,7 +10,7 @@
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-day=`date +'%Y-%m-%d'`
+day=$(python util/sh_util.py get_today)
 now=0
 xls=#
 type='default'
@@ -55,6 +55,8 @@ do
 	esac
 	shift
 done
+
+type=$(python engine/observe/hand/gene_cli.py may_change_xls_template_type $type)
 
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 

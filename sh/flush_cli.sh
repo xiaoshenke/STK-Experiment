@@ -3,7 +3,8 @@
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-day=#
+day=$(python util/sh_util.py get_today)
+
 time_str=#
 time_str2=#
 mode=#

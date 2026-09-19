@@ -2,7 +2,10 @@
 
 # 打印当前的手工hand文件
 
-day=`date +'%Y-%m-%d'`
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
+day=$(python util/sh_util.py get_today)
 
 if [ $# -gt 0 ]
 then

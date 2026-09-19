@@ -2,7 +2,12 @@
 
 echo ATTENTION: MANUAL-CMDS CLI
 
-day=#
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
+day=$(python util/sh_util.py get_today)
+
+#day=#
 time_str=#
 mode='now'
 
