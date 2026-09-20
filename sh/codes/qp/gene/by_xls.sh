@@ -15,6 +15,7 @@ with_logic=-1
 ignore_cache=0
 chain_id=-1
 action='0'
+basic_eva='0'
 
 if [ $# -lt 2 ]
 then
@@ -44,6 +45,10 @@ do
 	-action| --action)
 		shift
 		action=$1
+		;;
+	-basic_eva| --basic_eva | -base_eva | --base_eva | -eva | --eva)
+		shift
+		basic_eva=$1
 		;;
 	-chain_id | --chain_id | --chain)
 		shift
@@ -80,5 +85,5 @@ do
 done
 
 
-echo python engine/gene/qp/xls/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id --action $action
-python engine/gene/qp/xls/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id --action $action
+echo python engine/gene/qp/xls/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id --action $action --basic_eva $basic_eva
+python engine/gene/qp/xls/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id --action $action --basic_eva $basic_eva

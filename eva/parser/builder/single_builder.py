@@ -264,6 +264,12 @@ def build_single_one(type,debug=False):
 
 	elif type.startswith('xt'):
 		eva = try_pase_xt_eva(type)
+
+	elif type.startswith('inside'):
+		eva = try_pase_inside_eva(type)
+	elif type.startswith('outside'):
+                eva = try_pase_outside_eva(type)
+
 	elif type.startswith('pulluped'):
 		eva = try_parse_pulluped_eva(type)
 	elif type.startswith('pullup'):
@@ -1071,7 +1077,7 @@ def try_parse_upshake_eva(type):
 			eva.set_t2(k[1])
 	return eva
 
-# example: shake:fix_prec=:min_pchg=
+# example: shake:fix_prec=:min_pchg=:len=
 def try_parse_shake_eva(type):
 	from eva.evas.shake_eva import ShakeEva
 	eva = ShakeEva()
@@ -1085,6 +1091,12 @@ def try_parse_shake_eva(type):
 			eva.set_min_shake(float(k[1]))
 		elif k[0] in [ 'max_pchg','max' ]:
 			eva.set_max_shake(float(k[1]))
+		elif k[0] == 'mode':
+			eva.set_mode(k[1])
+		elif k[0] == 'fix_interval':
+                        eva.set_fix_interval(int(k[1]))
+		elif k[0] == 'len':
+			eva.set_fix_interval(int(k[1])*60)
 	return eva
 
 # example: outc
@@ -1860,7 +1872,7 @@ def try_parse_hc_eva(type):
 		k = p.split('=')
 		if k[0] in [ 'min_pchg','min' ]:
 			eva.set_min_pchg(float(k[1]))
-                elif k[0] == 'max_pchg':
+		elif k[0] in [ 'max','max_pchg' ]:
                         eva.set_max_pchg(float(k[1]))
 		elif k[0] in [ 'stop','stop_sort' ]:
                         b = True if k[1] in [ '1','true','TRUE','True' ] else False
@@ -1887,6 +1899,38 @@ def try_parse_pchg_eva(type):
 			eva.set_time_str(time_str)
 		else:
                         raise Exception("fail to parse %s,param:%s"%(type,k))
+	return eva
+
+# example: inside:min:max=:mode=:len=
+def try_pase_inside_eva(type):
+	from eva.evas.inside_eva import InsideEva
+	eva = InsideEva()
+
+	params = type.split(':')
+	for p in params[1:]:
+                k = p.split('=')
+                if k[0] in [ 'min','min_xt','min_pchg' ]:
+                        eva.set_min_xt(float(k[1]))
+		elif k[0] in [ 'max','max_xt','max_pchg' ]:
+                        eva.set_max_xt(float(k[1]))
+		elif k[0] == 'mode':
+			eva.set_mode(k[1])
+	return eva
+
+# example: outside:min:max=:mode=:len=
+def try_pase_outside_eva(type):
+	from eva.evas.outside_eva import OutsideEva
+	eva = OutsideEva()
+
+	params = type.split(':')
+	for p in params[1:]:
+                k = p.split('=')
+                if k[0] in [ 'min','min_xt','min_pchg' ]:
+                        eva.set_min_xt(float(k[1]))
+		elif k[0] in [ 'max','max_xt','max_pchg' ]:
+                        eva.set_max_xt(float(k[1]))
+		elif k[0] == 'mode':
+			eva.set_mode(k[1])
 	return eva
 
 # example: xt:min_hl_pchg=:max_hl_pchg=:min_pchg=:max_pchg=
