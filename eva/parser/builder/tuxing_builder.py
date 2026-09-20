@@ -59,6 +59,9 @@ def build_tuxing_one(type,debug=False):
 	elif name == 'good2':
 		eva = try_parse_good_2(type)
 
+	elif name == 'attack':
+		eva = try_parse_attack_1(type)
+
 	elif name == 'ho2':
 		eva = try_parse_ho2_1(type)
 	elif name == 'ho3':
@@ -69,6 +72,8 @@ def build_tuxing_one(type,debug=False):
 	elif name == 'co3':
                 eva = try_parse_co3_1(type)
 
+	elif name in [ 'ishake10','ishake10_1' ]:
+		eva = try_parse_ishake10_1(type)
 
 	elif name == 'zhusheng':
 		eva = try_parse_zhusheng_1(type)
@@ -107,6 +112,11 @@ def try_parse_zhusheng_1(type):
 	from eva.tuxing.zhushengs_1 import Zhusheng_1Eva
 	return Zhusheng_1Eva()
 
+# example: ishake10
+def try_parse_ishake10_1(type):
+	from eva.tuxing.ishakes_1 import IShake10_1Eva
+	return IShake10_1Eva()
+
 # example: ho2
 def try_parse_ho2_1(type):
 	from eva.tuxing.hos_1 import Ho2_1Eva
@@ -126,6 +136,11 @@ def try_parse_co2_1(type):
 def try_parse_co3_1(type):
 	from eva.tuxing.cos_1 import Co3_1Eva
 	return Co3_1Eva()
+
+# example: tx:attack
+def try_parse_attack_1(type):
+	from eva.tuxing.attacks_1 import Attack_1Eva
+	return Attack_1Eva()
 
 # example: tx:good
 def try_parse_good_1(type):

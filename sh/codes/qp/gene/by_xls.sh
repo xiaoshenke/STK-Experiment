@@ -42,7 +42,7 @@ do
 		shift
 		ignore_cache=$1
 		;;
-	-action| --action)
+	-action| --action | -act | --act)
 		shift
 		action=$1
 		;;

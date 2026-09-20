@@ -216,7 +216,7 @@ def build_single_one(type,debug=False):
 		eva = try_parse_change2_eva(type)
 	elif type.startswith('nothing') or type.startswith('nothi'):
 		eva = try_parse_nothing_eva(type)
-	elif type.startswith('shake'):
+	elif type.startswith('shake') or type.startswith('ishake'):
 		eva = try_parse_shake_eva(type)
 	elif name in [ 'open_high','openhigh' ]: 
 		eva = try_parse_open_high_eva(type)
@@ -1081,6 +1081,9 @@ def try_parse_upshake_eva(type):
 def try_parse_shake_eva(type):
 	from eva.evas.shake_eva import ShakeEva
 	eva = ShakeEva()
+	
+	mode_set = False
+
 	params = type.split(':')
 	for p in params[1:]:
 		k = p.split('=')
@@ -1093,10 +1096,17 @@ def try_parse_shake_eva(type):
 			eva.set_max_shake(float(k[1]))
 		elif k[0] == 'mode':
 			eva.set_mode(k[1])
+			mode_set = True
 		elif k[0] == 'fix_interval':
-                        eva.set_fix_interval(int(k[1]))
+			eva.set_fix_interval(int(k[1]))
+			mode_set = True
 		elif k[0] == 'len':
 			eva.set_fix_interval(int(k[1])*60)
+			mode_set = True
+
+	# 如果是ishake 那么强行设置一下mode
+	if type.startswith('ishake') and not mode_set:
+		eva.set_mode('qt')
 	return eva
 
 # example: outc
@@ -1915,6 +1925,8 @@ def try_pase_inside_eva(type):
                         eva.set_max_xt(float(k[1]))
 		elif k[0] == 'mode':
 			eva.set_mode(k[1])
+		elif k[0] == 'len':
+			eva.set_fix_interval( 60*int(k[1]) )
 	return eva
 
 # example: outside:min:max=:mode=:len=
