@@ -105,7 +105,7 @@ cat $to_file
 echo ""
 echo 手工打开文件:  open $to_file
 
-echo 可以继续启动对应的监听器: sh/hand/start_file_listener.sh $to_name
+echo 可以继续启动对应的监听器: sh/hand/start_file_listener.sh $to_name --only 1
 
 # 落日志
 #cmd="sh/hand/generate_hand.sh $type $to_name"
