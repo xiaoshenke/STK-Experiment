@@ -62,6 +62,15 @@ def build_tuxing_one(type,debug=False):
 	elif name == 'attack':
 		eva = try_parse_attack_1(type)
 
+	elif name in [ 'outxt','outxt1' ]:
+		eva = try_parse_outxt_1(type)
+	elif name == 'outxt2':
+		eva = try_parse_outxt_2(type)
+	elif name == 'outxt3':
+		eva = try_parse_outxt_3(type)
+	elif name == 'outxt11':
+		eva = try_parse_outxt_11(type)
+
 	elif name == 'ho2':
 		eva = try_parse_ho2_1(type)
 	elif name == 'ho3':
@@ -202,6 +211,54 @@ def try_parse_newhigh_1(type):
 def try_parse_reach_btw_1(type):
 	from eva.tuxing.reach_btws_1 import ReachBtw_1Eva
 	eva = ReachBtw_1Eva()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] == 'len':
+			eva.set_day_len(int(k[1]))
+	return eva
+
+# example: tx:outxt1:len=
+def try_parse_outxt_1(type):
+	from eva.tuxing.outxts_1 import Outxt_1Eva
+	eva = Outxt_1Eva()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] == 'len':
+			eva.set_day_len(int(k[1]))
+	return eva
+
+# example: tx:outxt2:len=
+def try_parse_outxt_2(type):
+	from eva.tuxing.outxts_1 import Outxt_2Eva
+	eva = Outxt_2Eva()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] == 'len':
+			eva.set_day_len(int(k[1]))
+	return eva
+
+# example: tx:outxt3:len=
+def try_parse_outxt_3(type):
+	from eva.tuxing.outxts_1 import Outxt_3Eva
+	eva = Outxt_3Eva()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] == 'len':
+			eva.set_day_len(int(k[1]))
+	return eva
+
+# example: tx:outxt11:len=
+def try_parse_outxt_11(type):
+	from eva.tuxing.outxts_1 import Outxt_11Eva
+	eva = Outxt_11Eva()
 
 	params = type.split(':')
 	for p in params[1:]:

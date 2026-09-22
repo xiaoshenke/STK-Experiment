@@ -755,6 +755,8 @@ def try_parse_out_xt(type):
 			stra.set_day_len(int(k[1]))
 		elif k[0] == 'min_xt':
 			stra.set_min_xt(float(k[1]))
+		elif k[0] == 'max_xt':
+			stra.set_max_xt(float(k[1]))
 		elif k[0] in [ 'out','type' ]:
 			stra.set_out(k[1])
 	return stra

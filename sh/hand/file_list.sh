@@ -31,16 +31,16 @@ echo ""
 echo open $dir
 
 
-echo ""
-echo "================================================="
-echo "然后展示计算结果文件"
+#echo ""
+#echo "================================================="
+#echo "然后展示计算结果文件"
 
-dir=/Users/wuxian/Desktop/stk_daily/$day/hand/
+#dir=/Users/wuxian/Desktop/stk_daily/$day/hand/
 
-echo "find $dir "
-ls $dir | sort
+#echo "find $dir "
+#ls $dir | sort
 
-echo ""
-echo open $dir
+#echo ""
+#echo open $dir
 
 

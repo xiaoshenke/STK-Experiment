@@ -46,7 +46,7 @@ do
 		shift
 		action=$1
 		;;
-	-basic_eva| --basic_eva | -base_eva | --base_eva | -eva | --eva)
+	-basic_eva| --basic_eva | -base_eva | --base_eva | -basic | --basic | -eva | --eva)
 		shift
 		basic_eva=$1
 		;;
