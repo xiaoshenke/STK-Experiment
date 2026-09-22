@@ -148,10 +148,10 @@ echo "最终生成的文件内容如下:"
 cat $to_file
 
 echo ""
-echo 手工打开文件:  open $to_file
+echo "手工打开文件(tmp):  open $to_file"
 echo ""
 
-echo 可以继续启动对应的监听器: sh/hand/start_file_listener.sh $to_name
+#echo 可以继续启动对应的监听器: sh/hand/start_file_listener.sh $to_name
 
 #cmd="sh/hand/generate_xls_hand.sh $xls $type --start_at $start_at --end_at $end_at"
 #sh/log/log_to_operate.sh "$cmd" "GENE-XLS-BUYER"

@@ -76,6 +76,8 @@ path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
 key="hand.not_open-$key"
+# 注意替换一下=
+key="${key//alias=/alias.}"
 
 echo python realtime/properties_cli.py write_key_val $key $val 
 python realtime/properties_cli.py write_key_val $key $val 

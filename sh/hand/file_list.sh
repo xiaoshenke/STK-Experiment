@@ -20,12 +20,25 @@ ls engine/observe/hand/template/ | grep hand[.]properties | sort
 
 echo ""
 echo "================================================="
-echo "然后展示当前手工配置的buyer文件"
+echo "然后展示当前手工配置的hand文件"
 
 dir=/Users/wuxian/Desktop/stk_daily/$day/juben/
 
-echo "find $dir |grep [.]properties"
-ls $dir |grep [.]properties|sort
+echo "find $dir | grep hand | grep [.]properties"
+ls $dir |grep [.]properties|grep hand|sort
+
+echo ""
+echo open $dir
+
+
+echo ""
+echo "================================================="
+echo "然后展示计算结果文件"
+
+dir=/Users/wuxian/Desktop/stk_daily/$day/hand/
+
+echo "find $dir "
+ls $dir | sort
 
 echo ""
 echo open $dir
