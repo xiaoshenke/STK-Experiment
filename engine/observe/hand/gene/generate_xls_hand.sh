@@ -137,7 +137,8 @@ to_file2="${to_file/#$home/~}"
 sed -i '' "5a\\
 # 注意: 这是由模板生成的手工文件\\
 # 模板: ${from_file}\\
-# xls: ${xls}\\
+\\
+hand_xls=${xls}\\
 \\
 " $to_file
 
