@@ -13,7 +13,8 @@ id='-1'
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
-day=$(python util/sh_util.py get_today)
+#day=$(python util/sh_util.py get_today)
+day=`date +'%Y-%m-%d'`
 
 now=0
 while [ -n "$1" ]
