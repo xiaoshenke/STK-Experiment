@@ -1,12 +1,17 @@
 #!/bin/bash
 
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
+day=$(python util/sh_util.py get_today)
+
 key=''
 val=''
 # update 2026-05-12:0->1
 force=1
 reason=#
 flush=0
-day=`date +'%Y-%m-%d'`
+#day=`date +'%Y-%m-%d'`
 
 now=0
 while [ -n "$1" ]

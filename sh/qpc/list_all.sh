@@ -4,8 +4,9 @@
 
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
+day=$(python util/sh_util.py get_today)
 
-day=`date +'%Y-%m-%d'`
+#day=`date +'%Y-%m-%d'`
 
 while [ -n "$1" ]
 do 
