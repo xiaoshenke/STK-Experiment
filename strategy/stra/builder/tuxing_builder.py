@@ -162,8 +162,15 @@ def build_tuxing_one(type,debug=False):
 	if name == 'bad':
 		stra = try_parse_bad_1(type)
 
-	if name in [ 'huoyue','huoy','hy' ]:
+	if name in [ 'buhuoyue','bhy','buhuoy' ]:
+		stra = try_parse_buhuoyue_1(type)
+	elif name in [ 'huoyue_yidian','yidian_huoyue' ]:
+		stra = try_parse_huoyue_yidian_1(type)
+	elif name in [ 'huoyue','huoy','hy' ]:
 		stra = try_parse_huoyue_1(type)
+
+	if name in [ 'dabodong' ]:
+		stra = try_parse_dabodong_1(type)
 
 	if name in [ 'bsd' ]:
 		stra = try_parse_bsd_1(type)
@@ -269,6 +276,21 @@ def try_parse_bad_1(type):
 def try_parse_huoyue_1(type):
 	from strategy.tuxing.huoyues_1 import Huoyue_1Strategy
 	return Huoyue_1Strategy()
+
+# example: tx:huoyue_yidian | tx:yidian_huoyue
+def try_parse_huoyue_yidian_1(type):
+	from strategy.tuxing.huoyues_1 import HuoyueYidian_1Strategy
+	return HuoyueYidian_1Strategy() 
+
+# example: tx:buhuoyue
+def try_parse_buhuoyue_1(type):
+	from strategy.tuxing.buhuoyues_1 import Buhuoyue_1Strategy
+	return Buhuoyue_1Strategy()
+
+# example: tx:dabodong
+def try_parse_dabodong_1(type):
+	from strategy.tuxing.dabodongs_1 import Dabodong_1Strategy
+	return Dabodong_1Strategy()
 
 # example: tx:bsd
 def try_parse_bsd_1(type):

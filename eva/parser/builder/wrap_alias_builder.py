@@ -89,6 +89,8 @@ def build_wrap_alias_one(type,debug=False):
 		eva = try_parse_upbound30_1(type)
 	elif type in [ 'upbound40','bound40' ]:
 		eva = try_parse_upbound40_1(type)
+	elif type in [ 'upbound50','bound50' ]:
+                eva = try_parse_upbound50_1(type)
 	elif type in [ 'upbound60','bound60' ]:
 		eva = try_parse_upbound60_1(type)
 	elif type in [ 'upbound70','bound70' ]:
@@ -972,6 +974,11 @@ def try_parse_upbound30_1(type):
 def try_parse_upbound40_1(type):
 	from eva.alias.upbounds_1 import Upbound40_1Eva
 	return Upbound40_1Eva()
+
+# example: upbound50
+def try_parse_upbound50_1(type):
+	from eva.alias.upbounds_1 import Upbound50_1Eva
+	return Upbound50_1Eva()
 
 # example: upbound60
 def try_parse_upbound60_1(type):

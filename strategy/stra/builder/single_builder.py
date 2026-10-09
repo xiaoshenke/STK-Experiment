@@ -817,9 +817,9 @@ def try_parse_ma_upbound(type):
 		k = p.split('=')
 		if k[0] == 'len':
 			stra.set_day_len(int(k[1]))
-		elif k[0] in [ 'rate','min_rate' ]:
+		elif k[0] in [ 'rate','min_rate','min' ]:
 			stra.set_min_rate(float(k[1]))
-		elif k[0] == 'max_rate':
+		elif k[0] in [ 'max_rate','max' ]:
 			stra.set_max_rate(float(k[1])) 
 		elif k[0] == 'min_pchg':
 			stra.set_min_bound_pchg(float(k[1]))
@@ -834,9 +834,9 @@ def try_parse_upbound(type):
 		k = p.split('=')
 		if k[0] == 'len':
 			stra.set_day_len(int(k[1]))
-		elif k[0] in [ 'rate','min_rate' ]:
+		elif k[0] in [ 'min','rate','min_rate' ]:
 			stra.set_min_rate(float(k[1]))
-		elif k[0] == 'max_rate':
+		elif k[0] in [ 'max_rate','max' ]:
 			stra.set_max_rate(float(k[1]))
 		elif k[0] == 'use_low':
 			b = True if k[1] in ['true','TRUE','True'] else False
