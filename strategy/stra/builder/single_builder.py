@@ -146,6 +146,8 @@ def build_single_one(type,debug=False):
 		stra = try_parse_pb(type)
 	elif type.startswith('pe'):
 		stra = try_parse_pe(type)
+	elif type.startswith( 'ma_guxing' ) or type.startswith( 'ma_gx' ):
+		stra = try_parse_ma_guxing(type)
 	elif type.startswith('ma_tover'):
 		stra = try_parse_ma_tover(type)
 	elif type.startswith('amt') or type.startswith('amount'):
@@ -1026,6 +1028,21 @@ def try_parse_ma_tover(type):
                         stra.set_min_tover(float(k[1]))
 		elif k[0] == 'max_tover':
                         stra.set_max_tover(float(k[1]))
+	return stra
+
+# example: ma_guxing:ma=:min=:max
+def try_parse_ma_guxing(type):
+	from strategy.ma.ma_guxing import MaGuxingStrategy
+	stra = MaGuxingStrategy()
+        params = type.split(':')
+        for p in params[1:]:
+                k = p.split('=')
+		if k[0] in [ 'ma','len' ]:
+			stra.set_ma_len(int(k[1]))
+		if k[0] in [ 'min','min_pchg','min_gx' ]:
+                        stra.set_min_gx(float(k[1]))
+		elif k[0] in [ 'max_pchg','max','max_gx' ]:
+			stra.set_max_gx(float(k[1]))
 	return stra
 
 # example: hcl:min_pchg=9.0:max_pchg=9.0
