@@ -9,7 +9,8 @@ def is_wrap_alias_type(type,debug=False):
 	node = build_wrap_alias_one(type)
 
 	from eva.alias.wrap_alias_eva import WrapAliasEva
-	if isinstance( node,WrapAliasEva ):
+	from eva.list.list_eva import ListEva
+	if isinstance( node,WrapAliasEva ) or isinstance( node,ListEva ):
 		if debug:
 			print 'wrap_alias_builder.is_wrap_alias_type return True.'
 		return True
@@ -232,6 +233,8 @@ def build_wrap_alias_one(type,debug=False):
 		eva = try_parse_high35_eva(type)
 	elif type == 'high36':
 		eva = try_parse_high36_eva(type)
+	elif type == 'high3_2':
+		eva = try_parse_high3_2(type)
 	elif type.startswith('high3') or type == 'high3_1':
 		eva = try_parse_high3_eva(type)
 	elif type.startswith('high25') or type == 'high25_1':
@@ -240,6 +243,8 @@ def build_wrap_alias_one(type,debug=False):
 		eva = try_parse_high23_eva(type)
 	elif type == 'high24':
 		eva = try_parse_high24_eva(type)
+	elif type == 'high2_2':
+                eva = try_parse_high2_2(type)
 	elif type == 'high2':
 		eva = try_parse_high2_eva(type)
 	elif type == 'high14':
@@ -1117,6 +1122,13 @@ def try_parse_high2_eva(type):
         eva = High2_1Eva()
         return eva
 
+# example: high2_2
+def try_parse_high2_2(type):
+        from eva.alias.highs_1 import High2_2Eva
+        eva = High2_2Eva()
+        return eva
+
+
 # example: high35
 def try_parse_high35_eva(type):
 	from eva.alias.highs_1 import High35_1Eva
@@ -1133,6 +1145,12 @@ def try_parse_high36_eva(type):
 def try_parse_high3_eva(type):
 	from eva.alias.highs_1 import High3_1Eva
 	eva = High3_1Eva()
+	return eva
+
+# example: high3_2
+def try_parse_high3_2(type):
+	from eva.alias.highs_1 import High3_2Eva
+	eva = High3_2Eva()
 	return eva
 
 # example: high14
