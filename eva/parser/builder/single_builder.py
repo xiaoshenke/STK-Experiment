@@ -225,6 +225,8 @@ def build_single_one(type,debug=False):
 		eva = try_parse_open_eva(type)
 	elif name in [ 'co_zhanbi','co_zb','cozb' ]:
 		eva = try_parse_co_zhanbi_eva(type)
+	elif name in [ 'real_co','rco' ]:
+		eva = try_parse_real_co_eva(type)
 	elif type.startswith('co:') or type == 'co':
 		eva = try_parse_co_eva(type)
 	elif type.startswith('ol'):
@@ -296,6 +298,8 @@ def build_single_one(type,debug=False):
 	#	eva = try_parse_fast_pull_eva(type)
 	elif type.startswith('drop'):
 		eva = try_parse_drop_eva(type)
+	elif name in [ 'real_rup','rrup' ]:
+		eva = try_parse_real_rup_eva(type)
 	elif type.startswith('rup2'):
 		eva = try_parse_rup2_eva(type)
 	elif type.startswith('rup'):
@@ -1467,6 +1471,28 @@ def try_parse_co_zhanbi_eva(type):
 			eva.set_ascending(b)
 	return eva
 
+# example: rco:min=:max=
+def try_parse_real_co_eva(type):
+	from eva.evas.real_co_eva import RealCoEva
+	eva = RealCoEva()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] in [ 'min','min_pchg','min_co' ]:
+			eva.set_min_co_pchg(float(k[1]))
+		elif k[0] in [ 'max','max_pchg','max_co' ]:
+			eva.set_max_co_pchg(float(k[1]))
+		elif k[0] == 'min_abs':
+			eva.set_min_abs(float(k[1]))
+		elif k[0] == 'asc' or k[0] == 'ascending':
+			b = True if k[1] in [ '1','true','TRUE','True'] else False
+			eva.set_ascending(b)
+		elif k[0] == 'sort':
+			eva.set_sort(k[1])
+	return eva
+
+
 # example: co:min_pchg=:max_pchg=:min_abs
 def try_parse_co_eva(type):
 	#print u'eva.single-builder.try_parse_co_eva,type:%s'%(type)
@@ -1569,6 +1595,27 @@ def try_parse_rup2_eva(type):
 		if k[0] == 'min_pchg':
 			eva.set_min_pchg(float(k[1]))
 	return eva
+
+# example: rrup:min=:max
+def try_parse_real_rup_eva(type):
+	from eva.evas.real_rup_eva import RealRupEva
+	eva = RealRupEva()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] in [ 'min','min_pchg','min_rup' ]:
+			eva.set_min_rup(float(k[1]))
+		elif k[0] in [ 'max','max_pchg','max_rup' ]:
+			eva.set_max_rup(float(k[1]))
+		elif k[0] == 'type':
+			eva.set_type(k[1])
+		elif k[0] == 'mode':
+			eva.set_mode(k[1])
+		else:
+			raise Exception("fail to parse %s,param:%s"%(type,k))
+	return eva
+
 
 # example: rup:min_pchg=0.0:max_pchg=10.0:type=close
 def try_parse_rup_eva(type):
