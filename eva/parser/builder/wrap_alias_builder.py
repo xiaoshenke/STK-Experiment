@@ -204,6 +204,8 @@ def build_wrap_alias_one(type,debug=False):
 		eva = try_parse_newlow8_1(type)
 	elif type == 'newlow10':
 		eva = try_parse_newlow10_1(type)
+	elif type == 'high0_2':
+                eva = try_parse_high0_2(type)
 	elif type == 'high02':
 		eva = try_parse_high02_eva(type)
 	elif type == 'high03':
@@ -1043,6 +1045,12 @@ def try_parse_stage2_eva(type):
         from eva.alias.stage_2_eva import Stage_2Eva
         eva = Stage_2Eva()
         return eva
+
+# example: high0_2
+def try_parse_high0_2(type):
+	from eva.alias.highs_1 import High0_2Eva
+	eva = High0_2Eva()
+	return eva
 
 # example: high02
 def try_parse_high02_eva(type):
