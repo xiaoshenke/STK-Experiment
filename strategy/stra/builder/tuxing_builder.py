@@ -88,6 +88,8 @@ def build_tuxing_one(type,debug=False):
 
 	elif name in [ 'drop10','drop10_1' ]:
 		stra = try_parse_drop10_1(type)
+	elif name in [ 'drop10_2' ]:
+		stra = try_parse_drop10_2(type)
 
 	elif name in [ 'good','gd' ]:
 		stra = try_parse_good_1(type)
@@ -214,6 +216,18 @@ def try_parse_dst_1(type):
 def try_parse_dst_2(type):
 	from strategy.tuxing.dsts_1 import Dst_2Strategy
 	return Dst_2Strategy()
+
+# example: tx:drop10_2:len=
+def try_parse_drop10_2(type):
+	from strategy.tuxing.drop10s_1 import Drop10_2Strategy
+	stra = Drop10_2Strategy()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] in [ 'day_len','len' ]:
+			stra.set_day_len(int(k[1]))
+	return stra
 
 # example: tx:drop10:len=
 def try_parse_drop10_1(type):
