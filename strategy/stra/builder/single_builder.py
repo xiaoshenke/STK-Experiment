@@ -85,6 +85,10 @@ def build_single_one(type,debug=False):
 		stra = try_parse_trds(type)
 	elif type.startswith('trd'):
 		stra = try_parse_trd(type)
+	elif type.startswith('yang'):
+		stra = try_parse_yang(type)
+	elif type.startswith('yin'):
+                stra = try_parse_yin(type)
 	elif type.startswith( 'shiti' ):
 		stra = try_parse_shiti(type)
 	elif type.startswith('upbound'):
@@ -573,6 +577,35 @@ def try_parse_shiti(type):
 		elif k[0] == 'max_pchg':
 			stra.set_max_shiti(float(k[1]))
 	return stra
+
+# example: yang:min_pchg=:max_pchg
+def try_parse_yang(type):
+	from strategy.single.yang_strategy import YangStrategy
+	stra = YangStrategy()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] in [ 'min_pchg','min','min_yang' ]:
+			stra.set_min_yang(float(k[1]))
+		elif k[0] in [ 'max_pchg','max','max_yang' ]:
+			stra.set_max_yang(float(k[1]))
+	return stra
+
+# example: yin:min_pchg=:max_pchg
+def try_parse_yin(type):
+	from strategy.single.yin_strategy import YinStrategy
+	stra = YinStrategy()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] in [ 'min_pchg','min','min_yang' ]:
+			stra.set_min_yin(float(k[1]))
+		elif k[0] in [ 'max_pchg','max','max_yang' ]:
+			stra.set_max_yin(float(k[1]))
+	return stra
+
 
 # example: trd:min_pchg=:max_pchg
 def try_parse_trd(type):
