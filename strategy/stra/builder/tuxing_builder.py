@@ -44,6 +44,15 @@ def build_tuxing_one(type,debug=False):
 
 	if name == 'duotrd':
 		stra = try_parse_duotrd_1(type)
+	elif name == 'yang31':
+		stra = try_parse_yang31_1(type)
+	elif name == 'yang31_up':
+		stra = try_parse_yang31_up_1(type)
+	elif name == 'yang32':
+		stra = try_parse_yang32_1(type)
+	elif name == 'yang32_up':
+		stra = try_parse_yang32_up_1(type)
+
 	elif name in [ 'duoyang','duoyang1','duoyang_1' ]:
 		stra = try_parse_duoyang_1(type)
 	elif name in [ 'duoyang2','duoyang_2' ]:
@@ -501,6 +510,35 @@ def try_parse_break5_1(type):
 	from strategy.tuxing.break5s_1 import Break5_1Strategy
 	stra = Break5_1Strategy()
 	return stra
+
+# example: tx:yang31
+def try_parse_yang31_1(type):
+	from strategy.tuxing.duo_yangs_2 import Yang31_1Strategy
+	stra = Yang31_1Strategy()
+
+	return stra
+
+# example: tx:yang31_up
+def try_parse_yang31_up_1(type):
+	from strategy.tuxing.duo_yangs_2 import Yang31Up_1Strategy
+	stra = Yang31Up_1Strategy()
+
+	return stra
+
+# example: tx:yang32
+def try_parse_yang32_1(type):
+	from strategy.tuxing.duo_yangs_2 import Yang32_1Strategy
+	stra = Yang32_1Strategy()
+
+	return stra
+
+# example: tx:yang32_up
+def try_parse_yang32_up_1(type):
+	from strategy.tuxing.duo_yangs_2 import Yang32Up_1Strategy
+	stra = Yang32Up_1Strategy()
+
+	return stra
+
 
 # example: tx:duoyang
 def try_parse_duoyang_1(type):
