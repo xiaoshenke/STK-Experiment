@@ -56,7 +56,7 @@ do
 	shift
 done
 
-type=$(python engine/observe/hand/gene_cli.py may_change_xls_template_type $type)
+type=$(python engine/observe/hand/gene/gene_cli.py may_change_xls_template_type $type)
 
 cur_dir=/Users/wuxian/Desktop/STK-Experiment
 

@@ -75,3 +75,8 @@ export PYTHONPATH=$path:$PYTHONPATH
 echo python realtime/qpc_cli.py add_to_key --day $day $key $val --force $force --reason $reason --flush $flush
 python realtime/qpc_cli.py add_to_key --day $day $key $val --force $force --reason $reason --flush $flush
 
+echo ""
+echo "生成一下新的数据"
+echo python realtime/qpc_cli.py re_generate_local_codes qpc:$key --day $day
+python realtime/qpc_cli.py re_generate_local_codes qpc:$key --day $day
+
