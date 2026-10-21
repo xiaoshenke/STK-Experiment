@@ -271,6 +271,8 @@ def build_wrap_alias_one(type,debug=False):
 		eva = try_parse_co3(type)
 	elif type == 'co4':
 		eva = try_parse_co4(type)
+	elif type == 'basic_btw_1':
+		eva = try_parse_basic_btw_1(type)
 	elif type == 'btw07':
 		eva = try_parse_btw07(type)
 	elif type == 'btw05':
@@ -1243,6 +1245,12 @@ def try_parse_co3(type):
 def try_parse_co4(type):
 	from eva.alias.cos_1 import Co4Eva
 	eva = Co4Eva()
+	return eva
+
+# example: basic_btw_1
+def try_parse_basic_btw_1(type):
+	from eva.alias.btws_1 import BasicBtw_1Eva
+	eva = BasicBtw_1Eva()
 	return eva
 
 # example: btw01
