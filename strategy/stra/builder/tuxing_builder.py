@@ -170,6 +170,8 @@ def build_tuxing_one(type,debug=False):
 	if name in [ 'qidong','qd','qid','qido','qidon' ]:
 		stra = try_parse_qidong_1(type)
 
+	if name in [ 'basic','baisc' ]:
+		stra = try_parse_basic_1(type)
 	if name == 'bad':
 		stra = try_parse_bad_1(type)
 
@@ -289,6 +291,12 @@ def try_parse_zhendang_1(type):
 def try_parse_zhendang_2(type):
 	from strategy.tuxing.zhendangs_1 import Zhendang_2Strategy
 	return Zhendang_2Strategy()
+
+# example: tx:basic
+def try_parse_basic_1(type):
+	from strategy.tuxing.basics_1 import Basic_1Strategy
+	return Basic_1Strategy()
+
 
 # example: tx:bad
 def try_parse_bad_1(type):
