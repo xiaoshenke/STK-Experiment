@@ -425,6 +425,9 @@ def build_wrap_alias_one(type,debug=False):
 		eva = try_parse_top_amount80(type)
 	elif type == 'tamount100':
 		eva = try_parse_top_amount100(type)
+	elif type in [ '3days_ok','3days_ok_1' ]:
+		eva = try_parse_3days_ok_1(type)
+
 	elif type in [ '2day_good1','2days_good1' ]:
 		eva = try_parse_2day_good1(type)
 	elif type in [ 'amount_and_good','amount_and_good_1','aag' ]:
@@ -654,6 +657,11 @@ def try_parse_amount_and_good_1(type):
 def try_parse_amount_and_bad_1(type):
 	from eva.alias.amount_and_bad_1 import AmountAndBad_1Eva
 	return AmountAndBad_1Eva()
+
+# example: 3days_ok
+def try_parse_3days_ok_1(type):
+	from eva.alias.days_good_1 import Days3Ok_1Eva
+	return Days3Ok_1Eva()
 
 # example: 2day_good1
 def try_parse_2day_good1(type):

@@ -54,7 +54,9 @@ def build_tuxing_one(type,debug=False):
 	if name in [ 'shouri_tupo','srtupo','shouritupo' ]:
 		eva = try_parse_shouri_tupo_1(type)
 
-	if name == 'good':
+	if name == '3days_dis_good_0':
+		eva = try_parse_3days_dis_good_0(type)
+	elif name == 'good':
 		eva = try_parse_good_1(type)
 	elif name == 'good2':
 		eva = try_parse_good_2(type)
@@ -150,6 +152,11 @@ def try_parse_co3_1(type):
 def try_parse_attack_1(type):
 	from eva.tuxing.attacks_1 import Attack_1Eva
 	return Attack_1Eva()
+
+# example: tx:3days_dis_good_0
+def try_parse_3days_dis_good_0(type):
+	from eva.tuxing.days_dis_goods_1 import Days3DisGood_0Eva
+	return Days3DisGood_0Eva()
 
 # example: tx:good
 def try_parse_good_1(type):

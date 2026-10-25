@@ -122,6 +122,10 @@ def build_single_one(type,debug=False):
 		eva = try_parse_irzq_pull_eva(type)
 	elif name in [ 'izouq_pull','izouqpull','izouqiang_pull','izouqiang_npull','izouqiangnpull' ]:
                 eva = try_parse_izouqiang_pull_eva(type)
+	
+	elif name in [ 'rchonggao' ] or name.startswith( 'rchon' ):
+		eva = try_parse_real_chonggao_eva(type)
+
 	elif name in [ 'chonggao_pull','chongao_pull','chonggaopull','chonggao_npull','chonggaonpull' ]:
                 eva = try_parse_chonggao_pull_eva(type)
 
@@ -140,10 +144,10 @@ def build_single_one(type,debug=False):
 	elif name in [ 'xg_chonggao','xingao_chonggao','newhigh_chonggao','newh_chonggao' ]:
 		eva = try_parse_xingao_chonggao(type)
 
-	elif name in [ 'new_chonggao','newchonggao' ]:
+	elif name in [ 'new_chonggao','newchonggao' ] or name.startswith('new_chon'):
 		eva = try_parse_new_chonggao(type)
-	elif name in [ 'new_chonggao2','newchonggao2' ]:
-		eva = try_parse_new_chonggao2(type)
+	#elif name in [ 'new_chonggao2','newchonggao2' ]:
+	#	eva = try_parse_new_chonggao2(type)
 
 	elif name in [ 'zero','0zhou' ]:
 		eva = try_parse_zero(type)
@@ -1139,6 +1143,18 @@ def try_parse_pchg_areas_eva(type):
 	from eva.evas.pchg_areas_eva import PchgAreasEva
 	return PchgAreasEva()
 
+# example: rchonggao:min=
+def try_parse_real_chonggao_eva(type):
+	from eva.evas.real_chonggao_eva import RealChonggaoEva
+	eva = RealChonggaoEva()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] in [ 'min','min_pchg','min_chonggao' ]:
+			eva.set_min_pchg(float(k[1]))
+	return eva
+
 # example: chonggao
 def try_parse_chonggao(type):
 	from eva.list.chonggao.chonggao_eva import ChonggaoEva
@@ -1175,11 +1191,31 @@ def try_parse_xingao_chonggao(type):
 	eva = XingaoChonggaoEva()
 	return eva
 
-# example: new_chonggao
+# 新版
+# example: new_chonggao:mode=:t2=
 def try_parse_new_chonggao(type):
-	from eva.list.chonggao.new_chonggao_eva import NewChonggaoEva
+	from eva.new.new_chonggao_eva import NewChonggaoEva
 	eva = NewChonggaoEva()
+
+	params = type.split(':')
+	for p in params[1:]:
+		k = p.split('=')
+		if k[0] in [ 'min','min_pchg','min_chonggao' ]:
+			eva.set_min_pchg(float(k[1]))
+		elif k[0] == 'min_up':
+			eva.set_min_up(float(k[1]))	
+		elif k[0] == 'mode':
+			eva.set_mode(k[1])
+		elif k[0] == 't2':
+			eva.set_t2(k[1])
 	return eva
+
+# 旧版
+# example: new_chonggao
+#def try_parse_new_chonggao(type):
+#	from eva.list.chonggao.new_chonggao_eva import NewChonggaoEva
+#	eva = NewChonggaoEva()
+#	return eva
 
 # example: new_chonggao2
 def try_parse_new_chonggao2(type):
