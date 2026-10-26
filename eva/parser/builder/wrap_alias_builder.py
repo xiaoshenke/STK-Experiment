@@ -427,6 +427,8 @@ def build_wrap_alias_one(type,debug=False):
 		eva = try_parse_top_amount100(type)
 	elif type in [ '3days_ok','3days_ok_1' ]:
 		eva = try_parse_3days_ok_1(type)
+	elif type in [ '3days_jiasu','3days_jiasu_1' ]:
+		eva = try_parse_3days_jiasu_1(type)
 	elif type == '3days_jiasu_2':
 		eva = try_parse_3days_jiasu_2(type)
 	elif type in [ '3days_qifei','3days_qifei_1' ]:
@@ -671,6 +673,12 @@ def try_parse_3days_qifei_1(type):
 def try_parse_3days_ok_1(type):
 	from eva.alias.days_good_1 import Days3Ok_1Eva
 	return Days3Ok_1Eva()
+
+# example: 3days_jiasu
+def try_parse_3days_jiasu_1(type):
+	from eva.alias.days_good_1 import Days3Jiasu_1Eva
+	return Days3Jiasu_1Eva()
+
 
 # example: 3days_jiasu_2
 def try_parse_3days_jiasu_2(type):
