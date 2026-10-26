@@ -678,6 +678,8 @@ def try_parse_trd_sum(type):
 		elif k[0] in [ 'only_up0' ]:
 			b = True if k[1] in [ 'true','TRUE','True','1' ] else False
 			stra.set_only_up0(b)	
+		elif k[0] == 'version':
+			stra.set_version(int(k[1]))
 	return stra
 
 # example: duanxt:len=:min_xt=:min=:max=:use_hl=

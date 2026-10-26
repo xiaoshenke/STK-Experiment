@@ -56,6 +56,11 @@ def build_tuxing_one(type,debug=False):
 
 	if name == '3days_dis_good_0':
 		eva = try_parse_3days_dis_good_0(type)
+	elif name == '3days_dis_jiasu_2':
+		eva = try_parse_3days_dis_jiasu_2(type)
+	elif name == '3days_dis_qifei_1':
+		eva = try_parse_3days_dis_qifei_1(type)
+
 	elif name == 'good':
 		eva = try_parse_good_1(type)
 	elif name == 'good2':
@@ -152,6 +157,16 @@ def try_parse_co3_1(type):
 def try_parse_attack_1(type):
 	from eva.tuxing.attacks_1 import Attack_1Eva
 	return Attack_1Eva()
+
+# example: tx:3days_dis_qifei_1
+def try_parse_3days_dis_qifei_1(type):
+	from eva.tuxing.days_dis_qifeis_1 import Days3DisQifei_1Eva
+	return Days3DisQifei_1Eva()
+
+# example: tx:3days_dis_jiasu_2
+def try_parse_3days_dis_jiasu_2(type):
+	from eva.tuxing.days_dis_jiasus_1 import Days3DisJiasu_2Eva
+	return Days3DisJiasu_2Eva()
 
 # example: tx:3days_dis_good_0
 def try_parse_3days_dis_good_0(type):
