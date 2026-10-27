@@ -55,6 +55,10 @@ def build_tuxing_one(type,debug=False):
 
 	elif name == '3days_dis_good_0':
 		stra = try_parse_3days_dis_good_0(type)
+	elif name == '3days_dis_jiasu_1':
+                stra = try_parse_3days_dis_jiasu_1(type)
+        elif name == '3days_dis_jiasu_2':
+                stra = try_parse_3days_dis_jiasu_2(type)
 
 	elif name in [ 'duoyang','duoyang1','duoyang_1' ]:
 		stra = try_parse_duoyang_1(type)
@@ -225,6 +229,16 @@ def may_try_single_type(type):
 def try_parse_3days_dis_good_0(type):
 	from strategy.tuxing.days_dis_goods_1 import Days3DisGood_0Strategy
 	return Days3DisGood_0Strategy()
+
+# example: tx:3days_dis_jiasu_1
+def try_parse_3days_dis_jiasu_1(type):
+	from strategy.tuxing.days_dis_jiasus_1 import Days3DisJiasu_1Strategy
+	return Days3DisJiasu_1Strategy()
+
+# example: tx:3days_dis_jiasu_2
+def try_parse_3days_dis_jiasu_2(type):
+	from strategy.tuxing.days_dis_jiasus_1 import Days3DisJiasu_2Strategy
+	return Days3DisJiasu_2Strategy()
 
 # example: tx:dst
 def try_parse_dst_1(type):
