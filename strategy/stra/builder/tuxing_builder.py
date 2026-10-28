@@ -59,6 +59,13 @@ def build_tuxing_one(type,debug=False):
                 stra = try_parse_3days_dis_jiasu_1(type)
         elif name == '3days_dis_jiasu_2':
                 stra = try_parse_3days_dis_jiasu_2(type)
+	elif name == '3days_dis_qifei_1':
+		stra = try_parse_3days_dis_qifei_1(type)
+
+	elif name == '3days_qushi_up_1' or name == '3days_qushiup_1':
+		stra = try_parse_3days_qushi_up_1(type)
+	elif name == '3days_qushi_up_2' or name == '3days_qushiup_2':
+		stra = try_parse_3days_qushi_up_2(type)
 
 	elif name in [ 'duoyang','duoyang1','duoyang_1' ]:
 		stra = try_parse_duoyang_1(type)
@@ -239,6 +246,22 @@ def try_parse_3days_dis_jiasu_1(type):
 def try_parse_3days_dis_jiasu_2(type):
 	from strategy.tuxing.days_dis_jiasus_1 import Days3DisJiasu_2Strategy
 	return Days3DisJiasu_2Strategy()
+
+# example: tx:3days_dis_qifei_1
+def try_parse_3days_dis_qifei_1(type):
+	from strategy.tuxing.days_dis_qifeis_1 import Days3DisQifei_1Strategy
+	return Days3DisQifei_1Strategy()
+
+# example: tx:3days_qushiup_1
+def try_parse_3days_qushi_up_1(type):
+	from strategy.tuxing.days_qushi_ups_1 import Days3QushiUp_1Strategy
+	return Days3QushiUp_1Strategy()
+
+
+# example: tx:3days_qushiup_2
+def try_parse_3days_qushi_up_2(type):
+	from strategy.tuxing.days_qushi_ups_1 import Days3QushiUp_2Strategy
+	return Days3QushiUp_2Strategy()
 
 # example: tx:dst
 def try_parse_dst_1(type):
