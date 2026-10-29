@@ -54,10 +54,17 @@ def build_tuxing_one(type,debug=False):
 	elif name in [ 'shouri_tupo','srtupo','shouritupo' ]:
 		eva = try_parse_shouri_tupo_1(type)
 
+	elif name == '1day_good_1':
+		eva = try_parse_1day_good_1(type)
+
 	elif name == '3days_dis_good_0':
 		eva = try_parse_3days_dis_good_0(type)
 	elif name == '3days_dis_good_1':
-                eva = try_parse_3days_dis_good_1(type)
+		eva = try_parse_3days_dis_good_1(type)
+	elif name == '3days_dis_good_2':
+		eva = try_parse_3days_dis_good_2(type)	
+
+	# 效果不佳 最好别使用
 	elif name == '3days_dis_up_2':
                 eva = try_parse_3days_dis_up_2(type)
 	elif name == '3days_dis_jiasu_1':
@@ -164,6 +171,11 @@ def try_parse_attack_1(type):
 	from eva.tuxing.attacks_1 import Attack_1Eva
 	return Attack_1Eva()
 
+# example: tx:1day_good_1
+def try_parse_1day_good_1(type):
+	from eva.tuxing.day1_goods_1 import Day1Good_1Eva
+	return Day1Good_1Eva()
+
 # example: tx:3days_dis_qifei_1
 def try_parse_3days_dis_qifei_1(type):
 	from eva.tuxing.days_dis_qifeis_1 import Days3DisQifei_1Eva
@@ -195,6 +207,12 @@ def try_parse_3days_dis_good_0(type):
 def try_parse_3days_dis_good_1(type):
 	from eva.tuxing.days_dis_goods_1 import Days3DisGood_1Eva
 	return Days3DisGood_1Eva()
+
+# example: tx:3days_dis_good_2
+def try_parse_3days_dis_good_2(type):
+	from eva.tuxing.days_dis_goods_1 import Days3DisGood_2Eva
+	return Days3DisGood_2Eva()
+
 
 # example: tx:good
 def try_parse_good_1(type):

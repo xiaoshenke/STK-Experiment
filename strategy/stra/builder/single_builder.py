@@ -618,6 +618,8 @@ def try_parse_trd(type):
 			stra.set_min_trend(float(k[1]))
 		elif k[0] in [ 'max_pchg','max' ]:
 			stra.set_max_trend(float(k[1]))
+		elif k[0] == 'version':	
+			stra.set_version(int(k[1]))
 	return stra
 
 # example: rup:min_pchg=:max_pchg

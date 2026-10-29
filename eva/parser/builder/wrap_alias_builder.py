@@ -427,13 +427,20 @@ def build_wrap_alias_one(type,debug=False):
 		eva = try_parse_top_amount80(type)
 	elif type == 'tamount100':
 		eva = try_parse_top_amount100(type)
+
+	elif type in [ '1day_good' ]:
+		eva = try_parse_1day_good_1(type)
+
 	elif type in [ '3days_ok','3days_ok_1' ]:
 		eva = try_parse_3days_ok_1(type)
 	elif type in [ '3days_good','3days_good_1' ]:
                 eva = try_parse_3days_good_1(type)
+	elif type in [ '3days_good2','3days_good_2' ]:
+                eva = try_parse_3days_good_2(type)
+
 	elif type in [ '3days_jiasu','3days_jiasu_1' ]:
 		eva = try_parse_3days_jiasu_1(type)
-	elif type == '3days_jiasu_2':
+	elif type in [ '3days_jiasu_2','3days_jiasu2' ]:
 		eva = try_parse_3days_jiasu_2(type)
 	elif type == '3days_up_2':
 		eva = try_parse_3days_up_2(type)
@@ -670,6 +677,11 @@ def try_parse_amount_and_bad_1(type):
 	from eva.alias.amount_and_bad_1 import AmountAndBad_1Eva
 	return AmountAndBad_1Eva()
 
+# example: 1day_good
+def try_parse_1day_good_1(type):
+	from eva.alias.days_good_1 import Day1Good_1Eva
+	return Day1Good_1Eva()
+
 # example: 3days_qifei
 def try_parse_3days_qifei_1(type):
 	from eva.alias.days_good_1 import Days3Qifei_1Eva
@@ -684,6 +696,12 @@ def try_parse_3days_ok_1(type):
 def try_parse_3days_good_1(type):
 	from eva.alias.days_good_1 import Days3Good_1Eva
 	return Days3Good_1Eva()
+
+# example: 3days_good2
+def try_parse_3days_good_2(type):
+	from eva.alias.days_good_1 import Days3Good_2Eva
+	return Days3Good_2Eva()
+
 
 # example: 3days_jiasu
 def try_parse_3days_jiasu_1(type):
