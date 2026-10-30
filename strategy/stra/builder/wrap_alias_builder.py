@@ -850,6 +850,8 @@ def build_wrap_alias_one(type,debug=False):
 		stra = try_parse_xls_ban5up_1(type)
 	elif type == 'xls:ban4up':
 		stra = try_parse_xls_ban4up_1(type)
+	elif type == 'xls:chaoduan0':
+		stra = try_parse_xls_chaoduan_0(type)
 	elif type == 'xls:chaoduan2':
 		stra = try_parse_xls_chaoduan_2(type)
 	elif type == 'xls:chaoduan':
@@ -2125,6 +2127,11 @@ def try_parse_xls_dqushi_1(type):
 def try_parse_xls_dqushi_2(type):
 	from strategy.alias.xls_qushi_1 import XlsDQushi_2Strategy
 	return XlsDQushi_2Strategy()
+
+# example: xls:chaoduan0
+def try_parse_xls_chaoduan_0(type):
+	from strategy.alias.chaoduans_1 import XlsChaoduan_0Strategy
+	return XlsChaoduan_0Strategy()
 
 # example: xls:chaoduan
 def try_parse_xls_chaoduan_1(type):
