@@ -9,6 +9,7 @@ template2=#
 now=0
 time_str=#
 mode='now'
+pool='0'
 operate='flush'
 ignore_cache=0
 chain_id=-1
@@ -34,7 +35,11 @@ do
 		shift
 		mode=$1
 		;;
-        -chain_id | --chain_id | --chain)
+ 	-pool | --pool)
+		shift
+		pool=$1
+		;;
+	-chain_id | --chain_id | --chain)
 		shift
 		chain_id=$1
 		;;
@@ -65,5 +70,5 @@ do
 	shift
 done
 
-echo python realtime/observe/chain.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate 
-python realtime/observe/chain.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache 
+echo python realtime/observe/chain.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate --pool $pool
+python realtime/observe/chain.py run_template $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --pool $pool
