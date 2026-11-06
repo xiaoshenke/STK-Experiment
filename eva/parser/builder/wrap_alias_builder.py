@@ -271,7 +271,7 @@ def build_wrap_alias_one(type,debug=False):
 		eva = try_parse_co3(type)
 	elif type == 'co4':
 		eva = try_parse_co4(type)
-	elif type == 'basic_btw_1':
+	elif type == 'basic_btw_1' or type == 'basic_btw':
 		eva = try_parse_basic_btw_1(type)
 	elif type == 'btw07':
 		eva = try_parse_btw07(type)
