@@ -12,6 +12,7 @@ now=0
 add=0
 mode='now'
 operate='flush'
+extra='0'
 time_str=#
 debug=0
 
@@ -36,6 +37,10 @@ do
 		shift
 		time_str=$1
 		;;
+	-extra | --extra)
+		shift
+		extra=$1
+		;;
 	-debug | --debug)
 		shift
 		debug=$1
@@ -55,8 +60,8 @@ do
 	shift
 done
 
-echo python realtime/if_cli.py check_if $eva_str --day $day --time_str $time_str --mode $mode --debug $debug
-python realtime/if_cli.py check_if "$eva_str" --day $day --time_str $time_str --mode $mode --debug $debug
+echo python realtime/if_cli.py check_if $eva_str --day $day --time_str $time_str --mode $mode --debug $debug --extra $extra
+python realtime/if_cli.py check_if "$eva_str" --day $day --time_str $time_str --mode $mode --debug $debug --extra $extra
 
 echo ""
 echo ""
