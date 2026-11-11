@@ -79,6 +79,9 @@ def build_tuxing_one(type,debug=False):
 	elif name == 'good2':
 		eva = try_parse_good_2(type)
 
+	elif name == 'zhuanq':
+		eva = try_parse_zhuanq_1(type)
+
 	elif name == 'attack':
 		eva = try_parse_attack_1(type)
 
@@ -213,6 +216,10 @@ def try_parse_3days_dis_good_2(type):
 	from eva.tuxing.days_dis_goods_1 import Days3DisGood_2Eva
 	return Days3DisGood_2Eva()
 
+# example: tx:zhuanq
+def try_parse_zhuanq_1(type):
+	from eva.tuxing.zhuanqs_1 import Zhuanq_1Eva
+	return Zhuanq_1Eva()
 
 # example: tx:good
 def try_parse_good_1(type):
