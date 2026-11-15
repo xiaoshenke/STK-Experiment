@@ -11,6 +11,7 @@ time_str=#
 mode='now'
 pool='0'
 operate='flush'
+spacing='0'
 with_logic=-1
 ignore_cache=0
 chain_id=-1
@@ -40,6 +41,10 @@ do
 	-pool | --pool)
 		shift
 		pool=$1
+		;;
+	-spacing | --spacing | -space | --space)
+		shift
+		spacing=$1
 		;;
 	-ignore_cache | --ignore_cache | -ignore | --ignore)
 		shift
@@ -83,6 +88,6 @@ do
 	shift
 done
 
-echo python realtime/observe/chain.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --rank $rank --pool $pool
-python realtime/observe/chain.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --rank $rank --pool $pool
+echo python realtime/observe/chain.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --rank $rank --pool $pool --spacing $spacing
+python realtime/observe/chain.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --rank $rank --pool $pool --spacing $spacing
 
