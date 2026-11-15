@@ -16,6 +16,7 @@ xls=#
 type='default'
 to_name=#
 force=0
+extra_msg='0'
 
 # 标志位=1的话 会去刷新一下tracing observe
 flush=0
@@ -36,6 +37,10 @@ do
 	-force | --force)
 		shift
 		force=$1
+		;;
+	-extra_msg | --extra_msg)
+		shift
+		extra_msg=$1
 		;;
 	*)
 		# set value to type|flush_type by now-flag
@@ -141,6 +146,14 @@ sed -i '' "5a\\
 # xls: ${xls}\\
 \\
 " $to_file
+
+# 添加一下extra msg
+if [[ "$extra_msg" != "0" ]]
+then
+	sed -i '' "5a\\
+# ************************ ${extra_msg} *********
+" $to_file
+fi
 
 # 插入字符串结束 
 

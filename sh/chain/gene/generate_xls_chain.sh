@@ -133,6 +133,7 @@ to_file2="${to_file/#$home/~}"
 
 # 插入特定的字符串 使的我能清晰的知道这是一个手工文件 而不是模板
 sed -i '' "5a\\
+# @@@@@@@@@@@@@@@@@@@@@@@@@@ [Chain File] @@@@@@@@@@@@@@@@@@@@@@@
 # 注意: 这是由模板生成的手工文件\\
 # 模板: ${from_file}\\
 # 存储: ${to_file2}\\
@@ -150,16 +151,4 @@ echo ""
 echo 手工打开文件:  open $to_file
 echo ""
 
-
-#echo 可以继续启动对应的监听器: sh/chain/start_file_listener.sh $to_name --only 0
-
-#cmd="sh/chain/generate_xls_chain.sh $xls $type --start_at $start_at --end_at $end_at"
-#sh/log/log_to_operate.sh "$cmd" "GENE-XLS-BUYER"
-
-# 最后 如果标志位=1,那么刷新一下tracing(因为efile文件修改了 自然应该进行一次新的刷新)
-#if [ $flush -eq 1 ]
-#then
-#	echo 标志位flush=1,因此刷新一下tracing文件
-#	sh/tracing/flush_one.sh efiles:$xls
-#fi
 
