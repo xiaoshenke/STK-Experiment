@@ -87,18 +87,6 @@ fi
 if [ -f "$file1" ]
 then
 	find=$file1
-#elif [[ $file2 != "0" ]]
-#then
-#	find=$file2
-#elif [[ $file3 != "0" ]]
-#then
-#	find=$file3
-#else
-#	# 尝试file2 即caop/hands/template下的文件
-#	# 调用一下python接口
-#	# 如果寻找失败 file2='0'
-#	file2=$(python engine/caop/hands/template/file_cli.py try_find_template_file xx_$type --day $day)
-#	find=$file2
 fi
 
 if [ ${#find} -lt 2 ]

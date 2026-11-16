@@ -80,23 +80,10 @@ fi
 if [ -f "$file1" ]
 then
 	find=$file1
-#elif [[ $file2 != "0" ]]
-#then
-#	find=$file2
-#elif [[ $file3 != "0" ]]
-#then
-#	find=$file3
-#else
-#	# 尝试file2 即caop/chains/template下的文件
-#	# 调用一下python接口
-#	# 如果寻找失败 file2='0'
-#	file2=$(python engine/caop/chains/template/file_cli.py try_find_template_file xx_$type --day $day)
-#	find=$file2
 fi
 
 if [ ${#find} -lt 2 ]
 then
-	#echo 不论是observe/chain/template下 还是caop/chains/template下 都找不到xx_$type 对应的模板文件,终止计算
 	echo 找不到对应的模板文件 是否输入错误?
 	exit 2
 fi
@@ -133,7 +120,7 @@ to_file2="${to_file/#$home/~}"
 
 # 插入特定的字符串 使的我能清晰的知道这是一个手工文件 而不是模板
 sed -i '' "5a\\
-# @@@@@@@@@@@@@@@@@@@@@@@@@@ [Chain File] @@@@@@@@@@@@@@@@@@@@@@@
+# --------------- [Chain File] ----------------\\
 # 注意: 这是由模板生成的手工文件\\
 # 模板: ${from_file}\\
 # 存储: ${to_file2}\\
@@ -149,6 +136,7 @@ cat $to_file
 
 echo ""
 echo 手工打开文件:  open $to_file
+open $to_file
 echo ""
 
 

@@ -11,6 +11,7 @@ now=0
 time_str=#
 mode='now'
 operate='flush'
+spacing='0'
 with_logic=-1
 ignore_cache=0
 chain_id=-1
@@ -38,6 +39,10 @@ do
 		shift
 		mode=$1
 		;;
+	-spacing | --spacing | -space | --space)
+                shift
+                spacing=$1
+                ;;
 	-ignore_cache | --ignore_cache | -ignore | --ignore)
 		shift
 		ignore_cache=$1
@@ -84,5 +89,5 @@ do
 	shift
 done
 
-echo python engine/caop/buyer/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id --action $action 
-python engine/caop/buyer/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id --action $action 
+echo python engine/caop/buyer/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id --action $action --spacing $spacing
+python engine/caop/buyer/cli.py generate $xls $template --day $day --mode $mode --time_str $time_str --chain_id $chain_id --action $action --spacing $spacing
