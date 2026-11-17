@@ -1,7 +1,7 @@
 #!/bin/bash
 
 do_log=0
-force=0
+force=1
 
 if [ $# -eq 1 ]
 then

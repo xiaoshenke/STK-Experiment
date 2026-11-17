@@ -14,6 +14,7 @@ operate='flush'
 with_logic=-1
 ignore_cache=0
 chain_id=-1
+spacing='0'
 silent=1
 
 if [ $# -lt 2 ]
@@ -37,6 +38,10 @@ do
 		shift
 		mode=$1
 		;;
+	-spacing | --spacing | -space | --space)
+                shift
+                spacing=$1
+                ;;
 	-ignore_cache | --ignore_cache | -ignore | --ignore)
 		shift
 		ignore_cache=$1
@@ -85,6 +90,6 @@ do
 	shift
 done
 
-echo python realtime/observe/hand.py run_xls_template $xls $template --pool_type $pool --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id --silent $silent
-python realtime/observe/hand.py run_xls_template $xls $template --pool_type $pool --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id --silent $silent
+echo python realtime/observe/hand.py run_xls_template $xls $template --pool_type $pool --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id --silent $silent --spacing $spacing
+python realtime/observe/hand.py run_xls_template $xls $template --pool_type $pool --day $day --mode $mode --time_str $time_str --operate $operate --ignore_cache $ignore_cache --chain_id $chain_id --silent $silent --spacing $spacing
 

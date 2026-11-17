@@ -14,7 +14,7 @@ fi
 file="/Users/wuxian/Desktop/stk_daily/$day//queryable_source//spacing.reg.csv"
 
 echo cat $file
-cat $file
+head -n 11 $file
 
 echo ""
 

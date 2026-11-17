@@ -3,7 +3,7 @@
 
 if [ $# -lt 1 ]
 then
-	echo usage sh/buyer/server/open_by_schedule_id.sh ABC
+	echo usage sh/spacing/open_id.sh xx
 	exit 2
 fi
 
@@ -27,7 +27,7 @@ do
 		id=$1
 		;;
 	-help | --help)
-		echo usage sh/buyer/server/open_by_schedule_id.sh ABC [day]
+		echo usage sh/spacing/open_id.sh xx
 		exit 1
 		;;
 	*)
