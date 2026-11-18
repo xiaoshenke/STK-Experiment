@@ -18,6 +18,7 @@ secret
 #*.properties
 realtime/realtime.properties
 realtime/pan.properties
+realtime/spacing.properties
 png
 !data/csv_data/calAll.csv
 data/csv_data/*.csv
