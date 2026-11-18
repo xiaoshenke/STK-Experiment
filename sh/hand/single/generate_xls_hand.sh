@@ -143,6 +143,10 @@ then
 " $to_file
 fi
 
+# 向文件最后一行插入一句命令字符串
+echo "可以继续启动对应的监听器: sh/hand/start_file_listener.sh $to_name --only 0" >> $to_file
+echo "对应的日志在 ../stk_daily/$day/observe.hand.xx_$to_name.log" >> $to_file
+
 # 插入字符串结束 
 
 echo ""

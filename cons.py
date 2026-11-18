@@ -81,6 +81,7 @@ FENSHI_API = 'tencent'
 # properties文件名称
 REALTIME_PROPERTIES_FILE = 'realtime/realtime.properties'
 PAN_PROPERTIES_FILE = 'realtime/pan.properties'
+SPACING_PROPERTIES_FILE = 'realtime/spacing.properties'
 
 BUYER_CONFIG_PROPERTIES_FILE = 'buyer.config.properties'
 DEFAULT_JUBEN_PROPERTIES_FILE = 'default.juben.properties'
