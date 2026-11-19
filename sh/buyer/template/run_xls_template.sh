@@ -65,6 +65,16 @@ do
 	shift
 done
 
+cur_dir=/Users/wuxian/Desktop/STK-Experiment
+file="$cur_dir/engine/caop/buyer/template/xx_$template.buyer.properties"
+
+if [ -f "$file" ]
+then
+	echo python engine/caop/buyer/jtemp/template_cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache --operate $operate
+	python engine/caop/buyer/jtemp/template_cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache --operate $operate
+	exit 2
+fi
+
 echo python engine/caop/buyers/template/cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache --operate $operate
 python engine/caop/buyers/template/cli.py run_xls_template $xls $template --day $day --mode $mode --time_str $time_str --ignore_cache $ignore_cache --operate $operate
 
