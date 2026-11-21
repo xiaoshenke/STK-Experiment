@@ -16,6 +16,9 @@ chain_id=-1
 time_str=#
 desc='0'
 
+# 和sh/eva/cli.sh的兼容字段
+open=1
+
 if [ $# -lt 1 ]
 then
 	echo Usage: sh/eva/run_simple_eva.sh "aa->bb" or sh/eva/run_simple_eva.sh aa bb
@@ -40,6 +43,10 @@ do
 	-action | --action)
 		shift
 		action=$1
+		;;
+	-open | --open)
+		shift
+		open=$1
 		;;
 	-operate | --operate | -op | --op)
 		shift

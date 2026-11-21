@@ -3,6 +3,9 @@
 
 # 列出当前的所有id列表
 
+path=`pwd`
+export PYTHONPATH=$path:$PYTHONPATH
+
 day=$(python util/sh_util.py get_today)
 
 if [ $# -eq 1 ]
