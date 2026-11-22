@@ -37,7 +37,7 @@ do
 			type=$1
 		elif [ $now -eq 1 ]
 		then
-			day=$1
+			spacing=$1
 		fi
 		declare -i now=$now+1
 		;;

@@ -26,6 +26,7 @@ call_from=0
 open_jpg=1
 do_report=1
 chain_id=-1
+spacing='0'
 
 while [ -n "$1" ]
 do 
@@ -54,6 +55,10 @@ do
 		shift
 		call_from=$1
 		;;
+	-spacing | --spacing | -space | --space)
+                shift
+                spacing=$1
+                ;;
 	-level | --level)
 		shift
 		level=$1

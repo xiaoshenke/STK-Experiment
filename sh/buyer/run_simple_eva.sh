@@ -15,6 +15,7 @@ with_logic=-1
 chain_id=-1
 time_str=#
 desc='0'
+spacing='0'
 
 # 和sh/eva/cli.sh的兼容字段
 open=1
@@ -52,6 +53,10 @@ do
 		shift
 		operate=$1
 		;;
+	-spacing | --spacing | -space | --space)
+		shift
+		spacing=$1
+                ;;
 	-with_logic | --with_logic | -logic| --logic)
 		shift
 		with_logic=$1
@@ -83,6 +88,6 @@ do
 	shift
 done
 
-echo python engine/observe/buyer/runner/simple_eva_cli.py run $type $type2 --day $day --time_str $time_str --mode $mode --with_logic $with_logic --desc $desc --chain_id $chain_id --action $action
+echo python engine/observe/buyer/runner/simple_eva_cli.py run $type $type2 --day $day --time_str $time_str --mode $mode --with_logic $with_logic --desc $desc --chain_id $chain_id --action $action --spacing $spacing
 
-python engine/observe/buyer/runner/simple_eva_cli.py run $type $type2 --day $day --time_str $time_str --mode $mode --with_logic $with_logic --desc $desc --chain_id $chain_id --action $action
+python engine/observe/buyer/runner/simple_eva_cli.py run $type $type2 --day $day --time_str $time_str --mode $mode --with_logic $with_logic --desc $desc --chain_id $chain_id --action $action --spacing $spacing
