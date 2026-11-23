@@ -64,7 +64,19 @@ then
 	exit 2
 fi
 
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # 接下来还要对文本内容进行一些修改
+
+line=$(grep -n -m 1 "spacing=" $to_file | cut -d: -f1)
+if [ -n "$line" ] 
+then
+	# 替换原先的存储本文
+	sed -i '' "${line}d" $to_file
+	declare -i line=$line-1
+	sed -i '' "${line}a\\
+spacing=(这里需要进行配置新的值)\\
+" $to_file
+fi
 
 line=$(grep -n -m 1 "模板:" $to_file | cut -d: -f1)
 
