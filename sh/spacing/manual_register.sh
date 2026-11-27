@@ -34,7 +34,7 @@ do
 	*)
 		if [ $now -eq 0 ]
 		then
-			type=$1
+			type="$1"
 		elif [ $now -eq 1 ]
 		then
 			spacing=$1
@@ -48,5 +48,5 @@ done
 path=`pwd`
 export PYTHONPATH=$path:$PYTHONPATH
 
-echo python engine/spacing/reg_cli.py manual_register $type --day $day --spacing $spacing
-python engine/spacing/reg_cli.py manual_register $type --day $day --spacing $spacing
+echo python engine/spacing/reg_cli.py manual_register "$type" --day $day --spacing $spacing
+python engine/spacing/reg_cli.py manual_register "$type" --day $day --spacing $spacing
